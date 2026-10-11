@@ -147,3 +147,27 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Laravel dependencies and generated files
+/backend/vendor/
+/backend/public/build/
+/backend/public/hot
+/backend/public/storage
+/backend/storage/*.key
+/backend/storage/logs/*.log
+/backend/.phpunit.cache/
+/backend/.phpunit.result.cache
+
+# Frontend build output
+/frontend/dist/
+
+# Local editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

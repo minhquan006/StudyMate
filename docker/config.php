@@ -1,0 +1,2 @@
+<?php
+return ['db_driver'=>'mysql','db_host'=>getenv('DB_HOST')?:'db','db_port'=>3306,'db_name'=>getenv('DB_NAME')?:'studymate','db_user'=>getenv('DB_USER')?:'studymate','db_password'=>getenv('DB_PASSWORD')?:'','sqlite_path'=>__DIR__.'/storage/studymate.sqlite','demo_password'=>getenv('DEMO_PASSWORD')?:'StudyMate2026!','app_env'=>'production','secure_cookie'=>getenv('HTTPS_ENABLED')==='1','ai_enabled'=>getenv('AI_ENABLED')==='1','gemini_api_key'=>getenv('GEMINI_API_KEY')?:'','ai_model'=>'gemini-2.5-flash-lite'];

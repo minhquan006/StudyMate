@@ -1,0 +1,12 @@
+<?php
+require dirname(__DIR__).'/app/bootstrap.php';require dirname(__DIR__).'/database/seed.php';require dirname(__DIR__).'/app/services.php';require dirname(__DIR__).'/app/ai_service.php';require dirname(__DIR__).'/app/ai_view.php';require dirname(__DIR__).'/app/actions.php';require dirname(__DIR__).'/app/views.php';require dirname(__DIR__).'/app/management_views.php';
+if(($_GET['page']??'')==='health'&&$_SERVER['REQUEST_METHOD']==='GET'){header('Content-Type: application/json');try{val('SELECT 1');echo json_encode(['status'=>'ok']);}catch(Throwable $e){http_response_code(503);echo json_encode(['status'=>'unavailable']);}exit;}
+$page=(string)($_GET['page']??'home');$id=(int)($_GET['id']??0);$error=null;
+try{if($_SERVER['REQUEST_METHOD']==='POST'){ $page=(string)($_POST['return_page']??'home');$id=(int)($_POST['course_id']??0);if(isset($_POST['return_tab']))$_GET['tab']=(string)$_POST['return_tab'];if(isset($_POST['lesson_id']))$_GET['lesson']=(int)$_POST['lesson_id'];handleAction();}}
+catch(AppError $e){$error=$e->getMessage();http_response_code($e->status);}
+catch(Throwable $e){error_log('StudyMate failure '.get_class($e));$error='Có lỗi hệ thống. Kiểm tra cấu hình CSDL và thử lại.';http_response_code(500);}
+ob_start();try{switch($page){case 'home':pageHome();break;case 'courses':pageCourses();break;case 'detail':pageDetail($id);break;case 'login':pageAuth(false);break;case 'register':pageAuth(true);break;case 'student':pageStudent();break;case 'learn':pageLearn($id);break;case 'quiz':pageQuiz($id);break;case 'result':pageResult($id);break;case 'profile':pageProfile();break;case 'instructor':pageInstructor();break;case 'edit':pageEdit($id);break;case 'preview':pagePreview($id);break;case 'admin':pageAdmin();break;default:reject('Trang không tồn tại.',404);}$body=ob_get_clean();}
+catch(AppError $e){ob_end_clean();$error=$error??$e->getMessage();http_response_code($e->status);$body='<main class="container"><a class="btn btn-primary" href="'.h(url(currentUser()?currentUser()['role']:'login')).'">Về khu vực của bạn</a></main>';}
+catch(Throwable $e){ob_end_clean();error_log('StudyMate view failure '.get_class($e));http_response_code(500);$error='Không tải được trang. Kiểm tra CSDL đã setup và cấu hình PHP.';$body='<main class="container"><a href="'.h(url('home')).'">Trang chủ</a></main>';}
+$u=currentUser();$f=$_SESSION['flash']??null;unset($_SESSION['flash']);
+require dirname(__DIR__).'/app/layout.php';

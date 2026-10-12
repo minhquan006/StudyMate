@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: studymate
+      MYSQL_USER: studymate
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8080}:80"
+    environment:
+      DB_HOST: db
+      DB_NAME: studymate
+      DB_USER: studymate
+      DB_PASSWORD: ${DB_PASSWORD}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:-StudyMate2026!}
+      AI_ENABLED: ${AI_ENABLED:-0}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      HTTPS_ENABLED: "0"
+    volumes:
+      - private_storage:/var/www/html/storage
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  mysql_data:
+  private_storage:

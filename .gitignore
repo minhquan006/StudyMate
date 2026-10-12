@@ -171,3 +171,11 @@ vite.config.ts.timestamp-*
 .vscode/
 .DS_Store
 Thumbs.db
+
+# StudyMate PHP
+/config.php
+/storage/*
+!/storage/.gitkeep
+/.env
+.DS_Store
+!/.env.example

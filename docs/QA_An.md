@@ -37,7 +37,7 @@ Kiểm tra cú pháp: `php -l app/views.php` và `php -l app/layout.php` đều 
 
 * `public/assets/app.css` có style `.answer-option.chosen`, nhưng các radio quiz native không gán class `chosen` và không có JavaScript để làm việc đó. Vì vậy lựa chọn đã tick không đổi màu viền/nền như style dự định.
 * Bổ sung `:has(input:checked)` cho trạng thái được chọn và `:focus-within` cho focus bàn phím. Không đổi form POST hoặc cách chấm trên server.
-* Đã kiểm tra `git diff --check`. **Cần kiểm tra lại màu lựa chọn và focus trực quan trên Chrome Windows** trước khi ghi nhận sửa lỗi đã nghiệm thu.
+* Đã kiểm tra `git diff --check`. **Đã kiểm tra trên Chrome Windows: đáp án được chọn đổi màu nền/viền; khi dùng Tab, radio nhận focus có viền tím. Đạt kiểm tra trực quan.**
 
 ## Kiểm tra trực quan cần An hoàn tất trên máy Windows
 
@@ -52,6 +52,10 @@ Trình duyệt kiểm thử trong môi trường hỗ trợ không mở được
 Cách làm: chạy bản `main` có `config.php` riêng theo README, mở DevTools → Toggle device toolbar, nhập ba kích thước. Kiểm tra `document.documentElement.scrollWidth <= window.innerWidth` trong Console trên từng trang; xem bằng mắt menu, form, nội dung, nút và bảng. Chụp ảnh có URL/thanh địa chỉ cho bằng chứng nộp bài. Dùng Chrome để chọn một đáp án quiz và Tab tới radio nhằm xác nhận CSS vừa sửa; chụp trước/sau nếu cần.
 
 \## Kiểm tra trực quan bổ sung trên Chrome Windows ngày 16/10/2026
+
+\- Kiểm tra bổ sung: Home, chi tiết khóa học, Đăng nhập/Đăng ký, Student, bài học, Quiz, kết quả và Profile trên Chrome Windows. Các trang đã mở hiển thị nội dung, form và nút; không quan sát thấy chồng chữ hoặc tràn ngang ở những viewport đã kiểm tra.
+
+\- Quiz: chọn đáp án thấy màu nền/viền thay đổi; dùng Tab thấy viền focus. Đạt kiểm tra trực quan.
 
 
 
@@ -69,7 +73,7 @@ Cách làm: chạy bản `main` có `config.php` riêng theo README, mở DevToo
 
 
 
-Các trang Home, Detail, Login/Register, Student, Learn, Quiz, Result, Profile và viewport desktop 1366 px vẫn cần kiểm tra trực quan. Chưa kiểm thử PDO MySQL trong lượt này.
+Các trang Home, Detail, Login/Register, Student, Learn, Quiz, Result và Profile đã được An kiểm tra trực quan trên Chrome Windows ở những viewport đã mở. Chưa kiểm thử PDO MySQL trong lượt này.
 
 ## Phần phối hợp còn mở
 

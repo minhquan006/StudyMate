@@ -96,16 +96,40 @@ Thông báo “Provider đã hết quota miễn phí.” thuộc hạn mức c�
 
 ## 7. Ảnh tham chiếu
 
-Ảnh được trao đổi trong phiên hỗ trợ. Bản Markdown này chưa nhúng hoặc đính kèm ảnh vào repository; có thể bổ sung các ảnh gốc vào `docs/images/qa-quan/` trước khi nộp minh chứng.
+Sáu ảnh minh chứng được lưu tại `docs/images/qa-quan/` và hiển thị bên dưới. Các ảnh được chép nguyên bản từ ảnh người kiểm thử cung cấp.
 
-| Mã ảnh | Tên ảnh gốc | Nội dung quan sát được |
+| Mã ảnh | Tệp minh chứng | Nội dung quan sát được |
 | --- | --- | --- |
-| A1 | `image(20261015-164650).png` | Admin nhận thông báo danh mục đang được sử dụng |
-| A2 | `image(20261015-165057).png` | Trang Student chặn phiên không hợp lệ/tài khoản bị khóa |
-| A3 | `image(20261015-165120).png` | Đăng nhập bị từ chối vì tài khoản đã bị khóa |
-| A4 | `image(20261015-165146).png` | Student2 đăng nhập thành công sau mở khóa; còn 1 khóa đã hoàn thành |
-| A5 | `image(20261015-173307).png` | Chưa cấu hình AI; bài học hiển thị và tiến độ 100% |
-| A6 | `image(20261015-173600).png` | Khung AI hiển thị phản hồi tiếng Việt đúng nội dung mục tiêu bài học |
+| A1 | [A1-category-in-use.png](images/qa-quan/A1-category-in-use.png) | Admin nhận thông báo danh mục đang được sử dụng |
+| A2 | [A2-session-revoked.png](images/qa-quan/A2-session-revoked.png) | Trang Student chặn phiên không hợp lệ/tài khoản bị khóa |
+| A3 | [A3-account-locked.png](images/qa-quan/A3-account-locked.png) | Đăng nhập bị từ chối vì tài khoản đã bị khóa |
+| A4 | [A4-account-unlocked.png](images/qa-quan/A4-account-unlocked.png) | Student2 đăng nhập thành công sau mở khóa; còn 1 khóa đã hoàn thành |
+| A5 | [A5-ai-disabled.png](images/qa-quan/A5-ai-disabled.png) | Chưa cấu hình AI; bài học hiển thị và tiến độ 100% |
+| A6 | [A6-ai-response.png](images/qa-quan/A6-ai-response.png) | Khung AI hiển thị phản hồi tiếng Việt đúng nội dung mục tiêu bài học |
+
+### A1 — Chặn xóa danh mục đang sử dụng
+
+![A1 — Chặn xóa danh mục đang sử dụng](images/qa-quan/A1-category-in-use.png)
+
+### A2 — Thu hồi phiên đăng nhập
+
+![A2 — Thu hồi phiên đăng nhập](images/qa-quan/A2-session-revoked.png)
+
+### A3 — Chặn đăng nhập tài khoản bị khóa
+
+![A3 — Chặn đăng nhập tài khoản bị khóa](images/qa-quan/A3-account-locked.png)
+
+### A4 — Đăng nhập sau mở khóa
+
+![A4 — Đăng nhập sau mở khóa](images/qa-quan/A4-account-unlocked.png)
+
+### A5 — AI chưa cấu hình
+
+![A5 — AI chưa cấu hình](images/qa-quan/A5-ai-disabled.png)
+
+### A6 — AI phản hồi thành công
+
+![A6 — AI phản hồi thành công](images/qa-quan/A6-ai-response.png)
 
 Các thông báo được đối chiếu ở mức giao diện; chưa thu thập mã HTTP hoặc log request làm bằng chứng cho những ca này.
 
@@ -126,3 +150,4 @@ Các ca trong báo cáo xác nhận những luồng đã thao tác, chưa đại
 - `config.example.php`: đổi model mặc định từ `gemini-2.5-flash-lite` sang `gemini-3.5-flash-lite`; giữ `ai_enabled=false` và `gemini_api_key=''`.
 - `docs/QA_Quan.md`: lưu kết quả kiểm thử thủ công, nguồn bằng chứng và phạm vi còn cần kiểm tra.
 - Theo kết quả `git status` trên máy kiểm thử, lần cập nhật này chưa có thay đổi mã xử lý Instructor, Admin hoặc AI. Báo cáo không khẳng định đã sửa lỗi mã nguồn trong nhánh này.
+

@@ -137,3 +137,17 @@ Trạng thái focus bằng Tab được ghi trong lượt kiểm tra 16/10; ản
 - `docs/QA_Tu.md` ghi nhận Tú đã chạy bản `StudyMate_PHP_Integrated.zip` riêng trên Docker `php:8.3-apache` và MySQL 8.4 ngày 12/10/2026, trong đó có login và tiến độ/quiz. Đó là kết quả do Tú thực hiện trên bản ZIP ngoài repo, chưa chứng minh đầy đủ các luồng của nhánh này trên MySQL. Cần Tú xác nhận commit được chạy và các ca còn thiếu: đăng ký/đăng xuất, tìm/lọc, tham gia khóa, điều kiện mở quiz, kết quả/lịch sử. Xem [báo cáo của Tú](QA_Tu.md).
 - Chưa kiểm tra phần Instructor, Admin và AI trong phạm vi QA của An.
 - Những khu vực chưa quan sát đầy đủ được ghi rõ trong bảng, không tính là đã xác nhận đạt.
+
+## Bổ sung kết quả kiểm thử MySQL của Tú ngày 17/10/2026
+
+Tú đã kiểm tra các luồng Public, Auth và Student trên nhánh `feature/an-week3-qa`, commit `0259699`. Môi trường kiểm thử là Windows Docker Desktop, PHP 8.3.35 có PDO MySQL, MySQL 8.4 ở trạng thái healthy và ứng dụng chạy tại `http://localhost:8083` trong project `studymate-an-qa`. Đây là kết quả Tú ghi trong phần trao đổi của [PR #9](https://github.com/minhquan006/StudyMate/pull/9), không phải lượt kiểm tra SQLite và giao diện responsive của An ở các mục phía trên.
+
+| Nội dung | Kết quả Tú ghi nhận |
+| --- | --- |
+| Public | Hiển thị 2 khóa học đã xuất bản; tìm kiếm bằng JavaScript cho 1 kết quả phù hợp và 0 kết quả với từ khóa không tồn tại; bộ lọc danh mục hoạt động. |
+| Auth | Đăng ký tài khoản Student, đăng nhập, đăng xuất và kiểm tra trường hợp xác thực bị từ chối. |
+| Student và bài học | Ghi danh khóa học; tiến độ bài học thay đổi từ 16,67% đến 100%. |
+| Quiz và kết quả | Quiz bị chặn khi chưa hoàn thành bài học; sau khi đủ điều kiện, bài làm đạt 5/5 câu (100%), có kết quả `id=1`. |
+| Dashboard và lịch sử | Dashboard hiển thị trạng thái hoàn thành; lịch sử có liên kết đến kết quả. |
+
+**Giới hạn:** Trong lượt kiểm tra này, Tú chưa xác nhận responsive, trạng thái focus, dữ liệu còn được lưu sau khi khởi động lại Docker/MySQL hoặc các yêu cầu HTTP đồng thời. Phần Instructor, Admin và AI nằm ngoài phạm vi kết quả trên. Các ghi chú “chưa xác nhận MySQL” ở mục kiểm tra của An và mục ngày 16/10 phản ánh trạng thái **trước khi Tú kiểm tra**, không phải trạng thái hiện tại của PR.

@@ -1,0 +1,6 @@
+﻿id	user_id	request_id	score_percent
+2	2	ef0708d1-ed5c-4dac-b926-9523328f056d	0.00
+attempt_count
+1
+answer_count
+5

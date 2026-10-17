@@ -1,0 +1,18 @@
+﻿[
+    {
+        "Session":  "A",
+        "HTTP":  "303",
+        "CurlExit":  0,
+        "StartUTC":  "2026-10-17T14:27:54.8880578Z",
+        "EndUTC":  "2026-10-17T14:27:55.1615039Z",
+        "Location":  "Location: /index.php?page=result\u0026id=2"
+    },
+    {
+        "Session":  "B",
+        "HTTP":  "303",
+        "CurlExit":  0,
+        "StartUTC":  "2026-10-17T14:27:54.8880578Z",
+        "EndUTC":  "2026-10-17T14:27:55.1587757Z",
+        "Location":  "Location: /index.php?page=result\u0026id=2"
+    }
+]

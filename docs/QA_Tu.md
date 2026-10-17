@@ -127,4 +127,65 @@ Các kiểm tra đạt:
 - T5 review chéo và chạy tích hợp trên main mới nhất vẫn còn thực hiện.
 
 - Kết quả trên chỉ áp dụng cho commit f142c53; chưa đánh dấu toàn bộ tuần 3 hoàn thành.
+## Bổ sung kiểm thử HTTP và phân quyền — 17/10/2026
+
+Người kiểm tra: Phạm Văn Tú.
+Commit mã nguồn kiểm thử: ab65abe.
+Nhánh làm việc: test/tu-auth-http-concurrency.
+
+### Môi trường và phương pháp
+
+- Windows PowerShell, curl.exe, Docker Desktop.
+- Docker Compose project: studymate-tu-http.
+- Địa chỉ: http://localhost:8082.
+- PHP 8.3.35, MySQL 8.4; setup và seed thành công.
+- Dùng DB và storage riêng của project kiểm thử, không dùng dữ liệu demo đang giữ trong studymate-tuan3.
+- Các request POST gửi tới /index.php, kèm cookie đăng nhập và CSRF hợp lệ.
+- Không tự động đi theo redirect khi ghi nhận mã HTTP.
+
+### Kết quả
+
+| Ca kiểm thử | Request / dữ liệu | HTTP thực tế | Đối chiếu DB | Kết luận |
+|---|---|---|---|---|
+| Giả mạo quyền Admin khi đăng ký | action=register, role=admin; các trường đăng ký hợp lệ | 303 | Tài khoản mới ID 6 có role=student | Không nâng được quyền |
+| Giả mạo quyền Instructor khi đăng ký | action=register, role=instructor; các trường đăng ký hợp lệ | 303 | Tài khoản mới ID 7 có role=student | Không nâng được quyền |
+| Instructor ghi danh | instructor1, action=enroll, course_id=1 | Đăng nhập 303; ghi danh 403 | Sau request: 0 enrollment của tài khoản | Bị chặn |
+| Admin ghi danh | admin, action=enroll, course_id=1 | Đăng nhập 303; ghi danh 403 | Sau request: 0 enrollment của tài khoản | Bị chặn |
+| Student ghi danh khóa draft | student2, action=enroll, course_id=3 | 409 | Enrollment khóa 3 trước/sau: 0/0 | Bị chặn |
+| Student ghi danh khóa archived | student2, action=enroll, course_id=3 | 409 | Enrollment khóa 3 trước/sau: 0/0 | Bị chặn |
+| Gửi lặp quiz tuần tự qua HTTP | student2, course_id=2, cùng UUID và cùng payload bỏ trống, confirm=1 | Hai lần 303, cùng Location kết quả id=1 | 1 attempt, điểm 0% | Không tạo attempt trùng |
+| Gửi quiz song song qua HTTP | Hai tiến trình PowerShell, hai session riêng của student2, cùng UUID và payload bỏ trống, course_id=2, confirm=1 | Hai lần 303, cùng Location kết quả id=2; curl exit code đều 0 | 1 attempt, 5 quiz_answers, điểm 0% | Không tạo attempt trùng trong lần kiểm thử |
+
+Khóa 3 được đổi trạng thái trực tiếp bằng SQL trong DB kiểm thử để chuẩn bị dữ liệu draft/archived. Ca này kiểm tra chặn ghi danh phía server, không kiểm tra quy trình chuyển trạng thái qua giao diện Instructor.
+
+### Chi tiết gửi lặp và song song
+
+UUID gửi lặp tuần tự:
+82e75f72-ca02-4318-86e5-02e06f3eb3c9
+
+UUID gửi song song:
+ef0708d1-ed5c-4dac-b926-9523328f056d
+
+Hai phiên đăng nhập đã được kiểm tra có session ID khác nhau.
+Hai tiến trình chờ cùng một tín hiệu trước khi gọi curl.exe.
+
+Thời gian đo phía máy gửi, theo UTC:
+
+- A: 14:27:54.8880578 đến 14:27:55.1615039.
+- B: 14:27:54.8880578 đến 14:27:55.1587757.
+- Hai khoảng thực thi chồng lấn khoảng 271 ms.
+
+Minh chứng:
+
+- [Kết quả HTTP song song](evidence/tu-http/concurrent-http.json)
+- [Đối chiếu DB](evidence/tu-http/concurrent-db.txt)
+
+### Giới hạn và việc còn lại
+
+- Thời gian trên đo phía client, chưa có trace chứng minh hai transaction đồng thời chờ khóa trong MySQL.
+- Ca song song mới thực hiện một cặp request cùng UUID và cùng payload bỏ trống; chưa phải kiểm thử tải.
+- Chưa kiểm tra cùng UUID nhưng khác payload qua HTTP trong đợt này; kết quả service trước đó được ghi ở phần báo cáo cũ.
+- Các kết quả mới bổ sung cho những mục trước đây ghi chưa kiểm thử; giữ phần cũ để thể hiện lịch sử.
+- Chưa hoàn thành lượt tích hợp chung sau khi PR của An được merge.
+- Chưa đánh dấu toàn bộ tuần 3 hoàn thành.
 

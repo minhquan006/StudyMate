@@ -1,5 +1,7 @@
 # StudyMate PHP
 
+**Tú cần làm nhanh:** mở [hướng dẫn thao tác chi tiết](docs/HUONG_DAN_TU.md). Mô tả PR bằng tiếng Việt nằm ở [PR_DESCRIPTION.md](docs/PR_DESCRIPTION.md).
+
 Website PHP thuần dựng HTML trên server, truy vấn bằng PDO và lưu vào CSDL. Không cần React, Node/npm, Laravel hoặc Blade. Các chức năng dùng session thật và dữ liệu thật; quiz được chấm trên server. Baseline 2.2 giữ phạm vi, phân công và hạn hoàn tất 01/11/2026.
 
 ## Chạy nhanh trên Mac
@@ -108,11 +110,12 @@ Bảng T1–T5/A1–A5/Q1–Q5, FR01–FR12, việc cần người thật và k�
 
 ### Máy/checkout sạch với Docker + MySQL
 
-Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repo, checkout đúng SHA/branch đã được nhóm bàn giao (main chỉ chứa thay đổi sau khi review/merge):
+Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repository và chuyển đúng nhánh đã được nhóm bàn giao. Trước khi merge dùng `codex/tu-final-acceptance`; sau khi review/merge dùng `main`:
 
 ```bash
 git clone https://github.com/minhquan006/StudyMate.git
 cd StudyMate
+git switch codex/tu-final-acceptance
 git rev-parse HEAD
 cp .env.example .env
 ```

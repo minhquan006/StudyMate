@@ -1,0 +1,4 @@
+{
+    "status": "blocked",
+    "reason": "AI_ENABLED/GEMINI_API_KEY chưa được cấu hình; không có request provider nào được gửi."
+}

@@ -3,7 +3,7 @@ import json, math, os, platform, re, statistics, subprocess, time, urllib.reques
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 BASE=os.environ.get('STUDYMATE_BROWSER_URL','http://127.0.0.1:8081')
-OUT=Path('docs/evidence/final');OUT.mkdir(parents=True,exist_ok=True)
+OUT=Path(os.environ.get('STUDYMATE_BROWSER_OUTPUT','docs/evidence/final'));OUT.mkdir(parents=True,exist_ok=True)
 results=[]
 def check(name,ok):
  assert ok,name
@@ -23,7 +23,7 @@ def main():
  check('catalog warm-up 5, 30 successful timed loads p95 under 1s',p95<1000)
  (OUT/'performance.json').write_text(json.dumps({'data':{'users':100,'courses':100,'lessons':500},'warmup':5,'runs_ms':times,'p95_ms_nearest_rank':p95,'machine':{'platform':platform.platform(),'logical_cpus':os.cpu_count(),'memory_kib':int(re.search(r'MemTotal:\s+(\d+)',Path('/proc/meminfo').read_text())[1]),'docker_limits':subprocess.check_output(['docker','inspect','studymate-perf','--format','{{.HostConfig.Memory}} {{.HostConfig.NanoCpus}}'],text=True).strip()},'scope':'sequential HTTP catalog responses on local Docker MySQL; not Internet latency or load test'},indent=2))
  with sync_playwright() as p:
-  browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+  browser=p.chromium.launch(executable_path=os.environ.get('STUDYMATE_BROWSER_EXECUTABLE','/usr/bin/chromium'),args=['--no-sandbox'])
   version=browser.version
   for role in ['guest','student','instructor','admin']:
    context=browser.new_context();page=context.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
@@ -39,7 +39,7 @@ def main():
      check(f'{role} {route} {width} fields labelled',unnamed==0)
      small=page.locator('.btn:not([disabled]),.lesson-link').evaluate_all('els=>els.filter(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height<43.5).length')
      check(f'{role} {route} {width} primary controls >=44px',small==0)
-     page.screenshot(path=str(OUT/(role+'-'+re.sub('[^a-zA-Z0-9]','-',route)+'-'+str(width)+'.png')),full_page=True)
+     if os.environ.get('STUDYMATE_BROWSER_SCREENSHOTS','1')=='1':page.screenshot(path=str(OUT/(role+'-'+re.sub('[^a-zA-Z0-9]','-',route)+'-'+str(width)+'.png')),full_page=True)
    page.goto(BASE+'/index.php?page='+{'guest':'courses','student':'student','instructor':'instructor','admin':'admin&tab=users'}[role])
    if role in ['student','instructor','admin']:
     item='.course-card' if role=='student' else 'tbody tr'
@@ -55,6 +55,6 @@ def main():
    check(role+' Tab focus visible',page.evaluate("getComputedStyle(document.activeElement).outlineStyle !== 'none'"))
    check(role+' no browser JS exceptions',not errors);context.close()
   browser.close()
- (OUT/'browser-results.json').write_text(json.dumps({'browser':'Chromium '+version,'real_chrome_edge':'NOT RUN','screenshots':'viewport/full-page only; no browser toolbar','results':results},ensure_ascii=False,indent=2))
+ (OUT/'browser-results.json').write_text(json.dumps({'browser':os.environ.get('STUDYMATE_BROWSER_NAME','Chromium')+' '+version,'mode':'headless automation','platform':platform.platform(),'screenshots':('viewport/full-page only; no browser toolbar' if os.environ.get('STUDYMATE_BROWSER_SCREENSHOTS','1')=='1' else 'not captured in this run'),'results':results},ensure_ascii=False,indent=2))
  print(len(results),'checks passed; catalog p95',round(p95,2),'ms')
 if __name__=='__main__':main()

@@ -5,15 +5,17 @@ import concurrent.futures, http.cookiejar, json, os, re, subprocess, threading, 
 from pathlib import Path
 BASE=os.environ.get('STUDYMATE_TEST_URL','http://127.0.0.1:8080')+'/index.php'
 PROJECT=os.environ.get('COMPOSE_PROJECT_NAME','studymate-acceptance')
+DB_NAME=os.environ.get('STUDYMATE_TEST_DB_NAME')
+if DB_NAME and not re.fullmatch(r'[a-zA-Z0-9_]+',DB_NAME):raise ValueError('Invalid disposable database name')
 RESULTS=[]
 def db(mode='inspect'):
  if mode in ['fail_answers','clear_fail_answers']:
   sql="CREATE TRIGGER acceptance_fail_answer BEFORE INSERT ON quiz_answers FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT='Acceptance rollback test'" if mode=='fail_answers' else 'DROP TRIGGER IF EXISTS acceptance_fail_answer'
   # Only the disposable QA database: use its existing container-local root binding.
   # Do not weaken global MySQL trust settings or grant SUPER to the application.
-  subprocess.check_call(['docker','compose','-p',PROJECT,'exec','-T','db','sh','-ec','MYSQL_PWD="$MYSQL_ROOT_PASSWORD" mysql -uroot "$MYSQL_DATABASE" -e "$1"','sh',sql])
+  subprocess.check_call(['docker','compose','-p',PROJECT,'exec','-T','db','sh','-ec','MYSQL_PWD="$MYSQL_ROOT_PASSWORD" mysql -uroot "${2:-$MYSQL_DATABASE}" -e "$1"','sh',sql,DB_NAME or ''])
   return None
- output=subprocess.check_output(['docker','compose','-p',PROJECT,'exec','-T','-e','STUDYMATE_DISPOSABLE_DB=1','app','php','tests/fixture.php',mode],text=True)
+ output=subprocess.check_output(['docker','compose','-p',PROJECT,'exec','-T','-e','STUDYMATE_DISPOSABLE_DB=1',*(['-e','DB_NAME='+DB_NAME] if DB_NAME else []),'app','php','tests/fixture.php',mode],text=True)
  return json.loads(output) if output.strip() else None
 class NoRedirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,*args):return None
@@ -130,8 +132,20 @@ def main():
  check('publish complete new course',i.post('course_state',course_id=cid,target='published',confirm=1)[0]==303)
  deny('published quiz locked',i,'quiz_save',409,course_id=cid,**quiz)
  check('new student enrolls and sees lesson',new.post('enroll',course_id=cid)[0]==303 and new.request('learn',id=cid)[0]==200)
- check('preview does not modify learning data',i.request('preview',id=cid)[0]==200)
- out=Path('docs/evidence/final');out.mkdir(parents=True,exist_ok=True)
+ before_preview=db('snapshot')
+ check('preview does not modify learning data',i.request('preview',id=cid)[0]==200 and before_preview==db('snapshot'))
+ fixture=db();new_lessons=[l['id'] for l in fixture['lessons'] if l['course_id']==cid]
+ for lid in new_lessons:check('new student completes created lesson',new.post('complete',course_id=cid,lesson_id=lid)[0]==303)
+ check('new student opens created quiz',new.request('quiz',id=cid)[0]==200)
+ new_answers={'answers['+str(a['question_id'])+']':a['answer_id'] for a in fixture['answers'] if a['course_id']==cid}
+ r=new.post('submit_quiz',course_id=cid,confirm=1,request_id=str(uuid.uuid4()),**new_answers)
+ check('new student submits created quiz',r[0]==303)
+ attempt=int(urllib.parse.parse_qs(urllib.parse.urlparse(r[2]['Location']).query)['id'][0])
+ result=new.request('result',id=attempt)
+ check('new student sees graded result',result[0]==200 and '100.00' in result[1])
+ check('new student dashboard records completion','Đã hoàn thành khóa học' in new.request('student')[1])
+ deny('AI disabled on newly created lesson leaves data unchanged',new,'ai',503,course_id=cid,lesson_id=new_lessons[0],mode='summarize')
+ out=Path(os.environ.get('STUDYMATE_HTTP_OUTPUT','docs/evidence/final'));out.mkdir(parents=True,exist_ok=True)
  (out/'http-results.json').write_text(json.dumps({'base_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'target':'working tree, Docker MySQL disposable database','results':RESULTS},ensure_ascii=False,indent=2))
  print(len(RESULTS),'checks passed')
 if __name__=='__main__':

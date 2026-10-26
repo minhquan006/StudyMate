@@ -191,3 +191,17 @@ python3 tools/package.py /private/path/StudyMate-source.zip
 ```
 
 Script không ghi đè ZIP đã có, loại config.php/.env/storage DB/session/backup, kiểm integrity và tạo manifest SHA256 cạnh ZIP. ZIP này là source, chưa tự bao gồm video ba người hoặc xác nhận nộp bài. Giữ đúng cấu trúc thư mục được ghi trong Specification.
+
+
+## Kết quả bổ sung và phần còn bị chặn
+
+Bộ HTTP tích hợp mở rộng đạt 84 ca. Google Chrome 156 và Microsoft Edge 142 chính hãng trên Linux đều đạt 235 kiểm tra tự động mỗi trình duyệt; có thể chọn executable bằng STUDYMATE_BROWSER_EXECUTABLE, tên bằng STUDYMATE_BROWSER_NAME và thư mục kết quả bằng STUDYMATE_BROWSER_OUTPUT. Điều này không thay việc An trực tiếp review giao diện/cài đặt độc lập trên máy nhóm. Kết quả MySQL/backup/restore trên Windows do Tú cung cấp được ghi riêng trong docs/evidence/final/tu-windows-results.json.
+
+Gemini thật bị chặn vì chưa có key và domain chưa được áp dụng trong cloud. Sau khi cấu hình AI_ENABLED=1/GEMINI_API_KEY riêng trên máy nhóm, dùng đúng source mới và build lại rồi chạy:
+
+```bash
+docker compose up --build -d
+docker compose exec -T -e STUDYMATE_ALLOW_LIVE_AI=1 app php tools/probe_gemini.php
+```
+
+Lệnh gửi hai request thật (ask/summarize) bằng bài mẫu công khai, không in key/nội dung response ra log; trả JSON kết quả và mã thoát khác 0 nếu thiếu cấu hình hoặc lỗi. Chỉ dùng free tier, không bật billing. Quân còn phải review chất lượng câu trả lời và quota/provider theo yêu cầu. Không dùng báo cáo blocked thay FR10 đạt.

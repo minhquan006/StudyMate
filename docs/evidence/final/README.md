@@ -15,3 +15,16 @@ Môi trường chạy: PHP 8.3.36 (cli) (built: Oct 21 2026 15:57:18) (NTS); Doc
 - `restart-and-clean-install.json`: source không dùng config/env/DB cũ; setup lặp và restart giữ dữ liệu/health.
 
 Lỗi setup ban đầu (quyền Apache, mã CSRF trên Apache, thiếu dung lượng cache) đã được xử lý và chạy lại. Xem ../../FINAL_ACCEPTANCE.md để biết phần chờ người review, khóa Gemini thật, rubric, video và nộp bài.
+
+
+## Bổ sung sau lượt kiểm đầu
+
+- `chrome/`: Google Chrome 156 chính hãng, 235 ca tự động trên Linux đạt; có ảnh mẫu Instructor 390 px.
+- `edge/`: Microsoft Edge 142 chính hãng, 235 ca tự động trên Linux đạt; có ảnh mẫu Admin 390 px.
+- `integrated-http/`: 84 ca đạt, bổ sung Student hoàn thành khóa do Instructor vừa tạo và preview không ghi dữ liệu.
+- `tu-windows-results.json`: ghi nhận ảnh/log do Tú cung cấp, gồm 14 checks MySQL và hash dữ liệu 12 bảng sau restore khớp. Không phải kết quả do công cụ điều khiển Windows.
+- `gemini-live-blocked.json`: probe không gửi request vì chưa có cấu hình/key. Không coi là provider đã đạt.
+
+Các binary Chrome/Edge được tải qua HTTPS từ repository chính hãng, kiểm SHA256 theo metadata chính thức. Các lượt này là headless trên Linux; không thay review trực quan hoặc cài độc lập của An.
+
+Báo cáo tổng hợp: `../../BAO_CAO_BAN_GIAO.md`; checklist hiện hành: `../../SUBMISSION_CHECKLIST.md`. Checklist frontend 12/10 cũ đã chuyển vào archive để tránh nhầm hạn nộp.

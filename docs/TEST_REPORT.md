@@ -1,5 +1,8 @@
 # Báo cáo nghiệm thu kỹ thuật — 27/10/2026
 
+**Bổ sung mới:** 84 ca HTTP tích hợp, 235 kiểm tra Google Chrome 156 và 235 kiểm tra Microsoft Edge 142 đều đạt. Xem `evidence/final/integrated-http/`, `chrome/`, `edge/`. Kết quả Windows của Tú được ghi riêng trong `evidence/final/tu-windows-results.json`. Các số liệu 78 ca/Chromium bên dưới là lượt kiểm trước.
+
+
 Bản thay đổi cục bộ chuẩn bị cho Tú, chờ review/merge. Xem [FINAL_ACCEPTANCE.md](FINAL_ACCEPTANCE.md) cho ma trận T/A/Q và phần nhóm phải làm. Bằng chứng cũ bên dưới giữ làm lịch sử.
 
 | Kiểm tra mới | Kết quả | Bằng chứng |

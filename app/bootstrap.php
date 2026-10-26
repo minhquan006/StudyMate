@@ -41,3 +41,6 @@ function transaction(callable $callback){db()->beginTransaction();try{$r=$callba
 function lockCourse(int $id):array{global $config;$c=one('SELECT * FROM courses WHERE id=?'.($config['db_driver']==='mysql'?' FOR UPDATE':''),[$id]);if(!$c)reject('Không tìm thấy khóa học.',404);return $c;}
 // File locking makes rate/quota reservation atomic on one server, no external cache service.
 function takeQuota(array $limits):bool{global $storage;$f=fopen($storage.'/limits.json','c+');if(!$f)throw new RuntimeException('Cannot open quota store');flock($f,LOCK_EX);try{$raw=stream_get_contents($f);$state=json_decode($raw,true)?:[];foreach($state as $k=>$v)if($v['until']<time())unset($state[$k]);$ok=true;foreach($limits as $key=>$limit){if(($state[$key]['count']??0)>=$limit['max'])$ok=false;}if($ok)foreach($limits as $key=>$limit)$state[$key]=['count'=>($state[$key]['count']??0)+1,'until'=>$limit['until']];rewind($f);ftruncate($f,0);fwrite($f,json_encode($state));fflush($f);return $ok;}finally{flock($f,LOCK_UN);fclose($f);}}
+
+// Apache requires an explicit reason phrase for the application-specific CSRF status.
+function responseStatus(int $status):void{if($status===419)header('HTTP/1.1 419 CSRF Token Mismatch');else http_response_code($status);}

@@ -1,0 +1,12 @@
+{
+  "sourceSha": "6d66a71b1cc3ef6d8cd985d445d8fcba962a45b0",
+  "applicationFiles": {
+    "app/bootstrap.php": "dc9062f28b5504402fcdb6ba56e208c756b60edffcbba1820aeffde27c0b6d48",
+    "app/services.php": "275c90274b60447228f0f02ea36fa34f556b7d08f30734179b0dd5459f78b0e2",
+    "app/views.php": "7d35471151450ebeddf2f23c0e00755507f4730852d07a47f93106f4eea6fe9f",
+    "app/management_views.php": "9503c05a7ce063d9d050325f260ee6007e8b134193d9cbeb5a460cb84cdcf75d",
+    "public/index.php": "fb05eb080d9564dd7726a19ae4b6ad6b2557dbfe3cae5758f436431a98c03871",
+    "public/assets/app.css": "0cecbc95ce208bb3b9c03d3938eca2683cea92d773f67badfa2d234b810eb9f0"
+  },
+  "containerFilesMatch": true
+}

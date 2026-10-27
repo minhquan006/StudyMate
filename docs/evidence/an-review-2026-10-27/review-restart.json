@@ -1,0 +1,34 @@
+{
+  "sourceSha": "6d66a71b1cc3ef6d8cd985d445d8fcba962a45b0",
+  "before": {
+    "users": "403590c7f63d3c541d4d35c2cdba85a5401c8625f5f7c84adeece1a512635157",
+    "categories": "4d7a0f036f9f207aac489b6e571c9e8f002474a993b229fe0a4e9cf1649aa6fe",
+    "courses": "afa7289fabd38ce9ce69a91d9444089cbe63fa371474401e68c28defe54d5f61",
+    "chapters": "6c7bfcbeef21894ead3c95fd06f970e5bd8a5d8adabc024bd1fb0fed265d3bed",
+    "lessons": "41a1c0afaf4d5f2f1b6592ca1375eaff1193a36de42143592a653076aacdf757",
+    "enrollments": "e1f1daff592231e80ddd7ff372823a94cdff8d64970a63ffe587ba940a8ebace",
+    "lesson_progress": "2d49010d1b53758e405d5123fa21b31f697c4d1cc92ad1cd5aa3684caa610c4d",
+    "quizzes": "9660c05bbcd97b7e0ab8271d8e57ed2b0c1bd03b3019b6aaa6d8f9b4584b78b6",
+    "questions": "4127da682e3a6c1fa5bda662aec7c947dc203a666a303bec160bd3c432c0638e",
+    "answers": "31ee343d84c968396a12e8fb46a58cf650b7601df1471b34b7ecb7b5278643b5",
+    "quiz_attempts": "6d5687147224c90bcf043bb43aa430f09350d6b18e6d6d336281dcf985c16aea",
+    "quiz_answers": "78629a9c24cdf9e1945ca8720391bd2c98a7e1422a64c72adfd50ac5b0c42a42"
+  },
+  "after": {
+    "users": "403590c7f63d3c541d4d35c2cdba85a5401c8625f5f7c84adeece1a512635157",
+    "categories": "4d7a0f036f9f207aac489b6e571c9e8f002474a993b229fe0a4e9cf1649aa6fe",
+    "courses": "afa7289fabd38ce9ce69a91d9444089cbe63fa371474401e68c28defe54d5f61",
+    "chapters": "6c7bfcbeef21894ead3c95fd06f970e5bd8a5d8adabc024bd1fb0fed265d3bed",
+    "lessons": "41a1c0afaf4d5f2f1b6592ca1375eaff1193a36de42143592a653076aacdf757",
+    "enrollments": "e1f1daff592231e80ddd7ff372823a94cdff8d64970a63ffe587ba940a8ebace",
+    "lesson_progress": "2d49010d1b53758e405d5123fa21b31f697c4d1cc92ad1cd5aa3684caa610c4d",
+    "quizzes": "9660c05bbcd97b7e0ab8271d8e57ed2b0c1bd03b3019b6aaa6d8f9b4584b78b6",
+    "questions": "4127da682e3a6c1fa5bda662aec7c947dc203a666a303bec160bd3c432c0638e",
+    "answers": "31ee343d84c968396a12e8fb46a58cf650b7601df1471b34b7ecb7b5278643b5",
+    "quiz_attempts": "6d5687147224c90bcf043bb43aa430f09350d6b18e6d6d336281dcf985c16aea",
+    "quiz_answers": "78629a9c24cdf9e1945ca8720391bd2c98a7e1422a64c72adfd50ac5b0c42a42"
+  },
+  "equal": true,
+  "tables": 12,
+  "method": "docker compose stop, up -d --wait; volumes retained"
+}

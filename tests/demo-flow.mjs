@@ -53,7 +53,7 @@ try {
  assert.equal(await page.locator('.course-card').count(),1);
  await page.locator('.course-card a').click();await form('enroll').locator('button').click();
  await form('complete').locator('button').click();
- await page.reload();assert.match(await page.locator('.progress-meta').innerText(),/100/);
+ await page.goto(page.url(),{waitUntil:'domcontentloaded'});assert.match(await page.locator('.progress-meta').innerText(),/100/);
  await shot('02-student-progress-persisted');
  // Explicitly exercise the unavailable-provider UI; this is not a successful AI call.
  await form('ai').locator('[name=question]').fill('What does a transaction guarantee?');

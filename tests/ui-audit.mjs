@@ -43,7 +43,12 @@ for (const [name, executablePath] of browsers) {
           await page.keyboard.press('Tab');
           const focus = await page.evaluate(()=>({tag:document.activeElement.tagName,outline:getComputedStyle(document.activeElement).outlineStyle}));
           if(focus.tag==='BODY' || focus.outline==='none') result.failures.push({browser:name,role,width,route,focus});
-          if(name==='Chrome') await page.screenshot({ path:`${output}/${role}-${width}-${route.replaceAll(/[^a-z0-9]/gi,'-')}.png` });
+          if(name==='Chrome') {
+            const prefix=`${output}/${role}-${width}-${route.replaceAll(/[^a-z0-9]/gi,'-')}`;
+            await page.screenshot({ path:`${prefix}.png` });
+            if(route.startsWith('learn')) {await page.locator('.ai-panel').scrollIntoViewIfNeeded();await page.screenshot({path:`${prefix}-ai.png`});}
+            if(await page.locator('.table-responsive').count()) {await page.locator('.table-responsive').first().scrollIntoViewIfNeeded();await page.screenshot({path:`${prefix}-table.png`});}
+          }
         }
       }
       if(role==='student' || role==='instructor') {

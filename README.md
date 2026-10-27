@@ -110,12 +110,12 @@ Bảng T1–T5/A1–A5/Q1–Q5, FR01–FR12, việc cần người thật và k�
 
 ### Máy/checkout sạch với Docker + MySQL
 
-Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repository và chuyển đúng nhánh đã được nhóm bàn giao. Trước khi merge dùng `codex/tu-final-acceptance`; sau khi review/merge dùng `main`:
+Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repository và chuyển đúng nhánh đã được nhóm bàn giao. Trước khi merge dùng `tu/nghiem-thu-thu-cong`; sau khi review/merge dùng `main`:
 
 ```bash
 git clone https://github.com/minhquan006/StudyMate.git
 cd StudyMate
-git switch codex/tu-final-acceptance
+git switch tu/nghiem-thu-thu-cong
 git rev-parse HEAD
 cp .env.example .env
 ```
@@ -128,7 +128,7 @@ curl --fail --silent --retry 10 --retry-all-errors --retry-connrefused --retry-d
 docker compose logs --tail 30 app
 ```
 
-Health phải trả `{"status":"ok"}`; trình duyệt mở cổng WEB_PORT với `index.php?page=home`. Kiểm login Student/Instructor/Admin theo seed ở trên. Nếu host không cho ghi `$HOME/.docker/buildx`, dùng thư mục ghi được: `DOCKER_CONFIG=/tmp/studymate-docker docker compose up --build -d`. Không tắt xác minh TLS/chữ ký.
+Health phải trả `{"status":"ok"}`; trình duyệt mở cổng WEB_PORT với `index.php?page=home`. Kiểm login Student/Instructor/Admin theo seed ở trên. Nếu host không cho ghi `$HOME/.docker/buildx`, dùng thư mục ghi được: `BUILDX_CONFIG=/tmp/studymate-buildx docker compose up --build -d`. Không tắt xác minh TLS/chữ ký.
 
 Kiểm setup lặp và restart (không reset DB):
 
@@ -205,3 +205,8 @@ docker compose exec -T -e STUDYMATE_ALLOW_LIVE_AI=1 app php tools/probe_gemini.p
 ```
 
 Lệnh gửi hai request thật (ask/summarize) bằng bài mẫu công khai, không in key/nội dung response ra log; trả JSON kết quả và mã thoát khác 0 nếu thiếu cấu hình hoặc lỗi. Chỉ dùng free tier, không bật billing. Quân còn phải review chất lượng câu trả lời và quota/provider theo yêu cầu. Không dùng báo cáo blocked thay FR10 đạt.
+
+
+## Kiểm tra độc lập của An
+
+Bản bàn giao hiện tại là PR #14 của Tú, SHA `593141f`; dùng đúng nhánh và kiểm tra SHA trước khi chạy. Các kết quả An chạy mới, phần sửa bổ sung và các mục còn chờ xem [AN_DELIVERY](docs/AN_DELIVERY.md). Không đánh dấu A1–A5 Done trước review, merge và nghiệm thu chung.

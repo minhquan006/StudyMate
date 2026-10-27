@@ -106,7 +106,7 @@ Các thao tác enroll, chuyển trạng thái và sửa cấu trúc khóa cùng 
 
 Mỗi course thuộc một category và một Instructor. Chapter/lesson dùng position là số nguyên dương; danh sách sắp position rồi id để ổn định khi trùng. Chỉnh position bằng ô số; không làm drag-and-drop.
 
-Tên course 5–150 ký tự; mô tả 20–2.200. Tên chapter/lesson 2–150. Lesson body bắt buộc 50–12.200 ký tự; Markdown không cho raw HTML. Video là youtube_video_id tùy chọn, kiểm tra định dạng 11 ký tự; ứng dụng tự tạo URL nhúng, không nhận iframe/URL tùy ý. Không thực thi code trong code block.
+Tên course 5–150 ký tự; mô tả 20–2.000. Tên chapter/lesson 2–150. Lesson body bắt buộc 50–12.000 ký tự; Markdown không cho raw HTML. Video là youtube_video_id tùy chọn, kiểm tra định dạng 11 ký tự; ứng dụng tự tạo URL nhúng, không nhận iframe/URL tùy ý. Không thực thi code trong code block.
 
 Ảnh course dùng một trong các ảnh tĩnh có sẵn với cover_key nằm trong allowlist. Không tải ảnh từ URL do người dùng nhập. Chức năng học phải dùng được chỉ với văn bản nếu video bên ngoài bị lỗi.
 
@@ -180,7 +180,7 @@ Mỗi yêu cầu AI độc lập chỉ lesson hiện tại/câu hỏi. PHP lưu 
 
 ### BR15 Giới hạn và thất bại
 
-Câu hỏi tối đa 1.000 ký tự; lesson body tối đa 12.200; output tối đa 600 token. Mỗi Student tối đa 5 yêu cầu/phút và 20/ngày; toàn ứng dụng tối đa 5/phút và 100/ngày, ngày tính Asia/Ho_Chi_Minh. Request bị chặn trước provider không trừ quota ngày; đếm cả request provider thất bại để hạn chế retry; kiểm tra quota bằng file lock flock với quota store ngoài public trước khi gọi.
+Câu hỏi tối đa 1.000 ký tự; lesson body tối đa 12.000; output tối đa 600 token. Mỗi Student tối đa 5 yêu cầu/phút và 20/ngày; toàn ứng dụng tối đa 5/phút và 100/ngày, ngày tính Asia/Ho_Chi_Minh. Request bị chặn trước provider không trừ quota ngày; đếm cả request provider thất bại để hạn chế retry; kiểm tra quota bằng file lock flock với quota store ngoài public trước khi gọi.
 
 Provider timeout 25 giây; form PHP chờ phản hồi và redirect, không streaming hoặc tự retry. Quota429, timeout504, thiếu key/provider503. Người học thử lại thủ công; AI lỗi không chặn học/quiz. Không dùng câu trả lời giả làm bằng chứng.
 
@@ -421,3 +421,8 @@ Phân công và giờ giữ nguyên: An public/Student templates và CSS; Quân 
 Phiên bị thu hồi bằng auth_version thay xóa vật lý file session. Quota dùng flock một host. UI xác nhận bằng checkbox bắt buộc, server kiểm; không modal JavaScript. Markdown hỗ trợ heading/paragraph/code an toàn, chưa full CommonMark. Catalog phân trang12; danh sách quản trị/roster cần hoàn thiện phân trang và aggregate trước performance gate.
 
 Bản PHP đã kiểm tra syntax/service/browser với SQLite; chưa nghiệm thu MySQL/concurrency/Gemini thật/Compose. Các mục này phải đạt riêng trước khi báo hoàn thành FR tương ứng. PDF ảnh viewport chưa có addressbar phải chụp lại trên máy để nộp theo yêu cầu bài frontend.
+
+
+## Cập nhật nghiệm thu kỹ thuật 27/10/2026
+
+Giới hạn được đối chiếu với validation server: mô tả 20–2.000 ký tự, lesson body 50–12.000. Model mặc định `gemini-2.5-flash-lite`, Docker cho phép `AI_MODEL`. Student/Instructor/Admin/roster phân trang mặc định 12, tối đa 50, giữ query filter, tổng số toàn tập; tiến độ/điểm tốt nhất được tổng hợp theo course/user. Bằng chứng mới và các phần chưa nghiệm thu (Gemini thật, Chrome/Edge, review/merge/rubric/video/nộp bài) xem FINAL_ACCEPTANCE.md. Đây là cập nhật đối chiếu hiện thực để nhóm review, không tự xác nhận đã đạt mọi FR.

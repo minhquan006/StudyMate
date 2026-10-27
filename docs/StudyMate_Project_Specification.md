@@ -136,11 +136,11 @@ Done: PHP xử lý thật, DB refresh giữ, quyền/CSRF đạt, lỗi hiển t
 
 PHP lint và14 service checks trên SQLite đã đạt. Browser PHP: login/progress/quiz 5/5/complete/quizbuilder/publish/categoryrestrict/owner404/CSRF419/AI503 đạt; public pages390/768/1366 không overflow. Đây chưa phải MySQL/concurrency hoặc gọi Gemini thật. Các kiểm tra còn lại giao owner trước G1/G2: MySQL setup/FK/transaction, hai request đồng thời, revocation user multi-session, nội dung/quota AI thật, 100 courses / 500 lessons / 100 users p95, Compose clean build.
 
-Bản hiện tại catalog phân trang 12; Student/Instructor/Admin/roster còn hiển thị danh sách toàn bộ, cần phân trang 12 và eager/aggregate queries khi làm performance gate. Markdown hỗ trợ heading/paragraph/code, không full CommonMark; không raw HTML. Checkbox xác nhận được server kiểm thay modal JS. Form tìm kiếm submit thay live search (StudyMate không bắt buộc live search). Không chấp nhận fake auth/progress/quiz bằng localStorage.
+Catalog phân trang 12; Student/Instructor/Admin/roster phân trang mặc định 12, tối đa 50, kèm COUNT cùng bộ lọc và truy vấn tổng hợp progress/best để tránh N+1. Markdown hỗ trợ heading/paragraph/code, không full CommonMark; không raw HTML. Checkbox xác nhận được server kiểm thay modal JS. Form tìm kiếm submit thay live search (StudyMate không bắt buộc live search). Không chấp nhận fake auth/progress/quiz bằng localStorage.
 
 ## 13. Setup
 
-README là nguồn lệnh duy nhất. Local: config.example.php→config.php; chọn mysql và credentials; php tools/setup.php; php -S localhost:8000 -t public. SQLite local: chọn sqlite rồi setup cùng lệnh. Docker Compose MySQL có config env và seed khi DB trống; source đã có Dockerfile/compose nhưng chưa chạy Docker ở môi trường kiểm tra này. Pin patch/digest sau build G1. Không serve project root hoặc mở storage ra web. AI key backend only. Không reset DB tự động mỗi lần start.
+README là nguồn lệnh duy nhất. Local: config.example.php→config.php; chọn mysql và credentials; php tools/setup.php; php -S localhost:8000 -t public. SQLite local: chọn sqlite rồi setup cùng lệnh. Docker Compose MySQL có config env và seed khi DB trống; Dockerfile/Compose đã có kiểm tra MySQL và image được pin digest trong đợt 27/10; xem FINAL_ACCEPTANCE.md. Không serve project root hoặc mở storage ra web. AI key backend only. Không reset DB tự động mỗi lần start.
 
 ## 14. Hồ sơ nộp
 
@@ -158,3 +158,8 @@ Quân quyết scope; Tú review DB/auth/PDO; An review layout. Baseline 2.2 PHP 
 ## Phụ lục bàn giao mã nguồn ngày 12 tháng 10
 
 Tách layout HTML từ public/index.php sang app/layout.php do An phụ trách; public/index.php vẫn do Tú phụ trách. Tách panel AI từ app/views.php sang app/ai_view.php do Quân phụ trách. Tên hàm renderAiPanel và biến layout giữ nguyên luồng xử lý; phạm vi, người phụ trách module và mức giờ không đổi. Xem HUONG_DAN_GITHUB.md trong bộ bàn giao để tích hợp.
+
+
+## Cập nhật bằng chứng 27/10/2026
+
+Đọc FINAL_ACCEPTANCE.md và evidence/final cho kết quả mới; các đoạn báo cáo SQLite/ảnh 12–17/10 phía trên là lịch sử, không thay bằng chứng MySQL hiện tại. Model mặc định thống nhất `gemini-2.5-flash-lite`; Docker nhận AI_MODEL. Chưa xác nhận provider thật hoặc toàn bộ quy trình nộp. README là nguồn lệnh setup/backup/restore/test/đóng gói.

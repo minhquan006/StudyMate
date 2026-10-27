@@ -1,0 +1,36 @@
+Setup hoàn tất: sqlite. Demo accounts seeded.
+PASS: server grades 5/5=100%
+PASS: completed_at recorded
+PASS: same UUID same payload returns one attempt
+PASS: UUID unique count
+PASS: same UUID different payload conflict409
+PASS: 3/5=60% not passed
+PASS: omitted questions persisted null
+PASS: lower score does not overwrite completed_at
+PASS: best score remains100
+PASS: answer-question relation validated
+PASS: database unique enrollment
+PASS: database FK restrict category
+PASS: bcrypt seeded password
+PASS: no plaintext password
+14 checks passed. Driver: sqlite
+No syntax errors detected in app/services.php
+No syntax errors detected in app/bootstrap.php
+No syntax errors detected in app/management_views.php
+No syntax errors detected in app/ai_view.php
+No syntax errors detected in app/student_actions.php
+No syntax errors detected in app/views.php
+No syntax errors detected in app/actions.php
+No syntax errors detected in app/layout.php
+No syntax errors detected in app/ai_service.php
+No syntax errors detected in app/admin_actions.php
+No syntax errors detected in app/ai_actions.php
+No syntax errors detected in app/auth_actions.php
+No syntax errors detected in app/instructor_actions.php
+No syntax errors detected in public/index.php
+No syntax errors detected in database/seed.php
+No syntax errors detected in database/schema.php
+No syntax errors detected in tools/setup.php
+No syntax errors detected in tests/fixture.php
+No syntax errors detected in tests/ai_contract.php
+No syntax errors detected in tests/run.php

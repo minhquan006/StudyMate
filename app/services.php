@@ -23,3 +23,16 @@ function storeAttempt(int $courseId,int $userId,string $requestId,array $selecte
  foreach($qs as $q){$correct=(int)array_values(array_filter($q['answers'],fn($a)=>(int)$a['is_correct']===1))[0]['id'];insertRow('quiz_answers',['attempt_id'=>$attempt,'question_id'=>$q['id'],'answer_id'=>$normal[$q['id']],'is_correct'=>(int)($normal[$q['id']]===$correct)]+$stamp);}completionService($userId,$courseId);return $attempt;
  });
 }
+
+// Shared bounded pagination. Counts and page rows use the same filter parameters.
+function searchPattern(string $q):string{return '%'.str_replace(['!','%','_'],['!!','!%','!_'],$q).'%';}
+function pageQuery(string $countSql,string $sql,array $params=[]):array{
+ $total=(int)val($countSql,$params);$size=max(1,min(50,(int)($_GET['per_page']??12)));
+ $last=max(1,(int)ceil($total/$size));$page=min($last,max(1,(int)($_GET['p']??1)));
+ return ['rows'=>all($sql.' LIMIT '.$size.' OFFSET '.(($page-1)*$size),$params),'total'=>$total,'size'=>$size,'page'=>$page,'last'=>$last];
+}
+// Each grouped subquery yields one row per course/user, avoiding join fan-out and N+1 queries.
+function progressJoins():string{return ' LEFT JOIN (SELECT ch.course_id,COUNT(*) total FROM lessons l JOIN chapters ch ON ch.id=l.chapter_id GROUP BY ch.course_id) totals ON totals.course_id=e.course_id
+ LEFT JOIN (SELECT p.user_id,ch.course_id,COUNT(*) done FROM lesson_progress p JOIN lessons l ON l.id=p.lesson_id JOIN chapters ch ON ch.id=l.chapter_id GROUP BY p.user_id,ch.course_id) done ON done.user_id=e.user_id AND done.course_id=e.course_id
+ LEFT JOIN (SELECT a.user_id,q.course_id,MAX(a.score_percent) best FROM quiz_attempts a JOIN quizzes q ON q.id=a.quiz_id GROUP BY a.user_id,q.course_id) scores ON scores.user_id=e.user_id AND scores.course_id=e.course_id ';}
+function rowProgress(array $row):array{$total=(int)$row['total'];$done=(int)$row['done'];return ['total'=>$total,'done'=>$done,'percent'=>$total?round($done/$total*100,2):0,'best'=>$row['best']===null?null:(float)$row['best']];}

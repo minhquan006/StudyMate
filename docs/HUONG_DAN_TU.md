@@ -1,23 +1,19 @@
 # Tú làm theo hướng dẫn này
 
-Bạn phụ trách T1–T5: Docker/MySQL, dữ liệu và khả năng chạy lại, truy vấn phân trang, kiểm thử đồng thời, hiệu năng, sao lưu/khôi phục và hỗ trợ nghiệm thu. Phần kỹ thuật đã được chuẩn bị trên nhánh `codex/tu-final-acceptance`. Bạn cần tự chạy, hiểu kết quả và nhờ nhóm review trước khi nhận Done.
+Bạn phụ trách T1–T5: Docker/MySQL, dữ liệu và khả năng chạy lại, truy vấn phân trang, kiểm thử đồng thời, hiệu năng, sao lưu/khôi phục và hỗ trợ nghiệm thu. Phần kỹ thuật đã được chuẩn bị trên nhánh `tu/nghiem-thu-thu-cong`. Bạn cần tự chạy, hiểu kết quả và nhờ nhóm review trước khi nhận Done.
 
-**Làm nhanh theo thứ tự: mở PR → chạy ứng dụng → kiểm dữ liệu/restart → chạy 14 kiểm tra trên DB riêng → gửi kết quả cho Quân → nghiệm thu chung → quay video/nộp.** Các bước thêm cho Gemini và trình duyệt giao cho Quân/An, không để chặn việc của Tú.
+**Làm nhanh theo thứ tự: sửa theo review trên PR #14 → chạy ứng dụng → kiểm dữ liệu/restart → chạy 14 kiểm tra trên DB riêng → gửi kết quả cho Quân → nghiệm thu chung → quay video/nộp.** Các bước thêm cho Gemini và trình duyệt giao cho Quân/An, không để chặn việc của Tú.
 
-## 1. Mở PR trên GitHub — làm trước
+## 1. Tiếp tục PR #14 — không tạo PR mới
 
-1. Đăng nhập GitHub bằng tài khoản của bạn và mở https://github.com/minhquan006/StudyMate/pull/new/codex/tu-final-acceptance .
-2. Kiểm tra dòng chọn nhánh: **base: main**, **compare: codex/tu-final-acceptance**. Không chọn ngược.
-3. Nếu GitHub báo đã có PR cho nhánh này, mở PR đó; không tạo thêm PR trùng.
-4. Điền tiêu đề: **Hoàn thiện nghiệm thu Docker/MySQL và bàn giao phần Tú**.
-5. Mở `docs/PR_DESCRIPTION.md` trên nhánh này, bấm biểu tượng sao chép nội dung thô nếu có, rồi dán vào ô mô tả PR. Không dán lệnh hoặc file `.env` vào mô tả.
-6. Bấm mũi tên cạnh **Create pull request** và chọn **Create draft pull request** nếu còn đang kiểm tra. Các nút này là tên giao diện GitHub nên giữ nguyên tiếng Anh.
-7. Trong mục **Reviewers**, chọn tài khoản Quân/An nếu bạn có quyền và biết đúng tài khoản. Nếu không chọn được, sao chép link PR để gửi nhóm.
-8. Sau khi nhóm chạy đủ và đồng ý, chuyển PR sang **Ready for review**. Quân/An review phần tương ứng; chưa tự merge khi chưa đủ quy tắc nhóm.
+PR đang xử lý: https://github.com/minhquan006/StudyMate/pull/14 . Base `main`, compare `tu/nghiem-thu-thu-cong`. Tú đã tự tạo commit `593141f` và push. Các bước clone bên dưới chỉ dành cho thư mục/máy mới; không clone hoặc tạo lại nhánh khi đã có checkout.
 
-**Cần thấy:** PR trỏ vào main, có danh sách file thay đổi và bảng kết quả test; chưa tự nhận Gemini thật hoặc toàn bộ task Done.
-
-Nếu báo không có quyền: dùng đúng tài khoản đã được mời vào repository, hoặc nhờ Quân thêm quyền cộng tác. Không gửi mật khẩu/token cho ai.
+1. Áp dụng bản sửa review vào đúng nhánh, xem `git diff` và kết quả trong `docs/REVIEW_FIXES_2026-10-30.md`. Công cụ chỉ sửa/kiểm tra; Tú tự commit và push.
+2. Sau khi cập nhật, PR #14 tự nhận commit của cùng nhánh; không mở PR thứ ba. Ghi SHA thật từ `git rev-parse HEAD` khi báo Quân. Không ghi đè SHA của các lượt kiểm cũ.
+3. Quân đã đồng ý tập trung review #14. Mở https://github.com/minhquan006/StudyMate/pull/13, ghi **Được thay thế bởi #14; giữ PR này làm tham chiếu lịch sử. Các kết quả kiểm thử giữ nguyên nguồn/SHA đã ghi.**, rồi bấm **Close pull request**. Không merge #13.
+4. Nhờ Quân/An review lại #14. Ô đỏ thiếu Approve trên main là điều kiện review của nhánh; không đổi bảo vệ main để chuyển màu xanh.
+5. An nhận bản sửa của nhánh nền vào #15 và kiểm lại các ca liên quan. Sau khi #14 được review và merge, An đổi base #15 sang `main` và kiểm diff chỉ còn phần bổ sung của An.
+6. Chỉ đánh dấu Done khi đủ review, merge, kiểm lại bản cuối và tài liệu phản ánh đúng hành vi. Gemini thật, nghiệm thu chung và video vẫn cần nhóm thực hiện.
 
 ## 2. Chuẩn bị máy một lần
 
@@ -44,13 +40,13 @@ Chọn thư mục bạn dễ tìm, ví dụ Desktop. Nếu Desktop không nằm 
 
 ```bash
 cd ~/Desktop
-git clone --branch codex/tu-final-acceptance https://github.com/minhquan006/StudyMate.git StudyMate-Tu
+git clone --branch tu/nghiem-thu-thu-cong https://github.com/minhquan006/StudyMate.git StudyMate-Tu
 cd StudyMate-Tu
 git branch --show-current
 git rev-parse HEAD
 ```
 
-**Cần thấy:** nhánh `codex/tu-final-acceptance`; lệnh cuối hiện SHA dài. Sao chép SHA vào ghi chú của bạn. SHA thay đổi khi nhánh được cập nhật; đừng lấy SHA cũ trong tin nhắn làm bằng chứng bản mới.
+**Cần thấy:** nhánh `tu/nghiem-thu-thu-cong`; lệnh cuối hiện SHA dài. Sao chép SHA vào ghi chú của bạn. SHA thay đổi khi nhánh được cập nhật; đừng lấy SHA cũ trong tin nhắn làm bằng chứng bản mới.
 
 Nếu thư mục StudyMate-Tu đã tồn tại, không xóa/ghi đè: chọn tên khác, ví dụ StudyMate-Tu-2, rồi `cd` đúng tên. Nếu đã có thay đổi riêng, giữ chúng; dùng thư mục mới để tránh mất dữ liệu.
 
@@ -146,7 +142,7 @@ Bộ test ghi dữ liệu, vì vậy tạo thư mục và project mới. Không 
 
 ```bash
 cd ..
-git clone --branch codex/tu-final-acceptance https://github.com/minhquan006/StudyMate.git StudyMate-Tu-QA
+git clone --branch tu/nghiem-thu-thu-cong https://github.com/minhquan006/StudyMate.git StudyMate-Tu-QA
 cd StudyMate-Tu-QA
 cp .env.example .env
 ```
@@ -226,7 +222,7 @@ Mỗi cặp phải bằng nhau nếu bạn không sửa dữ liệu sau lúc bac
 
 ## 9. Phần cần Quân và An làm
 
-**Quân — AI và yêu cầu môn học:** nhập khóa Gemini riêng trong `.env`, bật `AI_ENABLED=1`, chọn `AI_MODEL` đúng tài liệu rồi chạy `docker compose up -d --force-recreate app`. Hỏi và tóm tắt thật bằng Student đã enroll, ghi kết quả lỗi/quota và xác nhận học/quiz vẫn hoạt động khi AI lỗi. Không gửi khóa vào chat/ảnh/Git, không bật billing. Đồng thời xác minh đề/rubric, hạn nộp, yêu cầu Git/video và quy định dùng AI từ giảng viên.
+**Quân — AI và yêu cầu môn học:** nhập khóa Gemini riêng trong `.env`, bật `AI_ENABLED=1`, chọn `GEMINI_MODEL` đúng tên model đã được kiểm tra với key này (biến `AI_MODEL` cũ chỉ là phương án tương thích) rồi chạy `docker compose up -d --force-recreate app`. Hỏi và tóm tắt thật bằng Student đã enroll, ghi kết quả lỗi/quota và xác nhận học/quiz vẫn hoạt động khi AI lỗi. Không gửi khóa vào chat/ảnh/Git, không bật billing. Đồng thời xác minh đề/rubric, hạn nộp, yêu cầu Git/video và quy định dùng AI từ giảng viên.
 
 **An — trình duyệt và cài độc lập:** clone vào thư mục mới, tự tạo `.env`/DB riêng và chỉ theo README; ghi bước nào thiếu. Kiểm Google Chrome và Microsoft Edge thật, ghi version từ trang Giới thiệu của trình duyệt; rà 390/768/1366 px, Tab/focus, label, nút, empty/error, Instructor/Admin/AI panel. Nếu yêu cầu ảnh có thanh địa chỉ, chụp cửa sổ trình duyệt thật; PNG tự động hiện có không đáp ứng phần toolbar.
 

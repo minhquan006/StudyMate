@@ -1,5 +1,7 @@
 # Báo cáo bàn giao StudyMate cho Tú
 
+**Lưu ý cập nhật 30/10/2026:** phần dưới là báo cáo lịch sử 27/10, giữ nguyên nguồn/SHA. PR bàn giao hiện tại là #14 trên nhánh `tu/nghiem-thu-thu-cong`; bản sửa sau review và manifest mã mới xem [REVIEW_FIXES_2026-10-30.md](REVIEW_FIXES_2026-10-30.md). Không áp dụng câu “khớp manifest cũ” bên dưới cho mã sửa ngày 30/10.
+
 Ngày lập: 27/10/2026. PR #13: https://github.com/minhquan006/StudyMate/pull/13 . Nhánh: codex/tu-final-acceptance. Đây là ứng viên để nhóm review, chưa phải xác nhận đã merge hoặc nộp bài.
 
 ## Kết quả đã thực hiện

@@ -1,5 +1,7 @@
 # Báo cáo nghiệm thu kỹ thuật — 27/10/2026
 
+**Cập nhật 30/10/2026:** sửa UTF-8, DB khởi động muộn và cấu hình model; build image và các kiểm tra liên quan đã đạt. Xem [REVIEW_FIXES_2026-10-30.md](REVIEW_FIXES_2026-10-30.md). Kết quả 27/10 dưới đây giữ nguyên nguồn/SHA; không đổi thành kiểm tra của mã mới.
+
 **Bổ sung mới:** 84 ca HTTP tích hợp, 235 kiểm tra Google Chrome 156 và 235 kiểm tra Microsoft Edge 142 đều đạt. Xem `evidence/final/integrated-http/`, `chrome/`, `edge/`. Kết quả Windows của Tú được ghi riêng trong `evidence/final/tu-windows-results.json`. Các số liệu 78 ca/Chromium bên dưới là lượt kiểm trước.
 
 

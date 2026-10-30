@@ -1,0 +1,63 @@
+{
+  "checks": [
+    {
+      "name": "fresh app starts with health OK",
+      "passed": true
+    },
+    {
+      "name": "snapshot includes all 12 tables",
+      "passed": true
+    },
+    {
+      "name": "restart while DB is stopped waits without exiting",
+      "passed": true,
+      "status": "running"
+    },
+    {
+      "name": "app recovers automatically when DB returns",
+      "passed": true,
+      "elapsed_seconds": 4.16
+    },
+    {
+      "name": "restart preserves every row in all 12 tables",
+      "passed": true
+    },
+    {
+      "name": "repeated setup does not seed or reset data",
+      "passed": true
+    },
+    {
+      "name": "unavailable DB times out with nonzero exit",
+      "passed": true,
+      "exit_code": 1,
+      "elapsed_seconds": 3.07
+    },
+    {
+      "name": "timeout leaves database data unchanged",
+      "passed": true
+    },
+    {
+      "name": "incorrect credentials fail promptly without logging the password",
+      "passed": true,
+      "exit_code": 1,
+      "elapsed_seconds": 0.09
+    },
+    {
+      "name": "invalid wait configuration is rejected",
+      "passed": true
+    },
+    {
+      "name": "readiness does not require setup database to exist",
+      "passed": true
+    },
+    {
+      "name": "readiness creates no new databases",
+      "passed": true
+    },
+    {
+      "name": "Dockerfile calls the startup script",
+      "passed": true
+    }
+  ],
+  "scope": "isolated Docker/MySQL 8.4, application image with current source bind mount; no production DB or user volumes modified"
+}

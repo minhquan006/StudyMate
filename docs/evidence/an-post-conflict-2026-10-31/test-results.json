@@ -1,0 +1,34 @@
+[
+  {
+    "name": "php-lint",
+    "exit_code": 0
+  },
+  {
+    "name": "services",
+    "exit_code": 0
+  },
+  {
+    "name": "pagination",
+    "exit_code": 0
+  },
+  {
+    "name": "utf8",
+    "exit_code": 0
+  },
+  {
+    "name": "model",
+    "exit_code": 0
+  },
+  {
+    "name": "ai-offline",
+    "exit_code": 0
+  },
+  {
+    "name": "ui-fixture",
+    "exit_code": 0
+  },
+  {
+    "name": "chromium-ui",
+    "exit_code": 0
+  }
+]

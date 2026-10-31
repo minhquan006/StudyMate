@@ -1,5 +1,46 @@
 # Bàn giao An — giao diện và bằng chứng demo
 
+## Cập nhật sau giải conflict — 01/11/2026
+
+### SHA bàn giao và nguồn mã
+
+- Head PR #15 đã push: **`81dc740916360c4f6229cd1026837939bd44fd10`** (`feat/an-ui-acceptance`).
+- Nền mã Tú đã nhận: **`1a27ec1bc939b7b98324dc6f95ec7aaa175f484a`**. Merge commit có hai parent `f8565fb` và `1a27ec1`.
+- Phần ghép giữ `searchQuery()`/`maxlength="100"` của Tú cùng `tabindex="0"`, `role="region"`, `aria-label` của An cho ba bảng Admin; README.md/Readme.txt đồng bộ. Hai conflict cũ đã được giải, không còn task giải lại chúng.
+- Nhánh Tú sau đó thêm commit **chỉ sửa tài liệu** `24f6e1b9b4d4c60961a59f594b7df8cb0bc11960`. Commit này chưa nằm trong `81dc740`; không gọi `1a27ec1` là tip mới nhất của PR #14.
+- Khi bổ sung tài liệu này: main vẫn `861e72c`; #14/#15 còn mở. #15 vẫn base nhánh Tú. Chờ #14 vào main rồi đổi base #15 và kiểm lại diff.
+- Head `81dc740` là mốc mã đã bàn giao; commit tài liệu bổ sung sau đó có SHA riêng, không sửa SHA/ngày trong các bằng chứng cũ.
+
+### Bằng chứng được giữ riêng theo từng lượt
+
+| Lượt / người hoặc công cụ thực hiện | Nguồn mã và môi trường | Coverage / giới hạn |
+|---|---|---|
+| 27/10 — Codex hỗ trợ An, hồ sơ lịch sử bên dưới | UI/diễn tập `6d66a71`; cài độc lập bản Tú `593141f`; Linux Docker/MySQL | 108 lượt Chrome/Edge; giữ SHA, ngày và nguồn gốc. Không chuyển thành kết quả trên `81dc740`. |
+| 31/10 — gói Quân gửi An giải conflict PR #15 | Candidate `f8565fb + 1a27ec1` cùng ba file resolved; theo REVIEW.md và verification/result.json trong ZIP | 54 lượt Chrome 156.0.8078.79 trên macOS; các suite/HTTP/startup ghi trong gói. Đây là báo cáo của Quân/Codex, không phải An tự chạy. Không chạy Edge trong lượt này. |
+| 31/10 — Codex hỗ trợ An, chạy trong cloud phiên này | Candidate cùng cặp commit và file resolved; Linux PHP 8.3.36, MySQL 8.4.13, **Chromium 154.0.8037.57** | Lint 28 file; service 14; phân trang 8; UTF-8 58 (14 Public + 14 Student + 30 Admin); model 8; AI offline 24; 54 lượt màn hình ở 390/768/1366 (cao 900), 0 audit failures; 3 bảng Admin Tab/focus/cuộn phím ở 390×844; setup lặp/restart giữ hash 12 bảng. Không chạy Chrome/Edge hoặc Gemini thật. |
+| Review Tú báo trong comment #15 | Tú ghi nguồn đúng head `81dc740`, Codex chạy cloud/MySQL riêng | Theo comment: UTF-8 58, phân trang 8, service 14, HTTP tìm kiếm 13, startup/bảo toàn dữ liệu 13 và lint. Không browser/Gemini. Đây là kết quả Tú bàn giao, không cộng vào suite do phiên này chạy hoặc đổi thành kiểm tra Windows của Tú. |
+| 01/11 — cập nhật mốc tài liệu | Đọc diff/trạng thái và đối chiếu fingerprint | Không chạy lại các suite 30–31/10; không tạo bằng chứng Windows/Approve/CI thay người khác. |
+
+Bằng chứng lượt cloud do Codex hỗ trợ An: [README](evidence/an-post-conflict-2026-10-31/README.md), [báo cáo gốc](evidence/an-post-conflict-2026-10-31/REPORT_VI.md), [audit Chromium](evidence/an-post-conflict-2026-10-31/chromium-audit.json), [đối chiếu nguồn](evidence/an-post-conflict-2026-10-31/commit-source-match.json).
+
+Candidate đã chạy test trước commit. Sau khi An push, đối chiếu **310/310 file tracked** khớp toàn bộ nội dung tại `81dc740`, không có file thêm/bớt/thay đổi. Vì vậy có liên hệ nội dung với head đã push; không ghi thành lượt chạy test mới trên commit. Fingerprint trong image đối chiếu riêng **309 file**, không tính storage/.gitkeep bị .dockerignore loại.
+
+### Phần còn cần An và nhóm hoàn tất
+
+1. Cập nhật mô tả #15 cùng mốc head/nền/nguồn kiểm thử này; nhờ Tú/Quân review và Approve chính thức khi đạt. Comment review đã có, không gọi là chưa từng review; test cloud không phải status CI hoặc Approve.
+2. Khi người có trách nhiệm merge #14, fetch main và đổi base #15 sang main trên GitHub; kiểm Files changed còn đúng phần An. Giữ cập nhật tài liệu `24f6e1b` của Tú, xử lý vấn đề mới nếu có. Không tự merge thay nhóm.
+3. An kiểm bổ sung trực quan/bàn phím trên máy nhóm ở 390/768/1366, tìm kiếm/phân trang/empty state/tổng số và vùng bảng; ghi browser, phiên bản, hệ điều hành, SHA, expected/actual thật. Chỉ kiểm phần chưa có hoặc bị đổi; không tự nhận cloud là thao tác của An trên Windows.
+4. An tự thực hiện lượt cài độc lập chỉ theo README trên SHA nghiệm thu được nhóm chốt, cấu hình/project/DB MySQL mới. Ghi health, login 3 role, setup lặp, restart và đối chiếu dữ liệu. Stack Windows vừa dùng để chạy test không tự thay bằng chứng cài sạch độc lập này.
+5. An review HTML Instructor/Admin của Quân trên nền tích hợp, đặc biệt phần local Quân còn bàn giao. Chuẩn bị ảnh có thanh địa chỉ thật, PDF và phần Student trong video theo yêu cầu môn đã xác nhận; video diễn tập không tiếng không phải bản nộp cuối.
+6. Sau tích hợp, cả ba dùng cùng SHA/DB nghiệm thu riêng, chạy luồng Instructor → Student → Gemini thật → Admin thu hồi phiên; Tú kiểm dữ liệu/restart/restore. Chốt lại SHA và đầu ra bị thay đổi trước nộp.
+
+**A1–A5 chưa tự đánh dấu Done.** Gemini thật, review chính thức, phần kiểm độc lập do An thực hiện và video/ảnh/hồ sơ cuối vẫn còn điều kiện riêng.
+
+---
+
+## Hồ sơ lịch sử ngày 27/10/2026 — giữ nguyên nguồn và SHA
+
+
 Ngày thực hiện: **27/10/2026 (UTC+7)**. Có AI hỗ trợ đọc mã, viết kiểm tra,
 chạy Docker/browser, ghi hình và soạn báo cáo. Đây không phải xác nhận An đã
 trực tiếp trình bày/kiểm tra mọi bước hoặc cả ba người đã nghiệm thu chung.
@@ -31,7 +72,7 @@ proxy và TLS sẵn có, chỉ đổi `BUILDX_CONFIG` khi cần.
 Không tự merge hoặc đánh dấu Done: cần người khác review, merge vào main,
 ghi SHA chốt và chạy lại kiểm tra liên quan trên SHA đó.
 
-## Kết quả mới
+## Kết quả lượt 27/10/2026 (lịch sử)
 
 | Kiểm tra           | Mong đợi                                                                                      | Quan sát thực tế                                                                | Bằng chứng                                                                   |
 | ------------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |

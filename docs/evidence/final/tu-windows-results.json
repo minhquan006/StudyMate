@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-27",
+  "code_commit": "f19f12089b695a08cb9fe117934ffae6db0d05a0",
+  "source": "screenshots and pasted terminal log supplied by Tu in this chat; not remote access to the Windows machine",
+  "platform": "Windows PowerShell + Docker Desktop",
+  "mysql_service_checks": {
+    "passed": 14,
+    "evidence": "screenshot shows all 14 PASS and Driver: mysql"
+  },
+  "restart": {
+    "application_restarted": true,
+    "setup_preserves_existing_data": true,
+    "health_http_status": 200,
+    "learning_http_status": 200,
+    "progress_preserved": "reported by Tu; progress screenshot shows 100%"
+  },
+  "backup_restore": {
+    "backup_file": "studymate-tu-20261027-032643.sql",
+    "backup_size_bytes": 36990,
+    "restore_database": "studymate_restore_tu_lan1",
+    "table_count": 12,
+    "source_data_sha256": "3429a288d96d820f027238832b2594c3afc55a5591ef6f6526fc8e93ae4d8353",
+    "restored_data_sha256": "3429a288d96d820f027238832b2594c3afc55a5591ef6f6526fc8e93ae4d8353",
+    "result": "passed; screenshot shows equal deterministic data dump hashes"
+  },
+  "ai_offline": "Tu reports all steps OK; individual local AI output not attached; cloud 24-check evidence remains separate"
+}

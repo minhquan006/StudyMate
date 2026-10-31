@@ -1,3 +1,32 @@
+# Báo cáo nghiệm thu kỹ thuật — 27/10/2026
+
+**Cập nhật 30/10/2026:** sửa UTF-8, DB khởi động muộn và cấu hình model; build image và các kiểm tra liên quan đã đạt. Xem [REVIEW_FIXES_2026-10-30.md](REVIEW_FIXES_2026-10-30.md). Kết quả 27/10 dưới đây giữ nguyên nguồn/SHA; không đổi thành kiểm tra của mã mới.
+
+**Bổ sung mới:** 84 ca HTTP tích hợp, 235 kiểm tra Google Chrome 156 và 235 kiểm tra Microsoft Edge 142 đều đạt. Xem `evidence/final/integrated-http/`, `chrome/`, `edge/`. Kết quả Windows của Tú được ghi riêng trong `evidence/final/tu-windows-results.json`. Các số liệu 78 ca/Chromium bên dưới là lượt kiểm trước.
+
+
+Bản thay đổi cục bộ chuẩn bị cho Tú, chờ review/merge. Xem [FINAL_ACCEPTANCE.md](FINAL_ACCEPTANCE.md) cho ma trận T/A/Q và phần nhóm phải làm. Bằng chứng cũ bên dưới giữ làm lịch sử.
+
+| Kiểm tra mới | Kết quả | Bằng chứng |
+|---|---|---|
+| PHP lint, SQLite regression | 14/14 service checks, lint đạt | evidence/final/sqlite-and-lint.txt |
+| MySQL 8.4 / PHP 8.3 service | 14/14 | evidence/final/mysql-service.txt |
+| HTTP trên Docker/MySQL từ source sạch | 78 ca đạt, có concurrent và forced rollback | evidence/final/http-results.json |
+| AI hợp đồng offline | 24 kiểm tra đạt; **provider thật chưa chạy** | evidence/final/ai-offline.txt |
+| Chromium 390/768/1366 | 235 kiểm tra đạt, ảnh thật từ runner | evidence/final/browser-results.json |
+| SQL query budget | Student/Instructor/roster 4; Admin 6; như nhau ở 12 và 50 dòng | evidence/final/query-budget.json |
+| Catalog performance | 100 courses / 500 lessons / 100 users; warm-up 5, đo 30; p95 3.14 ms | evidence/final/performance.json |
+| Backup/restore | Khớp hash dữ liệu cả 12 bảng, DB đích mới riêng | evidence/final/restore.json |
+| Setup lặp/restart và cài sạch | So sánh toàn bộ dữ liệu, health sau restart | evidence/final/restart-and-clean-install.json |
+
+Phép đo hiệu năng là HTTP tuần tự trong cloud, không gồm Internet/video/AI và không thay kiểm tải đồng thời. Chromium không thay lượt kiểm Google Chrome/Microsoft Edge thật. Ảnh không có browser toolbar. AI lỗi 503 hoặc stub offline không thay Gemini thật. Không xác nhận review/merge, rubric, video hoặc nộp bài khi chưa có người thực hiện.
+
+Lỗi đã sửa: quyền đọc Apache trong image; Apache cần reason phrase rõ cho CSRF 419; danh sách chưa phân trang và N+1 progress; model AI không thống nhất; parser AI phòng dữ liệu parts sai kiểu. Mọi cập nhật quyền/CSDL cần Quân review kết quả trước merge.
+
+---
+
+## Báo cáo SQLite lịch sử (trước đợt nghiệm thu mới)
+
 # Kiểm thử bản PHP
 
 Môi trường đã chạy: PHP 8.3.6, PDO SQLite, Chromium headless và Playwright. PHP render HTML thật, không Node hoặc JavaScript runtime ở ứng dụng.

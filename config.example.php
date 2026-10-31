@@ -8,5 +8,5 @@ return [
  'demo_password'=>'StudyMate2026!',
  'app_env'=>'local', 'secure_cookie'=>false,
  'ai_enabled'=>false, 'gemini_api_key'=>'',
- 'ai_model'=>'gemini-3.5-flash-lite',
+ 'ai_model'=>getenv('GEMINI_MODEL')?:getenv('AI_MODEL')?:'gemini-2.5-flash-lite',
 ];

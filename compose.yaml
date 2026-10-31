@@ -1,6 +1,6 @@
 services:
   db:
-    image: mysql:8.4
+    image: mysql:8.4@sha256:76f0358884cb92d9a086d24e5671c38048d3fef40f2588703d73eb55392d6b69
     environment:
       MYSQL_DATABASE: studymate
       MYSQL_USER: studymate
@@ -23,8 +23,10 @@ services:
       DB_USER: studymate
       DB_PASSWORD: ${DB_PASSWORD}
       DEMO_PASSWORD: ${DEMO_PASSWORD:-StudyMate2026!}
+      DB_WAIT_TIMEOUT: ${DB_WAIT_TIMEOUT:-60}
       AI_ENABLED: ${AI_ENABLED:-0}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-${AI_MODEL:-gemini-2.5-flash-lite}}
       HTTPS_ENABLED: "0"
     volumes:
       - private_storage:/var/www/html/storage

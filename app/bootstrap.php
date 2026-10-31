@@ -22,6 +22,13 @@ function flash(string $message,string $type='success'):void{$_SESSION['flash']=[
 class AppError extends RuntimeException{public function __construct(string $message,public int $status=422){parent::__construct($message);}}
 function reject(string $message,int $status=422):never{throw new AppError($message,$status);}
 function length(string $text):int{return function_exists('mb_strlen')?mb_strlen($text,'UTF-8'):preg_match_all('/./us',$text);}
+// Search limits count Unicode characters, including when mbstring is unavailable.
+function searchQuery():string{
+ $value=$_GET['q']??'';
+ if(!is_string($value)||preg_match('//u',$value)!==1)reject('Từ khóa tìm kiếm phải là chuỗi UTF-8 hợp lệ.');
+ preg_match('/\A.{0,100}/us',trim($value),$match);
+ return $match[0];
+}
 function textInput(string $name,int $min,int $max):string{$value=trim((string)($_POST[$name]??''));if(length($value)<$min||length($value)>$max)reject("Trường $name cần $min–$max ký tự.");return $value;}
 function csrf():string{return '<input type="hidden" name="csrf" value="'.h($_SESSION['csrf']).'">';}
 function hidden(string $name,$value):string{return '<input type="hidden" name="'.h($name).'" value="'.h($value).'">';}

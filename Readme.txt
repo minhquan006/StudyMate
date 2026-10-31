@@ -85,7 +85,7 @@ PDF preview chỉ có ảnh viewport, **không có thanh địa chỉ**, cần c
 
 ## AI
 
-Trong config.php đặt `ai_enabled=true`, nhập key riêng ở `gemini_api_key`, giữ model `gemini-2.5-flash-lite`. Với Docker dùng AI_ENABLED=1/GEMINI_API_KEY trong .env. PHP cần openssl và allow_url_fopen. Chỉ dùng free tier, không bật billing.
+Trong config.php đặt `ai_enabled=true`, nhập key riêng ở `gemini_api_key`, đặt `ai_model` theo model đã kiểm tra với key thật. Với Docker dùng `AI_ENABLED=1`, `GEMINI_API_KEY`, `GEMINI_MODEL` trong `.env`. `GEMINI_MODEL` được ưu tiên; `AI_MODEL` cũ chỉ được dùng khi chưa đặt `GEMINI_MODEL`. Mặc định dự phòng `gemini-2.5-flash-lite` không có nghĩa model này dùng được với mọi key; provider trả 404 thì phải xác nhận lại tên model/quyền truy cập. PHP cần openssl và allow_url_fopen. Chỉ dùng free tier, không bật billing.
 
 Server lấy body từ DB, gọi HTTPS và kiểm quota bằng file lock. Thiếu key báo 503; học/quiz vẫn hoạt động. Chưa thử provider thật ở đây; Quân phải kiểm tra ask/summarize với key trước nghiệm thu FR10. Không gửi key trong ảnh, PDF hoặc Git.
 
@@ -110,12 +110,12 @@ Bảng T1–T5/A1–A5/Q1–Q5, FR01–FR12, việc cần người thật và k�
 
 ### Máy/checkout sạch với Docker + MySQL
 
-Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repository và chuyển đúng nhánh đã được nhóm bàn giao. Trước khi merge dùng `codex/tu-final-acceptance`; sau khi review/merge dùng `main`:
+Yêu cầu Git, Docker Engine đang chạy và Docker Compose v2. Không cần PHP/npm trên host. Cổng 8080 phải trống. Clone repository và chuyển đúng nhánh đã được nhóm bàn giao. Trước khi merge dùng `tu/nghiem-thu-thu-cong`; sau khi review/merge dùng `main`:
 
 ```bash
 git clone https://github.com/minhquan006/StudyMate.git
 cd StudyMate
-git switch codex/tu-final-acceptance
+git switch tu/nghiem-thu-thu-cong
 git rev-parse HEAD
 cp .env.example .env
 ```
@@ -128,7 +128,7 @@ curl --fail --silent --retry 10 --retry-all-errors --retry-connrefused --retry-d
 docker compose logs --tail 30 app
 ```
 
-Health phải trả `{"status":"ok"}`; trình duyệt mở cổng WEB_PORT với `index.php?page=home`. Kiểm login Student/Instructor/Admin theo seed ở trên. Nếu host không cho ghi `$HOME/.docker/buildx`, dùng thư mục ghi được: `DOCKER_CONFIG=/tmp/studymate-docker docker compose up --build -d`. Không tắt xác minh TLS/chữ ký.
+Health phải trả `{"status":"ok"}`; trình duyệt mở cổng WEB_PORT với `index.php?page=home`. Kiểm login Student/Instructor/Admin theo seed ở trên. Nếu host không cho ghi `$HOME/.docker/buildx`, dùng thư mục ghi được: `BUILDX_CONFIG=/tmp/studymate-buildx docker compose up --build -d`. Không tắt xác minh TLS/chữ ký.
 
 Kiểm setup lặp và restart (không reset DB):
 
@@ -137,6 +137,8 @@ docker compose exec -T app php tools/setup.php
 docker compose restart
 curl --fail --silent --retry 10 --retry-all-errors --retry-connrefused --retry-delay 2 'http://127.0.0.1:8080/index.php?page=health'
 ```
+
+App chờ kết nối MySQL thành công trước khi chạy setup, tối đa `DB_WAIT_TIMEOUT=60` giây (cho phép 1–300); hết thời gian thì dừng với mã lỗi, không chạy setup. Sai tài khoản/mật khẩu bị từ chối ngay và log không in mật khẩu. Bước chờ cũng chạy khi restart riêng app trong lúc DB dừng.
 
 Setup lần hai phải báo DB đã có dữ liệu, không seed lại. Volume giữ DB/session/quota qua restart. Không dùng `down -v` với dữ liệu cần giữ. Thay `.env` cần `docker compose up -d --force-recreate app`, restart đơn thuần không thay môi trường.
 
@@ -205,3 +207,22 @@ docker compose exec -T -e STUDYMATE_ALLOW_LIVE_AI=1 app php tools/probe_gemini.p
 ```
 
 Lệnh gửi hai request thật (ask/summarize) bằng bài mẫu công khai, không in key/nội dung response ra log; trả JSON kết quả và mã thoát khác 0 nếu thiếu cấu hình hoặc lỗi. Chỉ dùng free tier, không bật billing. Quân còn phải review chất lượng câu trả lời và quota/provider theo yêu cầu. Không dùng báo cáo blocked thay FR10 đạt.
+
+
+### Sửa sau review PR #14 — 30/10/2026
+
+Tìm kiếm Public/Student và ba tab Admin dùng cùng giới hạn 100 ký tự Unicode, không cắt theo byte; chuỗi UTF-8 lỗi hoặc `q` dạng mảng trả 422. Ký tự `%`, `_`, `!` vẫn được tìm theo nghĩa đen.
+
+Chỉ chạy hồi quy dữ liệu trên DB riêng đã seed có tên kết thúc `_test`, không chạy trên DB chính:
+
+```bash
+docker compose exec -T -e STUDYMATE_DISPOSABLE_DB=1 app php tests/search_utf8.php
+docker compose exec -T app php tests/model_config.php
+```
+
+Lệnh đầu chỉ dùng khi project Compose đã được cấu hình trỏ đến DB test riêng; biến cờ không tự đổi DB. Fixture tìm kiếm rollback khi kết thúc. Kết quả sửa review và phạm vi chưa chạy xem [REVIEW_FIXES_2026-10-30.md](docs/REVIEW_FIXES_2026-10-30.md). Bằng chứng 27/10 giữ nguyên nguồn/SHA, không đổi thành kết quả chạy mới.
+
+
+## Kiểm tra độc lập của An
+
+Bằng chứng cài độc lập ngày 27/10 dùng PR #14 tại SHA `593141f`. Bản xử lý conflict ngày 31/10 nhận sửa nền của Tú tại `1a27ec1`; kiểm tra lại trên bản tích hợp trước khi chốt. Các kết quả An chạy mới, phần sửa bổ sung và các mục còn chờ xem [AN_DELIVERY](docs/AN_DELIVERY.md). Không đánh dấu A1–A5 Done trước review, merge và nghiệm thu chung.

@@ -174,7 +174,7 @@ Cho phép làm lại không giới hạn; lưu lịch sử tất cả attempts. 
 
 AI nằm trong trang Learning, gồm hai thao tác ask và summarize. Chỉ Student active đã enroll được dùng với lesson của khóa đó. Backend tự lấy body từ DB; bỏ qua mọi lesson text/system prompt do client tự gửi. Không truyền đáp án quiz, email, tên hoặc kết quả học vào provider.
 
-Provider chốt: Gemini Developer API generateContent, model gemini-2.5-flash-lite, PHP HTTPS stream và AiTutorService. Dùng free tier, ngân sách thanh toán 0 đồng, không bật billing. GEMINI_API_KEY chỉ ở config.php hoặc biến môi trường server; không commit hoặc gửi trình duyệt. Không agent framework/vector database. Quota thực tế phải được probe ngày đầu; không giả lập thành kết quả AI thật.
+Provider: Gemini Developer API generateContent qua PHP HTTPS stream. Model lấy từ GEMINI_MODEL (tương thích AI_MODEL); gemini-2.5-flash-lite chỉ là mặc định dự phòng chưa nghiệm thu với key thật, không cam kết còn khả dụng. Dùng free tier, ngân sách thanh toán 0 đồng, không bật billing. GEMINI_API_KEY chỉ ở config.php hoặc biến môi trường server; không commit hoặc gửi trình duyệt. Không agent framework/vector database. Quota thực tế phải được probe ngày đầu; không giả lập thành kết quả AI thật.
 
 Mỗi yêu cầu AI độc lập chỉ lesson hiện tại/câu hỏi. PHP lưu kết quả trong session để render một lần rồi xóa; không DB history hoặc trí nhớ hội thoại. UI không ngụ ý AI nhớ các câu hỏi trước.
 
@@ -425,4 +425,4 @@ Bản PHP đã kiểm tra syntax/service/browser với SQLite; chưa nghiệm th
 
 ## Cập nhật nghiệm thu kỹ thuật 27/10/2026
 
-Giới hạn được đối chiếu với validation server: mô tả 20–2.000 ký tự, lesson body 50–12.000. Model mặc định `gemini-2.5-flash-lite`, Docker cho phép `AI_MODEL`. Student/Instructor/Admin/roster phân trang mặc định 12, tối đa 50, giữ query filter, tổng số toàn tập; tiến độ/điểm tốt nhất được tổng hợp theo course/user. Bằng chứng mới và các phần chưa nghiệm thu (Gemini thật, Chrome/Edge, review/merge/rubric/video/nộp bài) xem FINAL_ACCEPTANCE.md. Đây là cập nhật đối chiếu hiện thực để nhóm review, không tự xác nhận đã đạt mọi FR.
+Giới hạn được đối chiếu với validation server: mô tả 20–2.000 ký tự, lesson body 50–12.000. Cấu hình model dùng `GEMINI_MODEL`, tương thích `AI_MODEL`; mặc định dự phòng `gemini-2.5-flash-lite`, phải probe với key thật. Student/Instructor/Admin/roster phân trang mặc định 12, tối đa 50, giữ query filter, tổng số toàn tập; tiến độ/điểm tốt nhất được tổng hợp theo course/user. Bằng chứng mới và các phần chưa nghiệm thu (Gemini thật, Chrome/Edge, review/merge/rubric/video/nộp bài) xem FINAL_ACCEPTANCE.md. Đây là cập nhật đối chiếu hiện thực để nhóm review, không tự xác nhận đã đạt mọi FR.

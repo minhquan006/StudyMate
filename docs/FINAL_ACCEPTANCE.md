@@ -19,7 +19,7 @@
 | Q1 | Ma trận FR01–FR12 bên dưới, checklist/rủi ro và người phụ trách | Quân xác minh rubric, hạn nộp chính thức, Git/video/cách nộp/quy định AI với giảng viên |
 | Q2 | Direct POST sai quyền/ID; xóa/đổi thứ tự ở published/archived; CSRF mọi action; dữ liệu từ chối không đổi | Tú review handler/bảo mật, An review UI; Quân không tự duyệt |
 | Q3 | 24 kiểm tra hợp đồng AI **offline**: lỗi key/mạng/timeout/quota và Unicode; HTTP AI disabled không chặn quiz | Quân cấu hình khóa Gemini riêng trong .env, thử ask/summarize thật và lỗi/quota provider. Không gửi khóa vào chat/Git |
-| Q4 | README/SRS/Specification thống nhất model `gemini-2.5-flash-lite`, cấu hình `AI_MODEL`; cập nhật phân trang và giới hạn thực tế | Quân review tài liệu, xác minh model/free-tier còn dùng được bằng provider thật |
+| Q4 | README/SRS/Specification thống nhất cấu hình `GEMINI_MODEL` (tương thích `AI_MODEL`); mặc định dự phòng `gemini-2.5-flash-lite`, chưa xác nhận provider; cập nhật phân trang và giới hạn thực tế | Quân review tài liệu, xác minh model/free-tier còn dùng được bằng provider thật |
 | Q5 | Báo cáo, known issues, checklist và ZIP source có kiểm tra cấu trúc/integrity, manifest | Chốt commit đã review, quay video, bổ sung rubric/Git evidence thật, kiểm ZIP cuối rồi nộp và xác nhận Submitted |
 
 ## Ma trận FR
@@ -58,7 +58,7 @@
 
 ## Known issues / phần không thể làm thay
 
-- Chưa có Gemini credential dùng được trong môi trường này: không khẳng định FR10 đạt, không gọi giả rồi gắn nhãn thật. Dùng `.env` trên máy nhóm, `AI_ENABLED=1`, `GEMINI_API_KEY` nhập riêng; không bật billing. `AI_MODEL` phải được probe với key thật.
+- Chưa có Gemini credential dùng được trong môi trường này: không khẳng định FR10 đạt, không gọi giả rồi gắn nhãn thật. Dùng `.env` trên máy nhóm, `AI_ENABLED=1`, `GEMINI_API_KEY` nhập riêng; không bật billing. `GEMINI_MODEL` phải được probe với key thật; không suy diễn model dự phòng luôn khả dụng.
 - Chưa có rubric/hạn nộp chính thức từ giảng viên. 01/11 là mốc kế hoạch nội bộ, không tự biến thành deadline hệ thống.
 - Không có người thật khác review/merge, độc lập cài đặt hoặc thuyết trình. Tú chuyển branch/patch cho Quân và An theo ownership; không tự duyệt thay họ.
 - Đã có bằng chứng Chrome/Edge thật chạy tự động trên Linux. Kiểm trực quan bởi An, ảnh browser toolbar theo yêu cầu môn, video ba người, Insights/contributions và trạng thái nộp bài vẫn cần nhóm làm thật.
@@ -75,3 +75,6 @@ Tú đã cung cấp kết quả 14/14 kiểm tra MySQL, log restart và ảnh ba
 Bộ HTTP mở rộng đạt 84 ca, bổ sung trọn luồng khóa mới: Instructor tạo/publish → Student mới enroll → hoàn thành bài → nộp quiz → thấy 100 điểm và trạng thái hoàn thành; preview không ghi dữ liệu; AI chưa cấu hình không làm thay đổi DB. Kết quả trong `evidence/final/integrated-http/`.
 
 Đường mạng tới Gemini từ cloud trả proxy 403, không có GEMINI_API_KEY trong host/container. Đã lưu yêu cầu domain và khóa vào bản nháp cài đặt cloud; chưa áp dụng/publish và chưa có khóa nên không thể gọi provider thật. API GitHub để đọc/quản lý PR cũng trả Forbidden; Git đọc/đẩy nhánh vẫn hoạt động. Main chưa chứa thay đổi này tại thời điểm kiểm tra. Không tự duyệt hoặc vượt yêu cầu review để merge.
+
+
+Bổ sung review ngày 30/10/2026: xem [REVIEW_FIXES_2026-10-30.md](REVIEW_FIXES_2026-10-30.md). Không thay nguồn/SHA của bằng chứng 27/10; kết quả trên mã sửa chưa commit được ghi bằng manifest riêng. Theo góp ý Quân, tập trung review #14; #13 giữ tham chiếu lịch sử và do Tú đóng với ghi chú được thay thế bởi #14. An nhận bản sửa nền vào #15; sau khi #14 được review và merge, An đổi base #15 sang main rồi kiểm lại diff.

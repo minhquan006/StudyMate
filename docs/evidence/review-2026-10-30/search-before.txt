@@ -1,0 +1,3 @@
+PASS public: courses: 33 Vietnamese characters find the fixture
+PASS public: courses: valid UTF-8 and unchanged query
+FAIL public: courses: 34 Vietnamese characters find the fixture

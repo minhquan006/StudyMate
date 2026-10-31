@@ -104,7 +104,7 @@ completionService là nơi duy nhất set enrollment.completed_at. Quiz submit/p
 
 ## 8. AI miễn phí
 
-Gemini generateContent `gemini-2.5-flash-lite` qua PHP HTTPS stream; key config.php hoặc env server, không public. Output 600 tokens, timeout 25s, không SDK/history/RAG/tools. Server lấy lesson body từ DB; không nhận lesson text/system prompt từ client, không gửi email/tên/đáp án/điểm.
+Gemini generateContent qua PHP HTTPS stream, cấu hình `GEMINI_MODEL` (tương thích `AI_MODEL`), mặc định dự phòng `gemini-2.5-flash-lite` chưa được nghiệm thu với key thật; key config.php hoặc env server, không public. Output 600 tokens, timeout 25s, không SDK/history/RAG/tools. Server lấy lesson body từ DB; không nhận lesson text/system prompt từ client, không gửi email/tên/đáp án/điểm.
 
 Quota atomic một host: 5/user/phút, 5/app/phút, 20/user/ngày, 100/app/ngày; ngày Asia/Ho_Chi_Minh. Request bị chặn trước provider không đếm; provider lỗi vẫn đếm. Provider429→429; timeout504; thiếu key/AI disabled/safety/no text/error503. Không retry tự động hoặc provider trả phí. Dùng free tier, ngân sách0 đồng, không bật billing. Nội dung free-tier có thể dùng cải thiện sản phẩm: chỉ gửi bài công khai tự biên soạn, không dữ liệu riêng tư.
 
@@ -162,4 +162,4 @@ Tách layout HTML từ public/index.php sang app/layout.php do An phụ trách; 
 
 ## Cập nhật bằng chứng 27/10/2026
 
-Đọc FINAL_ACCEPTANCE.md và evidence/final cho kết quả mới; các đoạn báo cáo SQLite/ảnh 12–17/10 phía trên là lịch sử, không thay bằng chứng MySQL hiện tại. Model mặc định thống nhất `gemini-2.5-flash-lite`; Docker nhận AI_MODEL. Chưa xác nhận provider thật hoặc toàn bộ quy trình nộp. README là nguồn lệnh setup/backup/restore/test/đóng gói.
+Đọc FINAL_ACCEPTANCE.md và evidence/final cho kết quả mới; các đoạn báo cáo SQLite/ảnh 12–17/10 phía trên là lịch sử, không thay bằng chứng MySQL hiện tại. Docker dùng `GEMINI_MODEL`, nhận `AI_MODEL` cũ khi chưa đặt biến mới. `gemini-2.5-flash-lite` chỉ là mặc định dự phòng, không phải cam kết provider còn hỗ trợ. Chưa xác nhận provider thật hoặc toàn bộ quy trình nộp. README là nguồn lệnh setup/backup/restore/test/đóng gói.

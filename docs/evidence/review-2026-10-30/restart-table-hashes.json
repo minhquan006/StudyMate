@@ -1,0 +1,102 @@
+{
+  "before": {
+    "answers": {
+      "rows": 60,
+      "sha256": "320277e4e4eb2af5d6b8b480a2751318d050092da5d3b32cfb9a67bb39bfaae4"
+    },
+    "categories": {
+      "rows": 3,
+      "sha256": "dd5dad2ec32518872974101168fcd92e31e14a9afa26508a69d7779de3761f73"
+    },
+    "chapters": {
+      "rows": 6,
+      "sha256": "172ea7b0a0d49543637cc16f87b708796ce115db060d50eae394902f2d48adca"
+    },
+    "courses": {
+      "rows": 3,
+      "sha256": "20f1ed57f270edb5f798ef3fbdb9d7b07340d728ddbeb0246453fed5c6536a74"
+    },
+    "enrollments": {
+      "rows": 1,
+      "sha256": "bd1e811d7f2638cd20004abca51b8d0802c09f35898c15c77eba2fbc0af19738"
+    },
+    "lesson_progress": {
+      "rows": 6,
+      "sha256": "851e914618ff2fa68a707863ceeb9d0072249247ada98986efd53813a4937cc8"
+    },
+    "lessons": {
+      "rows": 18,
+      "sha256": "98689a80dc0d7c9fdf84590f80c65bd4c1148cb7d0ced1fe2a7d57c96cf494fa"
+    },
+    "questions": {
+      "rows": 15,
+      "sha256": "413d4f1063e810bfd46d6ae5d69a64afbe09164a589621977103e9fc4b96907f"
+    },
+    "quiz_answers": {
+      "rows": 10,
+      "sha256": "8b980a8fc2777cf079002e38b42faf4d80fdf7ee7c479cd89c7a4fc763f30cf0"
+    },
+    "quiz_attempts": {
+      "rows": 2,
+      "sha256": "c54d65302b1a304f1e4a0bfdbfc71ea9b73d51f3623b992d1c6f717144e0b1fb"
+    },
+    "quizzes": {
+      "rows": 3,
+      "sha256": "2fd5646be7f6068f5bf70adea0b2d931bfd4b79a7e032f26aa008e24602e78ec"
+    },
+    "users": {
+      "rows": 5,
+      "sha256": "a46ebbcf1ef856a73058cf0ebd57b4ef6fd072cb63f5c760d18e11845cee1994"
+    }
+  },
+  "after": {
+    "answers": {
+      "rows": 60,
+      "sha256": "320277e4e4eb2af5d6b8b480a2751318d050092da5d3b32cfb9a67bb39bfaae4"
+    },
+    "categories": {
+      "rows": 3,
+      "sha256": "dd5dad2ec32518872974101168fcd92e31e14a9afa26508a69d7779de3761f73"
+    },
+    "chapters": {
+      "rows": 6,
+      "sha256": "172ea7b0a0d49543637cc16f87b708796ce115db060d50eae394902f2d48adca"
+    },
+    "courses": {
+      "rows": 3,
+      "sha256": "20f1ed57f270edb5f798ef3fbdb9d7b07340d728ddbeb0246453fed5c6536a74"
+    },
+    "enrollments": {
+      "rows": 1,
+      "sha256": "bd1e811d7f2638cd20004abca51b8d0802c09f35898c15c77eba2fbc0af19738"
+    },
+    "lesson_progress": {
+      "rows": 6,
+      "sha256": "851e914618ff2fa68a707863ceeb9d0072249247ada98986efd53813a4937cc8"
+    },
+    "lessons": {
+      "rows": 18,
+      "sha256": "98689a80dc0d7c9fdf84590f80c65bd4c1148cb7d0ced1fe2a7d57c96cf494fa"
+    },
+    "questions": {
+      "rows": 15,
+      "sha256": "413d4f1063e810bfd46d6ae5d69a64afbe09164a589621977103e9fc4b96907f"
+    },
+    "quiz_answers": {
+      "rows": 10,
+      "sha256": "8b980a8fc2777cf079002e38b42faf4d80fdf7ee7c479cd89c7a4fc763f30cf0"
+    },
+    "quiz_attempts": {
+      "rows": 2,
+      "sha256": "c54d65302b1a304f1e4a0bfdbfc71ea9b73d51f3623b992d1c6f717144e0b1fb"
+    },
+    "quizzes": {
+      "rows": 3,
+      "sha256": "2fd5646be7f6068f5bf70adea0b2d931bfd4b79a7e032f26aa008e24602e78ec"
+    },
+    "users": {
+      "rows": 5,
+      "sha256": "a46ebbcf1ef856a73058cf0ebd57b4ef6fd072cb63f5c760d18e11845cee1994"
+    }
+  }
+}

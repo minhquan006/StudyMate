@@ -11,6 +11,11 @@ $_SESSION=['user_id'=>(int)$enrollment['user_id'],'auth_version'=>(int)$enrollme
 $lesson=one('SELECT l.*,ch.course_id FROM lessons l JOIN chapters ch ON ch.id=l.chapter_id WHERE ch.course_id=2 ORDER BY ch.position,l.position,l.id LIMIT 1');
 if(!$lesson)probeResult(['status'=>'blocked','reason'=>'Không tìm thấy bài mẫu công khai trong khóa JavaScript.'],2);
 $results=[];
-foreach(['ask','summarize'] as $mode){$start=microtime(true);try{$answer=aiHelp($lesson,$mode,'Giải thích ngắn gọn kiến thức chính trong bài học này.');$results[]=['mode'=>$mode,'status'=>'passed','answer_characters'=>length($answer),'elapsed_ms'=>round((microtime(true)-$start)*1000)];}catch(AppError $e){$results[]=['mode'=>$mode,'status'=>'failed','http_status'=>$e->status,'message'=>$e->getMessage(),'elapsed_ms'=>round((microtime(true)-$start)*1000)];}}
+foreach(['ask','summarize'] as $mode){
+ $start=microtime(true);$providerStatus=null;
+ $transport=static function(array $payload)use(&$providerStatus):array{$result=geminiRequest($payload);$providerStatus=$result[0];return $result;};
+ try{$answer=aiHelp($lesson,$mode,'Giải thích ngắn gọn kiến thức chính trong bài học này.',$transport);$results[]=['mode'=>$mode,'status'=>'passed','provider_http_status'=>$providerStatus,'answer_characters'=>length($answer),'elapsed_ms'=>round((microtime(true)-$start)*1000)];}
+ catch(AppError $e){$results[]=['mode'=>$mode,'status'=>'failed','http_status'=>$e->status,'provider_http_status'=>$providerStatus,'message'=>$e->getMessage(),'elapsed_ms'=>round((microtime(true)-$start)*1000)];}
+}
 $passed=count(array_filter($results,fn($r)=>$r['status']==='passed'))===2;
 probeResult(['status'=>$passed?'passed':'failed','model'=>$config['ai_model'],'provider'=>'Gemini thật','results'=>$results,'limitations'=>'Không tự xác nhận chất lượng câu trả lời, free tier/billing, provider quota thật hoặc nghiệm thu của Quân.'], $passed?0:1);

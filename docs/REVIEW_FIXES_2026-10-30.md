@@ -1,6 +1,6 @@
 # Xử lý góp ý PR #14 — 30/10/2026
 
-Nền: `593141fa2a021d7f1744dc2e7e20fe16c31423ad`. Các file sửa hiện **chưa commit, chưa push**. Công cụ thực hiện sửa và kiểm tra cloud; Tú tự xem diff, commit và push. Manifest SHA256 của mã đã chạy: [source-manifest.json](evidence/review-2026-10-30/source-manifest.json).
+Nền: `593141fa2a021d7f1744dc2e7e20fe16c31423ad`. Trạng thái tại thời điểm kiểm thử ngày 30/10/2026 là **chưa commit, chưa push**. Bản mã sau đó đã được Tú commit/push tại `1a27ec1`; xem mục xác nhận sau bàn giao ở cuối tài liệu. Công cụ thực hiện sửa và kiểm tra cloud; Tú tự xem diff, commit và push. Manifest SHA256 của mã đã chạy: [source-manifest.json](evidence/review-2026-10-30/source-manifest.json).
 
 ## Những mục đã sửa
 
@@ -37,3 +37,12 @@ Log/JSON trong [evidence/review-2026-10-30](evidence/review-2026-10-30/summary.j
 - Quy tắc rubric/hạn nộp chính thức vẫn chờ xác nhận của giảng viên theo thông tin Quân; không coi mốc dự kiến 10/11 là hạn chính thức.
 
 Kết quả mới chứng minh các ca vừa chạy trên mã có fingerprint nêu trên. Sau khi Tú commit, ghi thêm SHA thật và liên kết manifest; không đổi SHA gốc trong bằng chứng 27/10.
+
+## Xác nhận sau bàn giao — 01/11/2026
+
+- Bản mã đã bàn giao qua PR #14: [`1a27ec1bc939b7b98324dc6f95ec7aaa175f484a`](https://github.com/minhquan006/StudyMate/commit/1a27ec1bc939b7b98324dc6f95ec7aaa175f484a). Tú tự thực hiện commit/push; mã và kiểm tra cloud có AI hỗ trợ.
+- Đã đối chiếu **13/13 file** trong [source-manifest.json](evidence/review-2026-10-30/source-manifest.json) khớp nội dung tại `1a27ec1`. Phạm vi và kết quả kiểm tra gốc xem [summary.json](evidence/review-2026-10-30/summary.json). Quân đã xác nhận lại việc đối chiếu này trong review PR #14.
+- Phần kiểm thử ngày 30/10 ở trên giữ nguyên nền `593141f`, fingerprint, ngày và phạm vi đã ghi. Việc bổ sung xác nhận bàn giao không phải một lượt chạy kiểm thử mới và không thay SHA trong bằng chứng gốc.
+- Kết quả Windows của bản cập nhật: Tú cung cấp ảnh build Docker thành công, DB Healthy và health trả `{"status":"ok"}`. Kết quả này được giữ riêng với các suite cloud và bằng chứng Windows lịch sử trong [tu-windows-results.json](evidence/final/tu-windows-results.json).
+- Đợt bổ sung này chỉ sửa tài liệu, không thay mã ứng dụng, không chạy lại các suite đã đạt. Commit tài liệu mới được ghi trong lịch sử PR; `1a27ec1` vẫn là SHA bản mã ứng dụng đã đối chiếu.
+- Gemini thật và nghiệm thu chung tiếp tục thực hiện trên bản tích hợp. Thống nhất cấu hình model chưa xác nhận provider dùng được với key của nhóm.

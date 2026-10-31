@@ -1,0 +1,35 @@
+{
+  "source_files_verified": 309,
+  "fingerprint_mismatches": [],
+  "setup_repeat_preserved_data": true,
+  "restart_health": "ok",
+  "tables_before": {
+    "users": "8d902ff85beacee58eb4e658f415a373063124b35b22f02dc8d735abf46d7b60",
+    "categories": "e28aa8431ee5b7c41ddbf18238cca7a75e6855ad1389fe366aa960b6f64822b3",
+    "courses": "7811791f4612e5e2eb731e96be23ce3afcb1cf81b15b9b840a7716e2e8eb4c23",
+    "chapters": "d7c1be8b46df787dc15cb6e772055a2dfbdd81c7f32a3820bdc74c78beb9600a",
+    "lessons": "d8dd627be0aefead3092b5768caa76f0c6c4bf2ed16b7261fe2514e9591b984d",
+    "enrollments": "6da0aad121a50c3ed1488e7994e51edebab5f6cd6c731485a50180af6b615b4e",
+    "lesson_progress": "549c8b3f4fdcbe4148b344397f9f5ceab0aa7b2bf1a74416e3fb8cb19cc512e3",
+    "quizzes": "dd4a75863b052336c758ae8e392c099c7681a02d3412217bf9bc341ee48c6229",
+    "questions": "d1d1d370fa2b8e80d55c432b9451437d83d35f4a8c83a5d27d5442c9f9e5b295",
+    "answers": "0b87b2949baa10ce9ea34747b09c46542f95777451d51f2453fe86374d4527bd",
+    "quiz_attempts": "6bca71a227e4f1412368b8eeeaac1b3c4ce63ddb847c1a92515eb9d4f77b1404",
+    "quiz_answers": "c8e233335d6fad8e67220cc3865f34951a17c61900ff16c587a14fd8e46e2a68"
+  },
+  "tables_after": {
+    "users": "8d902ff85beacee58eb4e658f415a373063124b35b22f02dc8d735abf46d7b60",
+    "categories": "e28aa8431ee5b7c41ddbf18238cca7a75e6855ad1389fe366aa960b6f64822b3",
+    "courses": "7811791f4612e5e2eb731e96be23ce3afcb1cf81b15b9b840a7716e2e8eb4c23",
+    "chapters": "d7c1be8b46df787dc15cb6e772055a2dfbdd81c7f32a3820bdc74c78beb9600a",
+    "lessons": "d8dd627be0aefead3092b5768caa76f0c6c4bf2ed16b7261fe2514e9591b984d",
+    "enrollments": "6da0aad121a50c3ed1488e7994e51edebab5f6cd6c731485a50180af6b615b4e",
+    "lesson_progress": "549c8b3f4fdcbe4148b344397f9f5ceab0aa7b2bf1a74416e3fb8cb19cc512e3",
+    "quizzes": "dd4a75863b052336c758ae8e392c099c7681a02d3412217bf9bc341ee48c6229",
+    "questions": "d1d1d370fa2b8e80d55c432b9451437d83d35f4a8c83a5d27d5442c9f9e5b295",
+    "answers": "0b87b2949baa10ce9ea34747b09c46542f95777451d51f2453fe86374d4527bd",
+    "quiz_attempts": "6bca71a227e4f1412368b8eeeaac1b3c4ce63ddb847c1a92515eb9d4f77b1404",
+    "quiz_answers": "c8e233335d6fad8e67220cc3865f34951a17c61900ff16c587a14fd8e46e2a68"
+  },
+  "tables_preserved": 12
+}

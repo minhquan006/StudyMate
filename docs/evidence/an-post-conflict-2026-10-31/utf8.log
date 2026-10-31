@@ -1,0 +1,61 @@
+PASS public: courses: 33 Vietnamese characters find the fixture
+PASS public: courses: valid UTF-8 and unchanged query
+PASS public: courses: 34 Vietnamese characters find the fixture
+PASS public: courses: valid UTF-8 and unchanged query
+PASS public: courses: form has the same 100 character limit
+PASS public: courses: malformed query rejected before SQL
+PASS public: courses: malformed query rejected before SQL
+PASS public: courses: SQL wildcards remain literal
+PASS public: 100/101 character search keeps a complete 100 character prefix
+PASS public: 100/101 character search keeps a complete 100 character prefix
+PASS public: page two preserves the filtered result
+PASS public: pagination preserves the UTF-8 filter
+PASS public: trims whitespace and preserves emoji
+PASS public: four-byte characters are not split
+14 public UTF-8 search checks passed.
+PASS student: courses: 33 Vietnamese characters find the fixture
+PASS student: courses: valid UTF-8 and unchanged query
+PASS student: courses: 34 Vietnamese characters find the fixture
+PASS student: courses: valid UTF-8 and unchanged query
+PASS student: courses: form has the same 100 character limit
+PASS student: courses: malformed query rejected before SQL
+PASS student: courses: malformed query rejected before SQL
+PASS student: courses: SQL wildcards remain literal
+PASS student: 100/101 character search keeps a complete 100 character prefix
+PASS student: 100/101 character search keeps a complete 100 character prefix
+PASS student: page two preserves the filtered result
+PASS student: pagination preserves the UTF-8 filter
+PASS student: trims whitespace and preserves emoji
+PASS student: four-byte characters are not split
+14 student UTF-8 search checks passed.
+PASS admin: users: 33 Vietnamese characters find the fixture
+PASS admin: users: valid UTF-8 and unchanged query
+PASS admin: users: 34 Vietnamese characters find the fixture
+PASS admin: users: valid UTF-8 and unchanged query
+PASS admin: users: form has the same 100 character limit
+PASS admin: users: malformed query rejected before SQL
+PASS admin: users: malformed query rejected before SQL
+PASS admin: users: SQL wildcards remain literal
+PASS admin: courses: 33 Vietnamese characters find the fixture
+PASS admin: courses: valid UTF-8 and unchanged query
+PASS admin: courses: 34 Vietnamese characters find the fixture
+PASS admin: courses: valid UTF-8 and unchanged query
+PASS admin: courses: form has the same 100 character limit
+PASS admin: courses: malformed query rejected before SQL
+PASS admin: courses: malformed query rejected before SQL
+PASS admin: courses: SQL wildcards remain literal
+PASS admin: categories: 33 Vietnamese characters find the fixture
+PASS admin: categories: valid UTF-8 and unchanged query
+PASS admin: categories: 34 Vietnamese characters find the fixture
+PASS admin: categories: valid UTF-8 and unchanged query
+PASS admin: categories: form has the same 100 character limit
+PASS admin: categories: malformed query rejected before SQL
+PASS admin: categories: malformed query rejected before SQL
+PASS admin: categories: SQL wildcards remain literal
+PASS admin: 100/101 character search keeps a complete 100 character prefix
+PASS admin: 100/101 character search keeps a complete 100 character prefix
+PASS admin: page two preserves the filtered result
+PASS admin: pagination preserves the UTF-8 filter
+PASS admin: trims whitespace and preserves emoji
+PASS admin: four-byte characters are not split
+30 admin UTF-8 search checks passed.

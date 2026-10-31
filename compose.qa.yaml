@@ -1,0 +1,9 @@
+# Always use a new Compose project name for an independent acceptance run.
+services:
+  db:
+    environment:
+      MYSQL_DATABASE: studymate_ui_test
+  app:
+    environment:
+      DB_NAME: studymate_ui_test
+      AI_ENABLED: "0"

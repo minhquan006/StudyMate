@@ -1,0 +1,32 @@
+[
+  {
+    "tab": "users",
+    "tab_reachable": true,
+    "left": 0,
+    "overflow": true,
+    "role": "region",
+    "label": "Danh sách quản lý, cuộn ngang khi cần",
+    "outline": "solid",
+    "scrollAfter": 40
+  },
+  {
+    "tab": "courses",
+    "tab_reachable": true,
+    "left": 0,
+    "overflow": true,
+    "role": "region",
+    "label": "Danh sách quản lý, cuộn ngang khi cần",
+    "outline": "solid",
+    "scrollAfter": 40
+  },
+  {
+    "tab": "categories",
+    "tab_reachable": true,
+    "left": 0,
+    "overflow": true,
+    "role": "region",
+    "label": "Danh sách quản lý, cuộn ngang khi cần",
+    "outline": "solid",
+    "scrollAfter": 40
+  }
+]

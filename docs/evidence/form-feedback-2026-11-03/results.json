@@ -1,0 +1,127 @@
+{
+  "started": "2026-11-03T15:16:20.635Z",
+  "baseCommit": "d21f08e95585286df1a77be4815e3d44d120ee5b",
+  "sourceFilesSha256": {
+    "app/layout.php": "58711b480faa05fe89d7bc4f42a9f3244c3ff5a93274d2821fc66003efd1255a",
+    "public/assets/app.css": "3481aa38fe4938f3868022ea4eaa53a8280757502709ff10f66a13cd728ca021",
+    "public/assets/forms.js": "f7b024ac9577b1675e8a434834601e31297dae3bd02de09905e3a4a979db7881"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "native required validation does not set pending",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native registration posts and redirects",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pending status/style and duplicate event suppression preserve enabled controls",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "six lesson completion POSTs still work",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native keyboard quiz radio still works",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "refresh warns; cancelling keeps selected answer",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "intentional quiz submit has no leave warning and renders real result",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "logout still posts and invalidates private page",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native login works with JavaScript disabled",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native required validation does not set pending",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native registration posts and redirects",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "pending status/style and duplicate event suppression preserve enabled controls",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "six lesson completion POSTs still work",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native keyboard quiz radio still works",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "refresh warns; cancelling keeps selected answer",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "intentional quiz submit has no leave warning and renders real result",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "logout still posts and invalidates private page",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native login works with JavaScript disabled",
+      "status": "passed"
+    }
+  ],
+  "browsers": {
+    "chrome": "156.0.8078.79",
+    "edge": "156.0.4314.58"
+  },
+  "errors": [],
+  "finished": "2026-11-03T15:16:32.856Z"
+}

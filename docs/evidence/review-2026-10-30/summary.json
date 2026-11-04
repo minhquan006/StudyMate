@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-30",
+  "executor": "Codex, isolated cloud Docker/MySQL test environment",
+  "base_commit": "593141fa2a021d7f1744dc2e7e20fe16c31423ad",
+  "source_manifest": "source-manifest.json",
+  "uncommitted": true,
+  "mysql_service_checks": {
+    "passed": 14,
+    "command": "php tests/run.php",
+    "note": "Run only on the new disposable DB; not on the user Windows DB."
+  },
+  "offline_ai_contract": {
+    "passed": 24,
+    "command": "STUDYMATE_DISPOSABLE_DB=1 php tests/ai_contract.php",
+    "provider_requests": 0
+  },
+  "utf8_search_checks": {
+    "passed": 58,
+    "command": "STUDYMATE_DISPOSABLE_DB=1 php tests/search_utf8.php",
+    "logs": "search-after.txt",
+    "original_base_regression_fails_at": "34 Vietnamese characters; see search-before.txt"
+  },
+  "http_search_checks": {
+    "passed": 13,
+    "results": "http-search-results.json"
+  },
+  "startup_checks": {
+    "passed": 13,
+    "results": "startup-results.json",
+    "before_after": "restart-table-hashes.json"
+  },
+  "model_resolution": {
+    "php_checks_passed": 8,
+    "compose_checks_passed": 4
+  },
+  "syntax": {
+    "php": "passed for app/docker/tools/tests and config.example.php",
+    "shell_start_script": "passed",
+    "git_diff_check": "passed"
+  },
+  "utf8_with_mbstring_functions_disabled": "passed using php -d disable_functions=mb_strlen,mb_substr",
+  "live_gemini": {
+    "status": "blocked",
+    "provider_requests": 0,
+    "reason": "Test environment AI disabled; no configured provider credential/model acceptance"
+  },
+  "limitations": [
+    "Startup regression used the updated entrypoint/source via a bind mount on the existing PHP 8.3 image. The complete Docker image was also built successfully separately.",
+    "Full historical 84 HTTP and 235 browser checks per browser were not rerun. Their original source SHAs and results remain unchanged.",
+    "No personal Windows acceptance, new commit, push, review approval or merge performed."
+  ],
+  "docker_build": {
+    "status": "passed",
+    "image_id": "sha256:41b0eab01f4786af5e0272ea00e96d3c76360b6ce7c76358503e017e699b831e",
+    "log": "docker-build.txt",
+    "scope": "Full image built from the current source Dockerfile; startup regression executed with the same source bind-mounted on existing PHP image."
+  }
+}

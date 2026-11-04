@@ -1,0 +1,21 @@
+{
+  "app/actions.php": "c8e31490cfb09c67be9f310180ccb7b5f9b439020f851352bc8109362e8d403a",
+  "app/admin_actions.php": "dfe033001858e5c030ab75497fa68c9c9e307375d991e0b8136bc61902e066f9",
+  "app/ai_actions.php": "0adc368a607369af53e50d05a2cceab04f39f04f4b60ea06b1372c596ffa6f85",
+  "app/ai_service.php": "eeb83821251cd46dcb976393f7f7c6a76425c6e1000a17f66e0c0a95612309ef",
+  "app/ai_view.php": "48804c0fb623a52b03ca9e416a22321f8b1027e21e5dcd2478901e6d81224256",
+  "app/auth_actions.php": "c24edd8bc61d3f7c18112971e47c7069778deb06446144480c6047b23fd16716",
+  "app/bootstrap.php": "dc9062f28b5504402fcdb6ba56e208c756b60edffcbba1820aeffde27c0b6d48",
+  "app/instructor_actions.php": "aaaa0ccbf59c2bd2062dc6fab68ee8de75b6948ebde7d66b9402d85eb3f10830",
+  "app/layout.php": "402fdcb82fe721495fb5aa93400d97be30defead4653bef8522e8d9c652a45af",
+  "app/management_views.php": "f1408b12854c93f64b62b0149a5ae810e404ed8e6d7d19c17cf8330ce25777de",
+  "app/services.php": "275c90274b60447228f0f02ea36fa34f556b7d08f30734179b0dd5459f78b0e2",
+  "app/student_actions.php": "3de82a3d8130c1e2158b5a77e6338eb46744239c0e5d1e2c6e92ac015d28aa08",
+  "app/views.php": "7d35471151450ebeddf2f23c0e00755507f4730852d07a47f93106f4eea6fe9f",
+  "database/schema.php": "be2116075f69ba726c740421707e8f1b92d3f876035f069860349e93c939f77d",
+  "database/seed.php": "6b4c6108ce0103795e701dbfb14233bda22c468d9fd2bdcde24664a1d6a68cd1",
+  "public/assets/BOOTSTRAP_LICENSE.txt": "4620c84ad5ce8602ff65640ed6b7c8b78ebb9e036584f0ebc1ccc88206a4bb51",
+  "public/assets/app.css": "0cecbc95ce208bb3b9c03d3938eca2683cea92d773f67badfa2d234b810eb9f0",
+  "public/assets/bootstrap.min.css": "d85327d99c7a3ee1f9b5d0500d1370acea3ad2db39c163c2f51f232baedbdede",
+  "public/index.php": "fb05eb080d9564dd7726a19ae4b6ad6b2557dbfe3cae5758f436431a98c03871"
+}

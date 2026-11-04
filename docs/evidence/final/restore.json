@@ -1,0 +1,7 @@
+{
+  "result": "passed",
+  "tables": 12,
+  "comparison": "all rows, all columns via SHA256 per table",
+  "destination": "separate new database",
+  "source_untouched": true
+}

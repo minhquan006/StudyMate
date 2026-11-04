@@ -1,0 +1,34 @@
+[
+  {
+    "mode": "student",
+    "query_counts": {
+      "12": 4,
+      "50": 4
+    },
+    "result": "passed: query count independent of page size"
+  },
+  {
+    "mode": "instructor",
+    "query_counts": {
+      "12": 4,
+      "50": 4
+    },
+    "result": "passed: query count independent of page size"
+  },
+  {
+    "mode": "roster",
+    "query_counts": {
+      "12": 4,
+      "50": 4
+    },
+    "result": "passed: query count independent of page size"
+  },
+  {
+    "mode": "admin",
+    "query_counts": {
+      "12": 6,
+      "50": 6
+    },
+    "result": "passed: query count independent of page size"
+  }
+]

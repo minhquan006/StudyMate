@@ -1,0 +1,19 @@
+{
+  "base_commit": "593141fa2a021d7f1744dc2e7e20fe16c31423ad",
+  "target": "uncommitted working tree; not a new commit SHA",
+  "files": {
+    ".env.example": "1b3d1971f3ea8b7a557b9e6eb11087d2f172c391e5a90c039483344038f4f113",
+    "Dockerfile": "31110129d23ebf923c9802b5692f53e307517881c62499e59b00b9c9f1d9fc07",
+    "compose.yaml": "665c4ecdb08988748b8048bc4c17ec3c49ab40cb9cecd7144f9c6e4f34cd6e49",
+    "docker/config.php": "ab6300df52ffe3a019a4fddc817745836e95be357d11b9f678f9f21576cdd52f",
+    "docker/start.sh": "a2130847562df5091b6ef8302afa513f5dacb8f3bd58a1a12ac799a9e78b2374",
+    "config.example.php": "ff1cb9fefa90c4b25c8194fd8410c82c0525a38c25ce167c9d4efb3e3e5d9292",
+    "app/bootstrap.php": "5a3cf995fb3b979caab76e6291b9a733f9d1653d885e751300770629533a61aa",
+    "app/views.php": "be0d495d3ed4ea60cb373f474d8613903e65214c0e08e07e34628822443d3e9b",
+    "app/management_views.php": "99705352034374d44169c4c796fb0eab34053d389a27187880a89f7c2077408b",
+    "tools/wait_for_db.php": "ff4e8fe0e994728fc5291e4d7e29484057079f194320ea1412707616409c21fa",
+    "tools/probe_gemini.php": "7bfc2279528bda033a485af3dc4f42782c96f413669315ddc4e4ae56ed5d891b",
+    "tests/search_utf8.php": "a7871ccc7d7566fc4227be04cd46d05dbd626bf6232b3a5c213b15d403bf0ef3",
+    "tests/model_config.php": "e1c66c601ca72e93e0d4e28d0acaef922ac8f7ada13692f079ef6628921109bf"
+  }
+}

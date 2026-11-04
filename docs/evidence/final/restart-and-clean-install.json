@@ -1,0 +1,11 @@
+{
+  "result": "passed",
+  "clean_source": "nonignored source files only; no config.php/.env/database reused",
+  "project": "studymate-clean",
+  "database": "new MySQL volume",
+  "setup_twice_preserves_all_12_tables": true,
+  "restart_health": "ok",
+  "restart_preserves_all_12_tables": true,
+  "setup_output": "Database đã có dữ liệu; không ghi đè hoặc reset.",
+  "initial_issue": "cloud disk full; reclaimed task build cache and initialized a new disposable volume successfully"
+}

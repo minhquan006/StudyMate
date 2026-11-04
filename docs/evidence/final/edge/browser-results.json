@@ -1,0 +1,949 @@
+{
+  "browser": "Microsoft Edge 142.0.3595.94",
+  "mode": "headless automation",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "screenshots": "not captured in this run",
+  "results": [
+    {
+      "name": "catalog warm-up 5, 30 successful timed loads p95 under 1s",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest home 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest courses 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest detail&id=1 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest login 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "guest register 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "guest Tab focus visible",
+      "status": "passed"
+    },
+    {
+      "name": "guest no browser JS exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "student student 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student student 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student student 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student student 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student student 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student student 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student student 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student student 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student student 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student student 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student student 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student student 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student learn&id=2 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student quiz&id=2 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student result&id=1 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "student profile 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "student default 12 rows",
+      "status": "passed"
+    },
+    {
+      "name": "student page 2 works",
+      "status": "passed"
+    },
+    {
+      "name": "pagination preserves filter",
+      "status": "passed"
+    },
+    {
+      "name": "student totals independent of current page",
+      "status": "passed"
+    },
+    {
+      "name": "student Tab focus visible",
+      "status": "passed"
+    },
+    {
+      "name": "student no browser JS exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor instructor 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=info 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=content 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=3&tab=quiz 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "instructor edit&id=2&tab=students 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "instructor default 12 rows",
+      "status": "passed"
+    },
+    {
+      "name": "instructor page 2 works",
+      "status": "passed"
+    },
+    {
+      "name": "instructor Tab focus visible",
+      "status": "passed"
+    },
+    {
+      "name": "instructor no browser JS exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 390 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 390 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 390 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 390 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 768 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 768 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 768 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 768 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=users 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=courses 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 1366 HTTP 200",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 1366 no document overflow",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 1366 fields labelled",
+      "status": "passed"
+    },
+    {
+      "name": "admin admin&tab=categories 1366 primary controls >=44px",
+      "status": "passed"
+    },
+    {
+      "name": "admin default 12 rows",
+      "status": "passed"
+    },
+    {
+      "name": "admin page 2 works",
+      "status": "passed"
+    },
+    {
+      "name": "admin page size capped at 50",
+      "status": "passed"
+    },
+    {
+      "name": "search escapes SQL wildcard",
+      "status": "passed"
+    },
+    {
+      "name": "admin Tab focus visible",
+      "status": "passed"
+    },
+    {
+      "name": "admin no browser JS exceptions",
+      "status": "passed"
+    }
+  ],
+  "binary_source": "official vendor HTTPS package repository; package SHA256 matched vendor Packages metadata"
+}

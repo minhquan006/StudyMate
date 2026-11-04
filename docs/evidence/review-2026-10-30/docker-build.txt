@@ -1,0 +1,41 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 658B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/php:8.3-apache@sha256:0d46cb96775228313d3997c155f78227de13bf9972e0c736e653fb23aded79b2
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 77B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/php:8.3-apache@sha256:0d46cb96775228313d3997c155f78227de13bf9972e0c736e653fb23aded79b2
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 23.75MB 0.1s done
+#5 DONE 0.1s
+
+#6 [2/6] RUN docker-php-ext-install pdo_mysql
+#6 CACHED
+
+#7 [3/6] WORKDIR /var/www/html
+#7 CACHED
+
+#8 [4/6] COPY . /var/www/html/
+#8 DONE 4.4s
+
+#9 [5/6] COPY docker/config.php /var/www/html/config.php
+#9 DONE 2.0s
+
+#10 [6/6] RUN find /var/www/html -type d -exec chmod 755 {} + && find /var/www/html -type f -exec chmod 644 {} + && chown root:www-data config.php && chmod 640 config.php && sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf && mkdir -p /var/www/html/storage/sessions && chown -R www-data:www-data /var/www/html/storage
+#10 DONE 0.6s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.3s done
+#11 writing image sha256:41b0eab01f4786af5e0272ea00e96d3c76360b6ce7c76358503e017e699b831e done
+#11 naming to docker.io/library/studymate-review-fixes-validated done
+#11 DONE 0.3s

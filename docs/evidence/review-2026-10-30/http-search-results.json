@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "courses/ 33 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "courses/ 34 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "courses/ array query: HTTP422",
+      "passed": true
+    },
+    {
+      "name": "student/ 33 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "student/ 34 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "student/ array query: HTTP422",
+      "passed": true
+    },
+    {
+      "name": "admin/courses 33 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "admin/courses 34 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "admin/courses array query: HTTP422",
+      "passed": true
+    },
+    {
+      "name": "admin/categories 33 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "admin/categories 34 characters: HTTP200 with fixture and intact query",
+      "passed": true
+    },
+    {
+      "name": "admin/categories array query: HTTP422",
+      "passed": true
+    },
+    {
+      "name": "malformed UTF-8 query: HTTP422",
+      "passed": true
+    }
+  ],
+  "scope": "HTTP assertions against dedicated test DB; committed temporary fixtures removed afterwards"
+}

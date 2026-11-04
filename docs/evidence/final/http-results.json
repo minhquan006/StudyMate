@@ -1,0 +1,322 @@
+{
+  "base_commit": "861e72c5935ce321223c3d1289a39f0ea63660f1",
+  "target": "working tree, Docker MySQL disposable database",
+  "results": [
+    {
+      "name": "database health",
+      "status": "passed"
+    },
+    {
+      "name": "student renders",
+      "status": "passed"
+    },
+    {
+      "name": "instructor renders",
+      "status": "passed"
+    },
+    {
+      "name": "admin renders",
+      "status": "passed"
+    },
+    {
+      "name": "public catalog hides draft",
+      "status": "passed"
+    },
+    {
+      "name": "private learning without enrollment",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF register",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF login",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF logout",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF enroll",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF last_lesson",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF complete",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF submit_quiz",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF course_save",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF course_state",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF course_delete",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF chapter_save",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF chapter_delete",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF lesson_save",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF lesson_delete",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF quiz_save",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF user_status",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF category_save",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF category_delete",
+      "status": "passed"
+    },
+    {
+      "name": "CSRF ai",
+      "status": "passed"
+    },
+    {
+      "name": "wrong role course creation",
+      "status": "passed"
+    },
+    {
+      "name": "wrong owner course update",
+      "status": "passed"
+    },
+    {
+      "name": "forged chapter from other course",
+      "status": "passed"
+    },
+    {
+      "name": "forged lesson from other course",
+      "status": "passed"
+    },
+    {
+      "name": "category in use",
+      "status": "passed"
+    },
+    {
+      "name": "cannot lock admin",
+      "status": "passed"
+    },
+    {
+      "name": "published structure locked chapter_delete",
+      "status": "passed"
+    },
+    {
+      "name": "published structure locked lesson_delete",
+      "status": "passed"
+    },
+    {
+      "name": "published structure locked chapter_save",
+      "status": "passed"
+    },
+    {
+      "name": "published structure locked lesson_save",
+      "status": "passed"
+    },
+    {
+      "name": "published structure locked course_delete",
+      "status": "passed"
+    },
+    {
+      "name": "archive course",
+      "status": "passed"
+    },
+    {
+      "name": "archived structure locked chapter_delete",
+      "status": "passed"
+    },
+    {
+      "name": "archived structure locked lesson_delete",
+      "status": "passed"
+    },
+    {
+      "name": "archived structure locked chapter_save",
+      "status": "passed"
+    },
+    {
+      "name": "archived structure locked lesson_save",
+      "status": "passed"
+    },
+    {
+      "name": "archived structure locked course_delete",
+      "status": "passed"
+    },
+    {
+      "name": "archived rejects new enrollment",
+      "status": "passed"
+    },
+    {
+      "name": "republish",
+      "status": "passed"
+    },
+    {
+      "name": "concurrent enrollment both succeed",
+      "status": "passed"
+    },
+    {
+      "name": "exactly one enrollment",
+      "status": "passed"
+    },
+    {
+      "name": "concurrent completion both succeed",
+      "status": "passed"
+    },
+    {
+      "name": "exactly one progress",
+      "status": "passed"
+    },
+    {
+      "name": "cannot unpublish enrolled course",
+      "status": "passed"
+    },
+    {
+      "name": "quiz gate before lessons complete",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 7",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 8",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 9",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 10",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 11",
+      "status": "passed"
+    },
+    {
+      "name": "complete lesson 12",
+      "status": "passed"
+    },
+    {
+      "name": "same UUID concurrent same payload",
+      "status": "passed"
+    },
+    {
+      "name": "exactly one quiz attempt",
+      "status": "passed"
+    },
+    {
+      "name": "same UUID different payload leaves DB unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "malformed answer rolls back",
+      "status": "passed"
+    },
+    {
+      "name": "failed answer insert rolls back entire attempt",
+      "status": "passed"
+    },
+    {
+      "name": "concurrent same UUID different payload yields 303 and 409",
+      "status": "passed"
+    },
+    {
+      "name": "attempt owner protected",
+      "status": "passed"
+    },
+    {
+      "name": "archive existing enrolled course",
+      "status": "passed"
+    },
+    {
+      "name": "existing student learns archived",
+      "status": "passed"
+    },
+    {
+      "name": "AI disabled explicit 503",
+      "status": "passed"
+    },
+    {
+      "name": "quiz still available after AI error",
+      "status": "passed"
+    },
+    {
+      "name": "lock student revokes sessions",
+      "status": "passed"
+    },
+    {
+      "name": "unlock does not revive old session",
+      "status": "passed"
+    },
+    {
+      "name": "registration creates student despite forged role",
+      "status": "passed"
+    },
+    {
+      "name": "instructor creates draft",
+      "status": "passed"
+    },
+    {
+      "name": "create chapter",
+      "status": "passed"
+    },
+    {
+      "name": "create lesson",
+      "status": "passed"
+    },
+    {
+      "name": "create quiz transaction",
+      "status": "passed"
+    },
+    {
+      "name": "publish complete new course",
+      "status": "passed"
+    },
+    {
+      "name": "published quiz locked",
+      "status": "passed"
+    },
+    {
+      "name": "new student enrolls and sees lesson",
+      "status": "passed"
+    },
+    {
+      "name": "preview does not modify learning data",
+      "status": "passed"
+    }
+  ],
+  "validated_code_commit": "c1e0664edf220f07e6664459b3568c1c01550423",
+  "source_match": "application PHP and public assets match clean image; see validated-source-manifest.json",
+  "compose_project": "studymate-clean",
+  "fresh_database": true
+}

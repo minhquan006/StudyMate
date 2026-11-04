@@ -1,0 +1,16 @@
+Setup hoàn tất: mysql. Demo accounts seeded.
+PASS: server grades 5/5=100%
+PASS: completed_at recorded
+PASS: same UUID same payload returns one attempt
+PASS: UUID unique count
+PASS: same UUID different payload conflict409
+PASS: 3/5=60% not passed
+PASS: omitted questions persisted null
+PASS: lower score does not overwrite completed_at
+PASS: best score remains100
+PASS: answer-question relation validated
+PASS: database unique enrollment
+PASS: database FK restrict category
+PASS: bcrypt seeded password
+PASS: no plaintext password
+14 checks passed. Driver: mysql

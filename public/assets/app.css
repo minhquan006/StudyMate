@@ -6,3 +6,12 @@
 /* Native quiz radios: show the selected answer without JavaScript. */
 .answer-option:has(input:checked){border-color:var(--primary);background:#f6f4ff}
 .answer-option:focus-within{outline:3px solid #9087fb;outline-offset:2px}
+/* Keep long user content within grids; tables scroll inside their own panel. */
+.container,.panel,.content-editor-grid>*,.form-grid>*,.course-card,.stat{min-width:0}
+body{overflow-wrap:anywhere}.table-responsive{max-width:100%;overflow-x:auto}
+.table-responsive .table{min-width:550px}.pager{flex-wrap:wrap}.pager span{max-width:100%}
+.nav-links>a,.lesson-link{min-height:44px;display:inline-flex;align-items:center}
+.nav-links>a{padding-top:10px;padding-bottom:10px}.tabs a{min-height:44px}
+.correct-radio,.confirmation-label{min-height:44px;display:flex;align-items:center}
+.quiz-builder-option .form-control{min-width:0}.quiz-builder-option{gap:10px}
+.alert[role="alert"]{overflow-wrap:anywhere}

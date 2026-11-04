@@ -1,0 +1,25 @@
+PASS no user email in provider payload
+PASS offline ask transport
+PASS no user email in provider payload
+PASS offline summarize transport
+PASS 1001 Unicode characters rejected
+PASS invalid mode rejected
+PASS invalid input never calls provider
+PASS missing key 503
+PASS provider rejects key
+PASS provider quota
+PASS network failure
+PASS network timeout
+PASS empty response
+PASS malformed provider JSON
+PASS malformed parts
+PASS quota ai:user:1:m:29884076
+PASS quota rejection does not reserve other counters
+PASS quota ai:app:m:29884076
+PASS quota rejection does not reserve other counters
+PASS quota ai:user:1:d:2026-10-27
+PASS quota rejection does not reserve other counters
+PASS quota ai:app:d:2026-10-27
+PASS quota rejection does not reserve other counters
+PASS global quota blocks a different user too
+24 offline AI contract checks passed. Real Gemini: NOT RUN.

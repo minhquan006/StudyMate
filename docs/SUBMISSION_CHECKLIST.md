@@ -1,38 +1,30 @@
-# Checklist nộp frontend PHP tối 12/10/2026
+# Checklist gói nghiệm thu cuối StudyMate
 
-Hạn hệ thống: 00:00 ngày 13/10. Mục tiêu upload trước 23:00 ngày 12/10. Website mới dựng giao diện bằng PHP thật, có PDO và session. PDF cần ảnh bao gồm thanh địa chỉ browser thật, không chỉ caption URL.
+Checklist cũ cho mốc frontend 12/10 được lưu tại `archive/SUBMISSION_CHECKLIST_2026-10-12.md`; không dùng hạn cũ đó làm hạn nộp bản cuối. Hạn chính thức phải do Quân xác minh với giảng viên.
 
-## Chạy và kiểm tra
+## Đã chuẩn bị kỹ thuật
 
-Theo README: vào StudyMate_PHP, tạo config.php, chọn SQLite cho chạy nhanh hoặc MySQL nếu đã có, setup, chạy `php -S localhost:8000 -t public`. Không dùng npm hoặc bản React cũ.
+- [x] Nhánh `codex/tu-final-acceptance`, PR #13 do Tú tạo; main còn chờ review/merge.
+- [x] Docker/MySQL, DB test riêng và kiểm chạy lại; 14 service checks MySQL và SQLite.
+- [x] 84 ca HTTP tích hợp, gồm gửi đồng thời, chống trùng và rollback khi lỗi.
+- [x] Phân trang/tổng số/truy vấn tổng hợp; bộ dữ liệu hiệu năng 100/500/100.
+- [x] 235 kiểm tra Chromium; thêm 235 Google Chrome và 235 Microsoft Edge thật tự động.
+- [x] 24 kiểm tra AI mô phỏng; AI disabled không chặn học/quiz.
+- [x] Backup/restore cả 12 bảng, có bằng chứng cloud và ảnh SHA256 khớp trên máy Tú.
+- [x] Hướng dẫn tiếng Việt, mô tả PR, SRS/Specification, báo cáo và kịch bản demo.
 
-| Màn hình | URL sau localhost:8000 | Vai trò |
-|---|---|---|
-| Home | /index.php?page=home | Khách |
-| Catalog | /index.php?page=courses | Khách |
-| Chi tiết HTML | /index.php?page=detail&id=1 | Khách/Student |
-| Login/Register | /index.php?page=login hoặc register | Khách |
-| Dashboard | /index.php?page=student | Student |
-| Learning JavaScript | /index.php?page=learn&id=2 | Student đã tham gia |
-| Quiz JavaScript | /index.php?page=quiz&id=2 | Student học đủ bài |
-| Result | URL thực được chuyển tới sau nộp | Student owner |
-| Profile | /index.php?page=profile | Có phiên |
-| Instructor | /index.php?page=instructor | Instructor |
-| Editor CSDL | /index.php?page=edit&id=3&tab=info/content/quiz/students | Owner Instructor |
-| Admin | /index.php?page=admin&tab=users/courses/categories | Admin |
+## Điều kiện chưa thể tự đánh dấu
 
-Tab trong bảng là các giá trị thay thế; không nhập nguyên `info/content/...` vào URL.
+- [ ] Quân/An review theo ownership và duyệt; merge main, ghi SHA cuối rồi chạy lại phần liên quan.
+- [ ] An trực tiếp cài độc lập và review trực quan, bàn phím, lỗi/empty trên máy nhóm.
+- [ ] Quân cung cấp khóa Gemini riêng, xác nhận free tier và kiểm ask/summarize/provider/quota thật.
+- [ ] Quân xác minh rubric, hạn nộp, cách nộp và quy định Git/video/AI (xem course-rules.md).
+- [ ] Cả ba nghiệm thu cùng SHA đã merge và tự trình bày trong video 1080p.
+- [ ] Nếu môn yêu cầu, chụp ảnh trình duyệt có thanh địa chỉ thật, không ghép URL.
+- [ ] Bổ sung minh chứng Git thật, kiểm ZIP cuối, nộp và xác nhận Submitted.
 
-## Tạo PDF đúng yêu cầu
+## Kiểm gói trước nộp
 
-1. Mở Chrome/Edge với thanh địa chỉ nhìn thấy, không fullscreen.
-2. Mac dùng Command+Shift+4, chọn vùng chứa thanh địa chỉ và nội dung trang. Windows dùng Snipping Tool. Không chụp tab cá nhân hoặc key.
-3. Chụp từng màn hình đã chạy thật. Với quiz/result phải hoàn thành bài và nộp thật; không ghép điểm bằng ảnh.
-4. Đưa ảnh vào Word: tên màn hình, ảnh, mô tả ngắn. Export PDF, kiểm chữ và URL đọc được.
-5. Ghi chế độ DB thực tế (SQLite local hoặc MySQL), AI chưa cấu hình nếu chưa có key. Không coi thông báo 503 là đã nghiệm thu AI.
-6. PDF preview đi kèm không có browser toolbar, không thay ảnh tự chụp.
-7. Upload trước 23:00 và kiểm trạng thái Submitted. Không tự nhận đạt 70% khi chưa đối chiếu cách chấm của thầy.
+Source phải có README/Readme.txt, app, public, database/schema.php, database/schema.mysql.sql, seed, Dockerfile/compose, docs/tests/tools. Không chứa `.env`, config.php local, khóa API, DB/session hoặc backup SQL cá nhân. `docker/config.php` là cấu hình Docker dùng biến môi trường, phải giữ.
 
-## Phân công giữ nguyên
-
-An kiểm public/Student/CSS; Quân kiểm Instructor/Admin và PDF/upload; Tú kiểm PHP/PDO/session/CSDL/runtime. Mỗi người hiểu code của mình và ghi đúng đóng góp thực tế trên GitHub.
+ZIP hiện tạo là ứng viên source để review, không mặc nhiên là gói bài nộp đủ video/rubric. Mở kiểm ZIP sau lần đóng gói cuối. Không dùng kết quả hoặc video của commit cũ nếu code liên quan đã thay đổi.

@@ -5,7 +5,7 @@ const base=process.env.QA_BASE_URL||'http://127.0.0.1:8085';
 if(process.env.QA_ALLOW_WRITES!=='1'||!['127.0.0.1','localhost'].includes(new URL(base).hostname))throw Error('Require QA_ALLOW_WRITES=1 and a disposable seeded loopback app.');
 const out=process.env.QA_OUTPUT||'/tmp/studymate-form-feedback';fs.mkdirSync(out,{recursive:true});
 const files=['app/layout.php','public/assets/app.css','public/assets/forms.js'];
-const report={caseSet:process.env.QA_CASE_SET||'original',sourceHead:process.env.QA_SOURCE_SHA||'8e05dfb4898470d9929b12b1e58eb046d9fc1a5b',os:require('node:os').type()+' '+require('node:os').release(),started:new Date().toISOString(),baseCommit:process.env.QA_BASE_SHA||'d21f08e95585286df1a77be4815e3d44d120ee5b',sourceFilesSha256:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')])),checks:[],browsers:{},errors:[]};
+const report={caseSet:process.env.QA_CASE_SET||'original',sourceHead:process.env.QA_SOURCE_SHA||'01245b4f4e2902a1769d26623e1ce50ac6547fcd',sourceLabel:process.env.QA_SOURCE_LABEL||'01245b4 + working changes; see source fingerprints',os:require('node:os').type()+' '+require('node:os').release(),started:new Date().toISOString(),baseCommit:process.env.QA_BASE_SHA||'d21f08e95585286df1a77be4815e3d44d120ee5b',sourceFilesSha256:Object.fromEntries(files.map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')])),checks:[],browsers:{},errors:[]};
 const browsers=JSON.parse(process.env.QA_BROWSERS||'[{"name":"chromium","path":"/usr/bin/chromium"}]');
 (async()=>{try{for(const engine of browsers){
  const b=await chromium.launch({executablePath:engine.path,headless:true,args:['--no-sandbox']});report.browsers[engine.name]=b.version();
@@ -15,7 +15,7 @@ const browsers=JSON.parse(process.env.QA_BROWSERS||'[{"name":"chromium","path":"
  const form=a=>p.locator(`form:has(input[name=action][value="${a}"])`);
  const submit=async a=>Promise.all([p.waitForNavigation(),form(a).locator('button').last().click()]);
  try{
- if(process.env.QA_CASE_SET==='review'){await reviewCases({b,p,pass,go,form,submit,base});}else{
+ if(process.env.QA_CASE_SET==='quiz-exit'){await quizExitCases({b,p,pass,go,form,submit,base});}else if(process.env.QA_CASE_SET==='review'){await reviewCases({b,p,pass,go,form,submit,base});}else{
  await go('register');await form('register').locator('button').click();assert.equal(await form('register').getAttribute('aria-busy'),null);pass('native required validation does not set pending');
  const email=`forms-${engine.name}-${Date.now()}@example.test`;const password=process.env.QA_DEMO_PASSWORD||'StudyMate2026!';
  await p.getByLabel('Họ và tên',{exact:true}).fill('An Forms QA');await p.getByLabel('Email',{exact:true}).fill(email);await p.getByLabel('Mật khẩu',{exact:true}).fill(password);await p.getByLabel('Xác nhận mật khẩu',{exact:true}).fill(password);await submit('register');assert.match(p.url(),/page=student/);pass('native registration posts and redirects');
@@ -75,4 +75,32 @@ async function reviewCases({b,p,pass,go,form,submit,base}) {
   else{await np.goto(base+'/index.php?page=admin&tab=categories');const nf=np.locator('form:has(input[name=action][value=category_save]):not(:has(input[name=category_id]))');const value=cat+' NoJS';await nf.locator('[name=name]').fill(value);await Promise.all([np.waitForNavigation(),nf.locator('[name=name]').press('Enter')]);assert.equal(await np.locator('input[name=name]').evaluateAll((es,v)=>es.filter(e=>e.value===v).length,value),1);}
   await nc.close();pass('Không JavaScript: '+role,'Login và gửi form quản trị/biên soạn vẫn hoạt động','Đã login và xác minh thay đổi server trả lại');
  }
+}
+
+// Regression for cancelling logout while quiz answers are unsent.
+async function quizExitCases({b,p,pass,go,form,submit,base}) {
+ const password=process.env.QA_DEMO_PASSWORD||'StudyMate2026!';
+ const email='quiz-exit-'+Date.now()+'@example.test';
+ await go('register');await p.getByLabel('Họ và tên',{exact:true}).fill('An Quiz Exit QA');await p.getByLabel('Email',{exact:true}).fill(email);await p.getByLabel('Mật khẩu',{exact:true}).fill(password);await p.getByLabel('Xác nhận mật khẩu',{exact:true}).fill(password);await submit('register');await go('detail&id=1');await submit('enroll');
+ const lessons=await p.locator('form:has(input[value=last_lesson]) [name=lesson_id]').evaluateAll(es=>es.map(e=>e.value));assert.equal(lessons.length,6);
+ for(const id of lessons){await go('learn&id=1&lesson='+id);await submit('complete');}
+ let logoutPosts=0,quizPosts=0,lastLogout;
+ p.on('request',r=>{if(r.method()!=='POST')return;const fields=new URLSearchParams(r.postData());if(fields.get('action')==='logout'){logoutPosts++;lastLogout={action:fields.get('action'),csrfPresent:!!fields.get('csrf')};}if(fields.get('action')==='submit_quiz')quizPosts++;});
+ await go('quiz&id=1');const radio=()=>p.locator('.question input[type=radio]').first();await radio().check();
+ async function cancelLogout(keyboard=false){
+  const before=logoutPosts;const event=p.waitForEvent('dialog',{timeout:5000});const button=form('logout').locator('button');
+  const click=(keyboard?button.press('Enter',{noWaitAfter:true,timeout:2500}):button.click({noWaitAfter:true,timeout:2500})).catch(()=>null);
+  const dialog=await event;assert.equal(dialog.type(),'confirm');await dialog.dismiss();await click;
+  assert(await radio().isChecked());assert.equal(await form('logout').getAttribute('aria-busy'),null);assert.equal(await form('logout').getByRole('status').count(),0);assert.equal(logoutPosts,before);
+ }
+ await cancelLogout();pass('Logout rồi ở lại không kẹt pending','Giữ đáp án; pending/status trống; chưa gửi POST','Đáp án còn; aria-busy không có; status=0; logout POST=0');
+ await cancelLogout(true);pass('Logout lại bằng Enter vẫn cho phép hủy','Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form','Có confirm lần hai; không pending; logout POST=0');
+ let event=p.waitForEvent('dialog',{timeout:5000});let action=p.reload({timeout:2500}).catch(()=>null);let dialog=await event;assert.equal(dialog.type(),'beforeunload');await dialog.dismiss();await action;assert(await radio().isChecked());pass('Refresh sau khi hủy logout vẫn cảnh báo','Không mất bảo vệ quiz sau khi hủy form khác','beforeunload; ở lại giữ đáp án');
+ event=p.waitForEvent('dialog',{timeout:5000});action=p.locator('a[href*="page=learn"]').first().click({noWaitAfter:true,timeout:2500}).catch(()=>null);dialog=await event;assert.equal(dialog.type(),'beforeunload');await dialog.dismiss();await action;assert(await radio().isChecked());pass('Liên kết rời quiz sau khi hủy vẫn cảnh báo','Hủy rời bằng liên kết giữ đáp án','beforeunload; ở lại giữ đáp án');
+ const dialogs=[];const approve=async d=>{dialogs.push(d.type());await d.accept();};p.on('dialog',approve);await Promise.all([p.waitForNavigation(),form('logout').locator('button').dblclick({noWaitAfter:true})]);p.off('dialog',approve);
+ assert.deepEqual(dialogs,['confirm']);assert.equal(logoutPosts,1);assert.deepEqual(lastLogout,{action:'logout',csrfPresent:true});const unauthorized=await go('student');assert.equal(unauthorized.status(),401);pass('Logout sau hủy: xác nhận và nhấp đúp','Một confirm, đúng một POST có CSRF và đăng xuất thật','confirm=1; logout POST=1; CSRF có; Student=401');
+ await go('login');await p.getByLabel('Email',{exact:true}).fill(email);await p.getByLabel('Mật khẩu',{exact:true}).fill(password);await submit('login');await go('quiz&id=1');await radio().check();await cancelLogout();
+ const wrongDialogs=[];const dismiss=async d=>{wrongDialogs.push(d.type());await d.dismiss();};p.on('dialog',dismiss);await form('submit_quiz').locator('[name=confirm]').check();await Promise.all([p.waitForNavigation(),form('submit_quiz').locator('button').dblclick({noWaitAfter:true})]);p.off('dialog',dismiss);assert.equal(wrongDialogs.length,0);assert.equal(quizPosts,1);assert.match(p.url(),/page=result/);assert.equal(await p.locator('.review-question').count(),5);pass('Sau hủy logout vẫn nộp quiz hợp lệ','Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả','dialog=0; quiz POST=1; trang result có 5 câu');
+ await go('quiz&id=1');const cleanDialogs=[];const clean=async d=>{cleanDialogs.push(d.type());await d.dismiss();};p.on('dialog',clean);await submit('logout');p.off('dialog',clean);assert.equal(cleanDialogs.length,0);assert.equal(logoutPosts,2);pass('Quiz chưa đổi đáp án không hỏi logout','Không có confirm khi không có lựa chọn chưa nộp','dialog=0; thêm đúng một POST logout');
+ const nc=await b.newContext({javaScriptEnabled:false});const np=await nc.newPage();try{await np.goto(base+'/index.php?page=login');await np.locator('[name=email]').fill(email);await np.locator('[name=password]').fill(password);await Promise.all([np.waitForNavigation(),np.locator('form:has(input[value=login]) button').click()]);await np.goto(base+'/index.php?page=quiz&id=1');await np.locator('.question input[type=radio]').first().check();let sent=0;np.on('request',r=>{if(r.method()==='POST'&&new URLSearchParams(r.postData()).get('action')==='logout')sent++;});await Promise.all([np.waitForNavigation(),np.locator('form:has(input[value=logout]) button').click()]);assert.equal(sent,1);const r=await np.goto(base+'/index.php?page=student');assert.equal(r.status(),401);pass('Tắt JavaScript: logout vẫn hoạt động','Native form đăng xuất bằng một POST','logout POST=1; Student=401');}finally{await nc.close();}
 }

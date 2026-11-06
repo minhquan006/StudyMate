@@ -107,3 +107,53 @@ Không commit/push trong đợt này. An tự review và commit; Quân review tr
 Quan sát GitHub ngày 05/11: #15 head d21f08e, base tu/nghiem-thu-thu-cong; #16 head 8e05dfb, base feat/an-ui-acceptance; main 6e64cba đã nhận #14. Diff dự kiến #15 sang main đã được đọc; không sửa lại conflict hoặc bằng chứng nguồn/SHA cũ. API GitHub của cloud trả 403 Forbidden nên thao tác đổi base chưa thực hiện từ cloud.
 
 Đổi #15 sang main trước, báo Quân kiểm diff/review. **Chỉ sau #15 merge mới đổi base #16 sang main**; giữ nhánh nền feat/an-ui-acceptance cho tới lúc đó. Bản cập nhật này chỉ đổi runner, báo cáo và trường bằng chứng bổ sung trong file JSON đã có của #16, nên PR vẫn gồm sáu file và không đổi mã ứng dụng.
+
+
+## Sửa lỗi hủy logout từ quiz — 06/11/2026
+
+### Lỗi và thay đổi
+
+Theo review `pullrequestreview-5783216138`, đã tái hiện trên mã ứng dụng đúng head `01245b4f4e2902a1769d26623e1ce50ac6547fcd`: chọn đáp án, logout, hủy beforeunload; logout còn pending/status, lần bấm sau bị chặn, số POST bằng 0. Đây là lỗi thật, không phải kết luận từ bộ ca 22/34 cũ.
+
+Bản sửa chỉ thay `public/assets/forms.js` trong phần ứng dụng:
+
+- Khi quiz có lựa chọn chưa nộp và gửi một form khác (logout), dùng xác nhận đồng bộ **trước khi** thêm form vào pending.
+- Hủy: preventDefault và trả về ngay, không pending/status, không gửi POST, giữ đáp án.
+- Đồng ý: ghi nhận form đã được xác nhận, sau đó mới khóa pending; beforeunload không hỏi thêm lần nữa cho chính form đó.
+- Giữ kiểm tra pending trước xác nhận để ngăn gửi đúp. Không disable control nên named submitter/CSRF được giữ.
+- pageshow xóa pending và trạng thái form đã xác nhận; không dùng timer mở khóa vô điều kiện.
+- Rời quiz bằng link/refresh vẫn dùng cảnh báo beforeunload; nộp quiz hợp lệ vẫn không cảnh báo nhầm. JavaScript tắt thì native PHP forms vẫn chạy.
+
+### Source và môi trường của lượt mới
+
+- Codex kiểm trên Linux cloud, PHP 8.3.36, MySQL 8.4.13, project/DB/storage QA riêng; không phải An tự thao tác Windows.
+- Baseline: source ứng dụng tại `01245b4`. Candidate: `01245b4` **cộng sửa forms.js chưa commit**; fingerprint file trong `bugfixReviews[].fixedCandidate.sourceFilesSha256` xác định đúng nội dung đã chạy, không gán SHA mới khi chưa có commit.
+- Chrome 156.0.8078.79 và Edge 156.0.4314.58 bản chính hãng, headless. OS: Linux 6.18.57.
+- Thời gian UTC: 2026-11-06T04:07:10.622Z → 2026-11-06T04:07:23.216Z.
+- Chỉ chạy `QA_CASE_SET=quiz-exit`, không chạy lại toàn bộ suite/project. Kết quả 22 nhóm gốc và 34 ca bổ sung cũ giữ nguyên các trường/nguồn/SHA; lượt mới nằm riêng trong `bugfixReviews`.
+- **16 ca đạt, 8 mỗi browser; 0 JavaScript page error.** Baseline trước sửa tái hiện được lỗi trên Chrome, không tính baseline đó thành ca ứng dụng đạt.
+
+| Browser | Ca kiểm tra | Mong đợi | Thực tế |
+|---|---|---|---|
+| chrome | Logout rồi ở lại không kẹt pending | Giữ đáp án; pending/status trống; chưa gửi POST | Đáp án còn; aria-busy không có; status=0; logout POST=0 |
+| chrome | Logout lại bằng Enter vẫn cho phép hủy | Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form | Có confirm lần hai; không pending; logout POST=0 |
+| chrome | Refresh sau khi hủy logout vẫn cảnh báo | Không mất bảo vệ quiz sau khi hủy form khác | beforeunload; ở lại giữ đáp án |
+| chrome | Liên kết rời quiz sau khi hủy vẫn cảnh báo | Hủy rời bằng liên kết giữ đáp án | beforeunload; ở lại giữ đáp án |
+| chrome | Logout sau hủy: xác nhận và nhấp đúp | Một confirm, đúng một POST có CSRF và đăng xuất thật | confirm=1; logout POST=1; CSRF có; Student=401 |
+| chrome | Sau hủy logout vẫn nộp quiz hợp lệ | Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả | dialog=0; quiz POST=1; trang result có 5 câu |
+| chrome | Quiz chưa đổi đáp án không hỏi logout | Không có confirm khi không có lựa chọn chưa nộp | dialog=0; thêm đúng một POST logout |
+| chrome | Tắt JavaScript: logout vẫn hoạt động | Native form đăng xuất bằng một POST | logout POST=1; Student=401 |
+| edge | Logout rồi ở lại không kẹt pending | Giữ đáp án; pending/status trống; chưa gửi POST | Đáp án còn; aria-busy không có; status=0; logout POST=0 |
+| edge | Logout lại bằng Enter vẫn cho phép hủy | Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form | Có confirm lần hai; không pending; logout POST=0 |
+| edge | Refresh sau khi hủy logout vẫn cảnh báo | Không mất bảo vệ quiz sau khi hủy form khác | beforeunload; ở lại giữ đáp án |
+| edge | Liên kết rời quiz sau khi hủy vẫn cảnh báo | Hủy rời bằng liên kết giữ đáp án | beforeunload; ở lại giữ đáp án |
+| edge | Logout sau hủy: xác nhận và nhấp đúp | Một confirm, đúng một POST có CSRF và đăng xuất thật | confirm=1; logout POST=1; CSRF có; Student=401 |
+| edge | Sau hủy logout vẫn nộp quiz hợp lệ | Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả | dialog=0; quiz POST=1; trang result có 5 câu |
+| edge | Quiz chưa đổi đáp án không hỏi logout | Không có confirm khi không có lựa chọn chưa nộp | dialog=0; thêm đúng một POST logout |
+| edge | Tắt JavaScript: logout vẫn hoạt động | Native form đăng xuất bằng một POST | logout POST=1; Student=401 |
+
+### Chạy lại và bàn giao
+
+Thêm `QA_CASE_SET=quiz-exit` vào lệnh chạy `tests/form-feedback.cjs`; dùng DB seed riêng dùng một lần vì runner tạo tài khoản/tiến độ/attempt. Đặt `QA_SOURCE_SHA` theo nguồn mã thực sự chạy và `QA_SOURCE_LABEL` nếu kiểm candidate chưa commit. Không biến các kết quả cũ thành lượt chạy trên SHA mới.
+
+Bản vá sửa bốn file đã có trong PR16: forms.js, runner, báo cáo này và JSON evidence. Tổng diff của PR16 vẫn sáu file. Không sửa PHP service/action, schema, CSRF hoặc logic quiz/AI. Chưa commit/push từ cloud; An tự commit/push rồi gửi SHA mới để Tú/Quân review lại phần bị ảnh hưởng. Không tự merge hoặc đánh dấu toàn bộ A1–A5 hoàn tất. Kiểm thủ công Windows và các điều kiện nghiệm thu nhóm vẫn ghi riêng.

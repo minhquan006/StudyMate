@@ -2,6 +2,7 @@
 (() => {
   let quizChanged = false;
   const pending = new Set();
+  let approvedExitForm = null;
   const quiz = document.querySelector('input[name="action"][value="submit_quiz"]')?.form;
 
   quiz?.addEventListener('change', (event) => {
@@ -9,7 +10,8 @@
   });
 
   window.addEventListener('beforeunload', (event) => {
-    if (!quizChanged || (quiz && pending.has(quiz))) return;
+    if (!quizChanged || (quiz && pending.has(quiz)) ||
+        (approvedExitForm && pending.has(approvedExitForm))) return;
     event.preventDefault();
     event.returnValue = '';
   });
@@ -20,6 +22,15 @@
     if (pending.has(form)) {
       event.preventDefault();
       return;
+    }
+    // Confirm before locking a different form: cancelling beforeunload does
+    // not trigger pageshow, so a pending logout would otherwise stay locked.
+    if (quizChanged && form !== quiz) {
+      if (!window.confirm('Bạn có đáp án quiz chưa nộp. Rời trang sẽ mất lựa chọn. Bạn có muốn tiếp tục?')) {
+        event.preventDefault();
+        return;
+      }
+      approvedExitForm = form;
     }
     pending.add(form);
     form.setAttribute('aria-busy', 'true');
@@ -38,5 +49,6 @@
       form.querySelector('.form-pending')?.remove();
     }
     pending.clear();
+    approvedExitForm = null;
   });
 })();

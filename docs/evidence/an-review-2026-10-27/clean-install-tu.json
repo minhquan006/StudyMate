@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-10-27T06:23:37.686437+00:00",
+  "sourceSha": "593141fa2a021d7f1744dc2e7e20fe16c31423ad",
+  "checkout": "/workspace/studymate-an-install-check",
+  "project": "studymate-an-tu593141f",
+  "freshConfig": true,
+  "freshMysqlVolume": true,
+  "usedSqlite": false,
+  "health": "ok",
+  "repeatSetup": "Database already exists; preserved",
+  "restart": "docker compose restart followed by health retry passed",
+  "beforeTableHashes": {
+    "users": "53292cd32da61b5b5fb0c7c707440ed5cb0e2b22097c24125f6107a77a2a476f",
+    "categories": "4028ecf62665d009ac44a2a49ea035b5a1537b556e68189959ab1bb1377413e2",
+    "courses": "96cba1742ca407ae185ee3a6af7c3a6ceb39015669ee056bb677a3dd95974219",
+    "chapters": "7318a46425f8c8a20c23e2eb9bfe03ae029ff902501b02feb32fafbdad5875af",
+    "lessons": "3dd83da0de649fdae036b4d0a4066897028ddea13a8504676afcb421712fbcd9",
+    "enrollments": "00e24a220ee15ce082dd288e49d5dc45fe4fb86c374f2ff7c3ceea38ea2d144a",
+    "lesson_progress": "b43d95783b4122ca5bd79d7b5e6f14fb63b225acbe9d59cc0e5ad8313bf9e165",
+    "quizzes": "522cf0817c7270b2bbc641da18184df07f8f2c1fdec3f0b2175ab9bd5e6f5861",
+    "questions": "62da02da947d94aa7ed053e03b8bf49da8f60f735278a6d1efc867a67f597e5a",
+    "answers": "d24a0d379a83d9da930d397922a590fa6b6e0f4fd1d4a98fc7fd9efd81ddb5df",
+    "quiz_attempts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "quiz_answers": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "afterTableHashes": {
+    "users": "53292cd32da61b5b5fb0c7c707440ed5cb0e2b22097c24125f6107a77a2a476f",
+    "categories": "4028ecf62665d009ac44a2a49ea035b5a1537b556e68189959ab1bb1377413e2",
+    "courses": "96cba1742ca407ae185ee3a6af7c3a6ceb39015669ee056bb677a3dd95974219",
+    "chapters": "7318a46425f8c8a20c23e2eb9bfe03ae029ff902501b02feb32fafbdad5875af",
+    "lessons": "3dd83da0de649fdae036b4d0a4066897028ddea13a8504676afcb421712fbcd9",
+    "enrollments": "00e24a220ee15ce082dd288e49d5dc45fe4fb86c374f2ff7c3ceea38ea2d144a",
+    "lesson_progress": "b43d95783b4122ca5bd79d7b5e6f14fb63b225acbe9d59cc0e5ad8313bf9e165",
+    "quizzes": "522cf0817c7270b2bbc641da18184df07f8f2c1fdec3f0b2175ab9bd5e6f5861",
+    "questions": "62da02da947d94aa7ed053e03b8bf49da8f60f735278a6d1efc867a67f597e5a",
+    "answers": "d24a0d379a83d9da930d397922a590fa6b6e0f4fd1d4a98fc7fd9efd81ddb5df",
+    "quiz_attempts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "quiz_answers": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "all12TableHashesEqual": true,
+  "environmentAdaptation": "BUILDX_CONFIG writable cache; existing proxy/credentials/TLS preserved",
+  "readmeGaps": [
+    "README names codex/tu-final-acceptance instead of current PR14 branch tu/nghiem-thu-thu-cong",
+    "DOCKER_CONFIG workaround would hide injected credentials; use BUILDX_CONFIG instead"
+  ],
+  "scope": "Independent automated cloud installation, not installation on An personal computer or joint human acceptance.",
+  "seedRoleLogins": ["Student passed", "Instructor passed", "Admin passed"]
+}

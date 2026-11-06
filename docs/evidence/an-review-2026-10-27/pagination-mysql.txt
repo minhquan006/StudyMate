@@ -1,0 +1,9 @@
+PASS: total covers all pages
+PASS: middle page
+PASS: clamp to last page
+PASS: last item removed clamps page
+PASS: empty filter safe page
+PASS: array page input safe
+PASS: negative page safe
+PASS: links preserve and escape filters
+8 pagination checks passed; driver mysql.

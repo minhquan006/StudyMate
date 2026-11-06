@@ -1,0 +1,544 @@
+{
+  "started": "2026-11-03T15:16:20.635Z",
+  "baseCommit": "d21f08e95585286df1a77be4815e3d44d120ee5b",
+  "sourceFilesSha256": {
+    "app/layout.php": "58711b480faa05fe89d7bc4f42a9f3244c3ff5a93274d2821fc66003efd1255a",
+    "public/assets/app.css": "3481aa38fe4938f3868022ea4eaa53a8280757502709ff10f66a13cd728ca021",
+    "public/assets/forms.js": "f7b024ac9577b1675e8a434834601e31297dae3bd02de09905e3a4a979db7881"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "native required validation does not set pending",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native registration posts and redirects",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pending status/style and duplicate event suppression preserve enabled controls",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "six lesson completion POSTs still work",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native keyboard quiz radio still works",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "refresh warns; cancelling keeps selected answer",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "intentional quiz submit has no leave warning and renders real result",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "logout still posts and invalidates private page",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native login works with JavaScript disabled",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native required validation does not set pending",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native registration posts and redirects",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "pending status/style and duplicate event suppression preserve enabled controls",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "six lesson completion POSTs still work",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native keyboard quiz radio still works",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "refresh warns; cancelling keeps selected answer",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "intentional quiz submit has no leave warning and renders real result",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "logout still posts and invalidates private page",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native login works with JavaScript disabled",
+      "status": "passed"
+    }
+  ],
+  "browsers": {
+    "chrome": "156.0.8078.79",
+    "edge": "156.0.4314.58"
+  },
+  "errors": [],
+  "finished": "2026-11-03T15:16:32.856Z",
+  "supplementalReviews": [
+    {
+      "caseSet": "review",
+      "sourceHead": "8e05dfb4898470d9929b12b1e58eb046d9fc1a5b",
+      "os": "Linux 6.18.57",
+      "started": "2026-11-05T09:28:40.078Z",
+      "baseCommit": "d21f08e95585286df1a77be4815e3d44d120ee5b",
+      "sourceFilesSha256": {
+        "app/layout.php": "58711b480faa05fe89d7bc4f42a9f3244c3ff5a93274d2821fc66003efd1255a",
+        "public/assets/app.css": "3481aa38fe4938f3868022ea4eaa53a8280757502709ff10f66a13cd728ca021",
+        "public/assets/forms.js": "f7b024ac9577b1675e8a434834601e31297dae3bd02de09905e3a4a979db7881"
+      },
+      "checks": [
+        {
+          "browser": "chrome",
+          "name": "Instructor: thiếu trường bắt buộc",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Instructor: title ngắn hơn minlength",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Instructor: gửi liên tiếp",
+          "expected": "Nhấp đúp gửi chỉ tạo một POST và một status",
+          "actual": "POST thực tế=1; status trong submit đầu=1; số submit event quan sát=2",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Instructor: Back và gửi lại",
+          "expected": "Quay lại form không kẹt pending và gửi hợp lệ được",
+          "actual": "aria-busy không có; server trả lại title mới",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Instructor: lỗi server và phục hồi",
+          "expected": "Publish chưa hợp lệ hiện lỗi; form tiếp tục gửi được",
+          "actual": "Có alert, không kẹt aria-busy; lưu title sau lỗi thành công",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Admin: thiếu tên danh mục",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Admin: tên danh mục quá ngắn",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Admin: lỗi trùng tên không kẹt pending",
+          "expected": "Server báo trùng và form mới không pending",
+          "actual": "Alert đã tồn tại; aria-busy không có",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Admin: gửi liên tiếp sau lỗi",
+          "expected": "Nhấp đúp gửi chỉ tạo một POST và một status",
+          "actual": "POST thực tế=1; status trong submit đầu=1; số submit event quan sát=2",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Admin: Back và gửi lại",
+          "expected": "Quay lại không pending, tạo danh mục mới được",
+          "actual": "Danh mục Back xuất hiện đúng một lần",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "AI: nút ask",
+          "expected": "Gửi đúng mode/action/CSRF; lỗi AI không kẹt form",
+          "actual": "mode=ask, action=ai, CSRF có; bài vẫn hiện; không pending",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "AI: nút summarize",
+          "expected": "Gửi đúng mode/action/CSRF; lỗi AI không kẹt form",
+          "actual": "mode=summarize, action=ai, CSRF có; bài vẫn hiện; không pending",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Quiz: rời bằng liên kết và ở lại",
+          "expected": "Có cảnh báo; ở lại giữ lựa chọn",
+          "actual": "beforeunload; radio vẫn checked",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Quiz: refresh và ở lại",
+          "expected": "Refresh cảnh báo; ở lại giữ lựa chọn",
+          "actual": "beforeunload; radio vẫn checked",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Quiz: nộp hợp lệ",
+          "expected": "Nộp đi tới kết quả, không cảnh báo rời nhầm",
+          "actual": "URL result; dialog=0",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Không JavaScript: instructor",
+          "expected": "Login và gửi form quản trị/biên soạn vẫn hoạt động",
+          "actual": "Đã login và xác minh thay đổi server trả lại",
+          "status": "passed"
+        },
+        {
+          "browser": "chrome",
+          "name": "Không JavaScript: admin",
+          "expected": "Login và gửi form quản trị/biên soạn vẫn hoạt động",
+          "actual": "Đã login và xác minh thay đổi server trả lại",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Instructor: thiếu trường bắt buộc",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Instructor: title ngắn hơn minlength",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Instructor: gửi liên tiếp",
+          "expected": "Nhấp đúp gửi chỉ tạo một POST và một status",
+          "actual": "POST thực tế=1; status trong submit đầu=1; số submit event quan sát=2",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Instructor: Back và gửi lại",
+          "expected": "Quay lại form không kẹt pending và gửi hợp lệ được",
+          "actual": "aria-busy không có; server trả lại title mới",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Instructor: lỗi server và phục hồi",
+          "expected": "Publish chưa hợp lệ hiện lỗi; form tiếp tục gửi được",
+          "actual": "Có alert, không kẹt aria-busy; lưu title sau lỗi thành công",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Admin: thiếu tên danh mục",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Admin: tên danh mục quá ngắn",
+          "expected": "Dữ liệu sai bị native validation chặn; không POST hoặc pending",
+          "actual": "POST=0; aria-busy không có; status=0",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Admin: lỗi trùng tên không kẹt pending",
+          "expected": "Server báo trùng và form mới không pending",
+          "actual": "Alert đã tồn tại; aria-busy không có",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Admin: gửi liên tiếp sau lỗi",
+          "expected": "Nhấp đúp gửi chỉ tạo một POST và một status",
+          "actual": "POST thực tế=1; status trong submit đầu=1; số submit event quan sát=2",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Admin: Back và gửi lại",
+          "expected": "Quay lại không pending, tạo danh mục mới được",
+          "actual": "Danh mục Back xuất hiện đúng một lần",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "AI: nút ask",
+          "expected": "Gửi đúng mode/action/CSRF; lỗi AI không kẹt form",
+          "actual": "mode=ask, action=ai, CSRF có; bài vẫn hiện; không pending",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "AI: nút summarize",
+          "expected": "Gửi đúng mode/action/CSRF; lỗi AI không kẹt form",
+          "actual": "mode=summarize, action=ai, CSRF có; bài vẫn hiện; không pending",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Quiz: rời bằng liên kết và ở lại",
+          "expected": "Có cảnh báo; ở lại giữ lựa chọn",
+          "actual": "beforeunload; radio vẫn checked",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Quiz: refresh và ở lại",
+          "expected": "Refresh cảnh báo; ở lại giữ lựa chọn",
+          "actual": "beforeunload; radio vẫn checked",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Quiz: nộp hợp lệ",
+          "expected": "Nộp đi tới kết quả, không cảnh báo rời nhầm",
+          "actual": "URL result; dialog=0",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Không JavaScript: instructor",
+          "expected": "Login và gửi form quản trị/biên soạn vẫn hoạt động",
+          "actual": "Đã login và xác minh thay đổi server trả lại",
+          "status": "passed"
+        },
+        {
+          "browser": "edge",
+          "name": "Không JavaScript: admin",
+          "expected": "Login và gửi form quản trị/biên soạn vẫn hoạt động",
+          "actual": "Đã login và xác minh thay đổi server trả lại",
+          "status": "passed"
+        }
+      ],
+      "browsers": {
+        "chrome": "156.0.8078.79",
+        "edge": "156.0.4314.58"
+      },
+      "errors": [],
+      "finished": "2026-11-05T09:29:13.186Z",
+      "runnerSha256": "a284a81b624f9b6745f4a0aea5bb15a0c812db2bb539767b955aa4885c664526",
+      "note": "Supplementary 2026-11-05 Linux review on immutable application head 8e05dfb. baseCommit denotes historical foundation d21f08e; sourceHead is the tested PR16 head. No Windows manual execution is claimed."
+    }
+  ],
+  "bugfixReviews": [
+    {
+      "review": "pullrequestreview-5783216138",
+      "date": "2026-11-06",
+      "baseline": {
+        "checkedAt": "2026-11-06T04:05:26.538Z",
+        "applicationHead": "01245b4f4e2902a1769d26623e1ce50ac6547fcd",
+        "browser": "Google Chrome 156.0.8078.79",
+        "os": "Linux",
+        "bugReproduced": true,
+        "dialog": "beforeunload cancelled",
+        "logoutPosts": 0,
+        "pendingAfterCancel": true,
+        "answerPreserved": true,
+        "secondAttemptBlocked": true
+      },
+      "fixedCandidate": {
+        "caseSet": "quiz-exit",
+        "sourceHead": "01245b4f4e2902a1769d26623e1ce50ac6547fcd",
+        "sourceLabel": "01245b4 plus uncommitted forms.js fix",
+        "os": "Linux 6.18.57",
+        "started": "2026-11-06T04:07:10.622Z",
+        "baseCommit": "01245b4f4e2902a1769d26623e1ce50ac6547fcd",
+        "sourceFilesSha256": {
+          "app/layout.php": "58711b480faa05fe89d7bc4f42a9f3244c3ff5a93274d2821fc66003efd1255a",
+          "public/assets/app.css": "3481aa38fe4938f3868022ea4eaa53a8280757502709ff10f66a13cd728ca021",
+          "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005"
+        },
+        "checks": [
+          {
+            "browser": "chrome",
+            "name": "Logout rồi ở lại không kẹt pending",
+            "expected": "Giữ đáp án; pending/status trống; chưa gửi POST",
+            "actual": "Đáp án còn; aria-busy không có; status=0; logout POST=0",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Logout lại bằng Enter vẫn cho phép hủy",
+            "expected": "Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form",
+            "actual": "Có confirm lần hai; không pending; logout POST=0",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Refresh sau khi hủy logout vẫn cảnh báo",
+            "expected": "Không mất bảo vệ quiz sau khi hủy form khác",
+            "actual": "beforeunload; ở lại giữ đáp án",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Liên kết rời quiz sau khi hủy vẫn cảnh báo",
+            "expected": "Hủy rời bằng liên kết giữ đáp án",
+            "actual": "beforeunload; ở lại giữ đáp án",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Logout sau hủy: xác nhận và nhấp đúp",
+            "expected": "Một confirm, đúng một POST có CSRF và đăng xuất thật",
+            "actual": "confirm=1; logout POST=1; CSRF có; Student=401",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Sau hủy logout vẫn nộp quiz hợp lệ",
+            "expected": "Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả",
+            "actual": "dialog=0; quiz POST=1; trang result có 5 câu",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Quiz chưa đổi đáp án không hỏi logout",
+            "expected": "Không có confirm khi không có lựa chọn chưa nộp",
+            "actual": "dialog=0; thêm đúng một POST logout",
+            "status": "passed"
+          },
+          {
+            "browser": "chrome",
+            "name": "Tắt JavaScript: logout vẫn hoạt động",
+            "expected": "Native form đăng xuất bằng một POST",
+            "actual": "logout POST=1; Student=401",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Logout rồi ở lại không kẹt pending",
+            "expected": "Giữ đáp án; pending/status trống; chưa gửi POST",
+            "actual": "Đáp án còn; aria-busy không có; status=0; logout POST=0",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Logout lại bằng Enter vẫn cho phép hủy",
+            "expected": "Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form",
+            "actual": "Có confirm lần hai; không pending; logout POST=0",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Refresh sau khi hủy logout vẫn cảnh báo",
+            "expected": "Không mất bảo vệ quiz sau khi hủy form khác",
+            "actual": "beforeunload; ở lại giữ đáp án",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Liên kết rời quiz sau khi hủy vẫn cảnh báo",
+            "expected": "Hủy rời bằng liên kết giữ đáp án",
+            "actual": "beforeunload; ở lại giữ đáp án",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Logout sau hủy: xác nhận và nhấp đúp",
+            "expected": "Một confirm, đúng một POST có CSRF và đăng xuất thật",
+            "actual": "confirm=1; logout POST=1; CSRF có; Student=401",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Sau hủy logout vẫn nộp quiz hợp lệ",
+            "expected": "Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả",
+            "actual": "dialog=0; quiz POST=1; trang result có 5 câu",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Quiz chưa đổi đáp án không hỏi logout",
+            "expected": "Không có confirm khi không có lựa chọn chưa nộp",
+            "actual": "dialog=0; thêm đúng một POST logout",
+            "status": "passed"
+          },
+          {
+            "browser": "edge",
+            "name": "Tắt JavaScript: logout vẫn hoạt động",
+            "expected": "Native form đăng xuất bằng một POST",
+            "actual": "logout POST=1; Student=401",
+            "status": "passed"
+          }
+        ],
+        "browsers": {
+          "chrome": "156.0.8078.79",
+          "edge": "156.0.4314.58"
+        },
+        "errors": [],
+        "finished": "2026-11-06T04:07:23.216Z",
+        "runnerSha256": "ee361c619aba0dd6d1a7e84ebd7d452b736df18ec405a6b8c44366f838c4caf8",
+        "uncommittedApplicationChanges": [
+          "public/assets/forms.js"
+        ]
+      }
+    }
+  ]
+}

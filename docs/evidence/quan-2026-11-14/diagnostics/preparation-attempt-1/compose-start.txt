@@ -1,0 +1,16 @@
+ Network studymate-quan-form-5fm15e_default Creating 
+ Network studymate-quan-form-5fm15e_default Created 
+ Volume studymate-quan-form-5fm15e_mysql_data Creating 
+ Volume studymate-quan-form-5fm15e_mysql_data Created 
+ Volume studymate-quan-form-5fm15e_private_storage Creating 
+ Volume studymate-quan-form-5fm15e_private_storage Created 
+ Container studymate-quan-form-5fm15e-db-1 Creating 
+ Container studymate-quan-form-5fm15e-db-1 Created 
+ Container studymate-quan-form-5fm15e-app-1 Creating 
+ Container studymate-quan-form-5fm15e-app-1 Created 
+ Container studymate-quan-form-5fm15e-db-1 Starting 
+ Container studymate-quan-form-5fm15e-db-1 Started 
+ Container studymate-quan-form-5fm15e-db-1 Waiting 
+ Container studymate-quan-form-5fm15e-db-1 Healthy 
+ Container studymate-quan-form-5fm15e-app-1 Starting 
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/var/lib/docker/volumes/studymate-quan-form-5fm15e_private_storage/_data" to rootfs at "/var/www/html/storage": create mountpoint for /var/www/html/storage mount: make mountpoint "/var/www/html/storage": mkdirat /var/lib/docker/rootfs/overlayfs/b914db7120d27a3804af5783bbfbde3e7e471b3b1d0ba865a81c8e46740c0ce8/var/www/html/storage: read-only file system

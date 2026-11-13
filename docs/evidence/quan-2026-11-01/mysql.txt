@@ -1,0 +1,291 @@
+PASS: seed isolated mysql database
+PASS: setup repeat preserves data
+PASS: all PHP files lint
+PASS: 14 existing service checks
+PASS: question over 1000 characters
+PASS: blank question
+PASS: invalid mode
+PASS: invalid requests do not reach provider
+PASS: invalid requests do not consume quota
+PASS: server lesson context included
+PASS: no user email sent
+PASS: ask response
+PASS: server lesson context included
+PASS: no user email sent
+PASS: summarize response
+PASS: server lesson context included
+PASS: no user email sent
+PASS: server lesson context included
+PASS: no user email sent
+PASS: server lesson context included
+PASS: no user email sent
+PASS: sixth request in minute denied
+PASS: quota stops provider call
+PASS: quota ai:user:1:d:2026-11-01
+PASS: quota ai:app:d:2026-11-01
+PASS: quota ai:app:m:29891178
+PASS: disabled AI
+PASS: missing key
+PASS: invalid model
+PASS: provider error 0 / 0.01
+PASS: provider error 0 / 25
+PASS: provider error 504 / 0.1
+PASS: provider error 429 / 0.1
+PASS: provider error 400 / 0.1
+PASS: provider error 403 / 0.1
+PASS: provider error 500 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: thought parts excluded; truncated output supported
+PASS: provider failure still consumes quota
+PASS: failed provider call counted
+PASS: 12 parallel users admit exactly 5 shared reservations
+PASS: shared quota file remains valid and bounded
+42 AI checks passed (simulated transport; not live Gemini).
+PASS: AI mocked transport and concurrent quota suite
+PASS: AI rejects wrong role or missing enrollment
+PASS: unauthorized request never reaches provider
+PASS: AI rejects wrong role or missing enrollment
+PASS: unauthorized request never reaches provider
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login instructor1
+PASS: no PHP diagnostics: ?page=instructor
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login instructor2
+PASS: no PHP diagnostics: ?page=instructor
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login admin
+PASS: no PHP diagnostics: ?page=admin
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login student1
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: ?page=health
+PASS: HTTP health reaches database
+PASS: no PHP diagnostics: 
+PASS: CSRF course_save missing
+PASS: no PHP diagnostics: 
+PASS: CSRF course_save invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF course_state missing
+PASS: no PHP diagnostics: 
+PASS: CSRF course_state invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF course_delete missing
+PASS: no PHP diagnostics: 
+PASS: CSRF course_delete invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF chapter_save missing
+PASS: no PHP diagnostics: 
+PASS: CSRF chapter_save invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF chapter_delete missing
+PASS: no PHP diagnostics: 
+PASS: CSRF chapter_delete invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF lesson_save missing
+PASS: no PHP diagnostics: 
+PASS: CSRF lesson_save invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF lesson_delete missing
+PASS: no PHP diagnostics: 
+PASS: CSRF lesson_delete invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF quiz_save missing
+PASS: no PHP diagnostics: 
+PASS: CSRF quiz_save invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF user_status missing
+PASS: no PHP diagnostics: 
+PASS: CSRF user_status invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF category_save missing
+PASS: no PHP diagnostics: 
+PASS: CSRF category_save invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF category_delete missing
+PASS: no PHP diagnostics: 
+PASS: CSRF category_delete invalid
+PASS: no PHP diagnostics: 
+PASS: CSRF ai missing
+PASS: no PHP diagnostics: 
+PASS: CSRF ai invalid
+PASS: CSRF failures leave all DB tables unchanged
+PASS: no PHP diagnostics: 
+PASS: enrolled course blocks chapter_delete
+PASS: no PHP diagnostics: 
+PASS: enrolled course blocks lesson_delete
+PASS: no PHP diagnostics: 
+PASS: enrolled course blocks lesson_save
+PASS: no PHP diagnostics: 
+PASS: enrolled course blocks chapter_save
+PASS: no PHP diagnostics: 
+PASS: enrolled course blocks quiz_save
+PASS: closed structure rejects preserve all data
+PASS: no PHP diagnostics: 
+PASS: wrong owner chapter deletion
+PASS: no PHP diagnostics: 
+PASS: wrong owner quiz mutation
+PASS: no PHP diagnostics: 
+PASS: wrong role chapter deletion
+PASS: no PHP diagnostics: 
+PASS: wrong role quiz mutation
+PASS: no PHP diagnostics: 
+PASS: foreign lesson ID
+PASS: no PHP diagnostics: 
+PASS: foreign chapter ID
+PASS: forged identifiers and roles preserve all data
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: course_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: course_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: course_state
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: course_state
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: course_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: course_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: chapter_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: chapter_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: chapter_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: chapter_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: lesson_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: lesson_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: lesson_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: lesson_delete
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject foreign owner: quiz_save
+PASS: no PHP diagnostics: 
+PASS: all Instructor handlers reject Student: quiz_save
+PASS: no PHP diagnostics: 
+PASS: Admin handler rejects Instructor: user_status
+PASS: no PHP diagnostics: 
+PASS: Admin handler rejects Instructor: category_save
+PASS: no PHP diagnostics: 
+PASS: Admin handler rejects Instructor: category_delete
+PASS: authorization matrix preserves all tables
+PASS: no PHP diagnostics: 
+PASS: published without enrollment blocks structure
+PASS: no PHP diagnostics: 
+PASS: published without enrollment blocks quiz
+PASS: published rejects preserve data
+PASS: no PHP diagnostics: 
+PASS: published allows chapter title edit
+PASS: no PHP diagnostics: 
+PASS: archived without enrollment blocks structure
+PASS: no PHP diagnostics: 
+PASS: archived without enrollment blocks quiz
+PASS: archived rejects preserve data
+PASS: no PHP diagnostics: 
+PASS: archived allows chapter title edit
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 1
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 2
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 3
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 4
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 5
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 6
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 7
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 8
+PASS: no PHP diagnostics: 
+PASS: invalid quiz boundary 9
+PASS: invalid quiz payloads are atomic
+PASS: no PHP diagnostics: 
+PASS: maximum allowed quiz lengths accepted
+PASS: no PHP diagnostics: 
+PASS: Admin cannot lock Admin
+PASS: no PHP diagnostics: 
+PASS: invalid active state is not coerced to locked
+PASS: no PHP diagnostics: 
+PASS: update absent category returns404
+PASS: invalid Admin edits preserve DB
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login student2
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login student2
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: 
+PASS: lock Student2
+PASS: no PHP diagnostics: 
+PASS: unlock Student2
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: ?page=student
+PASS: both old sessions revoked after lock/unlock
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login student2
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: ?page=instructor
+PASS: no PHP diagnostics: ?page=instructor&p=2
+PASS: bounded pagination ?page=instructor
+PASS: non-overlapping pages ?page=instructor
+PASS: navigation ?page=instructor
+PASS: no PHP diagnostics: ?page=admin&tab=users
+PASS: no PHP diagnostics: ?page=admin&tab=users&p=2
+PASS: bounded pagination ?page=admin&tab=users
+PASS: non-overlapping pages ?page=admin&tab=users
+PASS: navigation ?page=admin&tab=users
+PASS: no PHP diagnostics: ?page=admin&tab=courses
+PASS: no PHP diagnostics: ?page=admin&tab=courses&p=2
+PASS: bounded pagination ?page=admin&tab=courses
+PASS: non-overlapping pages ?page=admin&tab=courses
+PASS: navigation ?page=admin&tab=courses
+PASS: no PHP diagnostics: ?page=admin&tab=categories
+PASS: no PHP diagnostics: ?page=admin&tab=categories&p=2
+PASS: bounded pagination ?page=admin&tab=categories
+PASS: non-overlapping pages ?page=admin&tab=categories
+PASS: navigation ?page=admin&tab=categories
+PASS: no PHP diagnostics: ?page=edit&id=2&tab=students
+PASS: no PHP diagnostics: ?page=edit&id=2&tab=students&p=2
+PASS: bounded pagination ?page=edit&id=2&tab=students
+PASS: non-overlapping pages ?page=edit&id=2&tab=students
+PASS: navigation ?page=edit&id=2&tab=students
+PASS: no PHP diagnostics: ?page=admin&tab=users&q=page&per_page=5
+PASS: filtered users first page
+PASS: pager preserves search and size
+PASS: no PHP diagnostics: ?page=admin&tab=users&q=does-not-exist
+PASS: empty search has valid page
+PASS: no PHP diagnostics: ?page=admin&tab=users&p=-1&per_page=0
+PASS: invalid page inputs bounded &p=-1&per_page=0
+PASS: no PHP diagnostics: ?page=admin&tab=users&p=999999999999&per_page=999
+PASS: invalid page inputs bounded &p=999999999999&per_page=999
+PASS: no PHP diagnostics: ?page=admin&tab=users&p=bad&per_page=bad
+PASS: invalid page inputs bounded &p=bad&per_page=bad
+PASS: no PHP diagnostics: ?page=admin&tab=users&p[]=2&per_page[]=5
+PASS: invalid page inputs bounded &p[]=2&per_page[]=5
+PASS: no PHP diagnostics: ?page=admin&tab=users&per_page=bad
+PASS: invalid page size retains the default 12 rows &per_page=bad
+PASS: no PHP diagnostics: ?page=admin&tab=users&per_page[]=5
+PASS: invalid page size retains the default 12 rows &per_page[]=5
+PASS: no PHP diagnostics: ?page=edit&id=2&tab=students&per_page=50
+PASS: aggregate roster preserves progress/best/completion
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/run.py", line 221, in <module>
+    from playwright.sync_api import sync_playwright
+ModuleNotFoundError: No module named 'playwright'

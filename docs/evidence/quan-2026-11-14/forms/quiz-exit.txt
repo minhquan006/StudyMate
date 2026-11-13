@@ -1,0 +1,8 @@
+PASS chrome Logout rồi ở lại không kẹt pending
+PASS chrome Logout lại bằng Enter vẫn cho phép hủy
+PASS chrome Refresh sau khi hủy logout vẫn cảnh báo
+PASS chrome Liên kết rời quiz sau khi hủy vẫn cảnh báo
+PASS chrome Logout sau hủy: xác nhận và nhấp đúp
+PASS chrome Sau hủy logout vẫn nộp quiz hợp lệ
+PASS chrome Quiz chưa đổi đáp án không hỏi logout
+PASS chrome Tắt JavaScript: logout vẫn hoạt động

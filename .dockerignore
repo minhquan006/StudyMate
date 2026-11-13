@@ -3,3 +3,12 @@ config.php
 storage/*
 .git
 *.zip
+output/
+ban-giao-an/
+ban-giao-quan/
+review-study-*/
+.codex/
+.agents/
+.DS_Store
+**/.DS_Store
+**/._*

@@ -1,0 +1,17 @@
+PASS chrome Instructor: thiếu trường bắt buộc
+PASS chrome Instructor: title ngắn hơn minlength
+PASS chrome Instructor: gửi liên tiếp
+PASS chrome Instructor: Back và gửi lại
+PASS chrome Instructor: lỗi server và phục hồi
+PASS chrome Admin: thiếu tên danh mục
+PASS chrome Admin: tên danh mục quá ngắn
+PASS chrome Admin: lỗi trùng tên không kẹt pending
+PASS chrome Admin: gửi liên tiếp sau lỗi
+PASS chrome Admin: Back và gửi lại
+PASS chrome AI: nút ask
+PASS chrome AI: nút summarize
+PASS chrome Quiz: rời bằng liên kết và ở lại
+PASS chrome Quiz: refresh và ở lại
+PASS chrome Quiz: nộp hợp lệ
+PASS chrome Không JavaScript: instructor
+PASS chrome Không JavaScript: admin

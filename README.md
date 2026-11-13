@@ -226,3 +226,13 @@ Lệnh đầu chỉ dùng khi project Compose đã được cấu hình trỏ đ
 ## Kiểm tra độc lập của An
 
 Bằng chứng cài độc lập ngày 27/10 dùng PR #14 tại SHA `593141f`. Bản xử lý conflict ngày 31/10 nhận sửa nền của Tú tại `1a27ec1`; kiểm tra lại trên bản tích hợp trước khi chốt. Các kết quả An chạy mới, phần sửa bổ sung và các mục còn chờ xem [AN_DELIVERY](docs/AN_DELIVERY.md). Không đánh dấu A1–A5 Done trước review, merge và nghiệm thu chung.
+
+## Tích hợp phần Quân ngày 01/11/2026
+
+Bản local hiện nhận đầy đủ source PR #15 tại `81dc740` và bổ sung validation Instructor/Admin, xử lý lỗi Gemini và kiểm tra tham số phân trang. Giữ tìm kiếm UTF-8, truy vấn tổng hợp, startup của Tú và vùng bảng thao tác bàn phím của An. Đây là thay đổi chưa commit, chưa merge và còn cần Tú/An review; xem [báo cáo tích hợp](docs/QUAN_INTEGRATION_2026-11-01.md).
+
+Model được kiểm qua Apache/MySQL/HTTP/Chrome ngày 01/11 là `gemini-3.5-flash-lite`. `.env.example` chọn model này; sau khi cấu hình key riêng, đặt `GEMINI_MODEL=gemini-3.5-flash-lite` khi nghiệm thu. Các config PHP vẫn giữ fallback cũ và tương thích `AI_MODEL`; không tự đổi config.php/.env đã có hoặc tự chuyển model khi provider lỗi. Khi thay env Docker cần recreate app theo hướng dẫn trên.
+
+Lượt mới đạt 270 kiểm tra runner SQLite, 310 runner MySQL có Chrome, các hồi quy của Tú/An và Compose. Có phản hồi Gemini thật cho hỏi/tóm tắt, thiếu dữ liệu, injection có kiểm soát và khóa archived; key giả trả 503 trong lượt kiểm lỗi riêng, app quota trả 429 và học/quiz vẫn hoạt động. Các số là phạm vi từng suite, không cộng thành tổng ca nghiệp vụ độc lập. Provider timeout/quota thật chưa được cố tình gây lỗi; bằng chứng mô phỏng giữ riêng.
+
+PHP/PDO/MySQL là runtime website; Node/Playwright chỉ dùng cho kiểm thử trình duyệt. Các lệnh tái kiểm tra và điều kiện DB riêng ở [tests/quan/README.md](tests/quan/README.md). Trạng thái hồ sơ, peer review và nghiệm thu chung ở [QUAN_ACCEPTANCE](docs/QUAN_ACCEPTANCE.md).

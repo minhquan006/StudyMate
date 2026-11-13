@@ -15,3 +15,7 @@ body{overflow-wrap:anywhere}.table-responsive{max-width:100%;overflow-x:auto}
 .correct-radio,.confirmation-label{min-height:44px;display:flex;align-items:center}
 .quiz-builder-option .form-control{min-width:0}.quiz-builder-option{gap:10px}
 .alert[role="alert"]{overflow-wrap:anywhere}
+
+/* Optional pending feedback for native POST forms. */
+.form-pending{margin:10px 0 0}
+form[aria-busy="true"] button{cursor:wait;opacity:.7}

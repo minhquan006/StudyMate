@@ -221,3 +221,8 @@ docker compose exec -T app php tests/model_config.php
 ```
 
 Lệnh đầu chỉ dùng khi project Compose đã được cấu hình trỏ đến DB test riêng; biến cờ không tự đổi DB. Fixture tìm kiếm rollback khi kết thúc. Kết quả sửa review và phạm vi chưa chạy xem [REVIEW_FIXES_2026-10-30.md](docs/REVIEW_FIXES_2026-10-30.md). Bằng chứng 27/10 giữ nguyên nguồn/SHA, không đổi thành kết quả chạy mới.
+
+
+## Kiểm tra độc lập của An
+
+Bằng chứng cài độc lập ngày 27/10 dùng PR #14 tại SHA `593141f`. Bản xử lý conflict ngày 31/10 nhận sửa nền của Tú tại `1a27ec1`; kiểm tra lại trên bản tích hợp trước khi chốt. Các kết quả An chạy mới, phần sửa bổ sung và các mục còn chờ xem [AN_DELIVERY](docs/AN_DELIVERY.md). Không đánh dấu A1–A5 Done trước review, merge và nghiệm thu chung.

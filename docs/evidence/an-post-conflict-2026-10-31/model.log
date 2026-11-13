@@ -1,0 +1,9 @@
+PASS model config docker/config.php case 1
+PASS model config config.example.php case 2
+PASS model config docker/config.php case 3
+PASS model config config.example.php case 4
+PASS model config docker/config.php case 5
+PASS model config config.example.php case 6
+PASS model config docker/config.php case 7
+PASS model config config.example.php case 8
+8 model configuration checks passed. Real Gemini: NOT RUN.

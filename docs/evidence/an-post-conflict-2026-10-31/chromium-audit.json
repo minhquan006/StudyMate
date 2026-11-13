@@ -1,0 +1,710 @@
+{
+  "recordedAt": "2026-10-31T15:51:42.474Z",
+  "sourceSha": "uncommitted candidate: An f8565fb + Tu 1a27ec1 + ZIP resolved files",
+  "base": "http://127.0.0.1:18085",
+  "checks": [
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 390,
+      "route": "home",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 390,
+      "route": "courses",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 390,
+      "route": "detail&id=1",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 390,
+      "route": "login",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 390,
+      "route": "register",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 768,
+      "route": "home",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 768,
+      "route": "courses",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 768,
+      "route": "detail&id=1",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 768,
+      "route": "login",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 768,
+      "route": "register",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 1366,
+      "route": "home",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 1366,
+      "route": "courses",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 1366,
+      "route": "detail&id=1",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 1366,
+      "route": "login",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "width": 1366,
+      "route": "register",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 390,
+      "route": "student",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 390,
+      "route": "profile",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 390,
+      "route": "learn&id=2",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 390,
+      "route": "quiz&id=2",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 390,
+      "route": "result&id=1",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 768,
+      "route": "student",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 768,
+      "route": "profile",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 768,
+      "route": "learn&id=2",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 768,
+      "route": "quiz&id=2",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 768,
+      "route": "result&id=1",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 1366,
+      "route": "student",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 1366,
+      "route": "profile",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 1366,
+      "route": "learn&id=2",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 1366,
+      "route": "quiz&id=2",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "width": 1366,
+      "route": "result&id=1",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 390,
+      "route": "instructor",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": true,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 390,
+      "route": "edit&id=3&tab=info",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 390,
+      "route": "edit&id=3&tab=content",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 390,
+      "route": "edit&id=3&tab=quiz",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 390,
+      "route": "edit&id=2&tab=students",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": true,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 768,
+      "route": "instructor",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 768,
+      "route": "edit&id=3&tab=info",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 768,
+      "route": "edit&id=3&tab=content",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 768,
+      "route": "edit&id=3&tab=quiz",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 768,
+      "route": "edit&id=2&tab=students",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 1366,
+      "route": "instructor",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 1366,
+      "route": "edit&id=3&tab=info",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 1366,
+      "route": "edit&id=3&tab=content",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 1366,
+      "route": "edit&id=3&tab=quiz",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": []
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "width": 1366,
+      "route": "edit&id=2&tab=students",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 390,
+      "route": "admin&tab=users",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": true,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 390,
+      "route": "admin&tab=courses",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": true,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 390,
+      "route": "admin&tab=categories",
+      "status": 200,
+      "documentWidth": 390,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": true,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 768,
+      "route": "admin&tab=users",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 768,
+      "route": "admin&tab=courses",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 768,
+      "route": "admin&tab=categories",
+      "status": 200,
+      "documentWidth": 768,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 1366,
+      "route": "admin&tab=users",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 1366,
+      "route": "admin&tab=courses",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "width": 1366,
+      "route": "admin&tab=categories",
+      "status": 200,
+      "documentWidth": 1366,
+      "unlabeled": [],
+      "smallButtons": [],
+      "scrollRegions": [
+        {
+          "scroll": false,
+          "keyboard": true
+        }
+      ]
+    }
+  ],
+  "functionalChecks": [
+    {
+      "browser": "Chromium",
+      "role": "public",
+      "status": "passed",
+      "scope": "responsive/labels/focus/buttons"
+    },
+    {
+      "browser": "Chromium",
+      "role": "student",
+      "status": "passed",
+      "scope": "pagination/aggregate/filter/empty plus responsive audit"
+    },
+    {
+      "browser": "Chromium",
+      "role": "instructor",
+      "status": "passed",
+      "scope": "pagination/aggregate/filter/empty plus responsive audit"
+    },
+    {
+      "browser": "Chromium",
+      "role": "admin",
+      "status": "passed",
+      "scope": "pagination/aggregate/filter/empty plus responsive audit"
+    }
+  ],
+  "browsers": [
+    {
+      "name": "Chromium",
+      "version": "154.0.8037.57",
+      "executablePath": "/usr/bin/chromium"
+    }
+  ],
+  "failures": []
+}

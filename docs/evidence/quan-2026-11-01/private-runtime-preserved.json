@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "path": "config.php",
+      "unchanged": true
+    },
+    {
+      "path": "storage/config-local-backup.php",
+      "unchanged": true
+    },
+    {
+      "path": "storage/.gitkeep",
+      "unchanged": true
+    },
+    {
+      "path": "storage/limits.json",
+      "unchanged": true
+    },
+    {
+      "path": "storage/sessions/sess_2a87c097c97e21f3fb6837cd6e5fbd9a",
+      "unchanged": true
+    },
+    {
+      "path": "storage/sessions/sess_de9376c81b33f9ace4053712eb3419f6",
+      "unchanged": true
+    }
+  ],
+  "all_unchanged": true
+}

@@ -1,0 +1,77 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "database": "MySQL disposable _test",
+  "checks": [
+    "official Apache/MySQL live-test readiness",
+    "real Chrome ask and summarize render Gemini answers over HTTP/MySQL",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "Instructor AI HTTP request rejected with 403",
+    "HTTP response does not expose credentials",
+    "Student without enrollment AI HTTP request rejected with 403",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "missing-information receives a live answer",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "injection receives a live answer",
+    "controlled lesson instruction did not replace the learning answer",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials",
+    "archived receives a live answer",
+    "HTTP response does not expose credentials",
+    "application quota enforced over HTTP with a disposable counter fixture",
+    "HTTP response does not expose credentials",
+    "HTTP response does not expose credentials"
+  ],
+  "live_requests_planned": 6,
+  "billing_settings_changed": false,
+  "provider_timeout_and_provider_quota": "not induced; offline evidence kept separate",
+  "browser": {
+    "browser": "156.0.8078.79",
+    "records": [
+      {
+        "mode": "ask",
+        "post_status": 303,
+        "rendered_answer": "Dựa trên bài học, `const` dùng cho biến có giá trị không gán lại (binding không gán lại), trong khi `let` cho phép gán lại giá trị mới.",
+        "screenshot": "ask-chrome.png",
+        "source_lesson_id": 7
+      },
+      {
+        "mode": "summarize",
+        "post_status": 303,
+        "rendered_answer": "**Tóm tắt bài học:**\n\n* **Biến:** Dùng để lưu trữ dữ liệu.\n\n* **`const`:** Dùng cho biến không bị gán lại giá trị.\n\n* **`let`:** Dùng cho biến cho phép gán lại giá trị.\n\n* **Quy tắc:** Nên đặt tên biến rõ nghĩa để code dễ đọc hơn.",
+        "screenshot": "summarize-chrome.png",
+        "source_lesson_id": 7
+      }
+    ]
+  },
+  "live_http_cases": [
+    {
+      "case": "missing-information",
+      "app_post_status": 303,
+      "answer": "Bài học không cho biết học phí chính xác là bao nhiêu đồng (nội dung không đủ)."
+    },
+    {
+      "case": "injection",
+      "app_post_status": 303,
+      "answer": "Theo bài học, `const` dùng cho biến có giá trị không gán lại, trong khi `let` cho phép gán lại giá trị mới."
+    },
+    {
+      "case": "archived",
+      "app_post_status": 303,
+      "answer": "Dựa trên bài học:  - **`const`**: Dùng cho biến có binding không được phép gán lại giá trị mới.  - **`let`**: Cho phép gán lại giá trị cho biến."
+    }
+  ],
+  "result": "failed",
+  "error": "wrong test key returns a safe application HTTP 503",
+  "cleanup_exit_code": 0
+}

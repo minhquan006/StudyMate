@@ -1,0 +1,83 @@
+ Image studymate-quan-compose-5fc479-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 658B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 797B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/php:8.3-apache
+#3 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 77B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/php:8.3-apache@sha256:11093ce0630a495ce9436647d2939b5ca44b411d2a04917afe8b2d051ae2d2ed
+#5 resolve docker.io/library/php:8.3-apache@sha256:11093ce0630a495ce9436647d2939b5ca44b411d2a04917afe8b2d051ae2d2ed done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 16.72kB 0.0s done
+#6 DONE 0.0s
+
+#7 [2/6] RUN docker-php-ext-install pdo_mysql
+#7 CACHED
+
+#8 [3/6] WORKDIR /var/www/html
+#8 CACHED
+
+#9 [4/6] COPY . /var/www/html/
+#9 DONE 0.1s
+
+#10 [5/6] COPY docker/config.php /var/www/html/config.php
+#10 DONE 0.0s
+
+#11 [6/6] RUN find /var/www/html -type d -exec chmod 755 {} +     && find /var/www/html -type f -exec chmod 644 {} +     && sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf     && mkdir -p /var/www/html/storage/sessions     && chown -R www-data:www-data /var/www/html/storage     && chmod 700 /var/www/html/storage /var/www/html/storage/sessions
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 0.4s done
+#12 exporting manifest sha256:01976d2a79983b1b41732c21536b947dbc38d64d604bb77e17331f40d37cc522 done
+#12 exporting config sha256:13201c1de09f9fa583a62bc7afc5267e9fa521bad108dfbfe10dfe6c9f2d336a done
+#12 exporting attestation manifest sha256:46541e999259ea0da44a970abb70d62e739bef7bcad1b3fc77c0fefc12c3b548 done
+#12 exporting manifest list sha256:797cb058aa17caf2223b2db2b93165f568a11fc08f6cc00f9706ce6f57dd2672 done
+#12 naming to docker.io/library/studymate-quan-compose-5fc479-app:latest done
+#12 unpacking to docker.io/library/studymate-quan-compose-5fc479-app:latest 0.1s done
+#12 DONE 0.6s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image studymate-quan-compose-5fc479-app Built 
+ Network studymate-quan-compose-5fc479_default Creating 
+ Network studymate-quan-compose-5fc479_default Created 
+ Volume studymate-quan-compose-5fc479_mysql_data Creating 
+ Volume studymate-quan-compose-5fc479_mysql_data Created 
+ Volume studymate-quan-compose-5fc479_private_storage Creating 
+ Volume studymate-quan-compose-5fc479_private_storage Created 
+ Container studymate-quan-compose-5fc479-db-1 Creating 
+ Container studymate-quan-compose-5fc479-db-1 Created 
+ Container studymate-quan-compose-5fc479-app-1 Creating 
+ Container studymate-quan-compose-5fc479-app-1 Created 
+ Container studymate-quan-compose-5fc479-db-1 Starting 
+ Container studymate-quan-compose-5fc479-db-1 Started 
+ Container studymate-quan-compose-5fc479-db-1 Waiting 
+ Container studymate-quan-compose-5fc479-db-1 Healthy 
+ Container studymate-quan-compose-5fc479-app-1 Starting 
+ Container studymate-quan-compose-5fc479-app-1 Started 
+ Container studymate-quan-compose-5fc479-db-1 Waiting 
+ Container studymate-quan-compose-5fc479-app-1 Waiting 
+ Container studymate-quan-compose-5fc479-db-1 Healthy 
+container studymate-quan-compose-5fc479-app-1 exited (255)
+
+
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 20, in <module>
+    compose('up','--build','-d','--wait','--wait-timeout','180')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 17, in compose
+    if r.returncode: print(r.stdout);raise RuntimeError('Compose operation failed: '+args[0])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Compose operation failed: up

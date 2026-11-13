@@ -1,0 +1,37 @@
+PASS: official Apache/MySQL live-test readiness
+PASS: real Chrome ask and summarize render Gemini answers over HTTP/MySQL
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: Instructor AI HTTP request rejected with 403
+PASS: HTTP response does not expose credentials
+PASS: Student without enrollment AI HTTP request rejected with 403
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: missing-information receives a live answer
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: injection receives a live answer
+PASS: controlled lesson instruction did not replace the learning answer
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: archived receives a live answer
+PASS: HTTP response does not expose credentials
+PASS: application quota enforced over HTTP with a disposable counter fixture
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/live_http.py", line 186, in <module>
+    main()
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/live_http.py", line 164, in main
+    check(status == 503, 'wrong test key returns a safe application HTTP 503')
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/live_http.py", line 89, in check
+    raise AssertionError(name)
+AssertionError: wrong test key returns a safe application HTTP 503

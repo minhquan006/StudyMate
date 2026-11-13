@@ -1,0 +1,42 @@
+[
+  {
+    "suite": "sqlite",
+    "exit_code": 0,
+    "elapsed_seconds": 11.21,
+    "log": "sqlite.txt"
+  },
+  {
+    "suite": "mysql",
+    "exit_code": 1,
+    "elapsed_seconds": 20.7,
+    "log": "mysql.txt"
+  },
+  {
+    "suite": "mysql",
+    "exit_code": 0,
+    "elapsed_seconds": 31.34,
+    "log": "mysql-2.txt",
+    "runtime_fingerprint": "mysql-2.txt.source.json"
+  },
+  {
+    "suite": "compose",
+    "exit_code": 0,
+    "elapsed_seconds": 38.32,
+    "log": "compose.txt",
+    "runtime_fingerprint": "compose.txt.source.json"
+  },
+  {
+    "suite": "live",
+    "exit_code": 1,
+    "elapsed_seconds": 33.09,
+    "log": "live.txt",
+    "runtime_fingerprint": "live.txt.source.json"
+  },
+  {
+    "suite": "live",
+    "exit_code": 0,
+    "elapsed_seconds": 24.47,
+    "log": "live-2.txt",
+    "runtime_fingerprint": "live-2.txt.source.json"
+  }
+]

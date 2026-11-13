@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-13T18:20:28.902261+00:00",
+  "base_commit": "aac87052135bea490856c648cc44f7b9bab57db8",
+  "source": "uncommitted Quân candidate; runtime fingerprint matches all three user-run suites",
+  "project": "studymate-quan-form-5fm15e",
+  "steps": [
+    {
+      "name": "compose-start",
+      "exit_code": 1
+    },
+    {
+      "name": "cleanup",
+      "exit_code": 0
+    }
+  ],
+  "status": "failed",
+  "failure": "compose-start failed; see log",
+  "finished_at": "2026-11-13T18:20:42.134641+00:00"
+}

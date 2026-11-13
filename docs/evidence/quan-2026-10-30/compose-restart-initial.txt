@@ -1,0 +1,12 @@
+PASS: repository Dockerfile/Compose clean build and MySQL healthy
+HTTP binding: 127.0.0.1:51494
+PASS: Apache/MySQL login student
+PASS: Apache/MySQL login instructor
+PASS: Apache/MySQL login admin
+PASS: 14 service checks on official Apache/MySQL Compose
+PASS: Compose GEMINI_MODEL binding
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 45, in <module>
+    else:raise RuntimeError('Compose restart health failed')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Compose restart health failed

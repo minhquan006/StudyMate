@@ -1,0 +1,9 @@
+{"case": "instructor", "model": "gemini-2.5-flash-lite", "app_status": 403, "provider_http": null, "provider_calls": 0, "answer": null, "message": "Bạn không có quyền thực hiện thao tác này.", "manual_review_required": true}
+{"case": "not-enrolled", "model": "gemini-2.5-flash-lite", "app_status": 403, "provider_http": null, "provider_calls": 0, "answer": null, "message": "Bạn cần tham gia khóa học trước.", "manual_review_required": true}
+{"case": "ask", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 404, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+{"case": "summarize", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 404, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+{"case": "missing-information", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 404, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+{"case": "injection", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 404, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+{"case": "archived", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 404, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+{"case": "wrong-key", "model": "gemini-2.5-flash-lite", "app_status": 503, "provider_http": 400, "provider_calls": 1, "answer": null, "message": "AI tạm không sẵn sàng.", "manual_review_required": true}
+Live probes recorded. Review generated answers before signing FR10; SQLite probes do not replace MySQL/HTTP/browser acceptance.

@@ -1,0 +1,11 @@
+PASS: repository Dockerfile/Compose clean build and MySQL healthy
+HTTP binding: 127.0.0.1:51839
+PASS: Apache/MySQL login student
+PASS: Apache/MySQL login instructor
+PASS: Apache/MySQL login admin
+PASS: 14 service checks on official Apache/MySQL Compose
+PASS: Compose GEMINI_MODEL binding
+PASS: Compose restart retains quiz attempts and database health
+PASS: app waits for delayed MySQL startup without losing quiz attempts
+PHP: 8.3.36
+RESULT: official Compose validation passed; disposable project/volumes removed; live Gemini not tested.

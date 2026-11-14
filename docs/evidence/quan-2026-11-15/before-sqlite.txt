@@ -1,0 +1,75 @@
+PASS: seed isolated sqlite database
+PASS: setup repeat preserves data
+PASS: all PHP files lint
+PASS: 14 existing service checks
+PASS: question over 1000 characters
+PASS: blank question
+PASS: invalid mode
+PASS: invalid requests do not reach provider
+PASS: invalid requests do not consume quota
+PASS: server lesson context included
+PASS: no user email sent
+PASS: ask response
+PASS: server lesson context included
+PASS: no user email sent
+PASS: summarize response
+PASS: server lesson context included
+PASS: no user email sent
+PASS: server lesson context included
+PASS: no user email sent
+PASS: server lesson context included
+PASS: no user email sent
+PASS: sixth request in minute denied
+PASS: quota stops provider call
+PASS: quota ai:user:1:d:2026-11-15
+PASS: quota ai:app:d:2026-11-15
+PASS: quota ai:app:m:29911316
+PASS: disabled AI
+PASS: missing key
+PASS: invalid model
+PASS: provider error 0 / 0.01
+PASS: provider error 0 / 25
+PASS: provider error 504 / 0.1
+PASS: provider error 429 / 0.1
+PASS: provider error 400 / 0.1
+PASS: provider error 403 / 0.1
+PASS: provider error 500 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: provider error 200 / 0.1
+PASS: thought parts excluded; truncated output supported
+PASS: provider failure still consumes quota
+PASS: failed provider call counted
+PASS: 12 parallel users admit exactly 5 shared reservations
+PASS: shared quota file remains valid and bounded
+42 AI checks passed (simulated transport; not live Gemini).
+PASS: AI mocked transport and concurrent quota suite
+PASS: AI rejects wrong role or missing enrollment
+PASS: unauthorized request never reaches provider
+PASS: AI rejects wrong role or missing enrollment
+PASS: unauthorized request never reaches provider
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login instructor1
+PASS: no PHP diagnostics: ?page=instructor
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login instructor2
+PASS: no PHP diagnostics: ?page=instructor
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login admin
+PASS: no PHP diagnostics: ?page=admin
+PASS: no PHP diagnostics: ?page=login
+PASS: no PHP diagnostics: 
+PASS: login student1
+PASS: no PHP diagnostics: ?page=student
+PASS: no PHP diagnostics: ?page=health
+PASS: HTTP health reaches database
+PASS: no PHP diagnostics: 
+PASS: no PHP diagnostics: 
+PASS: no PHP diagnostics: 
+BASELINE_REPRO=[{"case": "category_save array", "status": 303, "database_changed": true}, {"case": "category_save alphabetic", "status": 303, "database_changed": true}, {"case": "chapter_delete numeric prefix", "status": 303, "database_changed": true}]
+PASS: three reported malformed-ID mutations reproduced

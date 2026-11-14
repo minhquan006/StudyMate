@@ -186,6 +186,8 @@ return $c;
         check(admin.post('user_status',user_id=2,is_active='bad',confirm=1)[0]==422,'invalid active state is not coerced to locked')
         check(admin.post('category_save',category_id=99999,name='Missing category')[0]==404,'update absent category returns404')
         check(snapshot()==before,'invalid Admin edits preserve DB')
+        from id_validation import verify_management_ids
+        verify_management_ids(php, snapshot, admin, owner, check)
         # Two independent sessions must both stay revoked even after unlock.
         s2a,s2b=Client(),Client()
         s2a.login('student2');s2b.login('student2')

@@ -151,7 +151,11 @@ sh tools/db_backup.sh /private/path/studymate.sql
 sh tools/db_restore.sh /private/path/studymate.sql studymate_restore_review
 ```
 
-Restore cố ý **chỉ tạo DB mới**; nếu tên đã tồn tại thì từ chối. Script không thay DB chạy chính. Dùng tài khoản root trong container để kiểm số dòng/nội dung/quan hệ cả 12 bảng trong DB restore trước bất kỳ chuyển đổi nào. Bằng chứng kiểm khớp hash toàn bộ 12 bảng trong đợt này nằm ở `docs/evidence/final/restore.json`. Đặt `COMPOSE_PROJECT_NAME` đúng project nếu không dùng mặc định.
+Backup và restore cần lệnh `openssl` trên host. Định dạng v2 lưu tên DB nguồn, charset/collation mặc định và SHA-256 của toàn bộ phần SQL trong dòng đầu, kèm checksum của metadata. Restore kiểm tra checksum trên một bản sao tạm riêng và dùng bản sao đó để import. Chỉ dùng dump tin cậy do script tạo. Với bản cũ thiếu metadata hoặc checksum, tạo lại backup từ nguồn.
+
+Restore **chỉ tạo DB mới**. Script kiểm tra dữ liệu backup và cặp charset/collation trước khi tạo DB. Tên nguồn hoặc tên đã tồn tại bị từ chối. Nếu import lỗi sau khi tạo DB, script trả lỗi và giữ đích có thể chưa hoàn chỉnh. Sau khi xử lý nguyên nhân, dùng tên đích mới cho lần thử tiếp theo.
+
+Dùng tài khoản root trong container để kiểm số dòng, nội dung và quan hệ của cả 12 bảng trước khi chuyển đổi. Bằng chứng kiểm khớp hash trong đợt nghiệm thu nằm ở `docs/evidence/final/restore.json`. Đặt `COMPOSE_PROJECT_NAME` đúng project nếu không dùng mặc định.
 
 ### Chạy test trên project dùng một lần
 

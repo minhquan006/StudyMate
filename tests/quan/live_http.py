@@ -17,6 +17,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from compose_env import compose_environment
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -73,11 +74,12 @@ def main():
         envfile.write_text('DB_PASSWORD=' + secrets.token_hex(20) + '\nMYSQL_ROOT_PASSWORD=' + secrets.token_hex(20) + '\nWEB_PORT=' + str(port) + '\nAI_ENABLED=0\n')
         envfile.chmod(0o600)
         project = 'studymate-quan-live-' + secrets.token_hex(4)
+        env = compose_environment()
         prefix = ['docker', 'compose', '--env-file', str(envfile), '-f', 'compose.yaml', '-f', 'compose.qa.yaml', '-f', str(override), '-p', project]
         base = f'http://127.0.0.1:{port}/index.php'
 
         def compose(*arguments):
-            result = subprocess.run(prefix + list(arguments), cwd=app, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            result = subprocess.run(prefix + list(arguments), cwd=app, env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             if result.returncode:
                 raise RuntimeError('Disposable live Compose failed: ' + arguments[0])
             return result.stdout.strip()
@@ -189,7 +191,7 @@ def main():
             raise
         finally:
             cleanup = subprocess.run(prefix + ['down', '--volumes', '--remove-orphans'], cwd=app,
-                                     text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                                     env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             report['cleanup_exit_code'] = cleanup.returncode
             (output / 'cleanup.txt').write_text(cleanup.stdout)
             (output / 'live-http.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

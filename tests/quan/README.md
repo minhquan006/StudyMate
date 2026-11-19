@@ -57,7 +57,18 @@ Chọn model theo tài khoản, không tự fallback sang model khác. Ngày 30/
 
 ## PDF và gói review
 
-`python3 tools/build_review_pdfs.py --output /tmp/studymate-delivery` cần python-docx, reportlab và font NotoSans/DejaVuSans Unicode, tạo PDF CSDL và báo cáo/checklist. Đây không phải PDF chụp thanh địa chỉ thật. `python3 tools/package_release.py --output /tmp/studymate-delivery` tạo ZIP mã nguồn, manifest SHA256 từng tệp và checksum archive; không chứa config.php local, .env hoặc DB/session.
+`python3 tools/build_review_pdfs.py --output /tmp/studymate-delivery` cần python-docx, reportlab và font NotoSans/DejaVuSans Unicode, tạo PDF CSDL và báo cáo/checklist. Đây không phải PDF chụp thanh địa chỉ thật. `python3 tools/package_release.py --output /tmp/studymate-delivery` tạo ZIP mã nguồn, manifest SHA256 từng tệp và checksum archive. Danh sách lấy từ Git index; tệp mới cần được add/commit trước khi đóng gói. ZIP loại config.php local, .env riêng, DB/session, dump/backup, khóa riêng và symlink kể cả khi lỡ được theo dõi; giữ `.env.example`, `docker/config.php`, `database/schema.mysql.sql` và `storage/.gitkeep`. Thay đổi chưa commit của tệp được theo dõi được ghi nhận bằng hash và trạng thái candidate trong manifest.
+
+## Hồi quy công cụ đóng gói và môi trường QA
+
+```sh
+python3 tests/quan/review_tools.py --compose-config
+python3 tests/quan/live_readiness.py
+```
+
+Lệnh đầu thử ZIP trên clone dùng một lần với tệp local và tệp nhạy cảm mẫu vô hại, rồi kiểm cấu hình Compose khi host export sai `WEB_PORT`, mật khẩu hoặc model/key AI. Lệnh sau giải cấu hình Compose thật và gửi HTTP health tới server loopback tạm; bước up/down và đọc key được mô phỏng, dừng trước đăng nhập hoặc gọi provider. Cả hai không gọi Gemini thật. Kiểm Compose đầy đủ vẫn chạy riêng bằng `verify.py --suite compose`.
+
+Runner Compose và live loại các biến ứng dụng/biến chọn project do host export trước khi dùng env-file, override và tên project QA riêng. Giữ `DOCKER_HOST`, `DOCKER_CONTEXT`, `DOCKER_CONFIG`, TLS, PATH/HOME và cấu hình kết nối Docker hiện có. Cùng môi trường được dùng khi chạy, chẩn đoán và dọn tài nguyên QA.
 
 
 ## Bộ kiểm tích hợp ngày 01/11/2026

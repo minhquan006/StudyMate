@@ -1,0 +1,8 @@
+{
+  "tools/package_release.py": "3bdaf761c9e8777d4d263ed61dcb356551266c7ae04c0ccd4ed5709395a0af01",
+  "tests/quan/compose_env.py": "95a894c87b778c6a400c3c07e56e31ca23858431d1f26e0382a674f348726173",
+  "tests/quan/compose.py": "44d5166b8abd365376bbd39f039114334faa00a52b53d81490f2d97c40053512",
+  "tests/quan/live_http.py": "9624863ed888def8b773934f9021bc39437b3495fa41840840f74f3900ca638c",
+  "tests/quan/review_tools.py": "e7891ab808cb707d0519cda73b52b06046461333d21cc7b679c43e4cbd3437a2",
+  "tests/quan/live_readiness.py": "5c7b5ade969a3a4bfb457af5176c4566b67bbac98c51c2c20a65b9096db55e6f"
+}

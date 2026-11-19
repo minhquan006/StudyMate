@@ -8,19 +8,45 @@ FOLDER='52400227_NguyenMinhQuan_52400258_LeNguyenVanAn_52400252_PhamVanTu'
 TOP=['README.md','Readme.txt','config.example.php','.env.example','Dockerfile','compose.yaml','compose.qa.yaml','.dockerignore','.gitignore','.gitattributes']
 DIRS=['app','database','docker','public','tests','docs','tools']
 
+def source_files():
+    """Read tracked regular files; local dumps and private files never enter ZIPs."""
+    entries=subprocess.check_output(['git','ls-files','--stage','-z'],cwd=ROOT)
+    files=[]
+    for entry in entries.split(b'\0'):
+        if not entry:
+            continue
+        metadata,raw_name=entry.split(b'\t',1)
+        mode,_,stage=metadata.split()
+        if stage!=b'0':
+            raise ValueError('Resolve Git conflicts before packaging')
+        name=raw_name.decode('utf-8')
+        path=Path(name)
+        if not (name in TOP or path.parts[0] in DIRS or name=='storage/.gitkeep'):
+            continue
+        lower=tuple(part.lower() for part in path.parts)
+        suffixes={suffix.lower() for suffix in path.suffixes}
+        private=(path.name.lower().startswith('.env') and name!='.env.example') or (
+            path.name.lower()=='config.php' and name!='docker/config.php')
+        excluded=any(part in {'__pycache__','.git','.appledouble','backups','backup','dumps','sessions','secrets'}
+                     or part=='.ds_store' or part.startswith('._') for part in lower)
+        excluded=excluded or bool(suffixes & {'.pyc','.zip','.sqlite','.sqlite3','.db','.dump','.bak','.key','.pem','.p12','.pfx'})
+        excluded=excluded or ('.sql' in suffixes and name!='database/schema.mysql.sql')
+        file=ROOT/path
+        if mode not in {b'100644',b'100755'} or private or excluded:
+            continue
+        if any((ROOT/Path(*path.parts[:i])).is_symlink() for i in range(1,len(path.parts)+1)):
+            continue
+        if not file.is_file():
+            raise ValueError('Tracked source file is missing: '+name)
+        files.append(file)
+    return sorted(files)
+
 def package(output):
     output=output.resolve()
     if output==ROOT or ROOT in output.parents:
         raise ValueError('Output must be outside checkout to avoid recursive packaging')
     output.mkdir(parents=True,exist_ok=True)
-    files=[ROOT/name for name in TOP if (ROOT/name).is_file()]
-    for name in DIRS:
-        files.extend(p for p in (ROOT/name).rglob('*') if p.is_file() and not p.is_symlink()
-                     and '__pycache__' not in p.parts and p.suffix not in ['.pyc','.zip','.sqlite','.db']
-                     and p.name!='.DS_Store' and not p.name.startswith('._') and '.AppleDouble' not in p.parts
-                     and p.name!='.env' and (p.name!='config.php' or p.parent==ROOT/'docker') and not (p.name.startswith('.env.') and not p.name.endswith('.example')))
-    files.extend([ROOT/'storage/.gitkeep'])
-    files=sorted(set(files))
+    files=source_files()
     manifest={'base_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
               'integration_base_commit':'81dc740916360c4f6229cd1026837939bd44fd10',
               'working_tree_changes':bool(subprocess.check_output(['git','--no-optional-locks','status','--porcelain'],cwd=ROOT,text=True)),

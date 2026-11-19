@@ -1,0 +1,19 @@
+{
+  "baseline_commit": "717c99a5c94e4541aa679896126bee1b80b1b04c",
+  "source": "automated local macOS/Docker verification; candidate before user commit",
+  "release_and_env_checks": 33,
+  "skipped": [],
+  "live_readiness": {
+    "result": "passed",
+    "compose_port": 55674,
+    "exported_host_port": 49123,
+    "real_http_health_requests": 1,
+    "isolated_cleanup": true,
+    "containers_started": false,
+    "live_gemini": "not run"
+  },
+  "official_compose": "passed with intentionally conflicting inert host app variables; health/login/regressions/restart/delayed DB; 12-table hashes preserved; disposable volumes removed",
+  "full_sqlite_mysql_chrome": "not rerun; no application runtime changes",
+  "windows_edge": "not rerun",
+  "live_gemini": "not run"
+}

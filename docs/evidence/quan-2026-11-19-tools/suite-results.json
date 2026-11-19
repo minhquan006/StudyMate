@@ -1,0 +1,9 @@
+[
+  {
+    "suite": "compose",
+    "exit_code": 0,
+    "elapsed_seconds": 40.72,
+    "log": "compose.txt",
+    "runtime_fingerprint": "compose.txt.source.json"
+  }
+]

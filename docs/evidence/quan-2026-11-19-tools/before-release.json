@@ -1,0 +1,8 @@
+{
+  "head": "717c99a5c94e4541aa679896126bee1b80b1b04c",
+  "local_fixtures_in_zip": {
+    "docs/local-review-marker.txt": true,
+    "database/local-review-dump.sql": true,
+    "docs/.env.review": false
+  }
+}

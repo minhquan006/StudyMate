@@ -2,6 +2,7 @@
 """Smoke-test official Compose in a disposable source copy and DB volumes."""
 import os,subprocess,tempfile,secrets,shutil,socket,time,json,urllib.request,http.cookiejar,urllib.parse,re
 from pathlib import Path
+from compose_env import compose_environment
 root=Path(__file__).resolve().parents[2]
 with tempfile.TemporaryDirectory(prefix='studymate-compose-') as temp:
  work=Path(temp); app=work/'app';shutil.copytree(root,app,ignore=lambda path,names: [n for n in names if n=='__pycache__' or (Path(path)==root and n in ['.git','config.php','.env','storage'])]);(app/'storage').mkdir()
@@ -9,7 +10,7 @@ with tempfile.TemporaryDirectory(prefix='studymate-compose-') as temp:
  envfile=work/'compose.env';envfile.write_text('DB_PASSWORD='+secrets.token_hex(24)+'\nMYSQL_ROOT_PASSWORD='+secrets.token_hex(24)+'\nWEB_PORT='+str(port)+'\nAI_ENABLED=0\nGEMINI_MODEL=gemini-2.5-flash-lite\n');envfile.chmod(0o600)
  # Preserve Docker Desktop's selected context and Compose plugin discovery.
  # Restricted environments can still supply their own writable DOCKER_CONFIG.
- env=os.environ.copy()
+ env=compose_environment()
  project='studymate-quan-compose-'+secrets.token_hex(3)
  prefix=['docker','compose','--env-file',str(envfile),'-f','compose.yaml','-f','compose.qa.yaml','-p',project]
  def compose(*args):

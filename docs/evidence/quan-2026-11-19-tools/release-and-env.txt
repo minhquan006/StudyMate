@@ -1,0 +1,34 @@
+PASS: ZIP excludes docs/local-review-marker.txt
+PASS: ZIP excludes database/local-review-dump.sql
+PASS: ZIP excludes public/local-review.txt
+PASS: ZIP excludes docs/.env.review
+PASS: ZIP excludes app/private-review.pem
+PASS: ZIP excludes database/private-review.sql
+PASS: ZIP excludes database/private-review.sql.gz
+PASS: ZIP excludes docs/backups/private-review.txt
+PASS: ZIP excludes public/review.sqlite
+PASS: ZIP excludes public/.ENV.review
+PASS: ZIP excludes public/review-link.txt
+PASS: ZIP retains tracked source '.env.example'
+PASS: ZIP retains tracked source 'docker/config.php'
+PASS: ZIP retains tracked source 'database/schema.mysql.sql'
+PASS: ZIP retains tracked source 'storage/.gitkeep'
+PASS: ZIP retains tracked source 'docs/review file with spaces.txt'
+PASS: ZIP CRC verification
+PASS: all ZIP file hashes match manifest
+PASS: manifest identifies a modified candidate
+PASS: archive checksum matches ZIP
+PASS: existing release is not overwritten
+PASS: output inside source checkout is refused
+PASS: host app/Compose selection overrides removed
+PASS: actual Docker connection settings preserved
+PASS: parent shell environment is unchanged
+PASS: Compose uses the QA env-file port instead of exported WEB_PORT
+PASS: QA HTTP remains bound to loopback
+PASS: Compose uses matching QA database credentials
+PASS: Compose uses the QA root credential
+PASS: host Gemini key does not enter QA containers
+PASS: host model does not override QA model
+PASS: host demo password does not override QA logins
+PASS: Docker context, remote host and TLS settings survive filtering
+{"result": "passed", "checks": 33, "skipped": [], "compose_config": true, "live_gemini": "not run"}

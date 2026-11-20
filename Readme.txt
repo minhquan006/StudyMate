@@ -151,7 +151,13 @@ sh tools/db_backup.sh /private/path/studymate.sql
 sh tools/db_restore.sh /private/path/studymate.sql studymate_restore_review
 ```
 
-Restore cố ý **chỉ tạo DB mới**; nếu tên đã tồn tại thì từ chối. Script không thay DB chạy chính. Dùng tài khoản root trong container để kiểm số dòng/nội dung/quan hệ cả 12 bảng trong DB restore trước bất kỳ chuyển đổi nào. Bằng chứng kiểm khớp hash toàn bộ 12 bảng trong đợt này nằm ở `docs/evidence/final/restore.json`. Đặt `COMPOSE_PROJECT_NAME` đúng project nếu không dùng mặc định.
+Backup và restore cần lệnh `openssl` trên host chạy script, kể cả khi MySQL chạy trong Docker. Kiểm tra bằng `openssl version` trước khi chạy. Định dạng v2 lưu tên DB nguồn, charset/collation mặc định và SHA-256 của toàn bộ phần SQL trong dòng đầu, kèm checksum của metadata. Restore kiểm tra metadata và SQL trên một bản sao tạm riêng, xác minh cặp charset/collation được MySQL hỗ trợ trước khi tạo DB đích, rồi dùng đúng bản sao đã kiểm tra để import.
+
+Chỉ dùng dump tin cậy do script tạo; SHA-256 kiểm tra tính toàn vẹn của tệp. Backup cũ thiếu metadata/checksum v2 phải được tạo lại từ DB nguồn bằng `tools/db_backup.sh`. Không sửa header hoặc tính lại checksum để ép backup cũ, bị cắt hay bị sửa vượt qua kiểm tra.
+
+Restore **chỉ tạo DB mới**. Tên DB nguồn ghi trong backup, DB nguồn của project Compose hiện tại và tên đích đã tồn tại đều bị từ chối. Nếu import lỗi sau khi tạo DB, script trả lỗi và giữ DB đích có thể chưa hoàn chỉnh để kiểm tra. Kiểm tra lỗi import, khắc phục nguyên nhân rồi dùng một tên DB đích mới, chưa tồn tại, cho lần thử tiếp theo. Chỉ chuyển sang DB restore sau khi đã kiểm tra đầy đủ.
+
+Dùng tài khoản root trong container để kiểm số dòng, nội dung và quan hệ của cả 12 bảng trước khi chuyển đổi. Bằng chứng kiểm khớp hash trong đợt nghiệm thu nằm ở `docs/evidence/final/restore.json`. Đặt `COMPOSE_PROJECT_NAME` đúng project nếu không dùng mặc định.
 
 ### Chạy test trên project dùng một lần
 

@@ -151,9 +151,11 @@ sh tools/db_backup.sh /private/path/studymate.sql
 sh tools/db_restore.sh /private/path/studymate.sql studymate_restore_review
 ```
 
-Backup và restore cần lệnh `openssl` trên host. Định dạng v2 lưu tên DB nguồn, charset/collation mặc định và SHA-256 của toàn bộ phần SQL trong dòng đầu, kèm checksum của metadata. Restore kiểm tra checksum trên một bản sao tạm riêng và dùng bản sao đó để import. Chỉ dùng dump tin cậy do script tạo. Với bản cũ thiếu metadata hoặc checksum, tạo lại backup từ nguồn.
+Backup và restore cần lệnh `openssl` trên host chạy script, kể cả khi MySQL chạy trong Docker. Kiểm tra bằng `openssl version` trước khi chạy. Định dạng v2 lưu tên DB nguồn, charset/collation mặc định và SHA-256 của toàn bộ phần SQL trong dòng đầu, kèm checksum của metadata. Restore kiểm tra metadata và SQL trên một bản sao tạm riêng, xác minh cặp charset/collation được MySQL hỗ trợ trước khi tạo DB đích, rồi dùng đúng bản sao đã kiểm tra để import.
 
-Restore **chỉ tạo DB mới**. Script kiểm tra dữ liệu backup và cặp charset/collation trước khi tạo DB. Tên nguồn hoặc tên đã tồn tại bị từ chối. Nếu import lỗi sau khi tạo DB, script trả lỗi và giữ đích có thể chưa hoàn chỉnh. Sau khi xử lý nguyên nhân, dùng tên đích mới cho lần thử tiếp theo.
+Chỉ dùng dump tin cậy do script tạo; SHA-256 kiểm tra tính toàn vẹn của tệp. Backup cũ thiếu metadata/checksum v2 phải được tạo lại từ DB nguồn bằng `tools/db_backup.sh`. Không sửa header hoặc tính lại checksum để ép backup cũ, bị cắt hay bị sửa vượt qua kiểm tra.
+
+Restore **chỉ tạo DB mới**. Tên DB nguồn ghi trong backup, DB nguồn của project Compose hiện tại và tên đích đã tồn tại đều bị từ chối. Nếu import lỗi sau khi tạo DB, script trả lỗi và giữ DB đích có thể chưa hoàn chỉnh để kiểm tra. Kiểm tra lỗi import, khắc phục nguyên nhân rồi dùng một tên DB đích mới, chưa tồn tại, cho lần thử tiếp theo. Chỉ chuyển sang DB restore sau khi đã kiểm tra đầy đủ.
 
 Dùng tài khoản root trong container để kiểm số dòng, nội dung và quan hệ của cả 12 bảng trước khi chuyển đổi. Bằng chứng kiểm khớp hash trong đợt nghiệm thu nằm ở `docs/evidence/final/restore.json`. Đặt `COMPOSE_PROJECT_NAME` đúng project nếu không dùng mặc định.
 

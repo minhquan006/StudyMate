@@ -1,0 +1,31 @@
+unknown flag: --env-file
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+
+unknown flag: --env-file
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 18, in <module>
+    compose('up','--build','-d','--wait','--wait-timeout','180')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 15, in compose
+    if r.returncode: print(r.stdout);raise RuntimeError('Compose operation failed: '+args[0])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Compose operation failed: up
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 49, in <module>
+    compose('down','--volumes','--remove-orphans')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/TDTU/Lập trình web/Final/StudyMate_Quan_Work/tests/quan/compose.py", line 15, in compose
+    if r.returncode: print(r.stdout);raise RuntimeError('Compose operation failed: '+args[0])
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Compose operation failed: down

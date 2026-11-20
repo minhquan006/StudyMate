@@ -1,0 +1,30 @@
+{
+  "started_at": "2026-11-13T18:24:37.235595+00:00",
+  "base_commit": "aac87052135bea490856c648cc44f7b9bab57db8",
+  "source": "uncommitted Quân candidate; runtime fingerprint matches all three user-run suites",
+  "project": "studymate-quan-form-kpwxec",
+  "steps": [
+    {
+      "name": "compose-start",
+      "exit_code": 0
+    },
+    {
+      "name": "runtime",
+      "exit_code": 0
+    },
+    {
+      "name": "review",
+      "exit_code": 0
+    },
+    {
+      "name": "quiz-exit",
+      "exit_code": 0
+    },
+    {
+      "name": "cleanup",
+      "exit_code": 0
+    }
+  ],
+  "status": "passed",
+  "finished_at": "2026-11-13T18:25:20.058987+00:00"
+}

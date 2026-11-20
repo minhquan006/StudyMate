@@ -1,0 +1,41 @@
+{
+  "prepared_at_utc": "2026-11-14T18:05:38.642937+00:00",
+  "baseline_commit": "83e8b68a19d065790d7bff9b2feb4a043da0d467",
+  "source_state": "uncommitted ID-validation fix based on baseline; see runtime fingerprints",
+  "source": "automated local verification on macOS; not independent review by Tú or An",
+  "before_sqlite": [
+    {
+      "case": "category_save category_id[]=99999",
+      "status": 303,
+      "database_changed": true
+    },
+    {
+      "case": "category_save category_id=abc",
+      "status": 303,
+      "database_changed": true
+    },
+    {
+      "case": "chapter_delete chapter_id=5abc on owned draft",
+      "status": 303,
+      "database_changed": true
+    }
+  ],
+  "after_sqlite_checks": 447,
+  "after_mysql_chrome_checks": 487,
+  "invalid_id_cases_per_driver": 50,
+  "valid_but_missing_id_cases_per_driver": 2,
+  "rejected_cases_preserve_all_12_tables_per_driver": 52,
+  "chrome": {
+    "version": "157.0.8103.51",
+    "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  },
+  "chrome_viewports": [
+    390,
+    768,
+    1366
+  ],
+  "chrome_screenshots": 18,
+  "compose": "passed; repository build, login/health, original regressions, hashes of 12 tables preserved through restart and delayed MySQL startup",
+  "live_gemini": "not run",
+  "edge_windows": "not rerun; An review of 83e8b68 remains a separate source"
+}

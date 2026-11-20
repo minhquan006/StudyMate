@@ -1,6 +1,6 @@
 # Đặc tả yêu cầu StudyMate
 
-Phiên bản 2.2 • Ngày 12/10/2026 • Phạm vi triển khai trong 3 tuần
+Phiên bản 2.2 • Ngày lập 12/10/2026 • Cập nhật tích hợp 01/11/2026
 
 StudyMate là website học tập với khóa học, bài học, quiz luyện tập và trợ lý AI theo nội dung bài. Phiên bản này chốt phạm vi và quy tắc để ba thành viên triển khai song song, nghiệm thu được và không phát sinh các chức năng ngoài kế hoạch.
 
@@ -18,7 +18,7 @@ Bản bàn giao phải hoàn thành luồng tạo/publish khóa, enroll, học, 
 
 ## 1 Cơ sở thực hiện và thẩm quyền
 
-StudyMate sử dụng PHP thuần dựng HTML trên server, PDO và MySQL. Baseline yêu cầu 2.2 áp dụng cho bản hoàn tất ngày 01/11/2026. Leader Nguyễn Minh Quân quyết định phạm vi; phân công và mức giờ giữ nguyên. Bản này thay kiến trúc React/Laravel bằng PHP thuần.
+StudyMate sử dụng PHP thuần dựng HTML trên server, PDO và MySQL. Mốc 01/11/2026 thuộc kế hoạch nội bộ, chưa xác nhận là hạn LMS. Thông tin mới từ Quân là giảng viên dự kiến khoảng 10/11; ngày và hồ sơ nộp chính thức còn chờ xác nhận. Leader Nguyễn Minh Quân quyết định phạm vi; phân công và mức giờ giữ nguyên. Bản này thay kiến trúc React/Laravel bằng PHP thuần.
 
 Phân công hiện tại được giữ nguyên. Mỗi thành viên chịu trách nhiệm kiểm thử module và bàn giao theo Project Specification.
 
@@ -174,7 +174,7 @@ Cho phép làm lại không giới hạn; lưu lịch sử tất cả attempts. 
 
 AI nằm trong trang Learning, gồm hai thao tác ask và summarize. Chỉ Student active đã enroll được dùng với lesson của khóa đó. Backend tự lấy body từ DB; bỏ qua mọi lesson text/system prompt do client tự gửi. Không truyền đáp án quiz, email, tên hoặc kết quả học vào provider.
 
-Provider: Gemini Developer API generateContent qua PHP HTTPS stream. Model lấy từ GEMINI_MODEL (tương thích AI_MODEL); gemini-2.5-flash-lite chỉ là mặc định dự phòng chưa nghiệm thu với key thật, không cam kết còn khả dụng. Dùng free tier, ngân sách thanh toán 0 đồng, không bật billing. GEMINI_API_KEY chỉ ở config.php hoặc biến môi trường server; không commit hoặc gửi trình duyệt. Không agent framework/vector database. Quota thực tế phải được probe ngày đầu; không giả lập thành kết quả AI thật.
+Provider: Gemini Developer API generateContent qua PHP HTTPS stream. Model lấy từ GEMINI_MODEL (tương thích AI_MODEL); profile gemini-3.5-flash-lite đã kiểm HTTP/MySQL/Chrome thật ngày 01/11/2026. Fallback PHP gemini-2.5-flash-lite chưa được nghiệm thu với key hiện tại; cần chọn model đã kiểm trong môi trường chạy. Dùng free tier, ngân sách thanh toán 0 đồng, không bật billing. GEMINI_API_KEY chỉ ở config.php hoặc biến môi trường server; không commit hoặc gửi trình duyệt. Không agent framework/vector database. Quota thực tế phải được probe ngày đầu; không giả lập thành kết quả AI thật.
 
 Mỗi yêu cầu AI độc lập chỉ lesson hiện tại/câu hỏi. PHP lưu kết quả trong session để render một lần rồi xóa; không DB history hoặc trí nhớ hội thoại. UI không ngụ ý AI nhớ các câu hỏi trước.
 
@@ -394,7 +394,7 @@ Truy vết: FR02 FR08
 
 Gemini free tier có thể dùng nội dung để cải thiện sản phẩm. Chỉ gửi nội dung bài tự biên soạn công khai; UI nhắc không nhập thông tin riêng tư. Không gửi tên/email/điểm/đáp án. Quota app giữ 5/user/phút, 20/user/ngày, 5/app/phút, 100/app/ngày; kiểm atomic trước provider. Request bị chặn không trừ quota ngày, provider lỗi vẫn tính. Nguồn: https://ai.google.dev/gemini-api/docs/pricing và https://ai.google.dev/gemini-api/docs/rate-limits, kiểm tra 12/10/2026.
 
-Bản hoàn tất ngày 01/11/2026. Hồ sơ bắt buộc nội bộ: source clone sạch có .git, PHP source/schema/seed/Compose/config example, Readme.txt/README, tài khoản demo, video 1080p ba người và đủ FR, test report/collection, SRS2.2/spec2.2, known issues và evidence GitHub hợp lệ. Rubric dùng bản giảng viên cấp; không tự áp 32 chức năng ghi chú hoặc tự gán điểm online/offline. Checklist và lịch chi tiết nằm trong Specification mục 14.
+Mốc kế hoạch nội bộ 01/11/2026. Hồ sơ bắt buộc nội bộ: source clone sạch có .git, PHP source/schema/seed/Compose/config example, Readme.txt/README, tài khoản demo, video 1080p ba người và đủ FR, test report/collection, SRS2.2/spec2.2, known issues và evidence GitHub hợp lệ. Rubric dùng bản giảng viên cấp; không tự áp 32 chức năng ghi chú hoặc tự gán điểm online/offline. Checklist và lịch chi tiết nằm trong Specification mục 14.
 
 Kế hoạch 12/10–01/11 chỉ có ba tuần. Mỗi người hai meaningful commits mỗi tuần là mục tiêu nội bộ. Nếu giảng viên yêu cầu bốn tuần liên tiếp, ba tuần không đủ; leader ghi phản hồi chính thức và trạng thái bằng chứng trung thực. Yêu cầu chấm chưa được xác nhận không phải quyền tự miễn yêu cầu môn học.
 
@@ -420,9 +420,18 @@ Phân công và giờ giữ nguyên: An public/Student templates và CSS; Quân 
 
 Phiên bị thu hồi bằng auth_version thay xóa vật lý file session. Quota dùng flock một host. UI xác nhận bằng checkbox bắt buộc, server kiểm; không modal JavaScript. Markdown hỗ trợ heading/paragraph/code an toàn, chưa full CommonMark. Catalog phân trang12; danh sách quản trị/roster cần hoàn thiện phân trang và aggregate trước performance gate.
 
-Bản PHP đã kiểm tra syntax/service/browser với SQLite; chưa nghiệm thu MySQL/concurrency/Gemini thật/Compose. Các mục này phải đạt riêng trước khi báo hoàn thành FR tương ứng. PDF ảnh viewport chưa có addressbar phải chụp lại trên máy để nộp theo yêu cầu bài frontend.
+Ghi chú chuyển đổi PHP ngày 12/10/2026: tại thời điểm đó bản PHP mới kiểm syntax/service/browser với SQLite; MySQL/concurrency/Gemini thật/Compose được theo dõi ở các cập nhật sau. Các mục này phải đạt riêng trước khi báo hoàn thành FR tương ứng. PDF ảnh viewport chưa có addressbar phải chụp lại trên máy để nộp theo yêu cầu bài frontend.
 
 
 ## Cập nhật nghiệm thu kỹ thuật 27/10/2026
 
 Giới hạn được đối chiếu với validation server: mô tả 20–2.000 ký tự, lesson body 50–12.000. Cấu hình model dùng `GEMINI_MODEL`, tương thích `AI_MODEL`; mặc định dự phòng `gemini-2.5-flash-lite`, phải probe với key thật. Student/Instructor/Admin/roster phân trang mặc định 12, tối đa 50, giữ query filter, tổng số toàn tập; tiến độ/điểm tốt nhất được tổng hợp theo course/user. Bằng chứng mới và các phần chưa nghiệm thu (Gemini thật, Chrome/Edge, review/merge/rubric/video/nộp bài) xem FINAL_ACCEPTANCE.md. Đây là cập nhật đối chiếu hiện thực để nhóm review, không tự xác nhận đã đạt mọi FR.
+
+
+## Cập nhật tích hợp phần Quân ngày 01/11/2026
+
+Source nền là PR #15 tại `81dc740`, đã nhận nền Tú `1a27ec1`; phần Quân thêm validation Instructor/Admin và hardening Gemini, giữ phân trang/truy vấn/focus/startup của hai thành viên. Mặc định 12, tối đa 50; tham số phân trang sai kiểu được chuẩn hóa an toàn. Website chạy PHP/PDO/MySQL; Node/Playwright chỉ dùng để kiểm thử browser.
+
+Model được kiểm HTTP/MySQL/Chrome là `gemini-3.5-flash-lite`; `.env.example` chọn model này, config PHP vẫn giữ fallback và tương thích AI_MODEL. Kiểm thật có hỏi/tóm tắt, thiếu dữ liệu, injection có kiểm soát và archived; quota app và key giả có lượt kiểm riêng. Provider timeout/quota thật chưa được cố tình gây lỗi. Xem QUAN_INTEGRATION_2026-11-01.md để biết source fingerprint, kết quả và giới hạn.
+
+Đây là thay đổi local chưa commit, chưa review/merge. Mốc 01/11 là lịch nội bộ; khoảng 10/11 là dự kiến Quân được giảng viên thông báo, chưa có xác nhận hạn LMS/rubric. Các lịch và số liệu cũ trong tài liệu là lịch sử. Peer review, nghiệm thu chung, ảnh thanh địa chỉ thật, video và nộp bài vẫn cần nhóm xác nhận.

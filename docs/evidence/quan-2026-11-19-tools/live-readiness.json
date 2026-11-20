@@ -1,0 +1,1 @@
+{"result": "passed", "compose_port": 55674, "exported_host_port": 49123, "real_http_health_requests": 1, "isolated_cleanup": true, "containers_started": false, "live_gemini": "not run"}

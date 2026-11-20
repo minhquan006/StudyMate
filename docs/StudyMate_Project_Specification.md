@@ -1,6 +1,6 @@
 # StudyMate Project Specification
 
-**Baseline 2.2 — 12/10/2026 — Leader Nguyễn Minh Quân 52400227.** Thành viên: Lê Nguyễn Vạn An 52400258; Phạm Văn Tú 52400252. Hoàn tất dự án 01/11/2026. Giữ nguyên owner và mức giờ của baseline 2.1. Baseline này thay toàn bộ hướng React/Laravel trước đây theo quyết định của leader: **PHP thuần dựng HTML trên server, PDO, MySQL**.
+**Baseline 2.2 — 12/10/2026 — Leader Nguyễn Minh Quân 52400227.** Thành viên: Lê Nguyễn Vạn An 52400258; Phạm Văn Tú 52400252. Cập nhật tích hợp ngày 01/11/2026. Mốc 01/11 là kế hoạch nội bộ; khoảng 10/11 là dự kiến từ giảng viên theo Quân, chưa xác minh hạn LMS. Giữ nguyên owner và mức giờ của baseline 2.1. Baseline này thay toàn bộ hướng React/Laravel trước đây theo quyết định của leader: **PHP thuần dựng HTML trên server, PDO, MySQL**.
 
 ## 1. Quyết định đã chốt
 
@@ -163,3 +163,12 @@ Tách layout HTML từ public/index.php sang app/layout.php do An phụ trách; 
 ## Cập nhật bằng chứng 27/10/2026
 
 Đọc FINAL_ACCEPTANCE.md và evidence/final cho kết quả mới; các đoạn báo cáo SQLite/ảnh 12–17/10 phía trên là lịch sử, không thay bằng chứng MySQL hiện tại. Docker dùng `GEMINI_MODEL`, nhận `AI_MODEL` cũ khi chưa đặt biến mới. `gemini-2.5-flash-lite` chỉ là mặc định dự phòng, không phải cam kết provider còn hỗ trợ. Chưa xác nhận provider thật hoặc toàn bộ quy trình nộp. README là nguồn lệnh setup/backup/restore/test/đóng gói.
+
+
+## Cập nhật tích hợp phần Quân ngày 01/11/2026
+
+Source nền là PR #15 tại `81dc740`, đã nhận nền Tú `1a27ec1`; phần Quân thêm validation Instructor/Admin và hardening Gemini, giữ phân trang/truy vấn/focus/startup của hai thành viên. Mặc định 12, tối đa 50; tham số phân trang sai kiểu được chuẩn hóa an toàn. Website chạy PHP/PDO/MySQL; Node/Playwright chỉ dùng để kiểm thử browser.
+
+Model được kiểm HTTP/MySQL/Chrome là `gemini-3.5-flash-lite`; `.env.example` chọn model này, config PHP vẫn giữ fallback và tương thích AI_MODEL. Kiểm thật có hỏi/tóm tắt, thiếu dữ liệu, injection có kiểm soát và archived; quota app và key giả có lượt kiểm riêng. Provider timeout/quota thật chưa được cố tình gây lỗi. Xem QUAN_INTEGRATION_2026-11-01.md để biết source fingerprint, kết quả và giới hạn.
+
+Đây là thay đổi local chưa commit, chưa review/merge. Mốc 01/11 là lịch nội bộ; khoảng 10/11 là dự kiến Quân được giảng viên thông báo, chưa có xác nhận hạn LMS/rubric. Các lịch và số liệu cũ trong tài liệu là lịch sử. Peer review, nghiệm thu chung, ảnh thanh địa chỉ thật, video và nộp bài vẫn cần nhóm xác nhận.

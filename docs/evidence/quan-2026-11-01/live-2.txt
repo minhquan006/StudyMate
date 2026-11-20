@@ -1,0 +1,34 @@
+PASS: official Apache/MySQL live-test readiness
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: HTTP response does not expose credentials
+PASS: Instructor AI HTTP request rejected with 403
+PASS: HTTP response does not expose credentials
+PASS: Student without enrollment AI HTTP request rejected with 403
+PASS: HTTP response does not expose credentials
+PASS: application quota enforced over HTTP with a disposable counter fixture
+PASS: HTTP response does not expose credentials
+PASS: wrong test key returns a safe application HTTP 503
+PASS: HTTP response does not expose credentials
+PASS: learning remains available after live provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: lesson completion remains available after provider failure
+PASS: HTTP response does not expose credentials
+PASS: eligible quiz remains available after provider failure

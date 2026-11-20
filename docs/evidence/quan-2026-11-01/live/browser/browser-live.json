@@ -1,0 +1,19 @@
+{
+  "browser": "156.0.8078.79",
+  "records": [
+    {
+      "mode": "ask",
+      "post_status": 303,
+      "rendered_answer": "Dựa trên bài học, `const` dùng cho biến có giá trị không gán lại (binding không gán lại), trong khi `let` cho phép gán lại giá trị mới.",
+      "screenshot": "ask-chrome.png",
+      "source_lesson_id": 7
+    },
+    {
+      "mode": "summarize",
+      "post_status": 303,
+      "rendered_answer": "**Tóm tắt bài học:**\n\n* **Biến:** Dùng để lưu trữ dữ liệu.\n\n* **`const`:** Dùng cho biến không bị gán lại giá trị.\n\n* **`let`:** Dùng cho biến cho phép gán lại giá trị.\n\n* **Quy tắc:** Nên đặt tên biến rõ nghĩa để code dễ đọc hơn.",
+      "screenshot": "summarize-chrome.png",
+      "source_lesson_id": 7
+    }
+  ]
+}

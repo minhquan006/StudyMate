@@ -1,0 +1,23 @@
+[
+  {
+    "suite": "sqlite",
+    "exit_code": 0,
+    "elapsed_seconds": 20.14,
+    "log": "sqlite.txt",
+    "runtime_fingerprint": "sqlite.txt.source.json"
+  },
+  {
+    "suite": "mysql",
+    "exit_code": 0,
+    "elapsed_seconds": 38.34,
+    "log": "mysql.txt",
+    "runtime_fingerprint": "mysql.txt.source.json"
+  },
+  {
+    "suite": "compose",
+    "exit_code": 0,
+    "elapsed_seconds": 53.69,
+    "log": "compose.txt",
+    "runtime_fingerprint": "compose.txt.source.json"
+  }
+]

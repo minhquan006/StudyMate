@@ -273,3 +273,7 @@ Các ca đã thực hiện cho thấy server chặn những yêu cầu thay đ�
 
 Chưa kết luận kiểm thử toàn bộ phân quyền/CSRF, tính nguyên tử khi nhiều request đồng thời, không còn dữ liệu mồ côi sau xóa, mọi giới hạn độ dài hoặc nghiệm thu đầy đủ bản main. Các phần còn mở được giữ ở mục 8.
 
+
+## 11. Cập nhật27/10/2026 — bộ kiểm thử và chuẩn bị release
+
+Đã bổ sung mã nguồn phân trang/validation/AI error handling cùng kiểm thử tự động; xem [QUAN_TEST_REPORT.md](QUAN_TEST_REPORT.md) và [QUAN_ACCEPTANCE.md](QUAN_ACCEPTANCE.md). Kết quả mới do agent chạy trên bản sao/DB riêng; không đổi nguồn của các xác nhận thủ công15–17/10 phía trên. Chưa có review của Tú/An, chưa gọi Gemini thật trong lượt27/10 và chưa đánh dấu toàn bộ phần Quân Done theo quy tắc nhóm.

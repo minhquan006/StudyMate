@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__.'/management_support.php';
 function getCourse(int $id):array{$c=one('SELECT c.*,g.name category_name,u.name instructor_name FROM courses c JOIN categories g ON g.id=c.category_id JOIN users u ON u.id=c.instructor_id WHERE c.id=?',[$id]);if(!$c)reject('Không tìm thấy khóa học.',404);return $c;}
 function ownerCourse(int $id):array{$u=requireUser('instructor');$c=getCourse($id);if((int)$c['instructor_id']!==(int)$u['id'])reject('Không tìm thấy khóa học.',404);return $c;}
 function enrolled(int $courseId):array{$u=requireUser('student');$e=one('SELECT * FROM enrollments WHERE user_id=? AND course_id=?',[$u['id'],$courseId]);if(!$e)reject('Bạn cần tham gia khóa học trước.',403);return $e;}
@@ -27,8 +28,8 @@ function storeAttempt(int $courseId,int $userId,string $requestId,array $selecte
 // Shared bounded pagination. Counts and page rows use the same filter parameters.
 function searchPattern(string $q):string{return '%'.str_replace(['!','%','_'],['!!','!%','!_'],$q).'%';}
 function pageQuery(string $countSql,string $sql,array $params=[]):array{
- $total=(int)val($countSql,$params);$size=max(1,min(50,(int)($_GET['per_page']??12)));
- $last=max(1,(int)ceil($total/$size));$page=min($last,max(1,(int)($_GET['p']??1)));
+ $total=(int)val($countSql,$params);$paging=managementPage($total);
+ $size=$paging['per_page'];$last=$paging['pages'];$page=$paging['page'];
  return ['rows'=>all($sql.' LIMIT '.$size.' OFFSET '.(($page-1)*$size),$params),'total'=>$total,'size'=>$size,'page'=>$page,'last'=>$last];
 }
 // Each grouped subquery yields one row per course/user, avoiding join fan-out and N+1 queries.

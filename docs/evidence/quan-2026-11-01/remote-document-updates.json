@@ -1,0 +1,110 @@
+{
+  "runtime_base": "81dc740916360c4f6229cd1026837939bd44fd10",
+  "pr14_head": "24f6e1b9b4d4c60961a59f594b7df8cb0bc11960",
+  "pr15_head": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+  "scope": "17 documentation/evidence files only; no runtime changes; verified Git blob bytes",
+  "files": [
+    {
+      "path": "docs/REVIEW_FIXES_2026-10-30.md",
+      "ref": "24f6e1b9b4d4c60961a59f594b7df8cb0bc11960",
+      "git_blob": "6cfef56d9e63704a7591d8461314b550fcb6e70f",
+      "sha256": "394306f59ecda0ac4cac3d7b80448c7a9d862053813d0a56c009ebe64975e5d9"
+    },
+    {
+      "path": "docs/AN_DELIVERY.md",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "2df663f83514e8517ef662e25faad1f8bde293f4",
+      "sha256": "8f84eb116531b48e1c42302183a649cdda539fb3fb93784e4c81a61f3cab163a"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/README.md",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "36dc54b659468871f79c9ebd6bda91fb13c49069",
+      "sha256": "0fdb7a15c87845228d5ed3282d8f1ea9cfa50f31b45564b01fa9542c8e231594"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/REPORT_VI.md",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "38b1e0e424a3fafb953e04ef5d2724873bf69006",
+      "sha256": "85ac77c72d47cbfa0795f27bb6431b99ff8ef21e161bf1f126825f5870030249"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/ai-offline.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "8dc485d8a8198059522e2a59cd92ec2fb6560770",
+      "sha256": "3fabf33310f76df16750c067d91ff3d9ab0719538c379e0d823c3af5333a1bd3"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/chromium-audit.json",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "56322005cc3a62ad7381c476aa102d0433cb8f83",
+      "sha256": "11173f84125b0a1676cd06304ec4abf2dd2227593beabf3c6eb80cf9d1d2a0f8"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/commit-source-match.json",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "91dffea333f994497a2dc4edeb25de82cd67de0a",
+      "sha256": "96fa5f27a75f7ee85be2c9ec51ef6927622ea7f51623e513cfada78b40d86c0f"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/keyboard-check.cjs",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "1169feafec90b659af42eb5360a09cb7bf531b2b",
+      "sha256": "f73e6dbd3f824005cc4a891cba82b4faf972c375a83f716d45e77b6f870e0aad"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/keyboard-results.json",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "e7c363d6ea99bb04202d9af477e1373ee0cd3d79",
+      "sha256": "c9b052e929d32978f1eda05cdd702d9ad6535d5c7c634705aff5edd2a9ed8c9f"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/model.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "9e137e908126eb832614350707c836c32207253e",
+      "sha256": "2271b322353409ccea19414c5c5cf47554d39bd4acc97d75375d8763ba04c945"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/pagination.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "53d36562b06f7c2ce90a27142685b2e3cdfe4bc4",
+      "sha256": "2e93d274db696b6ed089aa7540533ea62c8079b43f6ed4f05b804c7cea180a43"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/php-lint.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "e1dedf72a29e1ea6c257a4ec0cd187f92e8150c9",
+      "sha256": "6efb6c9aeede9a8f4eee59a76f0adb22c4ac009cf0a6f8049a5b6cbd01d8b340"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/restart-and-fingerprint.json",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "48ac2e4636ccb125ae651b49da8d3d847b89dc9c",
+      "sha256": "c2fe0540ca7c6c2f9474b7c70376e613d388d058212c4c52b9343c9de7f571d8"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/services.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "e1164850a60989997a11af6e81fac8c254998c81",
+      "sha256": "d440e9511fe991de9b6744b485e705f33e39878cd31da83121082e03e78dc8e3"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/test-results.json",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "588397508f1bd63c8e644548d48a86e56d54d6b3",
+      "sha256": "85e9a2ed64868f6b75d8629e56756c2dbd5407c0bd7217d45d821a13b3cd100d"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/ui-audit-cloud.mjs",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "da6fced931599a94e76a90d88d4d6649da5786fb",
+      "sha256": "adcdc7718bbd28cb045affb69af2b453c939beb0d606b168b79e3b942eccfc52"
+    },
+    {
+      "path": "docs/evidence/an-post-conflict-2026-10-31/utf8.log",
+      "ref": "a44e23c7a25878be4bd1f7a70c39dddb13931bf5",
+      "git_blob": "c43e8fd783ca84b4c7e2551e866e93a782c5bb3f",
+      "sha256": "06f6df39858584170892333aed237f18efa63fdf85f978312c40f0db24b69042"
+    }
+  ]
+}

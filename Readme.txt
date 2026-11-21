@@ -242,3 +242,11 @@ Model được kiểm qua Apache/MySQL/HTTP/Chrome ngày 01/11 là `gemini-3.5-f
 Lượt mới đạt 270 kiểm tra runner SQLite, 310 runner MySQL có Chrome, các hồi quy của Tú/An và Compose. Có phản hồi Gemini thật cho hỏi/tóm tắt, thiếu dữ liệu, injection có kiểm soát và khóa archived; key giả trả 503 trong lượt kiểm lỗi riêng, app quota trả 429 và học/quiz vẫn hoạt động. Các số là phạm vi từng suite, không cộng thành tổng ca nghiệp vụ độc lập. Provider timeout/quota thật chưa được cố tình gây lỗi; bằng chứng mô phỏng giữ riêng.
 
 PHP/PDO/MySQL là runtime website; Node/Playwright chỉ dùng cho kiểm thử trình duyệt. Các lệnh tái kiểm tra và điều kiện DB riêng ở [tests/quan/README.md](tests/quan/README.md). Trạng thái hồ sơ, peer review và nghiệm thu chung ở [QUAN_ACCEPTANCE](docs/QUAN_ACCEPTANCE.md).
+
+## Ngôn ngữ và giao diện
+
+Mở nút quả địa cầu **VI/EN** ở bên phải thanh điều hướng để chọn Tiếng Việt/English và Sáng/Tối/Theo thiết bị. Lựa chọn được lưu trên trình duyệt, kể cả sau đăng xuất. Đổi giao diện áp dụng ngay; đổi ngôn ngữ giữ trang hiện tại và hỏi trước nếu có quiz hoặc form chưa lưu.
+
+Phần giao diện được dịch; nội dung khóa học và dữ liệu do thành viên nhập giữ nguyên. Khi không có JavaScript, chọn rồi nhấn **Áp dụng lựa chọn**. Xem `docs/DISPLAY_PREFERENCES.txt` để biết phạm vi và cách hoạt động.
+
+Bản giao diện kính, ảnh khóa, biểu đồ và bằng chứng kiểm tại [QUAN_GLASS_DISPLAY](docs/QUAN_GLASS_DISPLAY_2026-11-21.md). Tái kiểm bốn tổ hợp hiển thị trên SQLite tạm bằng `python3 tests/quan/verify_display.py`; tùy chọn đường dẫn ở [tests/quan/README.md](tests/quan/README.md).

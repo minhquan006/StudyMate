@@ -4,6 +4,22 @@
   const pending = new Set();
   let approvedExitForm = null;
   const quiz = document.querySelector('input[name="action"][value="submit_quiz"]')?.form;
+  const changedForms = new Set();
+  document.addEventListener('input', (event) => {
+    const form = event.target.form;
+    if (form?.method.toLowerCase() === 'post') changedForms.add(form);
+  });
+  document.addEventListener('change', (event) => {
+    const form = event.target.form;
+    if (form?.method.toLowerCase() === 'post') changedForms.add(form);
+  });
+  document.addEventListener('studymate:before-language-change', (event) => {
+    if (!quizChanged && !changedForms.size) return;
+    const message = quizChanged ? document.body.dataset.quizExitMessage : document.body.dataset.unsavedMessage;
+    if (!window.confirm(message)) { event.preventDefault(); return; }
+    // An explicit confirmation covers the imminent preference navigation.
+    quizChanged = false;
+  });
 
   quiz?.addEventListener('change', (event) => {
     if (event.target.matches('input[type="radio"]')) quizChanged = true;
@@ -26,7 +42,7 @@
     // Confirm before locking a different form: cancelling beforeunload does
     // not trigger pageshow, so a pending logout would otherwise stay locked.
     if (quizChanged && form !== quiz) {
-      if (!window.confirm('Bạn có đáp án quiz chưa nộp. Rời trang sẽ mất lựa chọn. Bạn có muốn tiếp tục?')) {
+      if (!window.confirm(document.body.dataset.quizExitMessage)) {
         event.preventDefault();
         return;
       }
@@ -38,7 +54,7 @@
     const status = document.createElement('p');
     status.className = 'form-pending small muted';
     status.setAttribute('role', 'status');
-    status.textContent = 'Đang xử lý, vui lòng chờ…';
+    status.textContent = document.body.dataset.pendingMessage;
     form.append(status);
   });
 

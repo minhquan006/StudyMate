@@ -1,0 +1,23 @@
+{
+  "base": "7f374926acdf3b2c6a1fa9e08b204b39e7777299",
+  "php": "8.4.24",
+  "lint_files": 46,
+  "results": {
+    "sqlite": {
+      "checks": 152,
+      "errors": 0,
+      "screenshots": 8
+    },
+    "mysql": {
+      "checks": 152,
+      "errors": 0,
+      "screenshots": 8
+    }
+  },
+  "limits": [
+    "Native PHP/MySQL, not Docker/Compose runtime.",
+    "Chromium emulated viewports, not Edge/Safari or physical phones.",
+    "AI disabled; no live Gemini.",
+    "No PR21 widgets imported."
+  ]
+}

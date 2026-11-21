@@ -9,7 +9,7 @@ function instructor_actions(string $action,int $cid,array $stamp):never{global $
    elseif($target==='archived'){if($c['status']==='draft')reject('Không lưu trữ khóa nháp.',409);}
    else reject('Trạng thái không hợp lệ.');run('UPDATE courses SET status=?,updated_at=? WHERE id=?',[$target,now(),$cid]);});flash('Đã cập nhật trạng thái.');go($u['role']==='admin'?'admin':'edit',$u['role']==='admin'?['tab'=>'courses']:['id'=>$cid]);
  case 'course_delete':
-  ownerCourse($cid);mustConfirm();transaction(function()use($cid){$c=lockCourse($cid);structureOpen($c);run('DELETE FROM courses WHERE id=?',[$cid]);});flash('Đã xóa bản nháp.');go('instructor');
+  ownerCourse($cid);mustConfirm();$deletedImage=null;transaction(function()use($cid,&$deletedImage){$c=lockCourse($cid);structureOpen($c);$deletedImage=$c['image_path']??null;run('DELETE FROM courses WHERE id=?',[$cid]);});if($path=mediaFile($deletedImage))@unlink($path);flash('Đã xóa bản nháp.');go('instructor');
  case 'chapter_save':
   $title=textInput('title',2,150);$position=(int)($_POST['position']??1);if($position<1)reject('Thứ tự phải lớn hơn 0.');$chapterId=postId('chapter_id',true);ownerCourse($cid);transaction(function()use($cid,$chapterId,$title,$position,$stamp){$c=lockCourse($cid);if($chapterId){$ch=one('SELECT * FROM chapters WHERE id=? AND course_id=?',[$chapterId,$cid]);if(!$ch)reject('Không tìm thấy chương.',404);if($position!==(int)$ch['position'])structureOpen($c);run('UPDATE chapters SET title=?,position=?,updated_at=? WHERE id=?',[$title,$position,now(),$chapterId]);}else{structureOpen($c);insertRow('chapters',['course_id'=>$cid,'title'=>$title,'position'=>$position]+$stamp);}});flash('Đã lưu chương.');go('edit',['id'=>$cid,'tab'=>'content']);
  case 'chapter_delete':

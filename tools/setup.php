@@ -9,6 +9,7 @@ if($config['db_driver']==='mysql'){
  }
 }
 foreach(schema($config['db_driver']) as $sql)db()->exec($sql);
+require_once dirname(__DIR__).'/database/migrate_profile_media.php';migrateProfileMedia();
 if((int)val('SELECT COUNT(*) FROM users')>0){echo "Database đã có dữ liệu; không ghi đè hoặc reset.\n";exit;}
 if(strlen($config['demo_password'])<10)exit("Demo password must have at least 10 characters\n");
 require dirname(__DIR__).'/database/seed.php';transaction(fn()=>seedDatabase());echo "Setup hoàn tất: ".$config['db_driver'].". Demo accounts seeded.\n";

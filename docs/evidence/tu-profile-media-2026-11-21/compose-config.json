@@ -1,0 +1,5 @@
+{
+  "configuration_only": true,
+  "persistent_uploads_covered_by_private_storage_volume": true,
+  "Docker_runtime_tested": false
+}

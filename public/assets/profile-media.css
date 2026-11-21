@@ -1,0 +1,16 @@
+.profile-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;align-items:start}
+.profile-summary{text-align:center;overflow-wrap:anywhere}.profile-summary .profile-avatar{margin:0 auto 18px}
+.profile-avatar{display:inline-flex;width:40px;height:40px;object-fit:cover;border-radius:50%;flex:none;vertical-align:middle}
+.avatar-placeholder{align-items:center;justify-content:center;background:var(--bs-tertiary-bg);color:var(--bs-body-color);font-weight:700;border:1px solid currentColor}
+.profile-summary .profile-avatar{width:96px;height:96px;font-size:2rem}
+.profile-panel,.profile-panel form,.image-controls{min-width:0}.profile-panel .form-grid{margin-top:20px}
+.profile-panel h3{font-size:1.1rem;margin-top:24px}.profile-panel button{margin-top:12px}
+.image-editor{display:grid;grid-template-columns:minmax(120px,200px) minmax(0,1fr);gap:20px;align-items:start;margin:20px 0}
+.image-preview{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border-radius:14px;overflow:hidden;background:var(--bs-tertiary-bg);border:1px solid var(--bs-border-color)}
+.image-preview img{width:100%;height:100%;object-fit:cover}.image-preview img[hidden],.image-preview span[hidden]{display:none}
+.avatar-editor .image-preview{aspect-ratio:1;width:120px;border-radius:50%}.avatar-editor{grid-template-columns:120px minmax(0,1fr)}
+.image-controls input[type=file]{max-width:100%;font-size:.9rem}.image-remove{display:flex;gap:8px;align-items:center}.image-remove input{width:auto;flex:none}
+.category-image-panel{min-width:260px;max-width:700px;margin-top:12px}.category-image-panel summary{cursor:pointer;padding:8px 0}
+.category-image-panel .image-editor{grid-template-columns:minmax(100px,150px) minmax(0,1fr)}
+.instructor-profile-heading{display:flex;gap:16px;align-items:center}.instructor-profile-heading h2{margin:0}.profile-text{white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:700px){.profile-layout{grid-template-columns:1fr}.image-editor,.avatar-editor,.category-image-panel .image-editor{grid-template-columns:1fr}.image-preview{max-width:260px}.category-image-panel{min-width:200px}}

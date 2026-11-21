@@ -1,0 +1,8 @@
+{
+  "driver": "sqlite",
+  "checks": 487,
+  "adapter": "tests/tu/native_regression.py",
+  "php_native": true,
+  "real_Gemini": false,
+  "Docker_runtime": false
+}

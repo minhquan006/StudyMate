@@ -1,0 +1,29 @@
+{
+  "main": "6b79ef34d632aebc07884fa981cc75b162cd4bce",
+  "pr26": "eb08da64de92b3a6efa22b1d48deee81f2561038",
+  "pr27": "12b819a5676b7ecf0ba439dd3a32884ab59d2380",
+  "php": "8.4.24",
+  "mysql": "8.4.13",
+  "browser": "Chromium headless-shell 156.0.8078.79",
+  "scope": "Local no-commit combination; PR27 metadata retargeted to main; no commit or push performed.",
+  "results": {
+    "sqlite": {
+      "profile-results.json": 152,
+      "utilities-results.json": 78,
+      "cross-results.json": 360
+    },
+    "mysql": {
+      "profile-results.json": 152,
+      "utilities-results.json": 78,
+      "cross-results.json": 360
+    }
+  },
+  "main_after26": "49db2d07341967b94c0e16528e0dd2b37865f3bc",
+  "tested_combined_tree": "5f8e4390c9ec3382f1b324f1f83b6b1cb1700829",
+  "candidate_source_matches_tested_tree": true,
+  "limits": [
+    "Linux native PHP/MySQL, no Docker/Compose runtime",
+    "One Chromium, no Edge/Safari or physical phone",
+    "AI disabled; no Gemini or YouTube playback"
+  ]
+}

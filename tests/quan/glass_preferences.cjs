@@ -23,7 +23,7 @@ const check=(condition,name)=>{if(!condition)throw Error(name);checks.push(name)
    check(response.status()===200,label+': HTTP 200');
    check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),label+': fits viewport');
    check(!/Warning:|Fatal error|Stack trace:/.test(await page.locator('body').innerText()),label+': no PHP diagnostics');
-   check(await page.locator('img').evaluateAll(xs=>xs.every(x=>x.complete&&x.naturalWidth>0)),label+': photos loaded');
+   check(await page.locator('img').evaluateAll(xs=>xs.every(img=>(img.hidden&&!img.hasAttribute('src'))||(img.complete&&img.naturalWidth>0))),label+': photos loaded');
    if(shot)await page.screenshot({path:path.join(root,'screenshots','display-'+label.replaceAll(/[^\w-]/g,'-')+'.png'),animations:'disabled'});
   }
   await go('home');

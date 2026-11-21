@@ -1,0 +1,19 @@
+{
+  "first": "Profile/media migration: 6 columns added.",
+  "second": "Profile/media migration: 0 columns added.",
+  "setup_repeat": "unchanged",
+  "old_tables_preserved": [
+    "users",
+    "categories",
+    "courses",
+    "chapters",
+    "lessons",
+    "enrollments",
+    "lesson_progress",
+    "quizzes",
+    "questions",
+    "answers",
+    "quiz_attempts",
+    "quiz_answers"
+  ]
+}

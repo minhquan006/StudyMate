@@ -1,0 +1,27 @@
+{
+  "normalization": "LF for text, original bytes for PNG",
+  "sha256": {
+    "browser/ai-offline-fixture-390.png": "058cab021ed159465d0329ea5ed0f53b4b22df0e2e1855c90cbbcb3a030e1c22",
+    "browser/courses-1366.png": "61f03420900ce5a4f460217b1b4f363a2ea767b3849b673b5eab6a10a01e7557",
+    "browser/courses-390.png": "990a0445b598e21ec109fd1a2be0fd0be1572bd849ae3b6c19d7a7537b59d349",
+    "browser/detail-1366.png": "ddf771ef79dcef6487f0ed1b278ee558bc4bb6ff3a4bb4c82da88655887f1100",
+    "browser/detail-390.png": "9942810a78f664564c3c6e281bf890cdfc471a84408015f494578cb9b8c5bf2a",
+    "browser/home-1366.png": "8241d7ec71e11132ed747abef424e18ef132271aef5a1c67a63ecc89b2550704",
+    "browser/home-390.png": "4911480160d74ed89ac781b3b4faa1335df4a464d395c79f7dbcfe3a2cb59c68",
+    "browser/learn-1366.png": "df8382fb56ee292e6d8b544be2704b501f8117607916f77150513db1e93ebec6",
+    "browser/learn-390.png": "b2e385e938c9415d85fe461e5ce8f5d426331cd6af44bedab8a2997819c1fc87",
+    "browser/quiz-1366.png": "99ff5c96e5d8595dfc8d9a510499ae3755a7bd2f29d41cea7946733d73dd060a",
+    "browser/quiz-390.png": "b6f068ffc599201f1d0c7a5ac5b81337b476d71aa012dee95e7029a7d6a6620d",
+    "browser/result-1366.png": "126eb7e7580b2e66d87d59bd9b4d3e6a34730e0bccc81dd1598a0c46dc1700f9",
+    "browser/result-390.png": "ade133770ee390e8751c834b16146b72faa04a64ba24c172d91b1c62ed47c94c",
+    "browser/results.json": "02ef4f8f71281b935a61d5d1a298576711c88456bf2a191eab873663da2e47c9",
+    "browser/student-1366.png": "12a791c1617f20a504fd4c33669e5307e2bfb12001e5ae8241578c06b3391132",
+    "browser/student-390.png": "32995d10409be8bf2721159f0001354f8b353bdbe86f2d72909cbda39d05b8ea",
+    "forms/original/results.json": "ec180b0fc9955eaba2bf17be1644f8e13c9236ebb2d7a92881c4cb0bc76276cf",
+    "forms/quiz-exit/results.json": "040971946a31bc0f84f30e8bdae257a3e73a98d81fa413662e132718fdaecb8d",
+    "forms/review/results.json": "4f22345f30922349ca42c18f03009e52eadcf37b341dbd3b1f5cf877e4157b75",
+    "php-checks.txt": "7af0ca4fdc57ed2b2de8848d90bfc2183d9bd3eed827da50c872bd02c44b6fd2",
+    "preview-home.png": "9aae523f88007fda48f00ced17d113459a04472fceaa73b1771070331848dff5",
+    "summary.json": "d316ce66c59109e2395e2c87818d69b85277664bcd782dcf845d3d5197d5d472"
+  }
+}

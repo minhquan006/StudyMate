@@ -1,0 +1,45 @@
+{
+  "runtimeSourceCommit": "7c76783f90ea8a0dd064c75b994e1b4f8a0901da",
+  "runtimeEquivalentTo": "3c1b377",
+  "harnessCommit": "7c76783f90ea8a0dd064c75b994e1b4f8a0901da",
+  "baseCommit": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "normalization": "UTF-8 text LF; binary raw bytes",
+  "sourceFilesSha256": {
+    "app/views.php": "23e14ba3ebed3afc2d9ab1ee326e759c850f7fe705a04ca99ea4b7df4357b903",
+    "app/layout.php": "2d321ff2f85b0c3e1427fd7162066a52aec55567104b5e0e469b4242df1b0068",
+    "app/ai_view.php": "cbb29021c79f2f9bcbba85ab6e957cfbc4c77d9e46f00d3740a515130f47a2ad",
+    "public/assets/app.css": "e50bf005ed84d097c380907289cc35253d33f17db4cd627f6550400adadf7b46",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005",
+    "tests/an-ui-demo.cjs": "c09e31c2bd0fb5291444839e5dcda01717781386b23b66142530f02cf2468fc1",
+    "tests/form-feedback.cjs": "0bd6ad735a6c4c6c612f45d45944872b8e723aaa043aa907b065ba8cfd8f0260"
+  },
+  "qa": {
+    "ui": {
+      "path": "browser/results.json",
+      "checks": 632,
+      "screenshots": 15,
+      "browsers": {
+        "chrome": "157.0.8103.80",
+        "edge": "157.0.4341.60"
+      },
+      "source": "Application runtime identical to committed source; browser harness is tests/an-ui-demo.cjs."
+    },
+    "forms": {
+      "sourceCommit": "3c1b377",
+      "original": 22,
+      "review": 34,
+      "quiz-exit": 16
+    },
+    "php": {
+      "sourceCommit": "3c1b377",
+      "checks": 112,
+      "lintFiles": 33
+    }
+  },
+  "limits": [
+    "Disposable SQLite only; MySQL/Docker not run.",
+    "No real Gemini call. Ask/Summarize disabled-AI POSTs and labelled offline response fixture.",
+    "Automated desktop browser viewports 390/768/1366; no physical phone.",
+    "Prior UI evidence under an-ui-2026-11-21 is historical."
+  ]
+}

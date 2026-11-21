@@ -111,7 +111,7 @@ def main():
                 assert not any('SUPER' in str(row) or 'GRANT ALL PRIVILEGES ON *.*' in str(row) for row in environment['grants'])
                 (OUT/(label+'-mysql-environment.json')).write_text(json.dumps(environment,indent=2)+'\n')
                 if label=='baseline':
-                    old=cmd(['git','show','HEAD:tests/demo_courses.php']).stdout
+                    old=cmd(['git','show','ae8a6b1ffbd67ed211cff135a2ee2b878f46adcb:tests/demo_courses.php']).stdout
                     (app/'tests/demo_courses_old.php').write_text(old)
                     summary['results'][label]=sequence(app,'mysql-baseline','tests/demo_courses_old.php',True)
                 else:

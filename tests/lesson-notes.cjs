@@ -81,7 +81,7 @@ async function approve(p,button,accept) { p.once('dialog',d=>accept?d.accept():d
         await p.goto(url+'7'); const q=await c.newPage(); await q.goto(url+'7'); await open(p); await open(q);
         // Keep tab A dirty while interacting with tab B, regardless of host load.
         // Advancing A's autosave clock explicitly below still tests suspension.
-        await p.clock.pauseAt(new Date());
+        await p.clock.pauseAt(new Date((await p.evaluate(() => Date.now())) + 60000));
         await p.locator('#lesson-note-input').fill('Bản đang sửa ở tab A');
         await q.locator('#lesson-note-input').fill('Bản mới từ tab B'); await q.locator('#lesson-note-save').click();
         await p.waitForFunction(()=>!document.querySelector('#lesson-note-conflict').hidden);

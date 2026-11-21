@@ -149,6 +149,7 @@ function pageLearn(int $id):void {
                 <div class="lesson-actions"><?=formStart('complete',['lesson_id'=>$lid,'course_id'=>$id,'return_page'=>'learn'])?><button class="btn btn-primary" <?=in_array($lid,$done,true)?'disabled':''?>><?=in_array($lid,$done,true)?'✓ Đã hoàn thành bài':'Đánh dấu hoàn thành'?></button></form><?php if(isset($lessons[$lessonNumber])): $next=$lessons[$lessonNumber]; echo formStart('last_lesson',['course_id'=>$id,'lesson_id'=>$next['id'],'return_page'=>'learn']); ?><button class="btn btn-outline-secondary">Bài tiếp theo <?=uiIcon('arrow')?></button></form><?php else: ?><a class="btn btn-outline-secondary" href="<?=h(url('quiz',['id'=>$id]))?>">Đến quiz cuối khóa</a><?php endif; ?></div>
                 <p class="small muted mt-3">Tiến độ được ghi khi bạn đánh dấu hoàn thành bài.</p>
             </section>
+            <?php require_once __DIR__.'/lesson_notes_view.php'; renderLessonNotes((int)$user['id'],$course,$lesson); ?>
             <?php renderAiPanel($lesson,$lid,$id); ?>
             </div>
             <div class="learning-rail"><?php require_once __DIR__.'/study_space_view.php'; renderStudySpace((int)$user['id'],$id); ?><details class="lesson-list-wrap" open><summary>Danh sách bài học <span><?=$progress['done']?> / <?=$progress['total']?></span></summary><aside class="panel outline" id="course-outline" aria-labelledby="outline-title"><h2 id="outline-title">Nội dung khóa học</h2><p class="small muted"><?=$progress['done']?> / <?=$progress['total']?> bài đã hoàn thành</p><?php progressBar($progress); ?>

@@ -1,0 +1,30 @@
+{
+  "normalization": "LF text; original PNG bytes",
+  "sha256": {
+    "celebrate.png": "6eecd8eb2a9976b2af3b151c9b00715837615f3ea3fc64b0146f418771b2bc3c",
+    "coffee.png": "036e577d29a5c7eab4f7e104b9f779e0603d85cfc565b26b68d7a26f8caa5fb1",
+    "crimson.png": "098b0c2fc4bd378a9c5f34488cf0d06ff5c1dde10c9b104068cb7c96ac76af52",
+    "diagnostics/stale-session-context.json": "17df8c4ea86b3d037c99b8b98497dd20356170ce7f21abcff6b87ce203e66ef8",
+    "header-smoke.json": "da94e9646bd99c9a5ccdcca424946e562a8569e8733ca817b6cd752104932fb4",
+    "panel-1366.png": "a8b909259a969ac5069fbb5f5e7d4d76fca4869c930fb5bf57591deb13ea4fca",
+    "panel-390.png": "2e437455dcfcee3101cdc4997378edd1d59b1d6bad967a3161ce2773f042db66",
+    "panel-768.png": "9cc96d97b7c293b36aab2418b029364797ae0a5bea895a7a11861e3f2a1d612c",
+    "php-syntax.txt": "feeefa91039b7ed4b1d0dab1c9261a18e798825625ac7fed7da84839877281d1",
+    "regression/floating-player-mobile.png": "018d8bde3dcef57a9ac4055b932cd3482f457a3b84168ffbc2894d3af17c02e0",
+    "regression/music-1366.png": "c421863db113d785afc462b12ac75342d866d8bad6a193e7d23f659aed87ca29",
+    "regression/music-390.png": "bdc0f63b3d79d62b8af2762d5d23261430b90c10ff85f0a44d3b48bd81d8e8ef",
+    "regression/results.json": "cace3be4d5110617fdd68d1842e8c538ae5c12dafbf59bbf41c45a823c6f3ff2",
+    "regression/scene-1366.png": "ad8dc0bc9f919917096c339c6ff62d013a68ad61b5b08d6448f1aa5ae1908bd2",
+    "regression/scene-390.png": "f9e4da54651c6aa0796cec4ebf7161cd9e26ced6f5b83e2fcab8bd7b660d2663",
+    "regression/scene-768.png": "8cdba5889be4f47549f8d435672b74a221eab0bdfdf5d08dea27869a218b91d5",
+    "regression/sound-1366.png": "2568216e6072a8f42c9be52f72e988446937d468f67e89265e3f5e0e63eb9b62",
+    "regression/sound-390.png": "0e35f384e09674a265eecf326fbd0b4d8707e6a80ee7f7d2af1ad40720cb5913",
+    "regression/youtube-live.png": "dd513343f0f60ca1566639691565c1a615b8fcea219e219ab73ded91e4d0f679",
+    "results.json": "8cd8cde901e6aaa5b34c817d20d7016d3ac61e71a6d6ec9179c9562930692a71",
+    "summary.json": "0cafad7f09b6039838eb8a60aaefbaceaca936b2c3bd469e36283df41e8226b0",
+    "wardrobe-mobile-final.png": "6fd425d9471d8f21d625d0a7a422b944e96826cd502846a8cb2fa1711f894bf7",
+    "wardrobe-mobile.png": "66c21c413080a9579513b2a6f9f054a2bbc32402c03f1e94e2ffaef79c436d16",
+    "xp-checks.txt": "95e69b05e22186fdcafed9204fcfd44f6e8df3550b1879303e90599950e6e870",
+    "youtube-mobile.png": "1c99d1dd1ae755aa36014da6f203eee9971c429d0264a22909016f5007039f00"
+  }
+}

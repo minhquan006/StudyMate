@@ -127,6 +127,7 @@
     state.timer.running = false;
     state.timer.anchor = 0;
   }
+  let lastBuddyFocus = '';
   function drawTimer() {
     const value = timerValue();
     if (state.timer.running && ((state.timer.mode !== 'stopwatch' && value === 0) || value === 86400000)) {
@@ -139,6 +140,9 @@
     $('space-clock').textContent = (hours ? pad(hours) + ':' : '') + pad(minutes) + ':' + pad(seconds % 60);
     $('space-timer-start').textContent = state.timer.running ? 'Tạm dừng' : ((state.timer.mode === 'stopwatch' ? value > 0 : value > 0 && value < modes[state.timer.mode]) ? 'Tiếp tục' : 'Bắt đầu');
     message('space-timer-status', state.timer.running ? 'Đang ' + (state.timer.mode === 'stopwatch' ? 'bấm giờ.' : 'đếm ngược.') : value === 0 && state.timer.mode !== 'stopwatch' ? 'Phiên đã kết thúc. Bạn có thể bắt đầu phiên mới.' : (state.timer.mode === 'stopwatch' ? value > 0 : value < modes[state.timer.mode]) ? 'Đã tạm dừng.' : 'Sẵn sàng cho một phiên học.');
+    const focus = { enabled:state.enabled, mode:state.timer.mode, running:state.timer.running };
+    const signature = JSON.stringify(focus);
+    if (signature !== lastBuddyFocus) { lastBuddyFocus = signature; document.dispatchEvent(new CustomEvent('studymate:focus-state', { detail:focus })); }
   }
   $('space-timer-start').addEventListener('click', () => {
     if (state.timer.running) pauseTimer();

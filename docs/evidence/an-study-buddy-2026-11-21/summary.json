@@ -1,0 +1,42 @@
+{
+  "sourceCommit": "16ae7aa744c35e09ca2b57e6362f0038663559fa",
+  "baseCommit": "2a8da1040d9723eefdb3e1a026c95b16feb21fb6",
+  "sourceFilesSha256": {
+    "app/layout.php": "ce4c09ac5113db5dcc60f41e831ab5a300c6926253bf7650a2bd69ada0651b02",
+    "app/study_buddy.php": "b6f224367215d7498a9ca60189e31238c59d05ef175a25d1dc6698539456dd02",
+    "public/assets/study-space.js": "5e608466eded9950e226c49ddfe8e86e5c929bb25dd41882bc3211356ce9f8b7",
+    "public/assets/study-buddy.js": "52da1b86802909aa18cc341be3bad412248c5fb21099779dac96596c80ad422f",
+    "public/assets/study-buddy.css": "a0413e4eb71d7eb235309cb57dca22980e3feee2ccfabb559720ec6b6d66d17c",
+    "tests/study_buddy.php": "d3a4af99a2ca2428fe27ebe575107ef950bd8f6fc89c0bed2fa2cddb6e8b5e66",
+    "tests/study_buddy_fixture.php": "af80969ab16a0367b20cfcbe532843a19e7bf17817a88d318d8d52d5f4de4059",
+    "tests/study-buddy.cjs": "c96244bbbfc1e3932e69b7aab6d2d0bc034038b83927349a41e11496bdf08e96",
+    "public/assets/buddy/classic-celebrating.webp": "1a95ba1dda644cd03b5b51cf1295d6e095290d22581bd3eecd47b47006e87fbb",
+    "public/assets/buddy/classic-greeting.webp": "b421559d241716903797e9d379885450c583865370ff27dac6ae1fa401cef015",
+    "public/assets/buddy/classic-reading.webp": "77dfe9ba1a7f3c992903b80a6b7e38f680692a47b91b711599d3f14dc593968c",
+    "public/assets/buddy/classic-resting.webp": "6f1861fe125eb931cc5cf7e813e6fcba75e6009aaa8d47daae459f45b3d7718b",
+    "public/assets/buddy/crimson-celebrating.webp": "8e933b4f4bffe2c47fb74049a8c45d75489038cfebfcf58a7d10fba2a6911284",
+    "public/assets/buddy/crimson-greeting.webp": "0cfacaf5c2f64e7b89873c59660df6092fd4b0e4689aa9eece1d059e0a48ed57",
+    "public/assets/buddy/crimson-reading.webp": "7a6bddeb25f6c4f799170cfc8514c41c834bdbe1c1ea5cb8ad343c0f59c9170c",
+    "public/assets/buddy/crimson-resting.webp": "c65fb76d2a50546b6342649388fccac919590069324f0bea18684ea0553c18b4",
+    "public/assets/buddy/SOURCES.md": "7a954078b12c7c9d8c8085ec82cba8bf8df06cdc748b2a915dba2f248cc763ea",
+    "public/assets/buddy/student-celebrating.webp": "0c84ba1b3569da284e280d7a53ce1cd5c083b56aaf06faceea751bef7ba4a08f",
+    "public/assets/buddy/student-greeting.webp": "60e9b0f31c69f6760a7198e2bf6c1c5e3c1b47df9bfc827b47febb91218ced48",
+    "public/assets/buddy/student-reading.webp": "ddab914de300148b83334fb9bfdfb20ecd2b774676083dca35a8433136b79abb",
+    "public/assets/buddy/student-resting.webp": "f59a0196389ecfbaf4bd204ab6007a49b238b7d140d403340e8c27a6bb75215c"
+  },
+  "sourceNormalization": "LF text; original WebP bytes",
+  "xpChecks": 15,
+  "buddyBrowserChecks": 99,
+  "headerSmokeChecks": 4,
+  "regressionChecks": 158,
+  "regressionScope": "Before final companion-only sticky-header spacing. All existing study/media/lesson/quiz code unchanged afterward. Final 99-check suite and 4 header checks cover the final Buddy layout.",
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "limits": [
+    "SQLite QA only; no MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones or Safari.",
+    "XP from academic records; wardrobe/reminder preferences are per-account browser localStorage, not cross-device synced."
+  ]
+}

@@ -1,3 +1,4 @@
+<?php $withStudyBuddy=$u&&$u['role']==='student';if($withStudyBuddy){require_once __DIR__.'/study_buddy.php';$studyBuddyProfile=studyBuddyProfile((int)$u['id']);} ?>
 <!doctype html>
 <html lang="vi">
 <head>
@@ -12,6 +13,7 @@
     <script src="/assets/forms.js" defer></script>
     <script src="/assets/discovery.js" defer></script>
     <?php if($page==='learn'): ?><link rel="stylesheet" href="/assets/study-space.css"><script src="/assets/study-space.js" defer></script><?php endif; ?>
+    <?php if($withStudyBuddy): ?><link rel="stylesheet" href="/assets/study-buddy.css"><script src="/assets/study-buddy.js" defer></script><?php endif; ?>
 </head>
 <body class="page-<?=h($page)?>">
 <a class="skip-link" href="#main-content">Đến nội dung chính</a>
@@ -44,5 +46,6 @@
 <?php if($error||$f): ?><div class="container flash-container"><div class="alert <?=$error?'alert-danger':'alert-'.h($f['type'])?>" role="alert"><?=h($error??$f['message'])?></div></div><?php endif; ?>
 <div id="main-content" tabindex="-1"><?=$body?></div>
 <footer class="footer"><div><a class="brand brand-artwork" href="<?=h(url('home'))?>" aria-label="StudyMate · Trang chủ"><img src="/assets/images/studymate-logo.webp" alt="StudyMate" width="480" height="292" loading="lazy"></a><p>Kiến thức mở. Học theo cách của bạn.</p></div><nav aria-label="Liên kết cuối trang"><a href="<?=h(url('courses'))?>">Khám phá khóa học</a><a href="<?=h(url($u?$u['role']:'login'))?>">Không gian học tập</a></nav><span>Đồ án Lập trình Web · TDTU</span></footer>
+<?php if($withStudyBuddy)renderStudyBuddy($u,$studyBuddyProfile,$page); ?>
 </body>
 </html>

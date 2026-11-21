@@ -8,7 +8,7 @@ const base = process.env.QA_BASE_URL;
 assert(base && process.env.QA_ALLOW_WRITES === '1' && ['localhost','127.0.0.1'].includes(new URL(base).hostname), 'Use a disposable loopback QA app.');
 const engines = JSON.parse(process.env.QA_BROWSERS || '[]'); assert(engines.length);
 const out = process.env.QA_OUTPUT || 'storage/study-space-qa'; fs.mkdirSync(out, { recursive:true });
-const files = ['app/bootstrap.php','app/layout.php','app/views.php','app/study_space_view.php','public/assets/study-space.js','public/assets/study-space.css'];
+const files = ['app/bootstrap.php','app/layout.php','app/views.php','app/study_space_view.php','public/assets/study-space.js','public/assets/study-space.css','public/assets/spaces/forest-motion.webm'];
 const report = { started:new Date().toISOString(), sourceFilesSha256:Object.fromEntries(files.map(f => [f,crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex')])), checks:[], errors:[], screenshots:[], browsers:{}, liveYoutube:[], limitations:['Disposable SQLite on Windows; not MySQL/Docker or real Gemini.', 'Browser viewports, not physical phones.', 'Web Audio source/decode/play/volume inspected automatically; not a listening-quality review.'] };
 const password = process.env.QA_DEMO_PASSWORD || 'StudyMate2026!';
 function check(ok, name, browser) { assert(ok, name); report.checks.push({ browser, name }); }
@@ -67,6 +67,21 @@ async function audioObserver(context) {
         check(await p.locator('#study-space-toggle').getAttribute('aria-expanded') === 'true', 'space toggle announces expanded state', engine.name);
         await p.getByLabel('Trong rừng', { exact:true }).check();
         check(await p.locator('body').getAttribute('data-study-scene') === 'forest', 'scene radio changes actual page background', engine.name);
+        await p.waitForFunction(() => document.querySelector('#space-scene-video').currentTime > .3);
+        check(await p.locator('#space-scene-video').evaluate(v => v.videoWidth === 1920 && v.videoHeight === 1080 && v.muted && v.loop && v.playsInline), 'local HD scenery video actually decodes and plays muted', engine.name);
+        const motionTime = await p.locator('#space-scene-video').evaluate(v => v.currentTime);
+        await p.waitForFunction(t => document.querySelector('#space-scene-video').currentTime > t + .4, motionTime);
+        check(true, 'scenery video advances rather than displaying a still', engine.name);
+        await p.locator('#space-motion').uncheck();
+        check(await p.locator('#space-scene-video').evaluate(v => v.paused && !v.hasAttribute('src')), 'turning motion off releases video source', engine.name);
+        await p.locator('#space-motion').check();
+        await p.emulateMedia({ reducedMotion:'reduce' });
+        await p.waitForFunction(() => document.querySelector('#space-motion').disabled);
+        check(await p.locator('#space-motion').isDisabled() && await p.locator('#space-scene-video').evaluate(v => v.paused && !v.hasAttribute('src')), 'system reduced motion stops video and disables effects', engine.name);
+        await p.emulateMedia({ reducedMotion:'no-preference' });
+        await p.waitForFunction(() => document.querySelector('#space-scene-video').currentTime > .2);
+        check(await p.locator('body').getAttribute('class').then(c => c.includes('study-space-motion')), 'motion preference resumes when reduction is lifted', engine.name);
+
         for (const width of [390,768,1366]) {
           await p.setViewportSize({ width,height:900 });
           for (const tab of ['Không gian','Âm thanh','Nhạc']) {
@@ -79,16 +94,20 @@ async function audioObserver(context) {
         await p.getByRole('tab', { name:'Không gian', exact:true }).focus(); await p.keyboard.press('ArrowRight');
         check(await p.getByRole('tab', { name:'Âm thanh', exact:true }).getAttribute('aria-selected') === 'true', 'tool tabs work with arrow keys', engine.name);
         check(youtubeRequests === 0, 'no YouTube request before explicit valid music load', engine.name);
+        check(await p.locator('.ambient-icon svg[aria-hidden=true]').count() === 4, 'four decorative sound icons have no extra screen reader noise', engine.name);
         await p.getByRole('button', { name:'Bật âm nền', exact:true }).click();
         await p.waitForFunction(() => window.__spaceQA.starts === 1);
         check(await p.evaluate(() => window.__spaceQA.pcm[0].seconds > 40 && window.__spaceQA.pcm[0].nonzero), 'real local rain recording decodes and starts after user gesture', engine.name);
         for (const kind of ['wind','pink','brown']) await p.locator('[data-ambient=' + kind + ']').check();
         await p.waitForFunction(() => window.__spaceQA.starts === 4);
         check(await p.evaluate(() => window.__spaceQA.pcm.every(p => p.nonzero)), 'four selected ambient channels contain actual signal', engine.name);
+        check(await p.locator('.ambient-row.is-playing').count() === 4, 'active sound indicators reflect actual live channels', engine.name);
         await p.locator('#space-master-volume').press('Home');
         check(await p.evaluate(() => window.__spaceQA.targets.slice(-4).every(v => v === 0)), 'master volume mutes all ambient output gains', engine.name);
+        check(await p.locator('.ambient-row.is-playing').count() === 0, 'muted channels stop showing active animation', engine.name);
         await p.locator('#space-master-volume').press('End'); await p.locator('[data-ambient-volume=wind]').press('Home'); await p.locator('[data-ambient-volume=wind]').press('ArrowRight');
         check(await p.evaluate(() => JSON.parse(localStorage.getItem('studymate:space:v1:1')).sounds.wind.volume === 1), 'per-channel and master levels persist', engine.name);
+        check(await p.locator('#ambient-value-wind').innerText() === '1%', 'sound volume percentage follows keyboard adjustment', engine.name);
         await p.getByRole('button', { name:'Tạm dừng âm nền', exact:true }).click();
         check(await p.evaluate(() => window.__spaceQA.starts === window.__spaceQA.stops), 'pause stops every live ambient source', engine.name);
         await p.reload();
@@ -117,13 +136,22 @@ async function audioObserver(context) {
           const status = await p.locator('#space-music-status').innerText(); report.liveYoutube.push({ browser:engine.name, status });
           if (status.includes('Đang phát nhạc')) {
             check(true, 'official sample video actually enters playing state', engine.name);
+            const originalFrame = await frame.elementHandle();
             await p.setViewportSize({ width:390,height:900 }); await p.locator('.lesson-panel').scrollIntoViewIfNeeded();
-            await p.waitForFunction(() => document.querySelector('#space-music-status').textContent.includes('tạm dừng'));
-            check(true, 'YouTube pauses when scrolled out of view on mobile', engine.name);
+            check(await p.locator('#space-music-status').innerText() === 'Đang phát nhạc YouTube.' && await originalFrame.evaluate(e => e.isConnected && e === document.querySelector('#space-player-shell iframe')), 'mobile scroll keeps the same playing YouTube iframe', engine.name);
+            check(await p.locator('#space-player-shell').evaluate(e => { const r=e.getBoundingClientRect(); return getComputedStyle(e).position==='fixed' && r.left>=0 && r.right<=innerWidth && r.top>=0 && r.bottom<=innerHeight; }), 'floating player stays inside mobile viewport', engine.name);
+            await p.getByRole('tab',{name:'Âm thanh',exact:true}).click();
+            check(await p.locator('#space-music-status').innerText() === 'Đang phát nhạc YouTube.' && await originalFrame.evaluate(e => e.isConnected), 'switching to sound mixer keeps music playing in visible dock', engine.name);
+            await shot(p,'floating-player-mobile',engine.name);
           } else report.limitations.push(engine.name + ': live video did not enter playing state: ' + status);
           await p.setViewportSize({ width:1366,height:900 }); await shot(p,'youtube-live',engine.name);
         } else report.liveYoutube.push({ browser:engine.name, status:await p.locator('#space-music-status').innerText() });
-        await p.getByRole('tab', { name:'Không gian', exact:true }).click(); check(await p.locator('#space-player-shell iframe').count() === 0, 'switching tools removes player instead of hiding playing video', engine.name);
+        await p.getByRole('tab', { name:'Không gian', exact:true }).click();
+        if (await p.locator('#space-player-shell iframe').count()) {
+          check(await p.locator('#space-player-shell').isVisible(), 'player remains visible across tool tabs', engine.name);
+          await p.locator('#space-player-close').click();
+          check(await p.locator('#space-player-shell iframe').count() === 0 && await p.locator('#space-player-shell').isHidden(), 'explicit close destroys YouTube player and stops media', engine.name);
+        }
         await p.getByRole('link', { name:'Danh sách bài học', exact:true }).click(); check(await p.locator('.lesson-list-wrap').getAttribute('open') !== null, 'course outline remains reachable in space mode', engine.name);
         const next = p.locator('.lesson-actions form:has(input[value=last_lesson])'); check(await next.count() === 1, 'non-final fixture lesson offers next action', engine.name); await submit(p,next);
         check(new URL(p.url()).searchParams.get('lesson') !== null && await p.locator('#study-space').isVisible(), 'real next-lesson POST preserves enabled space', engine.name);

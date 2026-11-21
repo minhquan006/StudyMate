@@ -4,10 +4,13 @@
   const toggle = document.getElementById('study-space-toggle');
   if (!root || !toggle) return;
   const $ = id => document.getElementById(id);
+  // Move the empty shell once, before an iframe exists. Reparenting a live iframe
+  // would reload the player and interrupt music.
+  document.body.append($('space-player-shell'));
   const key = 'studymate:space:v1:' + root.dataset.user;
   const modes = { focus: 25 * 60000, break: 5 * 60000, stopwatch: 0 };
   const kinds = ['rain', 'wind', 'pink', 'brown'];
-  const fresh = () => ({ enabled:false, scene:'library', tab:'scene', master:60, musicVolume:50, url:'', favorites:[], sounds:Object.fromEntries(kinds.map(kind => [kind, { selected:kind === 'rain', volume:35 }])), timer:{ mode:'focus', running:false, remaining:modes.focus, elapsed:0, anchor:0 } });
+  const fresh = () => ({ enabled:false, scene:'library', motion:true, tab:'scene', master:60, musicVolume:50, url:'', favorites:[], sounds:Object.fromEntries(kinds.map(kind => [kind, { selected:kind === 'rain', volume:35 }])), timer:{ mode:'focus', running:false, remaining:modes.focus, elapsed:0, anchor:0 } });
   const percent = (value, fallback) => Number.isFinite(value) ? Math.max(0, Math.min(100, value)) : fallback;
   function videoId(value) {
     try {
@@ -29,6 +32,7 @@
     const saved = JSON.parse(localStorage.getItem(key));
     if (saved && typeof saved === 'object') {
       state.enabled = saved.enabled === true;
+      if (typeof saved.motion === 'boolean') state.motion = saved.motion;
       if (['library', 'forest', 'desk'].includes(saved.scene)) state.scene = saved.scene;
       if (['scene', 'sound', 'music'].includes(saved.tab)) state.tab = saved.tab;
       state.master = percent(saved.master, 60);
@@ -63,6 +67,41 @@
   function message(id, text) {
     if ($(id).textContent !== text) $(id).textContent = text;
   }
+  const scenery = document.createElement('div'); scenery.id = 'study-scenery'; scenery.setAttribute('aria-hidden', 'true'); scenery.hidden = true;
+  const photo = document.createElement('div'); photo.className = 'scenery-photo';
+  const video = document.createElement('video'); video.id = 'space-scene-video'; video.muted = true; video.defaultMuted = true; video.loop = true; video.playsInline = true; video.preload = 'none'; video.poster = '/assets/spaces/forest.jpg';
+  const light = document.createElement('div'); light.className = 'scenery-light';
+  const rain = document.createElement('div'); rain.className = 'scenery-rain';
+  scenery.append(photo,video,light,rain); document.body.prepend(scenery);
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let sceneryGeneration = 0;
+  function applyScenery() {
+    const generation = ++sceneryGeneration;
+    const moving = state.enabled && state.motion && !reducedMotion.matches;
+    scenery.hidden = !state.enabled;
+    document.body.classList.toggle('study-space-motion', moving);
+    $('space-motion').checked = state.motion && !reducedMotion.matches;
+    $('space-motion').disabled = reducedMotion.matches;
+    const useVideo = moving && state.scene === 'forest' && !navigator.connection?.saveData;
+    if (!useVideo) {
+      video.pause(); scenery.classList.remove('is-live');
+      if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
+      message('space-motion-status', reducedMotion.matches ? 'Thiết bị đang chọn giảm chuyển động.' : !state.motion ? 'Đang dùng nền tĩnh.' : navigator.connection?.saveData && state.scene === 'forest' ? 'Đang tiết kiệm dữ liệu: dùng ảnh chuyển động nhẹ.' : 'Ánh sáng và cảnh nền chuyển động nhẹ.');
+      return;
+    }
+    if (!video.hasAttribute('src')) video.src = '/assets/spaces/forest-motion.webm';
+    if (document.hidden) { video.pause(); return; }
+    message('space-motion-status', 'Đang mở video suối rừng HD…');
+    video.play().then(() => {
+      if (generation !== sceneryGeneration || !state.enabled) return;
+      scenery.classList.add('is-live'); message('space-motion-status', 'Video suối rừng · HD 1920 × 1080.');
+    }).catch(() => {
+      if (generation !== sceneryGeneration) return;
+      scenery.classList.remove('is-live'); message('space-motion-status', 'Chưa phát được video. Nền ảnh vẫn hiển thị; bạn có thể tắt/bật để thử lại.');
+    });
+  }
+  $('space-motion').addEventListener('change', event => { state.motion = event.target.checked; applyScenery(); save(); });
+  reducedMotion.addEventListener('change', applyScenery);
   function timerValue() {
     const elapsed = state.timer.running ? Math.max(0, Date.now() - state.timer.anchor) : 0;
     return state.timer.mode === 'stopwatch' ? Math.min(86400000, state.timer.elapsed + elapsed) : Math.max(0, state.timer.remaining - elapsed);
@@ -152,12 +191,21 @@
     $('space-master-value').textContent = Math.round(state.master) + '%';
     for (const [kind, channel] of channels) channel.gain.gain.setTargetAtTime(state.master / 100 * state.sounds[kind].volume / 100 * .65, context.currentTime, .04);
     if (playerReady) player.setVolume(Math.round(state.master * state.musicVolume / 100));
+    updateSoundRows();
+  }
+  function updateSoundRows() {
+    for (const kind of kinds) {
+      root.querySelector('[data-sound-row="' + kind + '"]').classList.toggle('is-playing', channels.has(kind) && state.master > 0 && state.sounds[kind].volume > 0);
+      $('ambient-value-' + kind).textContent = Math.round(state.sounds[kind].volume) + '%';
+    }
+    document.body.classList.toggle('study-space-rain', state.enabled && channels.has('rain') && state.master > 0 && state.sounds.rain.volume > 0);
   }
   function stopChannel(kind) {
     const channel = channels.get(kind);
     if (!channel) return;
     for (const node of channel.nodes) { try { node.stop?.(); } catch {} node.disconnect(); }
     channels.delete(kind);
+    updateSoundRows();
   }
   function stopAmbient() {
     ambientGeneration++;
@@ -226,7 +274,9 @@
     player = null; playerReady = false;
     const placeholder = document.createElement('div'); placeholder.id = 'space-player';
     const shell = $('space-player-shell');
-    shell.querySelector('iframe, #space-player')?.replaceWith(placeholder);
+    const previous = shell.querySelector('iframe, #space-player');
+    if (previous) previous.replaceWith(placeholder);
+    else shell.querySelector('.space-player-actions').before(placeholder);
     shell.hidden = true;
     $('space-music-play').disabled = true; $('space-music-pause').disabled = true;
   }
@@ -252,7 +302,7 @@
     message('space-music-status', 'Đang mở trình phát YouTube…');
     try {
       await loadYoutubeAPI();
-      if (generation !== playerGeneration || !state.enabled || state.tab !== 'music') return;
+      if (generation !== playerGeneration || !state.enabled) return;
       $('space-player-shell').hidden = false;
       player = new YT.Player('space-player', {
         host:'https://www.youtube-nocookie.com', width:'100%', height:'200', videoId:id,
@@ -280,26 +330,25 @@
           onAutoplayBlocked:() => message('space-music-status', 'Hãy bấm nút Phát trực tiếp trong video để bật nhạc.')
         }
       });
-      $('space-player-shell').scrollIntoView({ block:'nearest' });
     } catch (error) { if (generation === playerGeneration) message('space-music-status', error.message); }
   }
   function playerVisible() {
     const frame = $('space-player-shell').querySelector('iframe');
-    if (!frame || !state.enabled || state.tab !== 'music') return false;
+    if (!frame || !state.enabled) return false;
     const rect = frame.getBoundingClientRect();
-    const rail = root.closest('.learning-rail').getBoundingClientRect();
-    return Math.min(rect.bottom, rail.bottom, innerHeight) - Math.max(rect.top, rail.top, 0) > 0 && rect.right > 0 && rect.left < innerWidth;
+    return Math.min(rect.bottom, innerHeight) - Math.max(rect.top, 0) >= rect.height * .5 && rect.right > 0 && rect.left < innerWidth;
   }
   function pauseInvisibleMusic() {
-    if (playerReady && (document.hidden || !playerVisible())) player.pauseVideo();
+    if (playerReady && player.getPlayerState() === 1 && (document.hidden || !playerVisible())) player.pauseVideo();
   }
-  document.addEventListener('visibilitychange', pauseInvisibleMusic);
+  document.addEventListener('visibilitychange', () => { pauseInvisibleMusic(); if (document.hidden) video.pause(); else applyScenery(); });
   document.addEventListener('scroll', pauseInvisibleMusic, { capture:true, passive:true });
   window.addEventListener('resize', pauseInvisibleMusic);
   $('space-music-form').addEventListener('submit', event => { event.preventDefault(); openMusic($('space-youtube-url').value.trim()); });
   $('space-youtube-url').value = state.url;
   $('space-music-play').addEventListener('click', () => { if (playerReady && playerVisible()) player.playVideo(); });
   $('space-music-pause').addEventListener('click', () => { if (playerReady) player.pauseVideo(); });
+  $('space-player-close').addEventListener('click', () => { destroyPlayer(); message('space-music-status', 'Đã đóng trình phát. Link yêu thích vẫn được giữ.'); toggle.focus({ preventScroll:true }); });
   $('space-music-volume').value = state.musicVolume;
   $('space-music-volume').addEventListener('input', event => { state.musicVolume = +event.target.value; setVolumes(); save(); });
   function drawFavorites() {
@@ -330,10 +379,6 @@
 
   const tabs = [...root.querySelectorAll('[role="tab"]')];
   function setTab(name, focus = false) {
-    if (name !== 'music') {
-      destroyPlayer();
-      if (state.tab === 'music') message('space-music-status', 'Trình phát đã đóng. Bấm Mở nhạc để tiếp tục.');
-    }
     state.tab = name;
     for (const tab of tabs) {
       const selected = tab.id === 'space-tab-' + name;
@@ -353,7 +398,7 @@
   }
   for (const input of root.querySelectorAll('[name="study_scene"]')) {
     input.checked = input.value === state.scene;
-    input.addEventListener('change', () => { if (input.checked) { state.scene = input.value; document.body.dataset.studyScene = state.scene; save(); } });
+    input.addEventListener('change', () => { if (input.checked) { state.scene = input.value; document.body.dataset.studyScene = state.scene; applyScenery(); save(); } });
   }
   const outline = document.querySelector('.lesson-list-wrap');
   function setEnabled(enabled, scroll = false) {
@@ -362,6 +407,7 @@
     root.hidden = !enabled;
     document.body.classList.toggle('study-space-on', enabled);
     document.body.dataset.studyScene = state.scene;
+    applyScenery();
     toggle.setAttribute('aria-expanded', String(enabled));
     toggle.textContent = enabled ? 'Giao diện thường' : 'Không gian học tập';
     outline.open = !enabled;
@@ -374,8 +420,8 @@
   toggle.addEventListener('click', () => setEnabled(!state.enabled, true));
   $('space-close').addEventListener('click', () => { setEnabled(false); toggle.focus(); });
   document.querySelector('a[href="#course-outline"]').addEventListener('click', () => { outline.open = true; });
-  window.addEventListener('pagehide', () => { save(); stopAmbient(); destroyPlayer(); });
-  window.addEventListener('pageshow', () => drawTimer());
+  window.addEventListener('pagehide', () => { save(); stopAmbient(); destroyPlayer(); video.pause(); });
+  window.addEventListener('pageshow', () => { drawTimer(); applyScenery(); });
   drawFavorites(); setVolumes(); setTab(state.tab); setEnabled(state.enabled);
   toggle.hidden = false;
   setInterval(() => { if (state.enabled) drawTimer(); }, 500);

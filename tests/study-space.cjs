@@ -60,7 +60,7 @@ async function audioObserver(context) {
         const home = await p.goto(base + '/index.php?page=home');
         check(home.headers()['referrer-policy'] === 'same-origin' && !home.headers()['content-security-policy'].includes('youtube.com/iframe_api'), 'public pages retain restrictive script/referrer policy', engine.name);
         await login(p); const auth = await c.storageState();
-        const learn = await p.goto(base + '/index.php?page=learn&id=2');
+        const learn = await p.goto(base + '/index.php?page=learn&id=2&lesson=7');
         check(learn.headers()['referrer-policy'] === 'strict-origin-when-cross-origin' && learn.headers()['content-security-policy'].includes('https://www.youtube.com/iframe_api') && !learn.headers()['content-security-policy'].includes("'unsafe-eval'"), 'study page allows only explicit official player script paths and origin referrer', engine.name);
         check(await p.locator('#study-space').isHidden() && await p.locator('.lesson-text').isVisible(), 'space starts optional and lesson remains usable', engine.name);
         await openSpace(p);
@@ -125,7 +125,7 @@ async function audioObserver(context) {
         } else report.liveYoutube.push({ browser:engine.name, status:await p.locator('#space-music-status').innerText() });
         await p.getByRole('tab', { name:'Không gian', exact:true }).click(); check(await p.locator('#space-player-shell iframe').count() === 0, 'switching tools removes player instead of hiding playing video', engine.name);
         await p.getByRole('link', { name:'Danh sách bài học', exact:true }).click(); check(await p.locator('.lesson-list-wrap').getAttribute('open') !== null, 'course outline remains reachable in space mode', engine.name);
-        const next = p.locator('.lesson-actions form:has(input[value=last_lesson])'); await submit(p,next);
+        const next = p.locator('.lesson-actions form:has(input[value=last_lesson])'); check(await next.count() === 1, 'non-final fixture lesson offers next action', engine.name); await submit(p,next);
         check(new URL(p.url()).searchParams.get('lesson') !== null && await p.locator('#study-space').isVisible(), 'real next-lesson POST preserves enabled space', engine.name);
         check(await p.evaluate(() => window.__spaceQA.starts === 0) && await p.locator('#space-player-shell iframe').count() === 0, 'navigation never auto-resumes media', engine.name);
         await p.locator('#space-close').click();
@@ -134,7 +134,7 @@ async function audioObserver(context) {
         const savedAccountState = await c.storageState(); await c.close();
 
         const timed = await b.newContext({ storageState:auth, viewport:{ width:1366,height:900 } }); const timer = await timed.newPage(); await timer.clock.install();
-        await timer.goto(base + '/index.php?page=learn&id=2'); await openSpace(timer); await timer.locator('#space-timer-start').click(); await timer.clock.fastForward(61000);
+        await timer.goto(base + '/index.php?page=learn&id=2&lesson=7'); await openSpace(timer); await timer.locator('#space-timer-start').click(); await timer.clock.fastForward(61000);
         check(/^23:5[5-9]$/.test(await timer.locator('#space-clock').innerText()), 'countdown uses elapsed time, not interval tick count', engine.name);
         await submit(timer,timer.locator('.lesson-actions form:has(input[value=last_lesson])'));
         check((await timer.locator('#space-clock').innerText()).startsWith('23:') && await timer.locator('#space-timer-start').innerText() === 'Tạm dừng', 'running countdown survives full PHP lesson navigation', engine.name);
@@ -149,13 +149,13 @@ async function audioObserver(context) {
         await timed.close();
 
         const denied = await b.newContext({ storageState:auth }); await denied.addInitScript(() => { Storage.prototype.setItem = () => { throw new DOMException('Denied','SecurityError'); }; });
-        const dp = await denied.newPage(); await dp.goto(base + '/index.php?page=learn&id=2'); await openSpace(dp);
+        const dp = await denied.newPage(); await dp.goto(base + '/index.php?page=learn&id=2&lesson=7'); await openSpace(dp);
         check((await dp.locator('#space-storage-status').innerText()).includes('chưa lưu được') && await dp.locator('#space-clock').innerText() === '25:00', 'blocked localStorage leaves tools usable with clear feedback', engine.name); await denied.close();
-        const plain = await b.newContext({ storageState:auth, javaScriptEnabled:false }); const np = await plain.newPage(); await np.goto(base + '/index.php?page=learn&id=2');
+        const plain = await b.newContext({ storageState:auth, javaScriptEnabled:false }); const np = await plain.newPage(); await np.goto(base + '/index.php?page=learn&id=2&lesson=7');
         check(await np.locator('#study-space-toggle').isHidden() && await np.locator('.lesson-text').isVisible() && await np.locator('.lesson-link[aria-current=step]').isVisible(), 'without JavaScript ordinary lesson and native outline remain usable', engine.name); await plain.close();
         const corrupt = await b.newContext({ storageState:auth });
         await corrupt.addInitScript(() => localStorage.setItem('studymate:space:v1:1','{broken-json'));
-        const cp = await corrupt.newPage(); await cp.goto(base + '/index.php?page=learn&id=2'); await openSpace(cp);
+        const cp = await corrupt.newPage(); await cp.goto(base + '/index.php?page=learn&id=2&lesson=7'); await openSpace(cp);
         check(await cp.locator('#space-clock').innerText() === '25:00' && await cp.locator('[name=study_scene]:checked').inputValue() === 'library', 'corrupt saved settings recover to usable defaults', engine.name); await corrupt.close();
         const account = await b.newContext({ storageState:savedAccountState }); const ap = await account.newPage();
         await login(ap,'student2'); await ap.goto(base + '/index.php?page=detail&id=1');

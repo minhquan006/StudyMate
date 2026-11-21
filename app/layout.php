@@ -13,6 +13,7 @@
     <script src="/assets/forms.js" defer></script>
     <script src="/assets/discovery.js" defer></script>
     <?php if($page==='learn'): ?><link rel="stylesheet" href="/assets/study-space.css"><script src="/assets/study-space.js" defer></script><?php endif; ?>
+    <?php if($page==='learn'): ?><link rel="stylesheet" href="/assets/lesson-notes.css"><script src="/assets/lesson-notes.js" defer></script><?php endif; ?>
     <?php if($withStudyBuddy): ?><link rel="stylesheet" href="/assets/study-buddy.css"><script src="/assets/study-buddy.js" defer></script><?php endif; ?>
 </head>
 <body class="page-<?=h($page)?>">

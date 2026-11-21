@@ -1,0 +1,27 @@
+{
+  "normalization": "LF text; original PNG bytes",
+  "sha256": {
+    "diagnostics/buddy-favorite-click-before-fix.json": "7540458f5f405de90a7cc208766c8d5e6749af3ef6dc736f2bf09d9fa726a382",
+    "favorite-click-before-fix.png": "cec5ca6a8dc27d1026319c735a49ca8408a4678d6b7e7cf6b7d0f5940d5d3dc3",
+    "note-chrome.txt": "4014a92545ef82459cc749cadb98c0b69aa02dd79988dda23011a2174e49e8bf",
+    "note-edge.txt": "05b5aac58fbd38a9e5d5467116993b05169a7acbc2db6e1665966dbecf14d10e",
+    "notes-1366.png": "f03f77928b70503060bbcf4a074a58e526d31ad9038ee2d8320383ebd55c3563",
+    "notes-390.png": "77988d3c7d082f96258ea6f0f6ec20626e73037c5a84dc2590502c8fedb57e7b",
+    "notes-desktop.png": "3f98827e613dd9d417d8a61e8056f98da440e08a52c0b4b44e52208efaee3cbb",
+    "php-syntax.txt": "6807d1e419951814d83974acb6f411cd6f8c06884b09863d11a0ade8938b8bd4",
+    "raw-chrome.txt": "46e19189614fc5c6fe500d6fd5369534e2620127dde8fdbf381c7084c9d6e0be",
+    "raw-edge.txt": "46e19189614fc5c6fe500d6fd5369534e2620127dde8fdbf381c7084c9d6e0be",
+    "regression/floating-player-mobile.png": "ff296a8924ea90df60ee0812e9b575546eb6f42dcf1abb30307822f0306c2688",
+    "regression/music-1366.png": "eb46e5f088677d48e7137f18bf2b357d98773dab71c7285dc433f44089f9033d",
+    "regression/music-390.png": "bda9627a669fa4919c4ad62b392019ae52ce19a52bd8faa1feed77e4036e56a3",
+    "regression/results.json": "f2567cffefde36b5d146a7c5ed5b0c809bb77edb4353f8afd9f504c3cb4a7454",
+    "regression/scene-1366.png": "22eb99d2c5334631aa87aa640eb243645b939802067b7eb419a6e13428cd869a",
+    "regression/scene-390.png": "1f23823833a2ddf2d89b35ff50638e5087797df629f06b911d23e1574a3b6813",
+    "regression/scene-768.png": "195adc6c3b3ec89800a3709aa0567eb68e3b23a6f6d58e6c2d508fe106d89083",
+    "regression/sound-1366.png": "2d99231801e2f0fdfdb8e680fc85186baad1d4484cad8742fe7ce2cbb6e1f29c",
+    "regression/sound-390.png": "add86c2aa5bc616b0f8cf60487a0e18179d9abbefc33d97c3a57244523362517",
+    "regression/youtube-live.png": "cb81c1341230610c271ae210f283d9e57676dd527fc92b54b2d4231d45755a43",
+    "results.json": "bdf2c6d28cedd53bfa045cbf6123a9344b13ca97ba24e5352ff17a8ca78de825",
+    "summary.json": "bb51ce2d5cc634f7ccf45a58e1c56141697a9ac5ca8ca1d762c2abb09d682b51"
+  }
+}

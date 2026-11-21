@@ -1,0 +1,27 @@
+{
+  "sourceCommit": "bb6b37febd9f865a6c9e615c63a769a6ba5bee9b",
+  "baseCommit": "6508885fa91e1c40160227aab58a3277d88c2568",
+  "sourceFilesSha256": {
+    "app/layout.php": "7b44f827a46b69df71e8ffdbdf25d2f9078a734ee5b408f1e54eaa6fe19998f0",
+    "app/views.php": "cfc4af2302c5588c785592cc4c04c17a4c30810a8d58c27ce720b09ee8384fb5",
+    "app/lesson_notes_view.php": "383efc090c0255e63050318579d5cd51c760684e79ddedcf3bffecdd16b14000",
+    "public/assets/lesson-notes.js": "8f353bd6d21762a1a280239ed128ca17a3410702d14950b56f1de1abc67961b0",
+    "public/assets/lesson-notes.css": "ee044eaa66bef323aeb08f52355dc379c15624ed3bc147aac79661d9d275a970",
+    "tests/lesson-notes.cjs": "c14b0fc9f7a3121004d1a582b67580182e1337b16e5b7c303fd1df1ca5c85494",
+    "public/assets/study-buddy.js": "f8a34ccb36c732facadcf51aab1e6c58f403548f5c536ac915fc2210ece6e4c9",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005",
+    "app/bootstrap.php": "bf77f23fc60d0962ba9909ce957c51893134190463d7fa060122924194accc09"
+  },
+  "sourceNormalization": "LF text",
+  "browserChecks": 93,
+  "regressionChecks": 158,
+  "regressionNote": "Reused intact successful notes-integration run recorded during the Buddy click fix, not a new rerun. Relevant server source files were compared to this commit and match. Original timestamps/fingerprints retained.",
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "limits": [
+    "Disposable SQLite only; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones or Safari."
+  ]
+}

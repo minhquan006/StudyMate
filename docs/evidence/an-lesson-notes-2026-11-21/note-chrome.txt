@@ -1,0 +1,12 @@
+﻿StudyMate — Ghi chú cá nhân
+Khóa học: JavaScript cơ bản
+Bài học: Biến và kiểu dữ liệu
+Xuất lúc: 16:35:17 21/11/2026
+
+Ý chính cần nhớ
+- const dùng cho binding không gán lại.
+- let cho phép gán lại.
+
+const progress = 3 / 6 * 100;
+console.log(progress);
+Câu hỏi: Khi nào nên dùng let? 🌧️

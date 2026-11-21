@@ -14,8 +14,11 @@
     if (form?.method.toLowerCase() === 'post') changedForms.add(form);
   });
   document.addEventListener('studymate:before-language-change', (event) => {
-    if (!quizChanged && !changedForms.size) return;
-    const message = quizChanged ? document.body.dataset.quizExitMessage : document.body.dataset.unsavedMessage;
+    const unsaved = { notes: false };
+    document.dispatchEvent(new CustomEvent('studymate:collect-unsaved', { detail: unsaved }));
+    if (!quizChanged && !changedForms.size && !unsaved.notes) return;
+    const message = unsaved.notes ? document.body.dataset.unsavedNotesMessage :
+      (quizChanged ? document.body.dataset.quizExitMessage : document.body.dataset.unsavedMessage);
     if (!window.confirm(message)) { event.preventDefault(); return; }
     // An explicit confirmation covers the imminent preference navigation.
     quizChanged = false;

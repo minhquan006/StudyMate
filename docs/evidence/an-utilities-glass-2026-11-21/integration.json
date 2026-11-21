@@ -1,0 +1,603 @@
+{
+  "checks": [
+    {
+      "engine": "chrome",
+      "name": "public home vi/light pixels match #22 exactly"
+    },
+    {
+      "engine": "chrome",
+      "name": "no utility assets or Buddy on public home vi/light"
+    },
+    {
+      "engine": "chrome",
+      "name": "public home vi/dark pixels match #22 exactly"
+    },
+    {
+      "engine": "chrome",
+      "name": "no utility assets or Buddy on public home vi/dark"
+    },
+    {
+      "engine": "chrome",
+      "name": "public home en/light pixels match #22 exactly"
+    },
+    {
+      "engine": "chrome",
+      "name": "no utility assets or Buddy on public home en/light"
+    },
+    {
+      "engine": "chrome",
+      "name": "public home en/dark pixels match #22 exactly"
+    },
+    {
+      "engine": "chrome",
+      "name": "no utility assets or Buddy on public home en/dark"
+    },
+    {
+      "engine": "chrome",
+      "name": "language switch flushes draft immediately without warning when saved"
+    },
+    {
+      "engine": "chrome",
+      "name": "English notebook label"
+    },
+    {
+      "engine": "chrome",
+      "name": "English focus labels and timer"
+    },
+    {
+      "engine": "chrome",
+      "name": "Buddy translated and mounted in learning rail"
+    },
+    {
+      "engine": "chrome",
+      "name": "XP derives from six lessons plus one distinct quiz pass"
+    },
+    {
+      "engine": "chrome",
+      "name": "outfit thresholds remain enforced"
+    },
+    {
+      "engine": "chrome",
+      "name": "unlocked outfit and accessory equip"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/390 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/390 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/390 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/768 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/768 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/768 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/1366 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/light/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/390 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/390 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/390 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/768 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/768 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/768 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/1366 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "vi/dark/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/390 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/390 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/390 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/768 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/768 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/768 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/1366 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/light/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/390 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/390 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/390 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/768 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/768 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/768 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/1366 no horizontal overflow"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "chrome",
+      "name": "en/dark/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "chrome",
+      "name": "theme changes in place and preserves notes without dialog"
+    },
+    {
+      "engine": "chrome",
+      "name": "first click after typing navigates lesson"
+    },
+    {
+      "engine": "chrome",
+      "name": "lesson navigation preserves the immediate draft"
+    },
+    {
+      "engine": "chrome",
+      "name": "failed save + AI draft language cancel shows one combined dialog"
+    },
+    {
+      "engine": "chrome",
+      "name": "cancel restores language and keeps draft/forms usable"
+    },
+    {
+      "engine": "chrome",
+      "name": "failed save + AI draft language approve shows one combined dialog"
+    },
+    {
+      "engine": "chrome",
+      "name": "explicit discard navigates without a second beforeunload warning"
+    },
+    {
+      "engine": "chrome",
+      "name": "no JS retains canonical readable lesson and POST controls"
+    },
+    {
+      "engine": "edge",
+      "name": "public home vi/light pixels match #22 exactly"
+    },
+    {
+      "engine": "edge",
+      "name": "no utility assets or Buddy on public home vi/light"
+    },
+    {
+      "engine": "edge",
+      "name": "public home vi/dark pixels match #22 exactly"
+    },
+    {
+      "engine": "edge",
+      "name": "no utility assets or Buddy on public home vi/dark"
+    },
+    {
+      "engine": "edge",
+      "name": "public home en/light pixels match #22 exactly"
+    },
+    {
+      "engine": "edge",
+      "name": "no utility assets or Buddy on public home en/light"
+    },
+    {
+      "engine": "edge",
+      "name": "public home en/dark pixels match #22 exactly"
+    },
+    {
+      "engine": "edge",
+      "name": "no utility assets or Buddy on public home en/dark"
+    },
+    {
+      "engine": "edge",
+      "name": "language switch flushes draft immediately without warning when saved"
+    },
+    {
+      "engine": "edge",
+      "name": "English notebook label"
+    },
+    {
+      "engine": "edge",
+      "name": "English focus labels and timer"
+    },
+    {
+      "engine": "edge",
+      "name": "Buddy translated and mounted in learning rail"
+    },
+    {
+      "engine": "edge",
+      "name": "XP derives from six lessons plus one distinct quiz pass"
+    },
+    {
+      "engine": "edge",
+      "name": "outfit thresholds remain enforced"
+    },
+    {
+      "engine": "edge",
+      "name": "unlocked outfit and accessory equip"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/390 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/390 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/390 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/768 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/768 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/768 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/1366 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/light/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/390 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/390 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/390 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/768 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/768 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/768 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/1366 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "vi/dark/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/390 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/390 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/390 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/768 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/768 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/768 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/1366 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/light/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/390 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/390 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/390 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/390 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/768 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/768 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/768 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/768 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/1366 no horizontal overflow"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/1366 editor foreground differs from background"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/1366 Buddy stays outside action overlays"
+    },
+    {
+      "engine": "edge",
+      "name": "en/dark/1366 no untranslated utility labels"
+    },
+    {
+      "engine": "edge",
+      "name": "theme changes in place and preserves notes without dialog"
+    },
+    {
+      "engine": "edge",
+      "name": "first click after typing navigates lesson"
+    },
+    {
+      "engine": "edge",
+      "name": "lesson navigation preserves the immediate draft"
+    },
+    {
+      "engine": "edge",
+      "name": "failed save + AI draft language cancel shows one combined dialog"
+    },
+    {
+      "engine": "edge",
+      "name": "cancel restores language and keeps draft/forms usable"
+    },
+    {
+      "engine": "edge",
+      "name": "failed save + AI draft language approve shows one combined dialog"
+    },
+    {
+      "engine": "edge",
+      "name": "explicit discard navigates without a second beforeunload warning"
+    },
+    {
+      "engine": "edge",
+      "name": "no JS retains canonical readable lesson and POST controls"
+    },
+    {
+      "engine": "all",
+      "name": "no JavaScript errors"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "home-vi-light.png",
+    "home-vi-dark.png",
+    "home-en-light.png",
+    "home-en-dark.png",
+    "notes-vi-light-390.png",
+    "tools-vi-light-390.png",
+    "notes-vi-light-1366.png",
+    "tools-vi-light-1366.png",
+    "notes-vi-dark-390.png",
+    "tools-vi-dark-390.png",
+    "notes-vi-dark-1366.png",
+    "tools-vi-dark-1366.png",
+    "notes-en-light-390.png",
+    "tools-en-light-390.png",
+    "notes-en-light-1366.png",
+    "tools-en-light-1366.png",
+    "notes-en-dark-390.png",
+    "tools-en-dark-390.png",
+    "notes-en-dark-1366.png",
+    "tools-en-dark-1366.png"
+  ],
+  "limits": [
+    "Disposable SQLite; not MySQL, Docker, Safari or physical phones.",
+    "No real Gemini calls. YouTube is covered separately by study-space.cjs."
+  ]
+}

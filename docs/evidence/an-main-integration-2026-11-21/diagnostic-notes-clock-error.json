@@ -1,0 +1,121 @@
+{
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "notes do not appear on public home"
+    },
+    {
+      "browser": "chrome",
+      "name": "fresh lesson has an empty optional notebook"
+    },
+    {
+      "browser": "chrome",
+      "name": "notebook opens with keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "typing and autosave never send an academic POST"
+    },
+    {
+      "browser": "chrome",
+      "name": "autosave gives saved feedback"
+    },
+    {
+      "browser": "chrome",
+      "name": "counter counts Unicode code points"
+    },
+    {
+      "browser": "chrome",
+      "name": "actual UTF-8 download preserves Vietnamese, code and metadata"
+    },
+    {
+      "browser": "chrome",
+      "name": "download filename is a safe plain-text filename"
+    },
+    {
+      "browser": "chrome",
+      "name": "note restores after reload"
+    },
+    {
+      "browser": "chrome",
+      "name": "existing note reopens its editor"
+    },
+    {
+      "browser": "chrome",
+      "name": "note markup stays plain text and never executes"
+    },
+    {
+      "browser": "chrome",
+      "name": "over-limit draft remains visible without replacing valid saved note"
+    },
+    {
+      "browser": "chrome",
+      "name": "exact Unicode limit accepts 20,000 emoji"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 390 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 768 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 1366 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "different lesson does not inherit note"
+    },
+    {
+      "browser": "chrome",
+      "name": "next-lesson POST flushes draft before autosave delay"
+    },
+    {
+      "browser": "chrome",
+      "name": "previous lesson note remains available"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes stay outside completion POST and preserve CSRF/action"
+    },
+    {
+      "browser": "chrome",
+      "name": "only actual completion changes Buddy XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "completion POST preserves note"
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80"
+  },
+  "downloads": [
+    {
+      "browser": "chrome",
+      "file": "note-chrome.txt",
+      "suggested": "StudyMate-JavaScript-co-ban-Bien-va-kieu-du-lieu.txt"
+    }
+  ],
+  "limits": [
+    "Disposable SQLite only; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones or Safari."
+  ],
+  "failure": "clock.pauseAt: Error: Cannot fast-forward to the past\n    at ClockController._innerFastForwardTo (<anonymous>:197:13)\n    at ClockController.pauseAt (<anonymous>:128:16)\n    at async <anonymous>:316:30\n    at D:\\TDTU\\Web\\StudyMate\\tests\\lesson-notes.cjs:84:23",
+  "finished": "2026-11-21T15:14:17.603Z"
+}

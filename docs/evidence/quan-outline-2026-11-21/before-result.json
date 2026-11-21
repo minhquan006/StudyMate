@@ -1,0 +1,12 @@
+{
+  "browser": "158.0.8127.36",
+  "checks": [
+    "outline vi/light/834x600: reproduces both scrolls",
+    "outline vi/light/834x600: header intercepts lesson choice",
+    "outline vi/light/834x600: intercepted click does not submit or change lesson",
+    "outline vi/light/991x600: reproduces both scrolls",
+    "outline vi/light/991x600: header intercepts lesson choice",
+    "outline vi/light/991x600: intercepted click does not submit or change lesson"
+  ],
+  "errors": []
+}

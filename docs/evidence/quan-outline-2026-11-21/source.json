@@ -1,0 +1,11 @@
+{
+  "base_head": "7f374926acdf3b2c6a1fa9e08b204b39e7777299",
+  "source_status": "working tree before delivery commit; source fingerprints identify the tested bytes",
+  "runtime_fingerprint": "runtime.source.json",
+  "tested_files_sha256": {
+    "public/assets/app.css": "db9ef55e78212f87bd9a7bea1bae986b3788469d3c095c90f81792815a727854",
+    "tests/quan/lesson_outline.cjs": "38da5d4c9095bba70139573ec315a423daa207be298b820313942b0830ec21e4",
+    "tests/quan/glass_preferences.cjs": "5af8b41b90d284d811b928a6fdbebec7087829bfba2a805892073e2ee5cfa370",
+    "tests/quan/verify_display.py": "2d6fbbe0a9f6dcb27379f18ea2bb4769356f0eb1a729cc3aaf2ea2edf2364996"
+  }
+}

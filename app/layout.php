@@ -1,3 +1,4 @@
+<?php $withUtilities=$u&&$u['role']==='student'&&in_array($page,['learn','student','quiz','result'],true);if($withUtilities){require_once __DIR__.'/learning_utilities.php';require_once __DIR__.'/study_buddy.php';$buddyProfile=studyBuddyProfile((int)$u['id']);} ?>
 <!doctype html>
 <html lang="<?=h(uiLanguage())?>" class="no-js" data-theme-preference="<?=h(uiTheme())?>"<?php if(uiTheme()!=='system'):?> data-theme="<?=h(uiTheme())?>" data-bs-theme="<?=h(uiTheme())?>"<?php endif;?>>
 <head>
@@ -7,9 +8,13 @@
     <script src="/assets/preferences.js"></script>
     <link rel="preload" href="/assets/fonts/Inter-Variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/assets/bootstrap.min.css"><link rel="stylesheet" href="/assets/app.css"><link rel="stylesheet" href="/assets/glass.css"><link rel="stylesheet" href="/assets/glass-workspace.css"><link rel="stylesheet" href="/assets/preferences.css">
-    <script src="/assets/glass.js"></script><script src="/assets/forms.js" defer></script><script src="/assets/profile-media.js" defer></script><link rel="stylesheet" href="/assets/profile-media.css">
+    <script src="/assets/glass.js"></script><script src="/assets/forms.js" defer></script>
+    <?php if($withUtilities): ?><link rel="stylesheet" href="/assets/study-buddy.css"><script src="/assets/learning-utilities-i18n.js" defer></script><?php endif; ?>
+    <?php if($withUtilities&&$page==='learn'): ?><link rel="stylesheet" href="/assets/study-space.css"><link rel="stylesheet" href="/assets/lesson-notes.css"><script src="/assets/study-space.js" defer></script><script src="/assets/lesson-notes.js" defer></script><?php endif; ?>
+    <?php if($withUtilities): ?><link rel="stylesheet" href="/assets/learning-utilities.css"><script src="/assets/study-buddy.js" defer></script><?php endif; ?>
+    <script src="/assets/profile-media.js" defer></script><link rel="stylesheet" href="/assets/profile-media.css">
 </head>
-<body data-unsaved-message="<?=h(t('Bạn có thay đổi chưa lưu. Đổi ngôn ngữ sẽ tải lại trang. Bạn có muốn tiếp tục?'))?>" data-pending-message="<?=h(t('Đang xử lý, vui lòng chờ…'))?>" data-quiz-exit-message="<?=h(t('Bạn có đáp án quiz chưa nộp. Rời trang sẽ mất lựa chọn. Bạn có muốn tiếp tục?'))?>" class="page-<?=h($page)?> <?=$page!=='home'?'liquid-workspace':''?>">
+<body <?php if($withUtilities): ?>data-unsaved-notes-message="<?=h(ut('Bạn có ghi chú chưa lưu được và có thể có thay đổi biểu mẫu chưa gửi. Tải ghi chú xuống để giữ lại. Đổi ngôn ngữ và bỏ phần chưa lưu?'))?>"<?php endif; ?> data-unsaved-message="<?=h(t('Bạn có thay đổi chưa lưu. Đổi ngôn ngữ sẽ tải lại trang. Bạn có muốn tiếp tục?'))?>" data-pending-message="<?=h(t('Đang xử lý, vui lòng chờ…'))?>" data-quiz-exit-message="<?=h(t('Bạn có đáp án quiz chưa nộp. Rời trang sẽ mất lựa chọn. Bạn có muốn tiếp tục?'))?>" class="page-<?=h($page)?> <?=$page!=='home'?'liquid-workspace':''?>">
 <?php if($page!=='home'):?><div class="workspace-backdrop" aria-hidden="true"><div class="workspace-backdrop-photo"></div></div><?php endif;?>
 <a class="skip-link" href="#main-content"><?=h(t('Đến nội dung chính'))?></a>
 <header class="glass-header glass-surface" id="site-header"><div class="glass-nav-wrap">
@@ -33,4 +38,5 @@
 <?php if($error||$f):?><div class="container flash-container"><div class="alert <?=$error?'alert-danger':'alert-'.h($f['type'])?>" role="alert"><?=h(displayMessage($error??$f['message']))?></div></div><?php endif;?>
 <div id="main-content" tabindex="-1"><?=$body?></div>
 <footer class="glass-footer"><div class="container footer-layout"><div class="footer-brand"><a class="brand" href="<?=h(url('home'))?>"><span class="brand-mark" aria-hidden="true"><?=glassIcon('book')?></span>StudyMate.</a><p><?=h(t('Học để hiểu. Thực hành để làm được.'))?><br><?=h(t('Một không gian cho những bước tiến của bạn.'))?></p><span><?=h(t('Đồ án Lập trình Web · TDTU'))?></span></div><div><h2><?=h(t('Khám phá'))?></h2><a href="<?=h(url('courses'))?>"><?=h(t('Thư viện khóa học'))?></a><a href="<?=h(url('home'))?>#fields"><?=h(t('Lĩnh vực học tập'))?></a><a href="<?=h(url('home'))?>#how-it-works"><?=h(t('Cách StudyMate hoạt động'))?></a></div><div><h2><?=h(t('Không gian của bạn'))?></h2><a href="<?=h(url($u?$u['role']:'login'))?>"><?=h(t('Tổng quan học tập'))?></a><a href="<?=h(url('profile'))?>"><?=h(t('Tài khoản cá nhân'))?></a><?php if(!$u):?><a href="<?=h(url('register'))?>"><?=h(t('Tạo tài khoản miễn phí'))?></a><?php endif;?></div></div><div class="container footer-bottom"><span>© <?=date('Y')?> StudyMate</span><span><?=h(t('Kiến thức nền tảng. Giá trị dài lâu.'))?></span></div></footer>
+<?php if($withUtilities): ?><div id="learning-utilities-i18n" hidden data-messages="<?=h(json_encode(uiLanguage()==='en'?require __DIR__.'/lang/learning.en.php':[],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES))?>"></div><div class="container learning-buddy-slot"><?php renderStudyBuddy($u,$buddyProfile,$page); ?></div><?php endif; ?>
 </body></html>

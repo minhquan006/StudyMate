@@ -503,7 +503,6 @@ pre { max-width: 100%; }
     .enrollment-panel { top: 20px; }
     .learning-grid { grid-template-columns: minmax(0,1fr) 240px; gap: 18px; }
     .lesson-panel { padding: 28px; }
-    .outline { top: 20px; }
     .student-workspace { grid-template-columns: 180px minmax(0,1fr); gap: 24px; }
     .workspace-nav { padding-right: 18px; }
     .workspace-main .course-grid { grid-template-columns: 1fr; }

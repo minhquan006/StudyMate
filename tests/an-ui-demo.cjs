@@ -223,6 +223,10 @@ async function snapshot(page, name, browser) {
                 await nativePage.locator('.course-subjects').getByRole('link', { name:'Lập trình', exact:true }).click();
                 check(await nativePage.locator('.home-courses .course-card h3').innerText() === 'JavaScript cơ bản', 'home subject filter works with JavaScript disabled', engine.name);
                 await nativePage.locator('.global-search [name=q]').fill('HTML');
+                await Promise.all([nativePage.waitForNavigation(), nativePage.locator('.global-search [name=q]').press('Enter')]);
+                check(await nativePage.locator('.course-card').count() === 1, 'native Enter searches after an anchored subject navigation', engine.name);
+                await nativePage.goto(base + '/index.php?page=home');
+                await nativePage.locator('.global-search [name=q]').fill('HTML');
                 await Promise.all([nativePage.waitForNavigation(), nativePage.locator('.global-search button').click()]);
                 check(await nativePage.locator('.course-card').count() === 1, 'global search works with JavaScript disabled', engine.name);
                 await nativePage.getByLabel('Tìm theo tên khóa học').fill('');

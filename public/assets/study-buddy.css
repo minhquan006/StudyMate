@@ -54,8 +54,6 @@
 .is-minimized .buddy-panel { bottom: calc(100% + 10px); }
 .study-buddy.is-quiz .buddy-character, .study-buddy.is-form-focused .buddy-character { display: none; }
 .study-buddy.is-quiz .buddy-launcher, .study-buddy.is-form-focused .buddy-launcher { min-height: 44px; justify-content: center; }
-body:has(#space-player-shell:not([hidden]):not(.dock-left)) .study-buddy { right: auto; left: 18px; }
-body:has(#space-player-shell:not([hidden]):not(.dock-left)) .buddy-panel, body:has(#space-player-shell:not([hidden]):not(.dock-left)) .buddy-bubble { right: auto; left: 0; }
 @keyframes buddy-breathe { 50% { transform: translateY(-3px); } }
 @keyframes buddy-sway { 50% { transform: rotate(2deg); } }
 @keyframes buddy-cheer { 50% { transform: translateY(-9px) rotate(-3deg); } }
@@ -64,13 +62,7 @@ body:has(#space-player-shell:not([hidden]):not(.dock-left)) .buddy-panel, body:h
   .buddy-launcher { width: 88px; }
   .buddy-character { width: 84px; height: 84px; }
   .buddy-panel { max-height: calc(100dvh - 145px); }
-  body:has(#space-player-shell:not([hidden]):not(.dock-left)) .study-buddy { left: 12px; }
-  body:has(#space-player-shell:not([hidden])) .study-buddy { bottom: calc(340px + env(safe-area-inset-bottom)); }
-  body:has(#space-player-shell:not([hidden])) .buddy-character { display: none; }
-  body:has(#space-player-shell:not([hidden])) .buddy-launcher { min-height: 44px; justify-content: center; }
-  body:has(#space-player-shell:not([hidden])) .buddy-panel { max-height: calc(100dvh - 420px); }
 }
-@media (max-width: 767px) and (max-height: 599px) { body:has(#space-player-shell:not([hidden])) .study-buddy { display: none; } }
 @media (max-height: 480px) {
   .buddy-character { display: none; }
   .buddy-panel { max-height: calc(100dvh - 85px); }

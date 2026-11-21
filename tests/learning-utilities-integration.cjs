@@ -50,6 +50,19 @@ async function save(p,text){await p.locator('#lesson-note-input').fill(text);awa
   check(await r.locator('[data-buddy-item=student]').isDisabled()&&!await r.locator('[data-buddy-item=crimson]').isDisabled(),'outfit thresholds remain enforced',engine.name);
   await r.locator('[data-buddy-item=crimson]').click();await r.locator('[data-buddy-item=crown]').click();
   check((await r.locator('#buddy-sprite').getAttribute('src')).includes('crimson-')&&await r.locator('#study-buddy').getAttribute('data-accessory')==='crown','unlocked outfit and accessory equip',engine.name);
+  // A visible music dock must not reactivate positioning from the old floating Buddy.
+  // This is a CSS state fixture; the separate space suite checks a live player.
+  for(const width of [390,834,1366]){
+   await r.setViewportSize({width,height:900});await r.goto(learn);
+   const before=await r.locator('#study-buddy').boundingBox();
+   await r.locator('#space-player-shell').evaluate(x=>x.hidden=false);
+   const after=await r.locator('#study-buddy').boundingBox();
+   check(Math.abs(before.x-after.x)<1&&Math.abs(before.y-after.y)<1,'music dock '+width+' leaves Buddy card in its original flow position',engine.name);
+   await r.locator('#space-player-shell').evaluate(x=>x.classList.add('dock-left'));
+   const left=await r.locator('#study-buddy').boundingBox();
+   check(Math.abs(before.x-left.x)<1&&Math.abs(before.y-left.y)<1,'left music dock '+width+' leaves Buddy card in flow',engine.name);
+   await r.locator('#space-player-shell').evaluate(x=>x.hidden=true);
+  }
   for(const lang of ['vi','en'])for(const theme of ['light','dark'])for(const width of [390,768,1366]){
    await r.setViewportSize({width,height:900});
    await r.goto(learn+`&ui_language=${lang}&ui_theme=${theme}`);await openNotes(r);

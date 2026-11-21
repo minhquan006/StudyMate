@@ -1,5 +1,5 @@
 .page-learn [hidden] { display: none !important; }
-.learning-rail { min-width: 0; position: sticky; top: 100px; align-self: start; }
+.learning-rail { min-width: 0; position: sticky; top: 100px; align-self: start; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: thin; }
 .learning-rail .outline { position: static; }
 .lesson-list-wrap, .lesson-list-wrap:last-child { padding: 0; border: 0; }
 .lesson-list-wrap > summary { display: none; }
@@ -116,7 +116,7 @@
     #space-clock { font-size: 2.75rem; }
 }
 @media (max-width: 767px) {
-    .learning-rail { position: static; width: 100%; }
+    .learning-rail { position: static; width: 100%; max-height: none; overflow: visible; }
     .study-space-on .learning-grid { display: flex; }
     .study-space-on .learning-rail { position: static; max-height: none; overflow: visible; order: -1; }
     .study-space-on .learning-top { padding: 16px; }

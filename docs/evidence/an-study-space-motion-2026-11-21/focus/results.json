@@ -1,0 +1,678 @@
+{
+  "started": "2026-11-21T06:34:38.422Z",
+  "sourceFilesSha256": {
+    "app/bootstrap.php": "a3f3d2adcabcdad37d4af11bf8cb82c9852aa5786aa338e152fea9577554d6b7",
+    "app/layout.php": "c3a13a1597840530d77286380f2214892d44af57b60a26b134ea2e6a6db74dc2",
+    "app/views.php": "1843d34e68ef3b4151974369c4b46bbbb2c5b417e071d6dcb05b473c4ceb5386",
+    "app/study_space_view.php": "1a909e8217b33f9fe1a7343bef88050fdf94122a2e5cf902e01c74ce6c945ed6",
+    "public/assets/study-space.js": "ee948758fbabcd050151da01dc02aa07a18e08667df783bcd0a93b75710174d7",
+    "public/assets/study-space.css": "221abafa37d6fb07e01ec8439f0893246b89e3666d0bda8f217a6e1bf131a4bf",
+    "public/assets/spaces/forest-motion.webm": "1e52b4e48f1c321244942dc8d4d031f607e78229f7f3407e9442fb00371bf054"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "public pages retain restrictive script/referrer policy"
+    },
+    {
+      "browser": "chrome",
+      "name": "study page allows only explicit official player script paths and origin referrer"
+    },
+    {
+      "browser": "chrome",
+      "name": "space starts optional and lesson remains usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "space toggle announces expanded state"
+    },
+    {
+      "browser": "chrome",
+      "name": "scene radio changes actual page background"
+    },
+    {
+      "browser": "chrome",
+      "name": "local HD scenery video actually decodes and plays muted"
+    },
+    {
+      "browser": "chrome",
+      "name": "scenery video advances rather than displaying a still"
+    },
+    {
+      "browser": "chrome",
+      "name": "turning motion off releases video source"
+    },
+    {
+      "browser": "chrome",
+      "name": "system reduced motion stops video and disables effects"
+    },
+    {
+      "browser": "chrome",
+      "name": "motion preference resumes when reduction is lifted"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "tool tabs work with arrow keys"
+    },
+    {
+      "browser": "chrome",
+      "name": "no YouTube request before explicit valid music load"
+    },
+    {
+      "browser": "chrome",
+      "name": "four decorative sound icons have no extra screen reader noise"
+    },
+    {
+      "browser": "chrome",
+      "name": "real local rain recording decodes and starts after user gesture"
+    },
+    {
+      "browser": "chrome",
+      "name": "four selected ambient channels contain actual signal"
+    },
+    {
+      "browser": "chrome",
+      "name": "active sound indicators reflect actual live channels"
+    },
+    {
+      "browser": "chrome",
+      "name": "master volume mutes all ambient output gains"
+    },
+    {
+      "browser": "chrome",
+      "name": "muted channels stop showing active animation"
+    },
+    {
+      "browser": "chrome",
+      "name": "per-channel and master levels persist"
+    },
+    {
+      "browser": "chrome",
+      "name": "sound volume percentage follows keyboard adjustment"
+    },
+    {
+      "browser": "chrome",
+      "name": "pause stops every live ambient source"
+    },
+    {
+      "browser": "chrome",
+      "name": "reload restores scene/settings without autoplaying ambience"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: javascript:alert(1)"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtube.com.evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtube.com@evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://example.com/M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: http://youtu.be/M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/watch?v=short"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/playlist?list=abc"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtu.be/M7lc1UVf-VE/extra"
+    },
+    {
+      "browser": "chrome",
+      "name": "invalid links never contact YouTube"
+    },
+    {
+      "browser": "chrome",
+      "name": "favorite name renders as text, not markup"
+    },
+    {
+      "browser": "chrome",
+      "name": "favorite deduplicates equivalent video links"
+    },
+    {
+      "browser": "chrome",
+      "name": "favorites cap at five without silent replacement"
+    },
+    {
+      "browser": "chrome",
+      "name": "favorites survive reload without loading a hidden player"
+    },
+    {
+      "browser": "chrome",
+      "name": "live official YouTube player is visible at minimum dimensions"
+    },
+    {
+      "browser": "chrome",
+      "name": "official sample video actually enters playing state"
+    },
+    {
+      "browser": "chrome",
+      "name": "mobile scroll keeps the same playing YouTube iframe"
+    },
+    {
+      "browser": "chrome",
+      "name": "floating player stays inside mobile viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "switching to sound mixer keeps music playing in visible dock"
+    },
+    {
+      "browser": "chrome",
+      "name": "dock switches sides without replacing live iframe"
+    },
+    {
+      "browser": "chrome",
+      "name": "player remains visible across tool tabs"
+    },
+    {
+      "browser": "chrome",
+      "name": "explicit close destroys YouTube player and stops media"
+    },
+    {
+      "browser": "chrome",
+      "name": "course outline remains reachable in space mode"
+    },
+    {
+      "browser": "chrome",
+      "name": "non-final fixture lesson offers next action"
+    },
+    {
+      "browser": "chrome",
+      "name": "real next-lesson POST preserves enabled space"
+    },
+    {
+      "browser": "chrome",
+      "name": "navigation never auto-resumes media"
+    },
+    {
+      "browser": "chrome",
+      "name": "closing space restores ordinary outline and keyboard focus"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz remains a separate native workflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "countdown uses elapsed time, not interval tick count"
+    },
+    {
+      "browser": "chrome",
+      "name": "running countdown survives full PHP lesson navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "paused countdown does not advance"
+    },
+    {
+      "browser": "chrome",
+      "name": "stopwatch counts elapsed seconds"
+    },
+    {
+      "browser": "chrome",
+      "name": "stopwatch reset clears time and stops"
+    },
+    {
+      "browser": "chrome",
+      "name": "short break preset is five minutes"
+    },
+    {
+      "browser": "chrome",
+      "name": "countdown finishes once at zero and announces completion"
+    },
+    {
+      "browser": "chrome",
+      "name": "blocked localStorage leaves tools usable with clear feedback"
+    },
+    {
+      "browser": "chrome",
+      "name": "without JavaScript ordinary lesson and native outline remain usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "corrupt saved settings recover to usable defaults"
+    },
+    {
+      "browser": "chrome",
+      "name": "another Student does not inherit enabled scene preference"
+    },
+    {
+      "browser": "chrome",
+      "name": "another Student does not inherit favorite links"
+    },
+    {
+      "browser": "edge",
+      "name": "public pages retain restrictive script/referrer policy"
+    },
+    {
+      "browser": "edge",
+      "name": "study page allows only explicit official player script paths and origin referrer"
+    },
+    {
+      "browser": "edge",
+      "name": "space starts optional and lesson remains usable"
+    },
+    {
+      "browser": "edge",
+      "name": "space toggle announces expanded state"
+    },
+    {
+      "browser": "edge",
+      "name": "scene radio changes actual page background"
+    },
+    {
+      "browser": "edge",
+      "name": "local HD scenery video actually decodes and plays muted"
+    },
+    {
+      "browser": "edge",
+      "name": "scenery video advances rather than displaying a still"
+    },
+    {
+      "browser": "edge",
+      "name": "turning motion off releases video source"
+    },
+    {
+      "browser": "edge",
+      "name": "system reduced motion stops video and disables effects"
+    },
+    {
+      "browser": "edge",
+      "name": "motion preference resumes when reduction is lifted"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Không gian 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Âm thanh 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "Nhạc 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "edge",
+      "name": "tool tabs work with arrow keys"
+    },
+    {
+      "browser": "edge",
+      "name": "no YouTube request before explicit valid music load"
+    },
+    {
+      "browser": "edge",
+      "name": "four decorative sound icons have no extra screen reader noise"
+    },
+    {
+      "browser": "edge",
+      "name": "real local rain recording decodes and starts after user gesture"
+    },
+    {
+      "browser": "edge",
+      "name": "four selected ambient channels contain actual signal"
+    },
+    {
+      "browser": "edge",
+      "name": "active sound indicators reflect actual live channels"
+    },
+    {
+      "browser": "edge",
+      "name": "master volume mutes all ambient output gains"
+    },
+    {
+      "browser": "edge",
+      "name": "muted channels stop showing active animation"
+    },
+    {
+      "browser": "edge",
+      "name": "per-channel and master levels persist"
+    },
+    {
+      "browser": "edge",
+      "name": "sound volume percentage follows keyboard adjustment"
+    },
+    {
+      "browser": "edge",
+      "name": "pause stops every live ambient source"
+    },
+    {
+      "browser": "edge",
+      "name": "reload restores scene/settings without autoplaying ambience"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: javascript:alert(1)"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://youtube.com.evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://youtube.com@evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://example.com/M7lc1UVf-VE"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: http://youtu.be/M7lc1UVf-VE"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/watch?v=short"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/playlist?list=abc"
+    },
+    {
+      "browser": "edge",
+      "name": "rejects unsafe/non-video link: https://youtu.be/M7lc1UVf-VE/extra"
+    },
+    {
+      "browser": "edge",
+      "name": "invalid links never contact YouTube"
+    },
+    {
+      "browser": "edge",
+      "name": "favorite name renders as text, not markup"
+    },
+    {
+      "browser": "edge",
+      "name": "favorite deduplicates equivalent video links"
+    },
+    {
+      "browser": "edge",
+      "name": "favorites cap at five without silent replacement"
+    },
+    {
+      "browser": "edge",
+      "name": "favorites survive reload without loading a hidden player"
+    },
+    {
+      "browser": "edge",
+      "name": "live official YouTube player is visible at minimum dimensions"
+    },
+    {
+      "browser": "edge",
+      "name": "official sample video actually enters playing state"
+    },
+    {
+      "browser": "edge",
+      "name": "mobile scroll keeps the same playing YouTube iframe"
+    },
+    {
+      "browser": "edge",
+      "name": "floating player stays inside mobile viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "switching to sound mixer keeps music playing in visible dock"
+    },
+    {
+      "browser": "edge",
+      "name": "dock switches sides without replacing live iframe"
+    },
+    {
+      "browser": "edge",
+      "name": "player remains visible across tool tabs"
+    },
+    {
+      "browser": "edge",
+      "name": "explicit close destroys YouTube player and stops media"
+    },
+    {
+      "browser": "edge",
+      "name": "course outline remains reachable in space mode"
+    },
+    {
+      "browser": "edge",
+      "name": "non-final fixture lesson offers next action"
+    },
+    {
+      "browser": "edge",
+      "name": "real next-lesson POST preserves enabled space"
+    },
+    {
+      "browser": "edge",
+      "name": "navigation never auto-resumes media"
+    },
+    {
+      "browser": "edge",
+      "name": "closing space restores ordinary outline and keyboard focus"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz remains a separate native workflow"
+    },
+    {
+      "browser": "edge",
+      "name": "countdown uses elapsed time, not interval tick count"
+    },
+    {
+      "browser": "edge",
+      "name": "running countdown survives full PHP lesson navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "paused countdown does not advance"
+    },
+    {
+      "browser": "edge",
+      "name": "stopwatch counts elapsed seconds"
+    },
+    {
+      "browser": "edge",
+      "name": "stopwatch reset clears time and stops"
+    },
+    {
+      "browser": "edge",
+      "name": "short break preset is five minutes"
+    },
+    {
+      "browser": "edge",
+      "name": "countdown finishes once at zero and announces completion"
+    },
+    {
+      "browser": "edge",
+      "name": "blocked localStorage leaves tools usable with clear feedback"
+    },
+    {
+      "browser": "edge",
+      "name": "without JavaScript ordinary lesson and native outline remain usable"
+    },
+    {
+      "browser": "edge",
+      "name": "corrupt saved settings recover to usable defaults"
+    },
+    {
+      "browser": "edge",
+      "name": "another Student does not inherit enabled scene preference"
+    },
+    {
+      "browser": "edge",
+      "name": "another Student does not inherit favorite links"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "scene-390.png",
+    "sound-390.png",
+    "music-390.png",
+    "scene-768.png",
+    "scene-1366.png",
+    "sound-1366.png",
+    "music-1366.png",
+    "floating-player-mobile.png",
+    "youtube-live.png"
+  ],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "liveYoutube": [
+    {
+      "browser": "chrome",
+      "status": "Đang phát nhạc YouTube."
+    },
+    {
+      "browser": "edge",
+      "status": "Đang phát nhạc YouTube."
+    }
+  ],
+  "limitations": [
+    "Disposable SQLite on Windows; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones.",
+    "Web Audio source/decode/play/volume inspected automatically; not a listening-quality review."
+  ],
+  "finished": "2026-11-21T06:35:24.168Z"
+}

@@ -1,3 +1,5 @@
+> Bản bàn giao hiện tại theo mẫu Udemy: [AN_UI_UDEMY_2026-11-21.md](AN_UI_UDEMY_2026-11-21.md). Nội dung dưới đây là lịch sử lượt trước.
+
 # Tái cấu trúc giao diện StudyMate — An, 21/11/2026
 
 PR [#20](https://github.com/minhquan006/StudyMate/pull/20), nhánh `codex/an-ui-demo-20261121`, nền main `9cb5dea77d23684dc258198ffa2c4e3c9dee47dc`. Bản giao diện và bộ kiểm ở `7c76783f90ea8a0dd064c75b994e1b4f8a0901da`; runtime giống `3c1b377`, commit kế tiếp chỉ sửa selector của runner. Codex hỗ trợ An triển khai và kiểm tự động trên Windows.

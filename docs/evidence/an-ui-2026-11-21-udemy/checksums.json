@@ -1,0 +1,29 @@
+{
+  "normalization": "LF text; original PNG bytes",
+  "sha256": {
+    "browser/ai-offline-fixture-390.png": "63f8c3f3fb50e6f2101518a85ac313645b947f96beaf9b4bb139faf101ab62bb",
+    "browser/courses-1366.png": "389e2ad040b9957eed56e50a9df1ee7e290e9d7f584d95ce457d0ae34cf1d4ca",
+    "browser/courses-390.png": "49c61244fc625f5381ad67719e62dc975a9ff7f206253a1e83ca1117f34793be",
+    "browser/detail-1366.png": "c478e75c6f1fa9f435263977f99cb5084744b3c2c624549c220e5f0183cbe8c1",
+    "browser/detail-390.png": "7a792e27372f29232520319e5a4e87dbb7cb28a537718337e2f70d172d36ba3d",
+    "browser/home-1366.png": "a90deba90a6b19b64b3e55367ad26548fea896ce718b24fee9ccda4561a4719b",
+    "browser/home-390.png": "a227b16860f16c2d52973e992a31873b18fccf13627e9d53adb21418fc65000d",
+    "browser/learn-1366.png": "8db9aeae44be12680b6040128cc8ea34cc4924e6fd1fb55ea5577100aed99035",
+    "browser/learn-390.png": "b1916e188d6591325b1502e02254a79edd6e039911f3de1c1cc73512b30cd2e5",
+    "browser/quiz-1366.png": "df916e7349527f1bd0ffc88e0409512b1dce7233a64ad5df04ee911f60eff9cf",
+    "browser/quiz-390.png": "9983a19b9e34e875a33a40a870062028ed96b72f110c305b7b657a60f4d8a79b",
+    "browser/result-1366.png": "93fa4d91bfdf799d76e6213507c8f9a814f02cd6e842f50e16833f964afa77ca",
+    "browser/result-390.png": "0935b0ab25d770e7295c6ebb9886fa48e862d2cc5439ffab7ee78f9b8cd95497",
+    "browser/results.json": "12365eae9ccecc2287ba4d767be56ba0a1c124222a73a13e6abda1e6b58a8a57",
+    "browser/student-1366.png": "19b94443c679301647734ab7de984b26b89556f8a75a3341bf8afb5ee41dc21e",
+    "browser/student-390.png": "81ce30bf8bd39993f94a111ac53e7a96db23d90a0e000b138462de12c8bf4b36",
+    "diagnostics/native-anchor-click-run.json": "d903298506743dd3a03cc47a25439f82bce9c84109dcfb3d7a1ac650f558c00e",
+    "explore-desktop.png": "281e1958ae2f070248664b72be8d211e160a8312914a46107fcb8d33494c158b",
+    "forms/original/results.json": "df8cbb973c89e208aec0de0c9ac526bbdbe9d63b1a7e3e0519c902a9fecbcd12",
+    "forms/quiz-exit/results.json": "614d8601ad74ff6d4367ab71132cb0bf5d767bf37e28cb7ac2f753d6131f751b",
+    "forms/review/results.json": "3c4112db613b95bd0a9df19bbcde6f81babb5993763c5b4c23a5a02db219d857",
+    "php-checks.txt": "0cfde3fd119b48116f10aa9ecca73e5c0c4b0f4fc5e2b2fca697d8478fdccb36",
+    "preview-home.png": "a7926c0d44e0fc05f8dddb95d0e002db4af2279339d81fc314a1ecf8f70d6551",
+    "summary.json": "de739dd097480b8f4a9ce6185cb2b8535621124c3054c46fb869d0f9dc697c8d"
+  }
+}

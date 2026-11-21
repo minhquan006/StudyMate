@@ -154,5 +154,6 @@
     "Automated browser viewports, not physical mobile devices."
   ],
   "qaFixtureOnly": "public/__qa_ai_preview.php existed only in temporary QA checkout and sets a labelled offline response in the QA session.",
-  "styleChecks": 3
+  "styleChecks": 3,
+  "artifactFingerprintNormalization": "CRLF normalized to LF for text artifacts before hashing; images use raw bytes."
 }

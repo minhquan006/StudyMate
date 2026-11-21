@@ -3,6 +3,8 @@ declare(strict_types=1);
 $configFile=dirname(__DIR__).'/config.php';
 if(!is_file($configFile)){http_response_code(503);exit('Chưa có config.php. Sao chép config.example.php thành config.php và chạy php tools/setup.php.');}
 $config=require $configFile;
+require_once __DIR__.'/preferences.php';
+initializeDisplayPreferences();
 date_default_timezone_set('UTC');
 ini_set('display_errors',$config['app_env']==='local'?'1':'0');
 $storage=dirname(__DIR__).'/storage';if(!is_dir($storage))mkdir($storage,0700,true);
@@ -34,7 +36,7 @@ function csrf():string{return '<input type="hidden" name="csrf" value="'.h($_SES
 function hidden(string $name,$value):string{return '<input type="hidden" name="'.h($name).'" value="'.h($value).'">';}
 function formStart(string $action,array $fields=[]):string{$s='<form method="post" action="/index.php">'.csrf().hidden('action',$action);foreach($fields as $k=>$v)$s.=hidden($k,$v);return $s;}
 function mustConfirm():void{if(($_POST['confirm']??'')!=='1')reject('Vui lòng xác nhận thao tác trước khi thực hiện.');}
-function confirmField():string{return '<label class="small confirmation-label"><input type="checkbox" name="confirm" value="1" required> Tôi xác nhận thao tác này</label>';}
+function confirmField():string{return '<label class="small confirmation-label"><input type="checkbox" name="confirm" value="1" required> '.h(t('Tôi xác nhận thao tác này')).'</label>';}
 if(PHP_SAPI!=='cli'){
  header('X-Content-Type-Options: nosniff');header('Referrer-Policy: same-origin');header('Cache-Control: no-store');
  header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'");

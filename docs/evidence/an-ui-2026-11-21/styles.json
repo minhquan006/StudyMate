@@ -1,0 +1,10 @@
+{
+  "sourceSha": "23cdd4fcae093ce8118caf15c02389718c9e58be",
+  "browser": "157.0.8103.80",
+  "primaryHover": "rgb(65, 48, 176)",
+  "dangerHover": {
+    "background": "rgb(220, 53, 69)",
+    "color": "rgb(255, 255, 255)"
+  },
+  "checks": 3
+}

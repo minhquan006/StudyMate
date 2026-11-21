@@ -1,0 +1,106 @@
+{
+  "caseSet": "original",
+  "sourceHead": "2f9c919d8afc748923b5204baf2e489afd983f2c",
+  "sourceLabel": "2f9c919 An UI demo Windows/SQLite isolated forms DB",
+  "os": "Windows_NT 10.0.26200",
+  "started": "2026-11-21T04:06:16.926Z",
+  "baseCommit": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "sourceFilesSha256": {
+    "app/layout.php": "a19d3dbc46568825e1ca1d15fabd226d54e81cd3583d1e76916f4b732c563fbe",
+    "public/assets/app.css": "b52df87364f8841af7fc2eccd8dbb19063e44112dad180ad917c6ec77281db29",
+    "public/assets/forms.js": "1f9691cbfb7ae37383efd2809a1c92cf38f9bb4c89274c801a44d07a4a549ddd"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "native required validation does not set pending",
+      "expected": "native required validation does not set pending",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native registration posts and redirects",
+      "expected": "native registration posts and redirects",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pending status/style and duplicate event suppression preserve enabled controls",
+      "expected": "pending status/style and duplicate event suppression preserve enabled controls",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "expected": "pageshow handler clears pending for intentional resubmission (synthetic event)",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "six lesson completion POSTs still work",
+      "expected": "six lesson completion POSTs still work",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "expected": "named AI submitter and CSRF retained; unavailable AI leaves lesson visible",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native keyboard quiz radio still works",
+      "expected": "native keyboard quiz radio still works",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "refresh warns; cancelling keeps selected answer",
+      "expected": "refresh warns; cancelling keeps selected answer",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "intentional quiz submit has no leave warning and renders real result",
+      "expected": "intentional quiz submit has no leave warning and renders real result",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "logout still posts and invalidates private page",
+      "expected": "logout still posts and invalidates private page",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "native login works with JavaScript disabled",
+      "expected": "native login works with JavaScript disabled",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "native required validation does not set pending",
+      "expected": "native required validation does not set pending",
+      "actual": "Đạt các assertion của ca kiểm tra",
+      "status": "passed"
+    }
+  ],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "errors": [],
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /page=student/. Input:\n\n'http://127.0.0.1:12823/index.php'\n\n    at D:\\TDTU\\Web\\StudyMate\\tests\\form-feedback.cjs:21:279",
+  "finished": "2026-11-21T04:06:25.684Z"
+}

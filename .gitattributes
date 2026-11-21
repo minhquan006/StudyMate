@@ -1,1 +1,7 @@
 *.sh text eol=lf
+
+# Keep captured runner output byte-for-byte, including empty diagnostic paths.
+docs/evidence/quan-glass-2026-11-21/mysql.txt whitespace=-blank-at-eol
+
+# Preserve captured outline QA artifacts and their checksums on Windows.
+docs/evidence/quan-outline-2026-11-21/* -text

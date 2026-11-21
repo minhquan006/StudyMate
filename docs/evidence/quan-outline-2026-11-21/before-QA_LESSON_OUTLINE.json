@@ -1,0 +1,47 @@
+{
+  "expectedBroken": true,
+  "samples": [
+    {
+      "language": "vi",
+      "theme": "light",
+      "width": 834,
+      "height": 600,
+      "scrollY": 650,
+      "innerScroll": 147,
+      "scrollHeight": 625,
+      "clientHeight": 478,
+      "position": "sticky",
+      "outlineTop": 20,
+      "outlineBottom": 500,
+      "headerBottom": 86,
+      "buttonTop": 59.578125,
+      "buttonBottom": 107.578125,
+      "x": 682,
+      "y": 83.578125,
+      "receivesClick": false,
+      "hitClass": "glass-nav-wrap",
+      "overflow": false
+    },
+    {
+      "language": "vi",
+      "theme": "light",
+      "width": 991,
+      "height": 600,
+      "scrollY": 650,
+      "innerScroll": 147,
+      "scrollHeight": 625,
+      "clientHeight": 478,
+      "position": "sticky",
+      "outlineTop": 20,
+      "outlineBottom": 500,
+      "headerBottom": 86,
+      "buttonTop": 59.578125,
+      "buttonBottom": 107.578125,
+      "x": 839,
+      "y": 83.578125,
+      "receivesClick": false,
+      "hitClass": "glass-nav-wrap",
+      "overflow": false
+    }
+  ]
+}

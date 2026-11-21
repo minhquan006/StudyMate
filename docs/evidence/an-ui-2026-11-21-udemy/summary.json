@@ -1,0 +1,45 @@
+{
+  "sourceCommit": "dd4ba34db126ca0647a0f208d7cd420da0a41e8e",
+  "runtimeEquivalentTo": "768042c",
+  "baseCommit": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "normalization": "LF for source text; original bytes for JPEG/PNG",
+  "sourceFilesSha256": {
+    "app/views.php": "c77adf236b17706eb66e8aff265ea1762ea57f892fc6f69beed13e3604d4c07e",
+    "app/layout.php": "d298a173b749978d5c229f77f41d7e6cd19e74f48f96986f6171f99c5043d2b7",
+    "app/ai_view.php": "cbb29021c79f2f9bcbba85ab6e957cfbc4c77d9e46f00d3740a515130f47a2ad",
+    "public/assets/app.css": "3dacab81ac6d176b6465192c244291c9b1d26c3b9a3bdf77c7343e4ecdf5a848",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005",
+    "public/assets/discovery.js": "3c018343ad24acc6b884b845dc409fbbd0395798999730655b4ef679b0c194a4",
+    "public/assets/images/learning-hero.jpg": "3a2f2e7be3ab04357eec6de0a9d1a18b966b4bb3be2dc84a76b6d08ecffc6d96",
+    "public/assets/images/SOURCES.md": "6a9f918815ec320c0d21fba9277e8a686f1b2a9fad0b917e939942bdaddabd08",
+    "tests/an-ui-demo.cjs": "85f11b1943f585d6afebbf9342e042f6cbd9e11dd0f3465be68ad205c5629ce6",
+    "tests/form-feedback.cjs": "0bd6ad735a6c4c6c612f45d45944872b8e723aaa043aa907b065ba8cfd8f0260"
+  },
+  "ui": {
+    "checks": 652,
+    "errors": 0,
+    "screenshots": 15,
+    "browsers": {
+      "chrome": "157.0.8103.80",
+      "edge": "157.0.4341.60"
+    },
+    "sourceCommit": "dd4ba34db126ca0647a0f208d7cd420da0a41e8e"
+  },
+  "forms": {
+    "sourceCommit": "768042c",
+    "review": 34,
+    "quiz-exit": 16,
+    "original": 22
+  },
+  "php": {
+    "sourceCommit": "768042c",
+    "checks": 112,
+    "syntaxFiles": 33
+  },
+  "limitations": [
+    "Disposable SQLite QA on Windows only; MySQL/Docker not rerun.",
+    "Gemini real not called; disabled-AI POST and explicitly labelled offline response fixture.",
+    "Browser viewports 390/768/1366; no physical-phone QA."
+  ],
+  "diagnostic": "Earlier headless native-search click after fragment navigation timed out waiting for element stability. Final harness verifies native Enter after that navigation and clicks the search button from page top; application code unchanged."
+}

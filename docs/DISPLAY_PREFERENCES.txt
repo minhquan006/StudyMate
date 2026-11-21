@@ -1,0 +1,17 @@
+STUDYMATE — NGÔN NGỮ VÀ GIAO DIỆN
+
+Mở nút có biểu tượng quả địa cầu và mã VI/EN ở bên phải thanh điều hướng.
+Chọn Tiếng Việt hoặc English; chọn Sáng, Tối hoặc Theo thiết bị.
+
+Giao diện áp dụng ngay khi chọn, giữ nguyên trang, vị trí cuộn và dữ liệu đang nhập. Theo thiết bị cập nhật khi cài đặt giao diện của hệ điều hành thay đổi.
+Đổi ngôn ngữ tải lại cùng trang, giữ bộ lọc, phân trang, tab biên soạn, khóa/bài hiện tại và neo trên trang khi JavaScript hoạt động. Nếu có câu trả lời quiz hoặc form POST chưa lưu, có bước xác nhận trước khi đổi; hủy sẽ giữ nội dung và ngôn ngữ cũ. Khi đồng ý đổi, nội dung chưa lưu sẽ được bỏ theo thông báo.
+
+Lựa chọn được lưu bằng cookie trên trình duyệt trong một năm, độc lập với phiên đăng nhập; không ghi vào hồ sơ hoặc cơ sở dữ liệu. Ngôn ngữ mặc định là tiếng Việt, giao diện mặc định theo thiết bị. Cookie bị chặn có thể khiến lựa chọn không được giữ sau khi tải lại.
+Chỉ nhận các lựa chọn hợp lệ. Tùy chọn từ URL chỉ áp dụng trên GET, không chen vào xử lý các POST dữ liệu.
+
+Tiếng Anh bao phủ phần giao diện: menu, nhãn, biểu đồ, form, thông báo và lỗi. Tên khóa, mô tả, danh mục do giảng viên quản lý, nội dung bài học, câu hỏi/đáp án và dữ liệu người dùng giữ nguyên theo bản biên soạn. Chức năng này không tự dịch tài liệu học.
+
+Không có JavaScript: mở cùng menu, chọn rồi nhấn Áp dụng lựa chọn. PHP dựng sẵn ngôn ngữ; CSS hỗ trợ giao diện hệ thống mà không cần script. Trình duyệt cũ không có backdrop-filter vẫn có nền thẻ để đọc.
+Bàn phím: Tab đến nút, Enter/Space mở menu; Escape đóng và trả focus khi JavaScript hoạt động. Lớp kính và tương tác tuân theo chế độ giảm chuyển động và giảm độ trong suốt của thiết bị.
+
+Mã liên quan: app/preferences.php, app/lang/en.php, app/lang/glass.en.php, các view, public/assets/preferences.js và preferences.css. Không thay đổi schema, handler nghiệp vụ, quyền, CSRF hoặc hợp đồng health API.

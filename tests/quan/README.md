@@ -86,3 +86,24 @@ python3 tests/quan/verify.py --suite live --allow-live --live-errors-only --mode
 `--suite all` là offline, gồm SQLite/MySQL/Compose; live phải bật riêng. Công cụ lưu từng lượt/log/fingerprint và không xóa log failed khi kiểm lại. Live lấy key read-only, chỉ đưa key vào fixture ngoài build context/public; tự dọn project và DB test. Không dùng kết quả live SQLite trước đây thay cho HTTP/MySQL/UI mới; xem báo cáo tích hợp để biết các lượt dừng và giới hạn.
 
 PDF builder dùng Python có python-docx/reportlab và font Unicode NotoSans hoặc DejaVuSans; `tools/build_review_pdfs.py` là entrypoint tương thích. Việc chạy website không cần các thư viện tạo tài liệu này.
+
+## Kiểm giao diện kính và lựa chọn hiển thị
+
+`verify_display.py` tạo bản sao SQLite riêng, seed dữ liệu mặc định và fixture hoàn thành bài/quiz, chạy kiểm PHP và Chrome, rồi gỡ server/bản sao tạm. AI bị tắt trong cấu hình test; không dùng `.env`, `config.php` hoặc DB demo đang chạy.
+
+Máy cần PHP có PDO SQLite, Node.js và Playwright. Có thể chỉ rõ các đường dẫn theo máy:
+
+```sh
+python3 tests/quan/verify_display.py \
+  --php-executable /path/to/php \
+  --browser-executable /path/to/chrome \
+  --node-executable /path/to/node \
+  --node-module-path /path/to/node_modules \
+  --artifacts /path/to/display-results
+```
+
+Các cờ PHP/Node có thể bỏ khi chương trình có trong PATH; bỏ cờ browser khi dùng Chromium do Playwright cài. Nếu Playwright được cài ở thư mục khác, truyền thư mục `node_modules` bằng `--node-module-path`. Trên Windows có thể ghi lệnh trên một dòng và dùng đường dẫn của máy.
+
+Kết quả gồm `QA_DISPLAY_PREFERENCES.json`, `display-unit.txt`, `runtime.source.json` và ảnh trong thư mục artifacts. Bộ hiển thị bao phủ Việt/Anh × sáng/tối, các vai trò, desktop/mobile, lưu cookie, chế độ hệ thống, no-JS, form/quiz chưa lưu và ngữ cảnh phân trang/tìm kiếm. Hồi quy MySQL vẫn chạy bằng `verify.py --suite mysql` như hướng dẫn ở trên.
+
+Bộ hiển thị cũng chạy `lesson_outline.cjs`: mở bài 8 trong fixture Student, cuộn trang và bên trong sidebar rồi bấm tọa độ thật để chọn bài 7. Kiểm POST chọn bài, URL sau chuyển trang, vùng nhận click dưới header và bố cục điện thoại/desktop ở Việt/Anh sáng/tối. Các biên 767/768 và 991/992px, tablet 834/991px với chiều cao 500/600/900px được bao phủ. Chi tiết và ảnh trước click nằm trong `QA_LESSON_OUTLINE.json`, `outline-after-834.png` và `outline-after-991.png`.

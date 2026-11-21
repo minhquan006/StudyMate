@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-21",
+  "browser": "158.0.8127.36",
+  "platform": "macOS",
+  "database": "disposable SQLite",
+  "base_head": "7f374926acdf3b2c6a1fa9e08b204b39e7777299",
+  "runtime_change": "remove tablet top:20px override for .outline; inherit top:100px and existing viewport-height limit",
+  "baseline_reproduction": {
+    "viewport_sizes": [
+      "834x600",
+      "991x600"
+    ],
+    "checks": 6,
+    "page_scroll": 650,
+    "inner_scroll": 147,
+    "actual_result": "header intercepted coordinate click; no last_lesson POST and no lesson navigation"
+  },
+  "fixed": {
+    "display_checks": 1052,
+    "included_outline_checks": 308,
+    "outline_combinations": 44,
+    "php_display_checks": 441,
+    "service_checks": 14,
+    "javascript_errors": 0,
+    "result": "coordinate click sends exactly one last_lesson POST and navigates from lesson 8 to lesson 7"
+  },
+  "limits": [
+    "No Edge or Safari rerun",
+    "No physical phone test",
+    "No MySQL/Compose rerun",
+    "AI disabled; no live Gemini calls"
+  ],
+  "cleanup": "display runner stopped server and removed its temporary SQLite copy"
+}

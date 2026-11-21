@@ -5,3 +5,4 @@ docs/evidence/quan-glass-2026-11-21/mysql.txt whitespace=-blank-at-eol
 
 # Preserve the captured utility QA artifacts and their checksums on Windows.
 docs/evidence/an-utilities-glass-2026-11-21/* -text whitespace=cr-at-eol
+docs/evidence/an-utilities-sticky-2026-11-21/* -text whitespace=cr-at-eol

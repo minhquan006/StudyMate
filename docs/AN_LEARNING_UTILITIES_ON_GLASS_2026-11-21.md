@@ -1,5 +1,7 @@
 # Tiện ích học tập trên giao diện #22
 
+Bổ sung sau review `c050b35`: [sửa nút đóng Góc tập trung bị header che trên tablet](AN_STUDY_SPACE_STICKY_FIX_2026-11-21.md). Các số kiểm trong báo cáo dưới đây thuộc đợt tích hợp ban đầu; bộ hồi quy sticky được ghi riêng.
+
 Nền giao diện: PR #22, `7f374926acdf3b2c6a1fa9e08b204b39e7777299`.
 Nguồn tách tính năng: PR #21, `79d877ada8da4301c97d9149c1ae6e29b76544e3` (đã gồm #23/#24/#25).
 Nhánh bàn giao: `codex/an-tich-hop-tien-ich-hoc-tap-20261121`.

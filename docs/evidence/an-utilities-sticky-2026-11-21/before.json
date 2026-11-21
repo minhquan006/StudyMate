@@ -1,0 +1,156 @@
+{
+  "expectedBroken": true,
+  "sourceCssSha256": "46c1e9f67dd307939ea0a30ccd9289d127efbe38bd26099e887f1c439552e939",
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "834 reproduces header intercepting close"
+    },
+    {
+      "browser": "chrome",
+      "name": "834 real close-position click opens menu instead of closing space"
+    },
+    {
+      "browser": "chrome",
+      "name": "991 reproduces header intercepting close"
+    },
+    {
+      "browser": "chrome",
+      "name": "991 real close-position click opens menu instead of closing space"
+    },
+    {
+      "browser": "edge",
+      "name": "834 reproduces header intercepting close"
+    },
+    {
+      "browser": "edge",
+      "name": "834 real close-position click opens menu instead of closing space"
+    },
+    {
+      "browser": "edge",
+      "name": "991 reproduces header intercepting close"
+    },
+    {
+      "browser": "edge",
+      "name": "991 real close-position click opens menu instead of closing space"
+    },
+    {
+      "browser": "all",
+      "name": "no JavaScript page errors"
+    }
+  ],
+  "samples": [
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 49,
+      "scrollY": 650,
+      "close": {
+        "top": 27,
+        "bottom": 71
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 20,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "860px"
+      },
+      "hitsClose": false,
+      "hitTag": "svg",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 49,
+      "scrollY": 650,
+      "close": {
+        "top": 27,
+        "bottom": 71
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 20,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "860px"
+      },
+      "hitsClose": false,
+      "hitTag": "svg",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 49,
+      "scrollY": 650,
+      "close": {
+        "top": 27,
+        "bottom": 71
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 20,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "860px"
+      },
+      "hitsClose": false,
+      "hitTag": "svg",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 49,
+      "scrollY": 650,
+      "close": {
+        "top": 27,
+        "bottom": 71
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 20,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "860px"
+      },
+      "hitsClose": false,
+      "hitTag": "svg",
+      "hitClass": null
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "limits": [
+    "Windows Chrome/Edge viewports on disposable SQLite; not macOS Chrome 158, physical phones, MySQL/Compose or real Gemini."
+  ]
+}

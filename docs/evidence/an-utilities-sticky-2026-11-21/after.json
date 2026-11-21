@@ -1,0 +1,3044 @@
+{
+  "expectedBroken": false,
+  "sourceCssSha256": "15f83f361914cd3d7ce346fe5db7fd07007a9e29cbf5ccd446c2dea37ff6802a",
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/767 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/834 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/991 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/992 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/light/1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/767 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/834 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/991 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/992 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "vi/dark/1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/767 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/834 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/991 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/992 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/light/1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/767 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/834 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/991 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/992 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 real click closes space"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 close does not open navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "chrome",
+      "name": "en/dark/1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/767 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/834 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/991 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/992 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/light/1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/767 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/834 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/991 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/992 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "vi/dark/1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/767 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/834 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/991 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/992 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/light/1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/767 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/834 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/991 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/992 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 close receives pointer hit after scrolling"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 close stays below header and inside viewport"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 rail preserves mobile flow or usable sticky height"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 real click closes space"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 close does not open navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 close returns keyboard focus to toggle"
+    },
+    {
+      "browser": "edge",
+      "name": "en/dark/1366 no horizontal overflow"
+    },
+    {
+      "browser": "all",
+      "name": "no JavaScript page errors"
+    }
+  ],
+  "samples": [
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1362.109375,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "light",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1362.109375,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1383.703125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "light",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1383.703125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "chrome",
+      "lang": "en",
+      "theme": "dark",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1362.109375,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "light",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1362.109375,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "vi",
+      "theme": "dark",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1383.703125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "light",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 390,
+      "x": 333,
+      "y": 144.09375,
+      "scrollY": 250,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1383.703125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 767,
+      "x": 710,
+      "y": 144.09375,
+      "scrollY": 198,
+      "close": {
+        "top": 122.09375,
+        "bottom": 166.09375
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 109.09375,
+        "bottom": 1317.125,
+        "position": "static",
+        "maxHeight": "none"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 768,
+      "x": 717,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 12,
+        "bottom": 76
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 834,
+      "x": 773,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 991,
+      "x": 930,
+      "y": 129,
+      "scrollY": 650,
+      "close": {
+        "top": 107,
+        "bottom": 151
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 992,
+      "x": 927,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 86
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    },
+    {
+      "browser": "edge",
+      "lang": "en",
+      "theme": "dark",
+      "width": 1366,
+      "x": 1289,
+      "y": 133,
+      "scrollY": 650,
+      "close": {
+        "top": 111,
+        "bottom": 155
+      },
+      "header": {
+        "top": 16,
+        "bottom": 94
+      },
+      "rail": {
+        "top": 100,
+        "bottom": 880,
+        "position": "sticky",
+        "maxHeight": "780px"
+      },
+      "hitsClose": true,
+      "hitTag": "BUTTON",
+      "hitClass": null
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "limits": [
+    "Windows Chrome/Edge viewports on disposable SQLite; not macOS Chrome 158, physical phones, MySQL/Compose or real Gemini."
+  ]
+}

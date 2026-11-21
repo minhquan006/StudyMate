@@ -110,9 +110,8 @@
 .space-favorite-row .favorite-select { flex: 1; min-width: 0; text-align: left; overflow-wrap: anywhere; padding: 8px 0; }
 .space-favorite-row .favorite-remove { width: 36px; flex-shrink: 0; color: var(--muted); font-size: 1.1rem; }
 @media (max-width: 991px) {
-    .learning-rail { top: 20px; }
+    /* Keep the base 100px sticky offset and viewport - 120px height below #22's header. */
     .study-space-on .learning-grid { grid-template-columns: minmax(0,1fr) 280px; }
-    .study-space-on .learning-rail { top: 20px; max-height: calc(100vh - 40px); }
     .study-space { padding: 16px; }
     #space-clock { font-size: 2.75rem; }
 }

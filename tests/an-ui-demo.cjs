@@ -13,7 +13,7 @@ fs.mkdirSync(output, { recursive: true });
 const password = process.env.QA_DEMO_PASSWORD || 'StudyMate2026!';
 const engines = JSON.parse(process.env.QA_BROWSERS || '[]');
 assert(engines.length, 'Set QA_BROWSERS to real browser executables.');
-const files = ['app/views.php', 'app/layout.php', 'app/ai_view.php', 'public/assets/app.css', 'public/assets/forms.js'];
+const files = ['app/views.php', 'app/layout.php', 'app/ai_view.php', 'public/assets/app.css', 'public/assets/forms.js', 'public/assets/discovery.js', 'public/assets/images/learning-hero.jpg'];
 const report = {
     started: new Date().toISOString(),
     sourceFilesSha256: Object.fromEntries(files.map(file => [file, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')])),
@@ -101,6 +101,22 @@ async function snapshot(page, name, browser) {
                 const page = await context.newPage();
                 page.on('pageerror', error => report.errors.push(engine.name + ': ' + error.message));
                 await page.goto(base + '/index.php?page=home');
+                check(await page.locator('.market-photo').evaluate(image => image.complete && image.naturalWidth > 1000), 'licensed local banner photo loads', engine.name);
+                await page.locator('.explore-menu summary').focus();
+                await page.keyboard.press('Enter');
+                check(await page.locator('.explore-menu').getAttribute('open') !== null && await page.locator('.explore-content').isVisible(), 'Explore opens with keyboard', engine.name);
+                await page.keyboard.press('Escape');
+                check(await page.locator('.explore-menu').getAttribute('open') === null && await page.locator('.explore-menu summary').evaluate(element => element === document.activeElement), 'Escape closes Explore and restores focus', engine.name);
+                await page.getByRole('button', { name:'Đóng thông báo', exact:true }).click();
+                check(await page.locator('.learning-announcement').count() === 0, 'announcement dismisses without navigation', engine.name);
+                const subjects = page.locator('.subject-grid');
+                await subjects.focus(); await page.keyboard.press('ArrowRight');
+                await page.waitForFunction(() => document.querySelector('.subject-grid').scrollLeft > 0);
+                check(await subjects.evaluate(element => element.scrollLeft > 0), 'mobile subject shelf scrolls with keyboard', engine.name);
+                await page.locator('.course-subjects').getByRole('link', { name:'Lập trình web', exact:true }).click();
+                check(await page.locator('.home-courses .course-card h3').innerText() === 'HTML và CSS cơ bản' && await page.locator('.course-subjects a[aria-current]').innerText() === 'Lập trình web', 'home subject filter returns actual course and announces selection', engine.name);
+                await page.locator('.course-subjects').getByRole('link', { name:'Cơ sở dữ liệu', exact:true }).click();
+                check(await page.locator('.home-courses .course-card').count() === 0 && await page.getByRole('heading', { name:'Khóa học đang được chuẩn bị', exact:true }).isVisible(), 'empty home subject explains current course availability', engine.name);
                 await page.getByRole('search', { name:'Tìm khóa học toàn trang' }).locator('[name=q]').fill('JavaScript');
                 await Promise.all([page.waitForNavigation(), page.locator('.global-search [name=q]').press('Enter')]);
                 check(new URL(page.url()).searchParams.get('q') === 'JavaScript' && await page.locator('.course-card').count() === 1, 'global search submits native GET and returns matching course', engine.name);
@@ -201,6 +217,11 @@ async function snapshot(page, name, browser) {
                 const plain = await browser.newContext({ javaScriptEnabled:false, viewport:{ width:390, height:844 } });
                 const nativePage = await plain.newPage();
                 await nativePage.goto(base + '/index.php?page=home');
+                await nativePage.locator('.explore-menu summary').click();
+                check(await nativePage.locator('.explore-content').isVisible(), 'Explore menu works with JavaScript disabled', engine.name);
+                await nativePage.locator('.explore-menu summary').click();
+                await nativePage.locator('.course-subjects').getByRole('link', { name:'Lập trình', exact:true }).click();
+                check(await nativePage.locator('.home-courses .course-card h3').innerText() === 'JavaScript cơ bản', 'home subject filter works with JavaScript disabled', engine.name);
                 await nativePage.locator('.global-search [name=q]').fill('HTML');
                 await Promise.all([nativePage.waitForNavigation(), nativePage.locator('.global-search button').click()]);
                 check(await nativePage.locator('.course-card').count() === 1, 'global search works with JavaScript disabled', engine.name);

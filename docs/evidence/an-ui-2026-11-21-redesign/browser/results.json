@@ -1,0 +1,2568 @@
+{
+  "started": "2026-11-21T04:50:12.877Z",
+  "sourceFilesSha256": {
+    "app/views.php": "23e14ba3ebed3afc2d9ab1ee326e759c850f7fe705a04ca99ea4b7df4357b903",
+    "app/layout.php": "a56ae4ef2136ce961b5ee4a03d50dc41e2bb57841c05e97032cda536870ac97b",
+    "app/ai_view.php": "82dc6a11b4b350aa0692b5e34a330a62e9d9f30014e9ee2cfa9913c3989abd1e",
+    "public/assets/app.css": "e50bf005ed84d097c380907289cc35253d33f17db4cd627f6550400adadf7b46",
+    "public/assets/forms.js": "1f9691cbfb7ae37383efd2809a1c92cf38f9bb4c89274c801a44d07a4a549ddd"
+  },
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "guest home 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest home 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest courses 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest detail&id=1 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest login 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest register 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest first Tab reaches skip link"
+    },
+    {
+      "browser": "chrome",
+      "name": "guest skip link enters main content"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 student 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 learn&id=2 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 quiz&id=2 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 result&id=1 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 profile 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 first Tab reaches skip link"
+    },
+    {
+      "browser": "chrome",
+      "name": "student1 skip link enters main content"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 instructor 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=info 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=content 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 edit&id=2&tab=students 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 first Tab reaches skip link"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 skip link enters main content"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 390 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 390 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 390 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 768 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 768 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 768 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=users 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=courses 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 1366 fields labelled"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin admin&tab=categories 1366 controls at least 44px"
+    },
+    {
+      "browser": "chrome",
+      "name": "Admin table receives focus with Tab"
+    },
+    {
+      "browser": "chrome",
+      "name": "Admin table scrolls with keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin first Tab reaches skip link"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin skip link enters main content"
+    },
+    {
+      "browser": "chrome",
+      "name": "global search submits native GET and returns matching course"
+    },
+    {
+      "browser": "chrome",
+      "name": "subject navigation applies category and preserves selected filter"
+    },
+    {
+      "browser": "chrome",
+      "name": "desktop catalog separates filters and results"
+    },
+    {
+      "browser": "chrome",
+      "name": "course overview navigation reaches curriculum"
+    },
+    {
+      "browser": "chrome",
+      "name": "chapter curriculum collapses by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "search finds JavaScript"
+    },
+    {
+      "browser": "chrome",
+      "name": "search result uses actual course title"
+    },
+    {
+      "browser": "chrome",
+      "name": "empty search explains recovery"
+    },
+    {
+      "browser": "chrome",
+      "name": "reset recovers complete catalog"
+    },
+    {
+      "browser": "chrome",
+      "name": "main text, secondary text and primary color meet 4.5:1 on white"
+    },
+    {
+      "browser": "chrome",
+      "name": "synthetic long course title stays inside mobile grid"
+    },
+    {
+      "browser": "chrome",
+      "name": "enrolled Student sees continue action"
+    },
+    {
+      "browser": "chrome",
+      "name": "next lesson preserves CSRF and ordered lesson ID"
+    },
+    {
+      "browser": "chrome",
+      "name": "next lesson action opens next real lesson"
+    },
+    {
+      "browser": "chrome",
+      "name": "desktop lesson has wide reading space"
+    },
+    {
+      "browser": "chrome",
+      "name": "mobile reading and assistant precede outline"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 1 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 2 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 3 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 4 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 5 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson 6 opens by keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "all lesson completion POSTs update progress"
+    },
+    {
+      "browser": "chrome",
+      "name": "current lesson is announced"
+    },
+    {
+      "browser": "chrome",
+      "name": "ask preserves AI contract and CSRF"
+    },
+    {
+      "browser": "chrome",
+      "name": "ask disabled AI leaves lesson usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "summarize preserves AI contract and CSRF"
+    },
+    {
+      "browser": "chrome",
+      "name": "summarize disabled AI leaves lesson usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz preserves request ID and CSRF"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz POST renders server result and explanations"
+    },
+    {
+      "browser": "chrome",
+      "name": "offline AI fixture response is readable"
+    },
+    {
+      "browser": "chrome",
+      "name": "long offline AI response stays inside page"
+    },
+    {
+      "browser": "chrome",
+      "name": "long code block is keyboard focusable"
+    },
+    {
+      "browser": "chrome",
+      "name": "long code block scrolls with keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "global search works with JavaScript disabled"
+    },
+    {
+      "browser": "chrome",
+      "name": "catalog category filter works with JavaScript disabled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest home 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest courses 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest detail&id=1 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest login 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "guest register 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "guest first Tab reaches skip link"
+    },
+    {
+      "browser": "edge",
+      "name": "guest skip link enters main content"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 student 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 learn&id=2 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 quiz&id=2 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 result&id=1 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 profile 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 first Tab reaches skip link"
+    },
+    {
+      "browser": "edge",
+      "name": "student1 skip link enters main content"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 instructor 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=info 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=content 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=3&tab=quiz 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 edit&id=2&tab=students 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 first Tab reaches skip link"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 skip link enters main content"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 390 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 390 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 390 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 768 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 768 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 768 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=users 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=courses 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 1366 no PHP diagnostics"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 1366 fields labelled"
+    },
+    {
+      "browser": "edge",
+      "name": "admin admin&tab=categories 1366 controls at least 44px"
+    },
+    {
+      "browser": "edge",
+      "name": "Admin table receives focus with Tab"
+    },
+    {
+      "browser": "edge",
+      "name": "Admin table scrolls with keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "admin first Tab reaches skip link"
+    },
+    {
+      "browser": "edge",
+      "name": "admin skip link enters main content"
+    },
+    {
+      "browser": "edge",
+      "name": "global search submits native GET and returns matching course"
+    },
+    {
+      "browser": "edge",
+      "name": "subject navigation applies category and preserves selected filter"
+    },
+    {
+      "browser": "edge",
+      "name": "desktop catalog separates filters and results"
+    },
+    {
+      "browser": "edge",
+      "name": "course overview navigation reaches curriculum"
+    },
+    {
+      "browser": "edge",
+      "name": "chapter curriculum collapses by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "search finds JavaScript"
+    },
+    {
+      "browser": "edge",
+      "name": "search result uses actual course title"
+    },
+    {
+      "browser": "edge",
+      "name": "empty search explains recovery"
+    },
+    {
+      "browser": "edge",
+      "name": "reset recovers complete catalog"
+    },
+    {
+      "browser": "edge",
+      "name": "main text, secondary text and primary color meet 4.5:1 on white"
+    },
+    {
+      "browser": "edge",
+      "name": "synthetic long course title stays inside mobile grid"
+    },
+    {
+      "browser": "edge",
+      "name": "enrolled Student sees continue action"
+    },
+    {
+      "browser": "edge",
+      "name": "next lesson preserves CSRF and ordered lesson ID"
+    },
+    {
+      "browser": "edge",
+      "name": "next lesson action opens next real lesson"
+    },
+    {
+      "browser": "edge",
+      "name": "desktop lesson has wide reading space"
+    },
+    {
+      "browser": "edge",
+      "name": "mobile reading and assistant precede outline"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 1 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 2 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 3 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 4 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 5 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson 6 opens by keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "all lesson completion POSTs update progress"
+    },
+    {
+      "browser": "edge",
+      "name": "current lesson is announced"
+    },
+    {
+      "browser": "edge",
+      "name": "ask preserves AI contract and CSRF"
+    },
+    {
+      "browser": "edge",
+      "name": "ask disabled AI leaves lesson usable"
+    },
+    {
+      "browser": "edge",
+      "name": "summarize preserves AI contract and CSRF"
+    },
+    {
+      "browser": "edge",
+      "name": "summarize disabled AI leaves lesson usable"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz preserves request ID and CSRF"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz POST renders server result and explanations"
+    },
+    {
+      "browser": "edge",
+      "name": "offline AI fixture response is readable"
+    },
+    {
+      "browser": "edge",
+      "name": "long offline AI response stays inside page"
+    },
+    {
+      "browser": "edge",
+      "name": "long code block is keyboard focusable"
+    },
+    {
+      "browser": "edge",
+      "name": "long code block scrolls with keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "global search works with JavaScript disabled"
+    },
+    {
+      "browser": "edge",
+      "name": "catalog category filter works with JavaScript disabled"
+    }
+  ],
+  "screenshots": [
+    "home-390.png",
+    "courses-390.png",
+    "detail-390.png",
+    "home-1366.png",
+    "courses-1366.png",
+    "detail-1366.png",
+    "student-390.png",
+    "learn-390.png",
+    "quiz-390.png",
+    "result-390.png",
+    "student-1366.png",
+    "learn-1366.png",
+    "quiz-1366.png",
+    "result-1366.png",
+    "ai-offline-fixture-390.png"
+  ],
+  "errors": [],
+  "limitations": [
+    "SQLite disposable QA only.",
+    "Gemini HTTP calls are disabled. AI response layout uses an explicitly named QA fixture when provided.",
+    "Automated browser viewports, not physical mobile devices."
+  ],
+  "finished": "2026-11-21T04:51:14.075Z"
+}

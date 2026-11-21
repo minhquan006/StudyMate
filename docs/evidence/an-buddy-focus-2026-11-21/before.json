@@ -1,0 +1,30 @@
+{
+  "favorites": 0,
+  "events": [
+    [
+      "focusin",
+      "space-youtube-url"
+    ],
+    [
+      "focusin",
+      "space-music-name"
+    ],
+    [
+      "mousedown",
+      "space-music-save"
+    ],
+    [
+      "focusin",
+      "space-music-save"
+    ],
+    [
+      "mouseup",
+      "buddy-sprite"
+    ],
+    [
+      "click",
+      "page-learn study-space-on study-space-motion"
+    ]
+  ],
+  "observation": "Buddy expanded during focusin between mousedown and mouseup; save click did not reach button."
+}

@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "a9fbc229b207626c353cfb83f3eb409084cfd4eb",
+  "baseCommit": "6a7691b386ca6abe9669cbf95813737074c63414",
+  "sourceFilesSha256": {
+    "public/assets/study-buddy.js": "f8a34ccb36c732facadcf51aab1e6c58f403548f5c536ac915fc2210ece6e4c9"
+  },
+  "sourceNormalization": "Git LF bytes",
+  "directChecks": 6,
+  "baseRegressionChecks": 158,
+  "notesIntegrationRegressionChecks": 158,
+  "note": "Two runs of the same regression suite, not 316 distinct tests. Notes integration uses in-progress uncommitted notes UI, identified by raw source fingerprints in its report. Base report was run from the actual base checkout and hashes matched the recorded source commit.",
+  "limits": [
+    "Chrome/Edge Windows, SQLite QA. No MySQL/Docker or real Gemini."
+  ]
+}

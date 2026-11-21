@@ -10,6 +10,10 @@
   const key = 'studymate:space:v1:' + root.dataset.user;
   const modes = { focus: 25 * 60000, break: 5 * 60000, stopwatch: 0 };
   const kinds = ['rain', 'wind', 'pink', 'brown'];
+  const sceneVideos = {
+    forest: { src:'/assets/spaces/forest-motion.webm', poster:'/assets/spaces/forest.jpg', name:'Video suối rừng' },
+    cafe: { src:'/assets/spaces/anime-cafe.mp4', poster:'/assets/spaces/anime-cafe.jpg', name:'Anime Café' }
+  };
   const fresh = () => ({ enabled:false, scene:'library', motion:true, tab:'scene', master:60, musicVolume:50, url:'', favorites:[], sounds:Object.fromEntries(kinds.map(kind => [kind, { selected:kind === 'rain', volume:35 }])), timer:{ mode:'focus', running:false, remaining:modes.focus, elapsed:0, anchor:0 } });
   const percent = (value, fallback) => Number.isFinite(value) ? Math.max(0, Math.min(100, value)) : fallback;
   function videoId(value) {
@@ -33,7 +37,7 @@
     if (saved && typeof saved === 'object') {
       state.enabled = saved.enabled === true;
       if (typeof saved.motion === 'boolean') state.motion = saved.motion;
-      if (['library', 'forest', 'desk'].includes(saved.scene)) state.scene = saved.scene;
+      if (['library', 'forest', 'desk', 'cafe'].includes(saved.scene)) state.scene = saved.scene;
       if (['scene', 'sound', 'music'].includes(saved.tab)) state.tab = saved.tab;
       state.master = percent(saved.master, 60);
       state.musicVolume = percent(saved.musicVolume, 50);
@@ -82,24 +86,34 @@
     document.body.classList.toggle('study-space-motion', moving);
     $('space-motion').checked = state.motion && !reducedMotion.matches;
     $('space-motion').disabled = reducedMotion.matches;
-    const useVideo = moving && state.scene === 'forest' && !navigator.connection?.saveData;
+    $('space-cafe-hint').hidden = state.scene !== 'cafe';
+    const clip = sceneVideos[state.scene];
+    if (clip) video.poster = clip.poster;
+    const useVideo = moving && clip && !navigator.connection?.saveData;
     if (!useVideo) {
       video.pause(); scenery.classList.remove('is-live');
       if (video.hasAttribute('src')) { video.removeAttribute('src'); video.load(); }
-      message('space-motion-status', reducedMotion.matches ? 'Thiết bị đang chọn giảm chuyển động.' : !state.motion ? 'Đang dùng nền tĩnh.' : navigator.connection?.saveData && state.scene === 'forest' ? 'Đang tiết kiệm dữ liệu: dùng ảnh chuyển động nhẹ.' : 'Ánh sáng và cảnh nền chuyển động nhẹ.');
+      message('space-motion-status', reducedMotion.matches ? 'Thiết bị đang chọn giảm chuyển động.' : !state.motion ? 'Đang dùng nền tĩnh.' : navigator.connection?.saveData && clip ? 'Đang tiết kiệm dữ liệu: dùng ảnh chuyển động nhẹ.' : 'Ánh sáng và cảnh nền chuyển động nhẹ.');
       return;
     }
-    if (!video.hasAttribute('src')) video.src = '/assets/spaces/forest-motion.webm';
+    if (video.getAttribute('src') !== clip.src) {
+      video.pause(); scenery.classList.remove('is-live'); video.src = clip.src;
+    }
     if (document.hidden) { video.pause(); return; }
-    message('space-motion-status', 'Đang mở video suối rừng HD…');
+    message('space-motion-status', 'Đang mở ' + clip.name + ' HD…');
     video.play().then(() => {
       if (generation !== sceneryGeneration || !state.enabled) return;
-      scenery.classList.add('is-live'); message('space-motion-status', 'Video suối rừng · HD 1920 × 1080.');
+      scenery.classList.add('is-live'); message('space-motion-status', clip.name + ' · HD 1920 × 1080.');
     }).catch(() => {
       if (generation !== sceneryGeneration) return;
       scenery.classList.remove('is-live'); message('space-motion-status', 'Chưa phát được video. Nền ảnh vẫn hiển thị; bạn có thể tắt/bật để thử lại.');
     });
   }
+  video.addEventListener('error', () => {
+    if (!state.enabled || !video.hasAttribute('src')) return;
+    scenery.classList.remove('is-live');
+    message('space-motion-status', 'Chưa phát được video. Nền ảnh vẫn hiển thị; bạn có thể tắt/bật để thử lại.');
+  });
   $('space-motion').addEventListener('change', event => { state.motion = event.target.checked; applyScenery(); save(); });
   reducedMotion.addEventListener('change', applyScenery);
   function timerValue() {

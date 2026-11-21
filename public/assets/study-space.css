@@ -9,6 +9,7 @@
 [data-study-scene="library"] .scenery-photo { background-image: url("spaces/library.jpg"); }
 [data-study-scene="forest"] .scenery-photo { background-image: url("spaces/forest.jpg"); }
 [data-study-scene="desk"] .scenery-photo { background-image: url("images/learning-hero.jpg"); }
+[data-study-scene="cafe"] .scenery-photo { background-image: url("spaces/anime-cafe.jpg"); }
 #space-scene-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
 #study-scenery.is-live #space-scene-video { opacity: 1; }
 #study-scenery::after { content: ""; position: absolute; inset: 0; background: #12211932; }
@@ -17,6 +18,8 @@
 .study-space-motion .scenery-light { animation: scenery-sunlight 24s ease-in-out infinite alternate; }
 .scenery-rain { position: absolute; inset: -25%; opacity: 0; background-image: repeating-linear-gradient(105deg,transparent 0 29px,#e2efff40 30px,transparent 31px 55px); background-size: 55px 110px; }
 .study-space-motion.study-space-rain .scenery-rain { opacity: .32; animation: scenery-rainfall 1.2s linear infinite; }
+.study-space-motion[data-study-scene="cafe"] .scenery-rain { inset: 0; clip-path: polygon(0 0,33% 0,32% 100%,0 100%); opacity: .28; animation: scenery-rainfall 1.2s linear infinite; }
+[data-study-scene="cafe"] .scenery-light { background: radial-gradient(ellipse at 16% 20%,#ffd78b40,transparent 60%); }
 @keyframes scenery-drift { from { transform: scale(1.01) translate(-1%,0); } to { transform: scale(1.08) translate(1%,1%); } }
 @keyframes scenery-sunlight { from { transform: translate(-3%,-2%); opacity: .35; } to { transform: translate(5%,2%); opacity: .7; } }
 @keyframes scenery-rainfall { to { background-position: -55px 110px; } }
@@ -40,7 +43,7 @@
 .space-tabs > button { flex: 1; min-height: 44px; padding: 10px 4px; font-size: .6875rem; border: 0; border-bottom: 2px solid transparent; background: #fff; color: var(--muted); white-space: nowrap; }
 .space-tabs > button[aria-selected="true"] { border-color: #346047; color: #244a36; font-weight: 650; }
 .space-tab-panel { min-width: 0; }
-.space-scenes { margin: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.space-scenes { margin: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
 .space-scenes legend { float: none; grid-column: 1/-1; margin-bottom: 4px; font-size: .8125rem; font-weight: 600; }
 .space-scene-option { position: relative; min-width: 0; padding: 4px; margin: 0; border: 1px solid var(--line); border-radius: 5px; cursor: pointer; font-weight: 450; font-size: .5625rem; line-height: 1.6; text-align: center; }
 .space-scene-option input { position: absolute; top: 7px; right: 7px; width: 14px; height: 14px; margin: 0; }
@@ -48,6 +51,7 @@
 .scene-library { background-image: url("spaces/library.jpg"); }
 .scene-forest { background-image: url("spaces/forest.jpg"); }
 .scene-desk { background-image: url("images/learning-hero.jpg"); }
+.scene-cafe { background-image: url("spaces/anime-cafe.jpg"); }
 .space-scene-option:has(input:checked) { border: 2px solid #346047; padding: 3px; background: #f0f6f1; }
 .space-scene-option:focus-within { outline: 3px solid var(--primary); outline-offset: 2px; }
 .space-motion-choice { display: flex; gap: 10px; align-items: flex-start; margin: 18px 0 0; font-size: .75rem; min-height: 44px; }

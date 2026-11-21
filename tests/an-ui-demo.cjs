@@ -76,6 +76,20 @@ async function snapshot(page, name, browser) {
                             }
                         }
                     }
+                    if (role === 'admin') {
+                        await page.setViewportSize({ width:390, height:844 });
+                        await page.goto(base + '/index.php?page=admin&tab=users');
+                        const table = page.locator('.table-responsive[tabindex="0"]');
+                        let reached = false;
+                        for (let attempt = 0; attempt < 30 && !reached; attempt++) {
+                            await page.keyboard.press('Tab');
+                            reached = await table.evaluate(element => element === document.activeElement);
+                        }
+                        check(reached, 'Admin table receives focus with Tab', engine.name);
+                        await page.keyboard.press('ArrowRight');
+                        await page.waitForFunction(() => document.querySelector('.table-responsive').scrollLeft > 0);
+                        check(await table.evaluate(element => element.scrollLeft > 0), 'Admin table scrolls with keyboard', engine.name);
+                    }
                     await page.goto(base + '/index.php?page=home');
                     await page.keyboard.press('Tab');
                     check(await page.locator('.skip-link').evaluate(element => element === document.activeElement), role + ' first Tab reaches skip link', engine.name);
@@ -151,6 +165,12 @@ async function snapshot(page, name, browser) {
                     await page.goto(base + process.env.QA_AI_PREVIEW_PATH);
                     check(await page.locator('.ai-message').isVisible(), 'offline AI fixture response is readable', engine.name);
                     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'long offline AI response stays inside page', engine.name);
+                    const code = page.locator('.ai-message pre');
+                    check(await code.getAttribute('tabindex') === '0', 'long code block is keyboard focusable', engine.name);
+                    await code.focus();
+                    await page.keyboard.press('ArrowRight');
+                    await page.waitForFunction(() => document.querySelector('.ai-message pre').scrollLeft > 0);
+                    check(await code.evaluate(element => element.scrollLeft > 0), 'long code block scrolls with keyboard', engine.name);
                     await snapshot(page, 'ai-offline-fixture-390', engine.name);
                 }
                 await context.close();

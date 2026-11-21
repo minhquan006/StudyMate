@@ -71,7 +71,7 @@ async function snapshot(page, name, browser) {
                             const undersized = await page.locator('.btn:not([disabled]), .lesson-link').evaluateAll(elements => elements.filter(element => element.getBoundingClientRect().width && element.getBoundingClientRect().height < 43.5).length);
                             check(undersized === 0, label + ' controls at least 44px', engine.name);
                             if (width !== 768) {
-                                const name = ({ home:'home', courses:'courses', 'detail&id=1':'detail', 'learn&id=2':'learn', 'quiz&id=2':'quiz', 'result&id=1':'result' })[route];
+                                const name = ({ home:'home', courses:'courses', 'detail&id=1':'detail', 'learn&id=2':'learn', 'quiz&id=2':'quiz', 'result&id=1':'result', student:'student' })[route];
                                 if (name) await snapshot(page, name + '-' + width, engine.name);
                             }
                         }
@@ -100,6 +100,21 @@ async function snapshot(page, name, browser) {
                 const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
                 const page = await context.newPage();
                 page.on('pageerror', error => report.errors.push(engine.name + ': ' + error.message));
+                await page.goto(base + '/index.php?page=home');
+                await page.getByRole('search', { name:'Tìm khóa học toàn trang' }).locator('[name=q]').fill('JavaScript');
+                await Promise.all([page.waitForNavigation(), page.locator('.global-search input').press('Enter')]);
+                check(new URL(page.url()).searchParams.get('q') === 'JavaScript' && await page.locator('.course-card').count() === 1, 'global search submits native GET and returns matching course', engine.name);
+                await page.locator('.subject-nav').getByRole('link', { name:'Lập trình web', exact:true }).click();
+                check(await page.locator('.course-card h3').innerText() === 'HTML và CSS cơ bản' && await page.locator('.catalog-filter select').inputValue() !== '', 'subject navigation applies category and preserves selected filter', engine.name);
+                await page.setViewportSize({ width:1366, height:900 });
+                check(await page.evaluate(() => document.querySelector('.catalog-sidebar').getBoundingClientRect().right < document.querySelector('.catalog-results').getBoundingClientRect().left), 'desktop catalog separates filters and results', engine.name);
+                await page.goto(base + '/index.php?page=detail&id=1');
+                await page.locator('.detail-nav a[href="#curriculum"]').click();
+                check(new URL(page.url()).hash === '#curriculum', 'course overview navigation reaches curriculum', engine.name);
+                const chapter = page.locator('.curriculum details').first();
+                await chapter.locator('summary').focus(); await page.keyboard.press('Enter');
+                check(await chapter.getAttribute('open') === null, 'chapter curriculum collapses by keyboard', engine.name);
+                await page.setViewportSize({ width:390, height:844 });
                 await page.goto(base + '/index.php?page=courses');
                 await page.getByLabel('Tìm theo tên khóa học').fill('JavaScript');
                 await submit(page, page.locator('.catalog-filter'));
@@ -134,7 +149,16 @@ async function snapshot(page, name, browser) {
                 await page.goto(base + '/index.php?page=detail&id=1');
                 check(await page.getByRole('link', { name:'Tiếp tục học', exact:true }).isVisible() && await page.locator('form:has(input[value=enroll])').count() === 0, 'enrolled Student sees continue action', engine.name);
                 await page.getByRole('link', { name:'Tiếp tục học', exact:true }).click();
-                const lessons = await page.locator('form:has(input[value=last_lesson]) [name=lesson_id]').evaluateAll(elements => elements.map(element => element.value));
+                const lessons = await page.locator('.outline form:has(input[value=last_lesson]) [name=lesson_id]').evaluateAll(elements => elements.map(element => element.value));
+                await page.goto(base + '/index.php?page=learn&id=1&lesson=' + lessons[0]);
+                const nextForm = page.locator('.lesson-actions form:has(input[value=last_lesson])');
+                check(!!await nextForm.locator('[name=csrf]').inputValue() && await nextForm.locator('[name=lesson_id]').inputValue() === lessons[1], 'next lesson preserves CSRF and ordered lesson ID', engine.name);
+                await submit(page, nextForm);
+                check(new URL(page.url()).searchParams.get('lesson') === lessons[1], 'next lesson action opens next real lesson', engine.name);
+                await page.setViewportSize({ width:1366, height:900 });
+                check(await page.locator('.lesson-panel').evaluate(element => element.getBoundingClientRect().width > 600), 'desktop lesson has wide reading space', engine.name);
+                await page.setViewportSize({ width:390, height:844 });
+                check(await page.evaluate(() => document.querySelector('.ai-panel').getBoundingClientRect().bottom <= document.querySelector('.outline').getBoundingClientRect().top), 'mobile reading and assistant precede outline', engine.name);
                 for (const lesson of lessons) {
                     await page.goto(base + '/index.php?page=learn&id=1&lesson=' + lesson);
                     const activeLesson = page.locator('.lesson-link[aria-current=step]');
@@ -174,6 +198,17 @@ async function snapshot(page, name, browser) {
                     await snapshot(page, 'ai-offline-fixture-390', engine.name);
                 }
                 await context.close();
+                const plain = await browser.newContext({ javaScriptEnabled:false, viewport:{ width:390, height:844 } });
+                const nativePage = await plain.newPage();
+                await nativePage.goto(base + '/index.php?page=home');
+                await nativePage.locator('.global-search input').fill('HTML');
+                await Promise.all([nativePage.waitForNavigation(), nativePage.locator('.global-search button').click()]);
+                check(await nativePage.locator('.course-card').count() === 1, 'global search works with JavaScript disabled', engine.name);
+                await nativePage.getByLabel('Tìm theo tên khóa học').fill('');
+                await nativePage.locator('.catalog-filter select').selectOption({ label:'Lập trình' });
+                await submit(nativePage, nativePage.locator('.catalog-filter'));
+                check(await nativePage.locator('.course-card h3').innerText() === 'JavaScript cơ bản', 'catalog category filter works with JavaScript disabled', engine.name);
+                await plain.close();
             } finally {
                 await browser.close();
             }

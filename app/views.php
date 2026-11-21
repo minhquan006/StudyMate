@@ -1,9 +1,17 @@
 <?php
 function heading(string $eyebrow,string $title,string $description=''):void{echo '<div class="page-heading"><div><p class="eyebrow">'.h($eyebrow).'</p><h1>'.h($title).'</h1><p class="muted">'.h($description).'</p></div></div>';}
+function uiIcon(string $name):string {
+    $paths=['book'=>'M12 5v15M12 5C8 2 4 3 2 4v15c3-1 6-1 10 1 4-2 7-2 10-1V4c-2-1-6-2-10 1Z','search'=>'m21 21-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z','arrow'=>'M4 12h16m-6-6 6 6-6 6','check'=>'m5 12 4 4L19 6'];
+    return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="'.($paths[$name]??$paths['book']).'"/></svg>';
+}
 function cover(string $key):void {
-    $symbols = ['web'=>'</>', 'programming'=>'{ }', 'database'=>'▤', 'default'=>'SM'];
-    $theme = array_key_exists($key, $symbols) ? $key : 'default';
-    echo '<div class="cover '.h($theme).'" aria-hidden="true"><span class="cover-grid"></span><span class="cover-symbol">'.h($symbols[$theme]).'</span></div>';
+    $theme=in_array($key,['web','programming','database'],true)?$key:'default';
+    ?><div class="cover <?=h($theme)?>" aria-hidden="true">
+        <?php if($theme==='web'): ?><span class="cover-caption">HTML / CSS</span><div class="mini-browser"><div class="browser-bar"><i></i><i></i><i></i><span>index.html</span></div><div class="browser-page"><div class="browser-side"></div><div class="browser-content"><b>Build for the web.</b><span></span><span></span><div class="browser-blocks"><i></i><i></i><i></i></div></div></div></div>
+        <?php elseif($theme==='programming'): ?><span class="cover-caption">JAVASCRIPT</span><div class="code-preview"><span class="code-line">const learn = () =&gt; {</span><span class="code-line">&nbsp; practice();</span><span class="code-line">&nbsp; return progress;</span><span class="code-line">};</span></div><strong class="language-stamp">JS</strong>
+        <?php elseif($theme==='database'): ?><span class="cover-caption">CƠ SỞ DỮ LIỆU</span><div class="table-preview"><div><b>id</b><b>course</b><b>status</b></div><div><span>01</span><span>HTML &amp; CSS</span><span>✓</span></div><div><span>02</span><span>JavaScript</span><span>✓</span></div><div><span>03</span><span>SQL</span><span>✓</span></div></div>
+        <?php else: ?><span class="cover-caption">STUDYMATE</span><div class="book-preview"><?=uiIcon('book')?><span>Học. Thực hành.<br>Tiến bộ.</span></div><?php endif; ?>
+    </div><?php
 }
 
 function statusName(string $s):string{return ['draft'=>'Bản nháp','published'=>'Đã xuất bản','archived'=>'Đã lưu trữ'][$s]??$s;}
@@ -33,34 +41,17 @@ function area(string $name,string $label,string $value='',string $attrs=''):void
 function markdown(string $body):string{$out='';$code=false;$buf='';foreach(explode("\n",str_replace("\r",'',$body)) as $line){if(str_starts_with($line,'```')){if($code){$out.='<pre tabindex="0" role="region" aria-label="Đoạn mã"><code>'.h($buf).'</code></pre>';$buf='';}$code=!$code;continue;}if($code){$buf.=$line."\n";continue;}if(preg_match('/^(#{1,3})\s+(.+)$/',$line,$m)){$n=strlen($m[1]);$out.="<h$n>".h($m[2])."</h$n>";}elseif(trim($line)!=='')$out.='<p>'.h($line).'</p>'; }if($code)$out.='<pre tabindex="0" role="region" aria-label="Đoạn mã"><code>'.h($buf).'</code></pre>';return $out;}
 function lessonViewer(array $l):void{echo '<article class="lesson-text">'.markdown($l['body']);if($l['youtube_video_id'])echo '<iframe title="Video bài học" src="https://www.youtube-nocookie.com/embed/'.h($l['youtube_video_id']).'" allowfullscreen></iframe>';echo '</article>';}
 function pageHome():void {
-    $courses=all("SELECT c.*,g.name category_name,u.name instructor_name FROM courses c JOIN categories g ON g.id=c.category_id JOIN users u ON u.id=c.instructor_id WHERE c.status='published' ORDER BY c.created_at DESC,c.id DESC LIMIT 3");
+    $courses=all("SELECT c.*,g.name category_name,u.name instructor_name FROM courses c JOIN categories g ON g.id=c.category_id JOIN users u ON u.id=c.instructor_id WHERE c.status='published' ORDER BY c.created_at DESC,c.id DESC LIMIT 6");
+    $categories=all("SELECT g.*,COUNT(c.id) total FROM categories g LEFT JOIN courses c ON c.category_id=g.id AND c.status='published' GROUP BY g.id,g.name ORDER BY g.name");
     $user=currentUser();
-    $featured=$courses[0]??null;
-    $preview=$featured?array_slice(courseLessons((int)$featured['id']),0,3):[];
     ?><main class="home-page">
-        <section class="hero container">
-            <div class="hero-copy">
-                <p class="eyebrow">HỌC THEO NHỊP CỦA BẠN</p>
-                <h1>Học từng bước.<br><span>Hiểu từng bài.</span></h1>
-                <p class="hero-description">Bắt đầu từ điều bạn muốn hiểu. Học qua ví dụ, luyện tập với quiz và hỏi AI ngay trong bài học.</p>
-                <div class="hero-actions"><a class="btn btn-primary btn-lg" href="<?=h(url('courses'))?>">Khám phá khóa học</a><a class="btn btn-outline-secondary btn-lg" href="<?=h(url($user?$user['role']:'register'))?>"><?=$user?'Khu vực của tôi':'Tạo tài khoản miễn phí'?></a></div>
-                <p class="hero-note">Khóa học miễn phí · Lưu tiến độ sau mỗi bài</p>
-            </div>
-            <?php if($featured): ?>
-                <a class="hero-preview" href="<?=h(url('detail',['id'=>$featured['id']]))?>" aria-label="<?=h('Khám phá '.$featured['title'])?>">
-                    <div class="preview-top"><span><?=h($featured['category_name'])?></span><span>StudyMate</span></div>
-                    <div class="preview-symbol" aria-hidden="true"><?=$featured['cover_key']==='web'?'&lt;/&gt;':($featured['cover_key']==='database'?'▤':'{ }')?></div>
-                    <h2><?=h($featured['title'])?></h2>
-                    <div class="preview-lessons"><?php foreach($preview as $lesson): ?><span><span class="preview-bullet" aria-hidden="true"></span><?=h($lesson['title'])?></span><?php endforeach; ?></div>
-                    <span class="preview-link">Tìm hiểu khóa học</span>
-                </a>
-            <?php endif; ?>
+        <section class="discovery-banner container">
+            <div class="discovery-copy"><p class="eyebrow">KIẾN THỨC MỞ CHO NGƯỜI TỰ HỌC</p><h1>Học điều mới.<br>Tự tay làm được.</h1><p>Từ dòng mã đầu tiên đến một nền tảng vững chắc. Khám phá khóa học, thực hành qua từng bài và học theo thời gian của bạn.</p><a class="btn btn-primary btn-lg" href="<?=h(url('courses'))?>">Khám phá khóa học <?=uiIcon('arrow')?></a></div>
+            <div class="discovery-board" aria-label="Cách học tại StudyMate"><p class="board-label">BẮT ĐẦU VỚI MỘT BÀI HỌC</p><div class="board-code"><span>01</span><code>&lt;h1&gt;Hello, world!&lt;/h1&gt;</code></div><div class="board-result"><span>KẾT QUẢ</span><strong>Hello, world!</strong><p>Một dòng mã. Một điều mới bạn vừa học.</p></div><div class="board-footer"><?=uiIcon('check')?> Đọc bài &nbsp; / &nbsp; Thực hành &nbsp; / &nbsp; Làm quiz</div></div>
         </section>
-        <section class="container home-courses" aria-labelledby="home-courses-title">
-            <div class="section-top"><div><p class="eyebrow">BẮT ĐẦU TẠI ĐÂY</p><h2 id="home-courses-title">Một kiến thức mới, mỗi ngày.</h2><p class="muted">Chọn chủ đề bạn muốn tìm hiểu và bắt đầu bài đầu tiên.</p></div><a class="text-link" href="<?=h(url('courses'))?>">Xem tất cả khóa học</a></div>
-            <div class="course-grid"><?php foreach($courses as $course)courseCard($course); ?></div>
-            <?php if(!$courses)emptyState('Khóa học đang được chuẩn bị','Bạn có thể quay lại thư viện sau.'); ?>
-        </section>
+        <section class="subject-section container" aria-labelledby="subject-title"><div class="section-top"><div><h2 id="subject-title">Bạn muốn bắt đầu từ đâu?</h2><p class="muted">Tìm khóa học theo lĩnh vực bạn quan tâm.</p></div></div><div class="subject-grid"><?php foreach($categories as $i=>$category): ?><a class="subject-tile" href="<?=h(url('courses',['category'=>$category['id']]))?>"><span class="subject-number"><?=str_pad((string)($i+1),2,'0',STR_PAD_LEFT)?></span><span><strong><?=h($category['name'])?></strong><small><?=$category['total']?> khóa học</small></span><?=uiIcon('arrow')?></a><?php endforeach; ?></div></section>
+        <section class="container home-courses" aria-labelledby="home-courses-title"><div class="section-top"><div><h2 id="home-courses-title">Khóa học mới trên StudyMate</h2><p class="muted">Nội dung có hệ thống, từ kiến thức cơ bản đến bài luyện tập.</p></div><a class="text-link" href="<?=h(url('courses'))?>">Xem tất cả khóa học →</a></div><div class="course-grid"><?php foreach($courses as $course)courseCard($course); ?></div><?php if(!$courses)emptyState('Khóa học đang được chuẩn bị','Bạn có thể quay lại thư viện sau.'); ?></section>
+        <section class="learning-method container" aria-labelledby="method-title"><div><p class="eyebrow">HỌC THEO NHỊP CỦA BẠN</p><h2 id="method-title">Từng bài học,<br>một bước tiến.</h2><a class="text-link" href="<?=h(url($user?$user['role']:'register'))?>"><?=$user?'Tiếp tục việc học':'Tạo tài khoản miễn phí'?> →</a></div><ol><li><span>1</span><div><h3>Hiểu kiến thức</h3><p>Đọc giải thích và ví dụ trong từng bài. Hỏi hoặc tóm tắt với trợ lý ngay khi cần.</p></div></li><li><span>2</span><div><h3>Thực hành và ghi nhớ</h3><p>Làm bài tập, đánh dấu bài đã học và theo dõi tiến độ của riêng bạn.</p></div></li><li><span>3</span><div><h3>Kiểm tra điều đã học</h3><p>Làm quiz cuối khóa, xem giải thích đáp án và luyện tập lại.</p></div></li></ol></section>
     </main><?php
 }
 
@@ -73,17 +64,18 @@ function pageCourses():void {
     $last=max(1,(int)ceil($count/12));$page=min($page,$last);
     $rows=all('SELECT c.*,g.name category_name,u.name instructor_name FROM courses c JOIN categories g ON g.id=c.category_id JOIN users u ON u.id=c.instructor_id WHERE '.$where.' ORDER BY c.created_at DESC,c.id DESC LIMIT 12 OFFSET '.(($page-1)*12),$params);
     ?><main class="container catalog-page">
-        <?php heading('THƯ VIỆN HỌC TẬP','Khám phá khóa học','Chọn một chủ đề. Bắt đầu bằng một bài học.'); ?>
-        <form class="filter-bar catalog-filter" method="get" action="/index.php">
+        <nav class="breadcrumb-link" aria-label="Đường dẫn"><a href="<?=h(url('home'))?>">Trang chủ</a><span aria-hidden="true"> / </span><span>Khóa học</span></nav>
+        <?php heading('THƯ VIỆN STUDYMATE','Tìm khóa học dành cho bạn','Kiến thức nền tảng, ví dụ cụ thể và bài luyện tập. Tất cả đều miễn phí.'); ?>
+        <div class="catalog-layout"><aside class="catalog-sidebar" aria-labelledby="filter-title"><h2 id="filter-title">Bộ lọc khóa học</h2><form class="catalog-filter" method="get" action="/index.php">
             <?=hidden('page','courses')?>
-            <label class="search-field">Tìm theo tên khóa học<input class="form-control" name="q" placeholder="Bạn muốn học gì?" value="<?=h($q)?>" maxlength="100"></label>
+            <label class="search-field">Tìm theo tên khóa học<input class="form-control" name="q" placeholder="Ví dụ: JavaScript" value="<?=h($q)?>" maxlength="100"></label>
             <label>Danh mục<select class="form-select" name="category"><option value="">Tất cả danh mục</option><?php foreach(all('SELECT * FROM categories ORDER BY name') as $category): ?><option value="<?=$category['id']?>" <?=$cat===(int)$category['id']?'selected':''?>><?=h($category['name'])?></option><?php endforeach; ?></select></label>
-            <button class="btn btn-primary" type="submit">Tìm khóa học</button>
-        </form>
-        <div class="results-toolbar"><p><strong><?=$count?></strong> khóa học phù hợp</p><?php if($q!==''||$cat): ?><a class="text-link" href="<?=h(url('courses'))?>">Xóa bộ lọc</a><?php endif; ?></div>
-        <div class="course-grid"><?php foreach($rows as $course)courseCard($course); ?></div>
+            <button class="btn btn-primary w-100" type="submit">Tìm khóa học</button>
+            <?php if($q!==''||$cat): ?><a class="filter-reset" href="<?=h(url('courses'))?>">Xóa bộ lọc</a><?php endif; ?>
+        </form><div class="catalog-help"><h3>Học theo cách của bạn</h3><p>Đọc bài bất cứ lúc nào. Tiến độ được lưu khi bạn đánh dấu hoàn thành.</p><p>Quiz cuối khóa giúp bạn ôn tập và xem lại đáp án.</p></div></aside>
+        <section class="catalog-results" aria-label="Kết quả khóa học"><div class="results-toolbar"><p><strong><?=$count?></strong> khóa học<?=$q!==''?' cho “'.h($q).'”':' phù hợp'?></p><span>Mới nhất trước</span></div><div class="course-list"><?php foreach($rows as $course)courseCard($course); ?></div>
         <?php if(!$rows): emptyState('Chưa tìm thấy khóa học phù hợp','Thử một từ khóa ngắn hơn hoặc chọn tất cả danh mục.'); ?><div class="empty-action"><a class="btn btn-primary" href="<?=h(url('courses'))?>">Xem tất cả khóa học</a></div><?php endif; ?>
-        <?php if($last>1): ?><nav class="pager" aria-label="Phân trang khóa học"><?php if($page>1): ?><a class="btn btn-outline-secondary" rel="prev" href="<?=h(url('courses',['q'=>$q,'category'=>$cat,'p'=>$page-1]))?>">Trước</a><?php endif; ?><span>Trang <?=$page?> / <?=$last?></span><?php if($page<$last): ?><a class="btn btn-outline-secondary" rel="next" href="<?=h(url('courses',['q'=>$q,'category'=>$cat,'p'=>$page+1]))?>">Sau</a><?php endif; ?></nav><?php endif; ?>
+        <?php if($last>1): ?><nav class="pager" aria-label="Phân trang khóa học"><?php if($page>1): ?><a class="btn btn-outline-secondary" rel="prev" href="<?=h(url('courses',['q'=>$q,'category'=>$cat,'p'=>$page-1]))?>">Trước</a><?php endif; ?><span>Trang <?=$page?> / <?=$last?></span><?php if($page<$last): ?><a class="btn btn-outline-secondary" rel="next" href="<?=h(url('courses',['q'=>$q,'category'=>$cat,'p'=>$page+1]))?>">Sau</a><?php endif; ?></nav><?php endif; ?></section></div>
     </main><?php
 }
 
@@ -94,18 +86,19 @@ function pageDetail(int $id):void {
     $chapters=all('SELECT * FROM chapters WHERE course_id=? ORDER BY position,id',[$id]);
     $lessons=courseLessons($id);
     $enrollment=$user&&$user['role']==='student'?one('SELECT id FROM enrollments WHERE user_id=? AND course_id=?',[$user['id'],$id]):null;
-    ?><main class="container course-detail">
-        <a class="breadcrumb-link" href="<?=h(url('courses'))?>">Tất cả khóa học</a>
-        <div class="detail-grid">
-            <section class="detail-content">
-                <div class="detail-intro"><p class="eyebrow"><?=h($course['category_name'])?></p><h1><?=h($course['title'])?></h1><p class="lead muted course-description"><?=h($course['description'])?></p><p class="instructor-line">Biên soạn bởi <strong><?=h($course['instructor_name'])?></strong></p><div class="course-facts"><span><?=count($chapters)?> chương</span><span><?=count($lessons)?> bài học</span><span>Quiz cuối khóa</span></div></div>
-                <?php if($lessons): ?><section class="panel learning-topics"><h2>Bạn sẽ tìm hiểu</h2><ul><?php foreach(array_slice($lessons,0,6) as $lesson): ?><li><?=h($lesson['title'])?></li><?php endforeach; ?></ul></section><?php endif; ?>
-                <section class="panel curriculum"><div class="section-top"><h2>Nội dung khóa học</h2><span class="muted"><?=count($lessons)?> bài học</span></div>
+    ?><main class="course-detail">
+        <header class="detail-masthead"><div class="container"><a class="breadcrumb-link" href="<?=h(url('courses'))?>">Khóa học / <?=h($course['category_name'])?></a>
+            <div class="detail-intro"><p class="eyebrow"><?=h($course['category_name'])?></p><h1><?=h($course['title'])?></h1><p class="lead muted course-description"><?=h($course['description'])?></p><p class="instructor-line">Biên soạn bởi <strong><?=h($course['instructor_name'])?></strong></p><div class="course-facts"><span><?=count($chapters)?> chương</span><span><?=count($lessons)?> bài học</span><span>Quiz cuối khóa</span></div></div>
+        </div></header>
+        <div class="container detail-grid">
+            <section class="detail-content"><nav class="detail-nav" aria-label="Nội dung giới thiệu khóa học"><a href="#course-overview">Tổng quan</a><a href="#curriculum">Nội dung khóa học</a><a href="#completion">Hoàn thành khóa</a></nav>
+                <?php if($lessons): ?><section class="panel learning-topics" id="course-overview"><h2>Bạn sẽ tìm hiểu</h2><ul><?php foreach(array_slice($lessons,0,6) as $lesson): ?><li><?=h($lesson['title'])?></li><?php endforeach; ?></ul></section><?php endif; ?>
+                <section class="panel curriculum" id="curriculum"><div class="section-top"><h2>Nội dung khóa học</h2><span class="muted"><?=count($lessons)?> bài học</span></div>
                     <?php foreach($chapters as $chapter): $chapterLessons=array_values(array_filter($lessons,fn($lesson)=>(int)$lesson['chapter_id']===(int)$chapter['id'])); ?>
                         <details open><summary><?=h($chapter['title'])?><span><?=count($chapterLessons)?> bài</span></summary><ol><?php foreach($chapterLessons as $lesson): ?><li><?=h($lesson['title'])?></li><?php endforeach; ?></ol></details>
                     <?php endforeach; ?>
                 </section>
-                <section class="completion-note"><h2>Học đủ bài. Luyện tập để ghi nhớ.</h2><p>Đánh dấu tất cả bài học, sau đó đạt ít nhất 70% ở quiz cuối khóa để hoàn thành khóa học. Bạn có thể làm lại để luyện tập.</p></section>
+                <section class="completion-note" id="completion"><h2>Học đủ bài. Luyện tập để ghi nhớ.</h2><p>Đánh dấu tất cả bài học, sau đó đạt ít nhất 70% ở quiz cuối khóa để hoàn thành khóa học. Bạn có thể làm lại để luyện tập.</p></section>
             </section>
             <aside class="panel enrollment-panel" aria-label="Tham gia khóa học">
                 <?php cover($course['cover_key']); ?>
@@ -128,7 +121,11 @@ function pageStudent():void{
  $list=pageQuery('SELECT COUNT(*) FROM enrollments e JOIN courses c ON c.id=e.course_id WHERE '.$where,
  'SELECT c.*,g.name category_name,u.name instructor_name,e.user_id,e.completed_at,COALESCE(totals.total,0) total,COALESCE(done.done,0) done,scores.best FROM enrollments e JOIN courses c ON c.id=e.course_id JOIN categories g ON g.id=c.category_id JOIN users u ON u.id=c.instructor_id '.progressJoins().' WHERE '.$where.' ORDER BY e.created_at DESC,e.id DESC',$params);
  $stats=one('SELECT COUNT(*) total,SUM(CASE WHEN completed_at IS NOT NULL THEN 1 ELSE 0 END) completed FROM enrollments WHERE user_id=?',[$u['id']]);
- ?><main class="container"><?php heading('KHÔNG GIAN HỌC TẬP','Xin chào, '.$u['name'],'Tiếp tục bài đang học hoặc thử một kiến thức mới hôm nay.');?><div class="stats-grid"><?php statCard('Khóa đã tham gia',$stats['total']);statCard('Khóa đã hoàn thành',$stats['completed']??0);statCard('Điều kiện hoàn thành','70%','Học đủ bài và đạt quiz');?></div><h2 class="section-heading">Khóa học của tôi</h2><form class="filter-bar" method="get"><?=hidden('page','student')?><?php field('q','Tìm khóa đã tham gia',$q,'text','maxlength="100"');?><button class="btn btn-primary">Tìm</button></form><div class="course-grid"><?php foreach($list['rows'] as $e)courseCard($e,$e);?></div><?php if(!$list['rows'])emptyState('Không có khóa học phù hợp','Thử tên khác hoặc tham gia khóa học từ thư viện.');pagination($list);?></main><?php }
+ ?><main class="container student-workspace"><aside class="workspace-nav" aria-label="Không gian học tập"><p class="workspace-person"><?=h($u['name'])?><small>Không gian học tập</small></p><nav><a class="active" href="<?=h(url('student'))?>" aria-current="page"><?=uiIcon('book')?> Việc học của tôi</a><a href="<?=h(url('courses'))?>"><?=uiIcon('search')?> Khám phá khóa học</a><a href="<?=h(url('profile'))?>">Hồ sơ cá nhân</a></nav><p class="workspace-tip">Tiến độ của bạn được lưu sau mỗi lần đánh dấu hoàn thành bài học.</p></aside><div class="workspace-main">
+ <?php heading('VIỆC HỌC CỦA TÔI','Chào mừng trở lại, '.$u['name'],'Tiếp tục từ nơi bạn đã dừng lại.'); ?>
+ <div class="study-summary"><span><strong><?=(int)$stats['total']?></strong> khóa đã tham gia</span><span><strong><?=(int)($stats['completed']??0)?></strong> khóa đã hoàn thành</span><a href="<?=h(url('courses'))?>">Tìm khóa học mới →</a></div>
+ <section aria-labelledby="my-courses-title"><div class="section-top"><h2 id="my-courses-title">Khóa học của tôi</h2></div><form class="filter-bar" method="get"><?=hidden('page','student')?><?php field('q','Tìm khóa đã tham gia',$q,'text','maxlength="100"');?><button class="btn btn-primary">Tìm</button></form><div class="course-grid"><?php foreach($list['rows'] as $e)courseCard($e,$e);?></div><?php if(!$list['rows'])emptyState('Không có khóa học phù hợp','Thử tên khác hoặc tham gia khóa học từ thư viện.');pagination($list);?></section></div></main><?php }
+
 function pageLearn(int $id):void {
     $enrollment=enrolled($id);$course=getCourse($id);$user=requireUser('student');$lessons=courseLessons($id);
     $done=array_map('intval',array_column(all('SELECT p.lesson_id FROM lesson_progress p JOIN lessons l ON l.id=p.lesson_id JOIN chapters ch ON ch.id=l.chapter_id WHERE p.user_id=? AND ch.course_id=?',[$user['id'],$id]),'lesson_id'));
@@ -139,18 +136,20 @@ function pageLearn(int $id):void {
     $lessonNumber=array_search($lid,array_map('intval',array_column($lessons,'id')),true)+1;
     ?><main class="container wide learning-page">
         <div class="learning-top"><div><a class="breadcrumb-link" href="<?=h(url('student'))?>">Khóa học của tôi</a><p class="learn-course-name"><?=h($course['title'])?></p></div><div class="learning-shortcuts"><a href="#course-outline">Danh sách bài học</a><a href="#study-assistant">Hỏi trợ lý AI</a></div></div>
-        <div class="learning-grid">
+        <div class="learning-grid"><div class="reading-column">
+            <section class="panel lesson-panel"><p class="lesson-position">BÀI <?=$lessonNumber?> / <?=count($lessons)?> · <?=h($lessons[$lessonNumber-1]['chapter_title'])?></p><?php lessonViewer($lesson); ?>
+                <div class="lesson-actions"><?=formStart('complete',['lesson_id'=>$lid,'course_id'=>$id,'return_page'=>'learn'])?><button class="btn btn-primary" <?=in_array($lid,$done,true)?'disabled':''?>><?=in_array($lid,$done,true)?'✓ Đã hoàn thành bài':'Đánh dấu hoàn thành'?></button></form><?php if(isset($lessons[$lessonNumber])): $next=$lessons[$lessonNumber]; echo formStart('last_lesson',['course_id'=>$id,'lesson_id'=>$next['id'],'return_page'=>'learn']); ?><button class="btn btn-outline-secondary">Bài tiếp theo <?=uiIcon('arrow')?></button></form><?php else: ?><a class="btn btn-outline-secondary" href="<?=h(url('quiz',['id'=>$id]))?>">Đến quiz cuối khóa</a><?php endif; ?></div>
+                <p class="small muted mt-3">Tiến độ được ghi khi bạn đánh dấu hoàn thành bài.</p>
+            </section>
+            <?php renderAiPanel($lesson,$lid,$id); ?>
+            </div>
             <aside class="panel outline" id="course-outline" aria-labelledby="outline-title"><h2 id="outline-title">Nội dung khóa học</h2><p class="small muted"><?=$progress['done']?> / <?=$progress['total']?> bài đã hoàn thành</p><?php progressBar($progress); ?>
                 <?php foreach(all('SELECT * FROM chapters WHERE course_id=? ORDER BY position,id',[$id]) as $chapter): ?><h3><?=h($chapter['title'])?></h3>
                     <?php foreach($lessons as $item)if((int)$item['chapter_id']===(int)$chapter['id']): echo formStart('last_lesson',['course_id'=>$id,'lesson_id'=>$item['id'],'return_page'=>'learn']); ?><button class="lesson-link <?=$lid===(int)$item['id']?'active':''?>" <?=$lid===(int)$item['id']?'aria-current="step"':''?>><span class="lesson-marker" aria-hidden="true"><?=in_array((int)$item['id'],$done,true)?'✓':'○'?></span><span><?=h($item['title'])?><?php if(in_array((int)$item['id'],$done,true)): ?><span class="visually-hidden"> — Đã hoàn thành</span><?php endif; ?></span></button></form><?php endif; ?>
                 <?php endforeach; ?>
                 <a class="btn btn-outline-secondary outline-quiz" href="<?=h(url('quiz',['id'=>$id]))?>">Quiz cuối khóa</a><?php if($progress['percent']<100): ?><p class="small muted outline-note">Hoàn thành tất cả bài học để mở quiz.</p><?php endif; ?>
             </aside>
-            <section class="panel lesson-panel"><p class="eyebrow">BÀI <?=$lessonNumber?> / <?=count($lessons)?> · <?=h($lessons[$lessonNumber-1]['chapter_title'])?></p><?php lessonViewer($lesson); ?>
-                <div class="lesson-actions"><?=formStart('complete',['lesson_id'=>$lid,'course_id'=>$id,'return_page'=>'learn'])?><button class="btn btn-primary" <?=in_array($lid,$done,true)?'disabled':''?>><?=in_array($lid,$done,true)?'✓ Đã hoàn thành bài':'Đánh dấu hoàn thành'?></button></form><a class="text-link" href="<?=h(url('quiz',['id'=>$id]))?>">Đến quiz cuối khóa</a></div>
-                <p class="small muted mt-3">Tiến độ được ghi khi bạn đánh dấu hoàn thành bài.</p>
-            </section>
-            <?php renderAiPanel($lesson,$lid,$id); ?>
+
         </div>
     </main><?php
 }

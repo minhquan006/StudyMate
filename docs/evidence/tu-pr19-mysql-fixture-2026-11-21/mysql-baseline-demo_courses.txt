@@ -1,0 +1,9 @@
+PASS: starts with the original three-course fixture
+PASS: fixture includes existing quiz history
+
+Fatal error: Uncaught PDOException: SQLSTATE[HY000]: General error: 1419 You do not have the SUPER privilege and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable) in /tmp/tu-pr19-trigger-review-d3qyzxp4/baseline/app/bootstrap.php:13
+Stack trace:
+#0 /tmp/tu-pr19-trigger-review-d3qyzxp4/baseline/app/bootstrap.php(13): PDOStatement->execute(Array)
+#1 /tmp/tu-pr19-trigger-review-d3qyzxp4/baseline/tests/demo_courses_old.php(39): run('CREATE TRIGGER ...')
+#2 {main}
+  thrown in /tmp/tu-pr19-trigger-review-d3qyzxp4/baseline/app/bootstrap.php on line 13

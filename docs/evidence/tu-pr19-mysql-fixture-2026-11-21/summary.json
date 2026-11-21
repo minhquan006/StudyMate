@@ -1,0 +1,38 @@
+{
+  "base": "ae8a6b1ffbd67ed211cff135a2ee2b878f46adcb",
+  "results": {
+    "baseline": {
+      "exit": 255,
+      "error": 1419,
+      "snapshot_unchanged": true
+    },
+    "fixed": {
+      "service_checks": 14,
+      "demo_checks": 358,
+      "parallel_repeats": 2,
+      "snapshot_unchanged": true,
+      "fixture_objects_after": {
+        "triggers": 0,
+        "checks": 0
+      }
+    },
+    "sqlite": {
+      "service_checks": 14,
+      "demo_checks": 358,
+      "parallel_repeats": 2,
+      "snapshot_unchanged": true,
+      "fixture_objects_after": {
+        "triggers": 0,
+        "checks": 0
+      }
+    }
+  },
+  "scope": "native PHP, isolated MySQL; no Docker/Edge/Gemini",
+  "php": "8.4.24",
+  "files_sha256": {
+    "tests/demo_courses.php": "446a23e57dc9a7b83861246a5a050c0c058468691fd69876107f35cd8bce9cf1",
+    "database/demo_courses.php": "7e66a7694e43c5ead9838443b02b15e1f55ca503cf73ad9d2d8df45ba4b239fa",
+    "database/seed_demo_courses.php": "b15446f4c8f49555f6d1b746333c3ac38bddcf6e94d790279ba3a895e503f239",
+    "tools/seed_demo_courses.php": "590444a7ac9d9b50476f725f786fb3dd6e32654d923ab6583067010d75600f1c"
+  }
+}

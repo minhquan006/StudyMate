@@ -1,0 +1,37 @@
+{
+  "checks": 6,
+  "browsers": [
+    "chrome",
+    "edge"
+  ],
+  "events": {
+    "chrome": [
+      [
+        "mousedown",
+        "space-music-save"
+      ],
+      [
+        "mouseup",
+        "space-music-save"
+      ],
+      [
+        "click",
+        "space-music-save"
+      ]
+    ],
+    "edge": [
+      [
+        "mousedown",
+        "space-music-save"
+      ],
+      [
+        "mouseup",
+        "space-music-save"
+      ],
+      [
+        "click",
+        "space-music-save"
+      ]
+    ]
+  }
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/app.css">
     <script src="/assets/forms.js" defer></script>
     <script src="/assets/discovery.js" defer></script>
+    <?php if($page==='learn'): ?><link rel="stylesheet" href="/assets/study-space.css"><script src="/assets/study-space.js" defer></script><?php endif; ?>
 </head>
 <body class="page-<?=h($page)?>">
 <a class="skip-link" href="#main-content">Đến nội dung chính</a>

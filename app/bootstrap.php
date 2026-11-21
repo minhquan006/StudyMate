@@ -36,8 +36,11 @@ function formStart(string $action,array $fields=[]):string{$s='<form method="pos
 function mustConfirm():void{if(($_POST['confirm']??'')!=='1')reject('Vui lòng xác nhận thao tác trước khi thực hiện.');}
 function confirmField():string{return '<label class="small confirmation-label"><input type="checkbox" name="confirm" value="1" required> Tôi xác nhận thao tác này</label>';}
 if(PHP_SAPI!=='cli'){
- header('X-Content-Type-Options: nosniff');header('Referrer-Policy: same-origin');header('Cache-Control: no-store');
- header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'");
+ // The study page opts into the official player API; all other routes stay local-script only.
+ $studySpaceRequest=($_GET['page']??null)==='learn'||($_POST['return_page']??null)==='learn';
+ $playerScripts=$studySpaceRequest?' https://www.youtube.com/iframe_api https://www.youtube.com/s/player/ https://s.ytimg.com/yts/jsbin/':'';
+ header('X-Content-Type-Options: nosniff');header('Referrer-Policy: '.($studySpaceRequest?'strict-origin-when-cross-origin':'same-origin'));header('Cache-Control: no-store');
+ header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'$playerScripts; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'");
  ini_set('session.use_strict_mode','1');ini_set('session.use_only_cookies','1');ini_set('session.gc_maxlifetime','7200');if(!is_dir($storage.'/sessions'))mkdir($storage.'/sessions',0700,true);session_save_path($storage.'/sessions');session_name('studymate_session');session_set_cookie_params(['httponly'=>true,'secure'=>(bool)$config['secure_cookie'],'samesite'=>'Lax','path'=>'/']);session_start();
  if(isset($_SESSION['last_activity'])&&time()-$_SESSION['last_activity']>7200){$_SESSION=[];session_regenerate_id(true);}$_SESSION['last_activity']=time();$_SESSION['csrf']??=bin2hex(random_bytes(32));
 }

@@ -13,7 +13,7 @@ fs.mkdirSync(output, { recursive: true });
 const password = process.env.QA_DEMO_PASSWORD || 'StudyMate2026!';
 const engines = JSON.parse(process.env.QA_BROWSERS || '[]');
 assert(engines.length, 'Set QA_BROWSERS to real browser executables.');
-const files = ['app/views.php', 'app/layout.php', 'app/ai_view.php', 'public/assets/app.css', 'public/assets/forms.js', 'public/assets/discovery.js', 'public/assets/images/learning-hero.jpg'];
+const files = ['app/views.php', 'app/layout.php', 'app/ai_view.php', 'public/assets/app.css', 'public/assets/forms.js', 'public/assets/discovery.js', 'public/assets/images/learning-hero.jpg', 'app/bootstrap.php', 'app/study_space_view.php', 'public/assets/study-space.js', 'public/assets/study-space.css'];
 const report = {
     started: new Date().toISOString(),
     sourceFilesSha256: Object.fromEntries(files.map(file => [file, crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')])),

@@ -143,6 +143,10 @@ async function audioObserver(context) {
             await p.getByRole('tab',{name:'Âm thanh',exact:true}).click();
             check(await p.locator('#space-music-status').innerText() === 'Đang phát nhạc YouTube.' && await originalFrame.evaluate(e => e.isConnected), 'switching to sound mixer keeps music playing in visible dock', engine.name);
             await shot(p,'floating-player-mobile',engine.name);
+            await p.locator('#space-player-side').click();
+            check(await p.locator('#space-player-shell').evaluate(e => e.getBoundingClientRect().left < 20) && await originalFrame.evaluate(e => e.isConnected), 'dock switches sides without replacing live iframe', engine.name);
+            await p.locator('#space-player-side').click();
+
           } else report.limitations.push(engine.name + ': live video did not enter playing state: ' + status);
           await p.setViewportSize({ width:1366,height:900 }); await shot(p,'youtube-live',engine.name);
         } else report.liveYoutube.push({ browser:engine.name, status:await p.locator('#space-music-status').innerText() });

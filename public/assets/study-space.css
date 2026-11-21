@@ -89,7 +89,9 @@
 #space-music-form label { font-size: .75rem; margin-bottom: 12px; }
 #space-music-form .form-control { min-height: 44px; font-size: .75rem; margin-top: 6px; }
 #space-player-shell { position: fixed; right: 18px; bottom: max(16px,env(safe-area-inset-bottom)); z-index: 60; width: 320px; max-width: calc(100vw - 24px); margin: 0; min-width: 0; background: #fff; border: 1px solid #cdd4cf; border-radius: 10px; box-shadow: 0 8px 32px #17231b30; overflow: hidden; }
+#space-player-shell.dock-left { left: 18px; right: auto; }
 .space-dock-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-left: 14px; min-height: 44px; font-size: .8125rem; font-weight: 600; }
+.space-dock-heading > span { margin-right: auto; }
 .space-dock-heading small { font-size: .625rem; font-weight: 400; margin-left: 8px; color: var(--muted); }
 .space-dock-heading > button { width: 44px; min-height: 44px; flex-shrink: 0; border: 0; background: #fff; color: var(--muted); font-size: 1.5rem; }
 #space-player-shell iframe, #space-player { width: 100%; min-height: 200px; height: 200px; display: block; border: 0; background: #f3f4f5; }
@@ -125,6 +127,7 @@
     .space-timer .form-select { font-size: .8125rem; }
     #space-clock { font-size: 3.5rem; }
     #space-player-shell { right: 12px; bottom: max(12px,env(safe-area-inset-bottom)); }
+    #space-player-shell.dock-left { left: 12px; right: auto; }
     #space-player-shell iframe, #space-player { height: 200px; }
 }
 @media (max-height: 480px) { .space-player-actions { display: none; } }

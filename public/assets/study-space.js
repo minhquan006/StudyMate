@@ -349,6 +349,10 @@
   $('space-music-play').addEventListener('click', () => { if (playerReady && playerVisible()) player.playVideo(); });
   $('space-music-pause').addEventListener('click', () => { if (playerReady) player.pauseVideo(); });
   $('space-player-close').addEventListener('click', () => { destroyPlayer(); message('space-music-status', 'Đã đóng trình phát. Link yêu thích vẫn được giữ.'); toggle.focus({ preventScroll:true }); });
+  $('space-player-side').addEventListener('click', () => {
+    const left = $('space-player-shell').classList.toggle('dock-left');
+    $('space-player-side').setAttribute('aria-label', left ? 'Chuyển trình phát sang phải' : 'Chuyển trình phát sang trái');
+  });
   $('space-music-volume').value = state.musicVolume;
   $('space-music-volume').addEventListener('input', event => { state.musicVolume = +event.target.value; setVolumes(); save(); });
   function drawFavorites() {

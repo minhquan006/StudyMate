@@ -90,8 +90,19 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !panel.hidden) { openPanel(false, true); event.preventDefault(); }
   });
-  document.addEventListener('click', event => { if (!root.contains(event.target)) openPanel(false); });
-  document.addEventListener('focusin', event => root.classList.toggle('is-form-focused', !root.contains(event.target) && event.target.matches('input:not([type=checkbox]):not([type=radio]):not([type=range]),textarea')));
+  const textEntry = target => target.matches('input:not([type=checkbox]):not([type=radio]):not([type=range]),textarea');
+  document.addEventListener('click', event => {
+    if (!root.contains(event.target)) {
+      openPanel(false);
+      // Restore only after the clicked control has handled its click. Expanding
+      // on focusin would put the character under the mouse before mouseup.
+      if (!textEntry(event.target)) root.classList.remove('is-form-focused');
+    }
+  });
+  document.addEventListener('focusin', event => {
+    if (root.contains(event.target)) root.classList.remove('is-form-focused');
+    else if (textEntry(event.target)) root.classList.add('is-form-focused');
+  });
   document.addEventListener('studymate:focus-state', renderState);
   root.classList.toggle('is-quiz', root.dataset.page === 'quiz');
   renderState(); showCharacter(); root.hidden = false; save();

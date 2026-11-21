@@ -39,11 +39,11 @@ function mustConfirm():void{if(($_POST['confirm']??'')!=='1')reject('Vui lòng x
 function confirmField():string{return '<label class="small confirmation-label"><input type="checkbox" name="confirm" value="1" required> '.h(t('Tôi xác nhận thao tác này')).'</label>';}
 if(PHP_SAPI!=='cli'){
  header('X-Content-Type-Options: nosniff');header('Referrer-Policy: same-origin');header('Cache-Control: no-store');
- header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'");
+ header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: blob:; frame-src https://www.youtube-nocookie.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'");
  ini_set('session.use_strict_mode','1');ini_set('session.use_only_cookies','1');ini_set('session.gc_maxlifetime','7200');if(!is_dir($storage.'/sessions'))mkdir($storage.'/sessions',0700,true);session_save_path($storage.'/sessions');session_name('studymate_session');session_set_cookie_params(['httponly'=>true,'secure'=>(bool)$config['secure_cookie'],'samesite'=>'Lax','path'=>'/']);session_start();
  if(isset($_SESSION['last_activity'])&&time()-$_SESSION['last_activity']>7200){$_SESSION=[];session_regenerate_id(true);}$_SESSION['last_activity']=time();$_SESSION['csrf']??=bin2hex(random_bytes(32));
 }
-function currentUser():?array{static $loaded=false,$user=null;if($loaded)return $user;$loaded=true;if(empty($_SESSION['user_id']))return null;$user=one('SELECT id,name,email,role,is_active,auth_version FROM users WHERE id=?',[$_SESSION['user_id']]);if(!$user||!(int)$user['is_active']||(int)$user['auth_version']!==(int)($_SESSION['auth_version']??-1)){unset($_SESSION['user_id'],$_SESSION['auth_version']);$user=null;}return $user;}
+function currentUser():?array{static $loaded=false,$user=null;if($loaded)return $user;$loaded=true;if(empty($_SESSION['user_id']))return null;$user=one('SELECT * FROM users WHERE id=?',[$_SESSION['user_id']]);if(!$user||!(int)$user['is_active']||(int)$user['auth_version']!==(int)($_SESSION['auth_version']??-1)){unset($_SESSION['user_id'],$_SESSION['auth_version']);$user=null;}return $user;}
 function requireUser(?string $role=null):array{$u=currentUser();if(!$u)reject('Phiên đăng nhập không hợp lệ hoặc tài khoản đã bị khóa.',401);if($role&&$u['role']!==$role)reject('Bạn không có quyền thực hiện thao tác này.',403);return $u;}
 function loginUser(array $u):void{session_regenerate_id(true);$_SESSION['user_id']=(int)$u['id'];$_SESSION['auth_version']=(int)$u['auth_version'];$_SESSION['csrf']=bin2hex(random_bytes(32));}
 function transaction(callable $callback){db()->beginTransaction();try{$r=$callback();db()->commit();return $r;}catch(Throwable $e){if(db()->inTransaction())db()->rollBack();throw $e;}}
@@ -53,3 +53,6 @@ function takeQuota(array $limits):bool{global $storage;$f=fopen($storage.'/limit
 
 // Apache requires an explicit reason phrase for the application-specific CSRF status.
 function responseStatus(int $status):void{if($status===419)header('HTTP/1.1 419 CSRF Token Mismatch');else http_response_code($status);}
+
+require_once __DIR__.'/profile_media.php';
+require_once __DIR__.'/profile_media_view.php';

@@ -41,7 +41,7 @@ function uiTheme(): string {
 function t(string $message, array $values = []): string {
     static $english;
     if (uiLanguage() === 'en') {
-        $english ??= array_replace(require __DIR__.'/lang/en.php', require __DIR__.'/lang/glass.en.php');
+        $english ??= array_replace(require __DIR__.'/lang/en.php', require __DIR__.'/lang/glass.en.php', require __DIR__.'/lang/profile.en.php');
         $message = $english[$message] ?? $message;
     }
     $replacements = [];

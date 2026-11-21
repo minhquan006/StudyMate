@@ -250,3 +250,12 @@ Mở nút quả địa cầu **VI/EN** ở bên phải thanh điều hướng đ
 Phần giao diện được dịch; nội dung khóa học và dữ liệu do thành viên nhập giữ nguyên. Khi không có JavaScript, chọn rồi nhấn **Áp dụng lựa chọn**. Xem `docs/DISPLAY_PREFERENCES.txt` để biết phạm vi và cách hoạt động.
 
 Bản giao diện kính, ảnh khóa, biểu đồ và bằng chứng kiểm tại [QUAN_GLASS_DISPLAY](docs/QUAN_GLASS_DISPLAY_2026-11-21.md). Tái kiểm bốn tổ hợp hiển thị trên SQLite tạm bằng `python3 tests/quan/verify_display.py`; tùy chọn đường dẫn ở [tests/quan/README.md](tests/quan/README.md).
+
+
+## Hồ sơ cá nhân và hình ảnh
+
+Các vai trò có thể sửa họ tên, ngày sinh tùy chọn, giới thiệu và avatar trong Hồ sơ; Instructor bổ sung bằng cấp/chuyên môn và ảnh khóa mình sở hữu; Admin đặt ảnh danh mục. Giao diện giữ Việt/Anh, sáng/tối của #22. Ảnh tải lên được ưu tiên, thay/xóa ảnh có ảnh dự phòng.
+
+Sau khi backup DB và ảnh, cập nhật source rồi chạy `php tools/setup.php` (hoặc `php tools/migrate_profile_media.php` trên DB đã có bảng). Migration SQLite/MySQL thêm cột nullable, chạy lại được và giữ dữ liệu cũ. Upload native cần GD, Fileinfo và Exif để xoay JPEG điện thoại; Docker cần dựng lại app để có các extension.
+
+Ảnh JPEG/PNG tối đa 2 MiB, 4096 px/cạnh và 8 triệu điểm ảnh; lưu ngoài public tại `storage/uploads`, endpoint kiểm quyền theo đối tượng. Volume private_storage giữ ảnh qua restart. Backup SQL v2 không chứa file ảnh: dừng ghi và backup/restore thư mục uploads cùng thời điểm DB, giữ tên file và quyền user PHP. Không commit ảnh cá nhân hoặc runtime DB. Hướng dẫn đầy đủ, lệnh backup/restore và phạm vi kiểm: [docs/TU_PROFILE_MEDIA_2026-11-21.md](docs/TU_PROFILE_MEDIA_2026-11-21.md).

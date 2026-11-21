@@ -1,0 +1,56 @@
+ẢNH CHỤP DÙNG TRONG BẢN XEM TRƯỚC STUDYMATE
+Ngày truy cập: 21/11/2026. Ảnh được lưu và phục vụ local.
+
+hero.jpg — Mikhail Nilov / Pexels, 9159038
+Asian woman studying diligently on a computer in a vibrant university library setting.
+https://www.pexels.com/photo/brunette-student-using-computer-in-library-9159038/
+
+study.jpg — RDNE Stock project / Pexels, 6517089
+Asian woman studying online at home, writing notes while using laptop.
+https://www.pexels.com/photo/a-woman-writing-while-smiling-in-front-of-the-laptop-6517089/
+
+library.jpg — Yan Krukau / Pexels, 8199252
+Asian woman typing on a laptop surrounded by books in a library setting.
+https://www.pexels.com/photo/a-student-using-her-laptop-in-the-library-8199252/
+
+collaboration.jpg — Ketut Subiyanto / Pexels, 4132440
+Two women focused on work, using laptops at home.
+https://www.pexels.com/photo/asian-students-working-on-laptop-at-home-4132440/
+
+web.jpg — Sora Shimazaki / Pexels, 5926382
+Hands typing code on a laptop with programming text on screen.
+https://www.pexels.com/photo/crop-faceless-developer-working-on-software-code-on-laptop-5926382/
+
+programming.jpg — Nemuel Sereti / Pexels, 6424590
+Laptop screen displaying programming code.
+https://www.pexels.com/photo/programming-code-on-laptop-screen-6424590/
+
+database.jpg — Brett Sayles / Pexels, 4508751
+Modern data center corridor with server racks and computer equipment.
+https://www.pexels.com/photo/server-racks-on-data-center-4508751/
+
+Giấy phép: https://www.pexels.com/license/
+Ảnh minh họa cho bối cảnh học tập và nội dung công nghệ. Không giới thiệu người trong ảnh là giảng viên, học viên thực tế, khách hàng hay người xác nhận chất lượng của StudyMate.
+Các ảnh không được sinh bằng AI. CSS crop/overlay/blur chỉ dùng cho bố cục và khả năng đọc chữ.
+
+Nguồn tham khảo thiết kế:
+https://developer.apple.com/design/human-interface-guidelines/materials
+Áp dụng lớp trong mờ và phân cấp thị giác; đây là CSS web, không phải triển khai vật liệu Liquid Glass native của Apple.
+https://www.coursera.org/browse
+Tham khảo cách chia lĩnh vực và tổ chức thông tin khóa học, dùng dữ liệu và nhận diện của StudyMate.
+
+ẢNH RIÊNG CHO SÁU KHÓA HỌC — BỔ SUNG 21/11/2026
+html-foundations.jpg — Pixabay / Pexels, 270408. Mã HTML trên màn hình.
+https://www.pexels.com/photo/source-code-270408/
+javascript-foundations.jpg — Markus Spiske / Pexels, 1972464. Mã JavaScript.
+https://www.pexels.com/photo/javascript-code-1972464/
+database-foundations.jpg — Brett Sayles / Pexels, 5480781. Hạ tầng máy chủ dữ liệu.
+https://www.pexels.com/photo/server-racks-on-data-center-5480781/
+html-project.jpg — picjumbo.com / Pexels, 196645. Phác thảo bố cục trang web.
+https://www.pexels.com/photo/white-printer-paper-196645/
+javascript-project.jpg — Rashed Paykary / Pexels, 31177054. Mã JavaScript thao tác DOM.
+https://www.pexels.com/photo/colorful-javascript-code-on-monitor-screen-31177054/
+sql-project.jpg — Wolf Art / Pexels, 34639577. Phân tích bảng dữ liệu trên laptop; minh họa chủ đề dữ liệu, không phải ảnh chụp sản phẩm SQL của khóa.
+https://www.pexels.com/photo/person-analyzing-data-on-laptop-screen-34639577/
+Giấy phép ảnh bổ sung: https://www.pexels.com/license/
+Ảnh khóa được ghép theo tên và mẫu bìa hiện tại; khi đổi mẫu bìa trong phần biên soạn, lựa chọn mới được giữ. Khóa mới hoặc đổi tên dùng ảnh dự phòng theo lĩnh vực.

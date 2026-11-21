@@ -1,0 +1,19 @@
+{
+  "date_utc": "2026-11-21T08:43:08.567586+00:00",
+  "source_base": "56e58f8ac2185457cfc75281f6f25ea39f5433b0",
+  "target_main": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "scope": "current pre-commit tree; runtime hashes rechecked before commit",
+  "chrome_display_checks": 744,
+  "php_display_checks": 441,
+  "service_fixture_checks": 14,
+  "mysql_chrome_checks": 487,
+  "database_fixtures": "main seed only; PR19 importer not included",
+  "provider": "disabled; live Gemini not run",
+  "common_runtime_hashes_match": true,
+  "native_fingerprint": "display.source.json",
+  "mysql_fingerprint": "mysql.source.json",
+  "shared_runtime_files": 58,
+  "mysql_extra_files": [
+    "tools/wait_for_db.php"
+  ]
+}

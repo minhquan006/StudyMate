@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "name": "setup",
+      "exit_code": 0,
+      "log": "setup.txt"
+    },
+    {
+      "name": "service-fixture",
+      "exit_code": 0,
+      "log": "service-fixture.txt"
+    },
+    {
+      "name": "display-unit",
+      "exit_code": 0,
+      "log": "display-unit.txt"
+    },
+    {
+      "name": "display-browser",
+      "exit_code": 0,
+      "log": "display-browser.txt"
+    }
+  ],
+  "runtime_fingerprint": "runtime.source.json",
+  "database": "disposable SQLite; removed on exit",
+  "live_provider": "not run; AI disabled"
+}

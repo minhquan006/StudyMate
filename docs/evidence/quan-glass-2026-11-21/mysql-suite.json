@@ -1,0 +1,9 @@
+[
+  {
+    "suite": "mysql",
+    "exit_code": 0,
+    "elapsed_seconds": 38.38,
+    "log": "mysql.txt",
+    "runtime_fingerprint": "mysql.txt.source.json"
+  }
+]

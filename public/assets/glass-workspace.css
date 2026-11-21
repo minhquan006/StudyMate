@@ -1,0 +1,211 @@
+/* A shared photographic canvas and frosted functional surfaces beyond the landing page. */
+body.liquid-workspace {
+  --ink:#173c2f; --muted:#405e4e;
+  --frost-fill:rgba(249,255,250,.70);
+  --frost-edge:rgba(255,255,255,.78);
+  background:#d3dfd5;
+  isolation:isolate;
+}
+.workspace-backdrop {position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#cbd8ce}
+.workspace-backdrop-photo {
+  position:absolute;inset:-10px;
+  background:url('/assets/photos/hero.jpg') 65% 42% / cover no-repeat;
+  filter:blur(2px);transform:scale(1.02);
+}
+.workspace-backdrop:after {content:"";position:absolute;inset:0;background:linear-gradient(125deg,#e8f1e63d,#edf7ed73)}
+.page-login .workspace-backdrop-photo,.page-register .workspace-backdrop-photo {background-image:url('/assets/photos/study.jpg');background-position:65% 45%}
+.page-admin .workspace-backdrop-photo,.page-instructor .workspace-backdrop-photo,.page-edit .workspace-backdrop-photo {background-image:url('/assets/photos/collaboration.jpg');background-position:50% 35%}
+.page-learn .workspace-backdrop-photo,.page-quiz .workspace-backdrop-photo,.page-result .workspace-backdrop-photo {background-image:url('/assets/photos/library.jpg');background-position:50% 38%}
+.liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.filter-bar,.stat,.empty,.workspace-nav,.dashboard-date,.tabs) {
+  background:linear-gradient(130deg,rgba(255,255,255,.78),var(--frost-fill));
+  border:1px solid var(--frost-edge);
+  backdrop-filter:blur(27px) saturate(130%);
+  -webkit-backdrop-filter:blur(27px) saturate(130%);
+  box-shadow:inset 0 1px 0 #ffffffbf,inset 0 -1px 0 #ffffff35,0 12px 32px #173b2810;
+}
+.liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.stat) {border-radius:12px}
+.liquid-workspace .glass-header {background:rgba(249,255,250,.72);border-color:#ffffffc4;box-shadow:inset 0 1px #fff,0 12px 36px #153b2720}
+.liquid-workspace .nav-search {background:#ffffff6e;border-color:#ffffffa3}
+.liquid-workspace :is(.page-heading,.dashboard-heading,.learning-top) {
+  background:rgba(250,255,250,.70);border:1px solid #ffffffc7;
+  border-radius:12px;padding:27px 30px;
+  backdrop-filter:blur(26px) saturate(120%);-webkit-backdrop-filter:blur(26px) saturate(120%);
+  box-shadow:inset 0 1px #ffffffe0,0 8px 26px #173c2810;
+}
+.liquid-workspace .page-heading {margin-bottom:26px}
+.liquid-workspace .page-heading p:last-child {margin-bottom:0}
+.liquid-workspace .dashboard-heading {margin-bottom:24px}
+.liquid-workspace .dashboard-heading .muted {color:#3e5e4c}
+.liquid-workspace .dashboard-stat-grid {margin-bottom:24px}
+.liquid-workspace .glass-dashboard .workspace-nav {background:rgba(236,247,235,.64);border-color:#ffffffb3}
+.liquid-workspace .workspace-overline,.liquid-workspace .workspace-person small,.liquid-workspace .sidebar-note small {color:#496a50}
+.liquid-workspace .sidebar-note {border-color:#ffffff89;color:#345c3f}
+.liquid-workspace .profile-monogram {background:#ffffff94;border-color:#ffffffbf;box-shadow:inset 0 1px #fff}
+.liquid-workspace .dashboard-stat>span {background:#ffffff86;border:1px solid #ffffffa3}
+.liquid-workspace .dashboard-stat p,.liquid-workspace .dashboard-stat strong small {color:#3d5e45}
+.liquid-workspace .metric-badge {background:#ffffff9c;border-color:#ffffffc4;color:#31573a}
+.liquid-workspace .metric-track {background:#ecf5ed8c;box-shadow:inset 0 1px 3px #173b2814}
+.liquid-workspace :is(.chart-footnote,.chart-legend,.chart-data>summary,.chart-empty,.chart-empty p,.metric-bar-row strong small,.pass-ring p,.pass-ring small) {color:#3d5e45}
+.liquid-workspace .chart-axis {fill:#41613f}
+.activity-columns>span>span {white-space:nowrap;line-height:1.3}
+.liquid-workspace .activity-day>small,.liquid-workspace .activity-columns>span>span {color:#41613f}
+.liquid-workspace .activity-day .today {color:#153e25}
+.liquid-workspace .activity-columns {background:repeating-linear-gradient(to top,transparent 0,transparent 50px,#ffffff82 50px,#ffffff82 51px)}
+.liquid-workspace .activity-chart {border-color:#ffffffb3}
+.liquid-workspace .chart-gridline {stroke:#ffffffb0}
+.liquid-workspace .passing-line {stroke:#537b5a;opacity:.7}
+.liquid-workspace .score-value {fill:#284c32}
+.liquid-workspace .ring-track {stroke:#ecf5e7ac}
+.liquid-workspace .catalog-sidebar {
+  padding:24px;border-radius:12px;background:rgba(247,254,246,.7);border:1px solid #ffffffc4;
+  backdrop-filter:blur(26px) saturate(125%);-webkit-backdrop-filter:blur(26px) saturate(125%);
+  box-shadow:inset 0 1px #fff,0 12px 28px #173b2810;
+}
+.liquid-workspace .catalog-sidebar .catalog-help {background:#ffffff52;border-color:#ffffffb3;padding:18px;border-radius:9px}
+.liquid-workspace .catalog-help p,.liquid-workspace .results-toolbar {color:#35553f}
+.liquid-workspace .results-toolbar {padding:13px 18px;background:#fafffaad;border:1px solid #ffffffb0;border-radius:8px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.liquid-workspace .breadcrumb-link,.liquid-workspace .quiz-container>a:first-child {
+  display:inline-flex;align-items:center;padding:7px 12px;border:1px solid #ffffff9c;border-radius:7px;
+  background:#fafffaad;color:#214d36;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.liquid-workspace .catalog-page>.breadcrumb-link {margin-bottom:20px}
+.liquid-workspace .course-card {
+  background:rgba(249,255,250,.75);border-color:#ffffffe0;
+  backdrop-filter:blur(24px) saturate(125%);-webkit-backdrop-filter:blur(24px) saturate(125%);
+  box-shadow:inset 0 1px #fff,0 12px 32px #173b2810;
+}
+ .liquid-workspace .course-list {gap:18px}
+.liquid-workspace .course-list .course-card {padding:18px;border:1px solid #ffffffd1;border-radius:12px;background:linear-gradient(130deg,#ffffffc7,#f9fffab3);box-shadow:inset 0 1px #fff,0 12px 32px #173b2810}
+.liquid-workspace .course-list .course-card>a {grid-template-columns:220px minmax(0,1fr)}
+.liquid-workspace .course-list .cover {height:185px;padding:0;border-radius:8px}
+.liquid-workspace .catalog-sidebar {align-self:start;position:sticky;top:126px}
+.liquid-workspace .course-card .muted,.liquid-workspace .course-card-info,.liquid-workspace .card-meta small {color:#405f4b}
+.liquid-workspace .card-meta {border-color:#ffffffc7}
+.liquid-workspace .course-free,.liquid-workspace .instructor-initial {background:#ffffff8f;border:1px solid #ffffffa8}
+.liquid-workspace .detail-masthead {background:rgba(18,53,40,.71);border-block:1px solid #ffffff45;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.liquid-workspace .detail-masthead .breadcrumb-link {background:#ffffff17;border-color:#ffffff3b;color:#e6f9e8}
+.liquid-workspace .completion-note {padding:25px 28px;border-radius:12px;background:rgba(246,255,245,.75);border:1px solid #ffffffd1;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.liquid-workspace .completion-note p {color:#34563f}
+.liquid-workspace .detail-nav {padding:5px 12px;background:#fafffaad;border:1px solid #ffffffc4;border-radius:9px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.liquid-workspace .detail-nav a {color:#375b42}
+.liquid-workspace .enrollment-panel {background:rgba(251,255,250,.79)}
+.liquid-workspace .enrollment-content .muted,.liquid-workspace .feature-list {color:#3e5f49}
+.liquid-workspace .learning-top {padding:20px 25px;margin-bottom:24px}
+.liquid-workspace .learning-top .breadcrumb-link {background:#ffffff5c;box-shadow:none}
+.liquid-workspace .learning-shortcuts a {background:#ffffff63;border:1px solid #ffffffc2;border-radius:7px;padding:9px 12px;color:#285336}
+.liquid-workspace .lesson-panel {background:rgba(251,255,251,.86)}
+.liquid-workspace .lesson-text p {color:#294f39}
+.liquid-workspace .lesson-text pre {background:rgba(15,42,31,.94);border-color:#ffffff30;box-shadow:inset 0 1px #ffffff14}
+.liquid-workspace .outline {background:rgba(238,250,235,.66);border-color:#ffffffb3}
+.liquid-workspace .lesson-link {color:#35563e}
+.liquid-workspace .lesson-position {background:#ffffffa3;border:1px solid #ffffffc4;color:#315e3e}
+.liquid-workspace .ai-panel {background:rgba(239,251,235,.75)}
+.liquid-workspace .ai-message {background:rgba(255,255,255,.79);border-color:#fff;box-shadow:inset 0 1px #fff}
+.liquid-workspace .quiz-note {background:rgba(250,255,248,.78);border:1px solid #ffffffc9;border-radius:9px;color:#36583e;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.liquid-workspace .question,.liquid-workspace .review-question {background:rgba(253,255,252,.82)}
+.liquid-workspace .result-hero {background:rgba(241,253,238,.77);border-color:#ffffffc7;box-shadow:inset 0 1px #fff,0 14px 40px #153d2814;backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.liquid-workspace .result-hero.passed {background:rgba(230,253,228,.8)}
+.liquid-workspace .auth-story {border:1px solid #ffffff9e;box-shadow:inset 0 1px #ffffff85,0 18px 42px #173c2824}
+.liquid-workspace .auth-panel {background:rgba(251,255,250,.79)}
+.liquid-workspace .demo-accounts,.liquid-workspace .confirmation-label {color:#3f6049}
+.liquid-workspace .tabs {padding:6px 12px;border-radius:10px;gap:5px}
+.liquid-workspace .editor-actions {padding:16px;border-radius:12px;background:#f7fff4a6;border:1px solid #ffffffc4;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.liquid-workspace .editor-actions form {background:#ffffff4f;border-color:#ffffffb3}
+.liquid-workspace .table {--bs-table-bg:transparent;--bs-table-color:#244934;--bs-table-border-color:#ffffffae}
+.liquid-workspace .table th {color:#31563c;background:#ffffff30}
+.liquid-workspace .table td,.liquid-workspace .table th {border-color:#ffffffb3}
+.liquid-workspace .table tbody tr:nth-child(even) {background:#ffffff1f}
+.liquid-workspace .table tbody tr:hover {background:#ffffff54}
+.liquid-workspace .chart-data .table {--bs-table-bg:transparent}
+.liquid-workspace .form-control,.liquid-workspace .form-select {
+  background-color:rgba(255,255,255,.55);border-color:#ffffffd4;color:#1d4430;
+  box-shadow:inset 0 1px 0 #fff,inset 0 1px 4px #173b2805;
+}
+.liquid-workspace .form-control::placeholder {color:#526e59}
+.liquid-workspace .form-control:focus,.liquid-workspace .form-select:focus {background-color:#ffffffe8;border-color:#57966d;box-shadow:0 0 0 3px #ffffff9c,inset 0 1px #fff}
+.liquid-workspace .form-control:disabled,.liquid-workspace .form-select:disabled {background-color:#e2ece1a6;color:#46634b}
+.liquid-workspace .form-select option {background:#f6fbf5;color:#204a30}
+.liquid-workspace .alert-danger {background:#fff2f1eb;border-color:#f0bdb8;color:#7e2723;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.liquid-workspace .alert-success {background:#eafbe7e8;border-color:#c0dcba;color:#25502c;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.liquid-workspace .alert-light {background:#fbfff7b8;border-color:#ffffffc4;color:#34573b;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.liquid-workspace .glass-footer {background:rgba(10,39,27,.88);border-top:1px solid #ffffff2e;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.liquid-workspace .my-learning>.section-top,.liquid-workspace .pager {
+  padding:22px;border:1px solid #ffffffc7;border-radius:12px;background:#fafffab8;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:inset 0 1px #fff,0 8px 24px #173b2810;
+}
+.liquid-workspace .pager {padding:12px 18px}
+/* Deliberate interaction states, shared by mouse, keyboard, and native controls. */
+.btn,.primary-links a,.nav-account>a,.tabs a,.detail-nav a,.workspace-nav nav>a,.course-subjects a,.lesson-link,.answer-option,.text-link,.hero-secondary,.learning-shortcuts a {
+  transition:transform 180ms cubic-bezier(.2,.75,.25,1),box-shadow 180ms ease,background-color 180ms ease,border-color 180ms ease,color 180ms ease;
+}
+.primary-links a,.nav-account>.dashboard-link {position:relative;border-radius:8px;padding-inline:10px;margin-inline:-10px;border:1px solid transparent}
+.primary-links a[aria-current],.nav-account>.dashboard-link[aria-current] {background:#ffffff7a;border-color:#ffffffcf;box-shadow:inset 0 1px #fff,0 4px 12px #143c2610;text-decoration:none;color:#174a30}
+.page-home .glass-header:not(.is-scrolled) .primary-links a[aria-current] {background:#ffffff26;border-color:#ffffff45;color:#fff;box-shadow:inset 0 1px #ffffff38}
+.tabs a,.detail-nav a,.course-subjects a {position:relative;border-radius:7px 7px 3px 3px;padding-inline:13px;border-bottom-width:2px}
+.tabs a.active,.detail-nav a[aria-current],.course-subjects a[aria-current] {background:#ffffff87;border-color:var(--primary);color:var(--primary);box-shadow:inset 0 1px #fff,0 3px 8px #143c2608}
+.glass-dashboard .workspace-nav nav>a.active,.lesson-link.active {background:#ffffffa6;border:1px solid #ffffffd1;box-shadow:inset 0 1px #fff,0 5px 14px #153c2712;color:#195735}
+.lesson-link.active {box-shadow:inset 3px 0 #287443,inset 0 1px #fff,0 5px 14px #153c2710}
+.answer-option:has(input:checked) {background:#f5fff1bc;border-color:#5b9465;box-shadow:inset 0 1px #fff,0 4px 12px #153c2712}
+body :is(.btn,a,summary,button,input,select,textarea):focus-visible {outline:3px solid #246c42;outline-offset:4px}
+.page-home .hero-copy :is(.btn,a):focus-visible,.page-home .glass-header:not(.is-scrolled) :is(a,button,input):focus-visible {outline-color:#e6ffdd}
+@media(hover:hover) and (pointer:fine) {
+  .btn:not(:disabled):not([aria-disabled="true"]):hover {transform:translateY(-2px) scale(1.025);box-shadow:inset 0 1px #ffffff59,0 8px 20px #163b2829}
+  .btn-primary:not(:disabled):hover {box-shadow:inset 0 1px #ffffff7a,0 10px 24px #143c2833}
+  .btn-outline-secondary:not(:disabled):hover,.btn-light:not(:disabled):hover {background:#ffffffe0;border-color:#ffffffed;color:#225e38}
+  .nav-logout:hover {background:#ffffff8f;border-color:#ffffffd1}
+  .primary-links a:hover,.nav-account>.dashboard-link:hover {background:#ffffff6b;border-color:#ffffff9e;transform:translateY(-1px);box-shadow:inset 0 1px #ffffffcf,0 5px 12px #143c2614}
+  .page-home .glass-header:not(.is-scrolled) .primary-links a:hover {background:#ffffff26;border-color:#ffffff45;box-shadow:inset 0 1px #ffffff3d;color:#fff}
+  .tabs a:hover,.detail-nav a:hover,.course-subjects a:hover {background:#ffffff8c;transform:translateY(-1px);color:var(--primary);box-shadow:inset 0 1px #fff,0 4px 10px #173b280e}
+  .glass-dashboard .workspace-nav nav>a:hover,.lesson-link:hover,.learning-shortcuts a:hover {background:#ffffff9e;transform:translateY(-1px);border-color:#ffffffdc;box-shadow:inset 0 1px #fff,0 6px 16px #173b2817;color:#215c36}
+  .course-card:hover,.liquid-workspace .course-list .course-card:hover {transform:translateY(-5px) scale(1.008);box-shadow:inset 0 1px #fff,0 20px 36px #153c2829;border-color:#fff}
+  .answer-option:hover {background:#ffffffad;transform:translateY(-1px);border-color:#88af85;box-shadow:inset 0 1px #fff,0 5px 14px #153c2712}
+  .text-link:hover,.hero-secondary:hover {transform:translateY(-1px);text-decoration:underline;text-underline-offset:5px}
+  .field-card:hover .field-caption {background:#fffffff0;box-shadow:inset 0 1px #fff,0 8px 22px #173b2820}
+}
+.btn:not(:disabled):active {transform:translateY(0) scale(.98);box-shadow:inset 0 2px 5px #173b2820}
+.btn:disabled,.btn[aria-disabled="true"] {transform:none;box-shadow:none;cursor:not-allowed}
+@media(max-width:1100px) {
+  .primary-links {gap:24px}
+  .liquid-workspace .glass-header:has([data-open]) {background:rgba(248,255,248,.92)}
+}
+@media(max-width:768px) {
+  html {scroll-padding-top:110px}
+  .liquid-workspace .catalog-sidebar {position:static}
+  .liquid-workspace .course-list .course-card {padding:0}
+  .liquid-workspace .course-list .course-card>a {display:flex;gap:0}
+  .liquid-workspace .course-list .cover {height:210px;border-radius:0}
+  .liquid-workspace .course-list .card-content {padding:22px}
+  .workspace-backdrop-photo {filter:blur(4px);background-position:62% 35%}
+  .workspace-backdrop:after {background:#e7f0e538}
+  .liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.filter-bar,.stat,.workspace-nav,.tabs) {backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .liquid-workspace :is(.page-heading,.dashboard-heading,.learning-top) {padding:22px;border-radius:10px}
+  .liquid-workspace .catalog-sidebar {padding:22px}
+  .liquid-workspace .completion-note {padding:23px}
+  .liquid-workspace .detail-nav {gap:8px;padding-inline:8px}
+  .tabs a,.detail-nav a,.course-subjects a {padding-inline:10px}
+  .no-js .page-home .glass-header .primary-links a[aria-current] {color:#174a30;background:#ffffff8c}
+}
+@media(prefers-reduced-motion:reduce) {
+  .btn,.primary-links a,.nav-account>a,.tabs a,.detail-nav a,.workspace-nav nav>a,.course-subjects a,.lesson-link,.answer-option,.text-link,.hero-secondary,.learning-shortcuts a,.course-card,.field-card>img {transition:none!important;transform:none!important}
+}
+@media(prefers-reduced-transparency:reduce) {
+  .workspace-backdrop {display:none}
+  body.liquid-workspace {background:#edf4ec}
+  .liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.filter-bar,.stat,.empty,.workspace-nav,.dashboard-date,.tabs,.page-heading,.dashboard-heading,.learning-top,.catalog-sidebar,.results-toolbar,.detail-nav,.completion-note,.editor-actions,.question,.review-question,.auth-panel,.ai-panel,.course-card) {background:#f7fcf6;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:#d7e3d4}
+  .liquid-workspace .course-list .course-card {background:#f7fcf6}
+  .liquid-workspace .my-learning>.section-top,.liquid-workspace .pager {background:#f7fcf6;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .liquid-workspace .glass-header {background:#f7fcf6;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .liquid-workspace .lesson-panel {background:#fcfefb}
+  .liquid-workspace .detail-masthead {background:#173d2c}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  .liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.filter-bar,.stat,.empty,.workspace-nav,.dashboard-date,.tabs,.page-heading,.dashboard-heading,.learning-top,.catalog-sidebar,.results-toolbar,.detail-nav,.completion-note,.editor-actions,.question,.review-question,.auth-panel,.ai-panel,.course-card) {background:#f4faf2}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  .liquid-workspace .course-list .course-card {background:#f4faf2}
+}
+@media print {
+  .workspace-backdrop {display:none!important}
+  body.liquid-workspace {background:#fff}
+  .liquid-workspace :is(.panel,.insight-panel,.dashboard-stat,.page-heading,.dashboard-heading,.learning-top,.table-responsive,.course-card) {background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;border-color:#ccd8c8}
+}

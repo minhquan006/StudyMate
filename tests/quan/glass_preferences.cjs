@@ -1,5 +1,6 @@
 const {chromium}=require('playwright');
 const fs=require('fs');const path=require('path');
+const {verifyLessonOutline}=require('./lesson_outline.cjs');
 const root=path.resolve(process.env.STUDYMATE_TEST_ARTIFACTS||path.join(__dirname,'../../storage/qa-display')),base=process.env.STUDYMATE_TEST_URL||'http://127.0.0.1:8096/index.php';
 const checks=[],errors=[];
 const check=(condition,name)=>{if(!condition)throw Error(name);checks.push(name);};
@@ -62,6 +63,7 @@ const check=(condition,name)=>{if(!condition)throw Error(name);checks.push(name)
   for(const width of [320,375,390,834,1101,1280,1440]){await page.setViewportSize({width,height:1000});await go('home');check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`English header fits ${width}px`);}
   await login('student1');check(await page.locator('html').getAttribute('lang')==='en'&&await page.locator('html').getAttribute('data-theme')==='dark','login retains display choices');
   for(const locale of ['vi','en']){await language(locale);for(const mode of ['light','dark']){await theme(mode);for(const width of [1440,390])for(const route of ['student','learn&id=2&lesson=7','quiz&id=2','result&id=1','profile'])await inspect(route,width,`${locale}-${mode}-${route}-${width}`,route==='student'||(route.startsWith('learn')&&locale==='en'));}}
+  await verifyLessonOutline({page,base,check,artifacts:root});
   await page.setViewportSize({width:1440,height:1000});await go('learn&id=2&lesson=7');
   await go('student');check((await page.locator('.pager span').innerText()).startsWith('Page ')&&!(await page.locator('.pager span').innerText()).includes('kết quả'),'English student pagination fully translated');await go('learn&id=2&lesson=7');
   check(await page.locator('.lesson-text h1').innerText()==='Biến và kiểu dữ liệu','authored lesson remains unchanged in English interface');

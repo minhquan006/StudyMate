@@ -1,0 +1,8 @@
+{
+  "result": "passed configuration rendering only; Docker not run",
+  "app_db_user": "studymate",
+  "app_db_name": "studymate_ui_test",
+  "db_name": "studymate_ui_test",
+  "AI_ENABLED": "0",
+  "project": "tu-content-qa-config"
+}

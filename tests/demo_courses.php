@@ -36,17 +36,25 @@ $before = demoSnapshot();
 
 // Fail after inserting a course and chapter to verify atomic recovery.
 if ($config['db_driver'] === 'mysql') {
-    run("CREATE TRIGGER demo_content_failure BEFORE INSERT ON lessons FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'demo test failure'");
+    // A table-local CHECK works with the app's database-scoped ALTER privilege.
+    // CREATE TRIGGER can require global privileges when binary logging is on.
+    $fixtureContent = require dirname(__DIR__).'/database/demo_courses.php';
+    $blockedTitle = db()->quote($fixtureContent[0]['chapters'][0]['lessons'][0]['title']);
+    run('ALTER TABLE lessons ADD CONSTRAINT demo_content_failure CHECK (title <> '.$blockedTitle.')');
+    $cleanupFailure = 'ALTER TABLE lessons DROP CHECK demo_content_failure';
 } else {
     run("CREATE TRIGGER demo_content_failure BEFORE INSERT ON lessons BEGIN SELECT RAISE(ABORT, 'demo test failure'); END");
+    $cleanupFailure = 'DROP TRIGGER demo_content_failure';
 }
 $failed = false;
 try {
     seedDemoCourses();
 } catch (PDOException $error) {
-    $failed = str_contains($error->getMessage(), 'demo test failure');
+    $failed = $config['db_driver'] === 'mysql'
+        ? ($error->errorInfo[1] ?? null) === 3819 && str_contains($error->getMessage(), 'demo_content_failure')
+        : str_contains($error->getMessage(), 'demo test failure');
 } finally {
-    run('DROP TRIGGER demo_content_failure');
+    run($cleanupFailure);
 }
 demoCheck($failed && demoSnapshot() === $before, 'mid-import failure rolls back every inserted row across all 12 tables');
 

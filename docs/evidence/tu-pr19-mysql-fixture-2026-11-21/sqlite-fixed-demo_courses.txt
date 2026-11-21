@@ -1,0 +1,359 @@
+PASS: starts with the original three-course fixture
+PASS: fixture includes existing quiz history
+PASS: mid-import failure rolls back every inserted row across all 12 tables
+PASS: retry creates exactly three new courses
+PASS: preserves users #1
+PASS: preserves users #2
+PASS: preserves users #3
+PASS: preserves users #4
+PASS: preserves users #5
+PASS: preserves categories #1
+PASS: preserves categories #2
+PASS: preserves categories #3
+PASS: preserves courses #1
+PASS: preserves courses #2
+PASS: preserves courses #3
+PASS: preserves chapters #1
+PASS: preserves chapters #2
+PASS: preserves chapters #3
+PASS: preserves chapters #4
+PASS: preserves chapters #5
+PASS: preserves chapters #6
+PASS: preserves lessons #1
+PASS: preserves lessons #2
+PASS: preserves lessons #3
+PASS: preserves lessons #4
+PASS: preserves lessons #5
+PASS: preserves lessons #6
+PASS: preserves lessons #7
+PASS: preserves lessons #8
+PASS: preserves lessons #9
+PASS: preserves lessons #10
+PASS: preserves lessons #11
+PASS: preserves lessons #12
+PASS: preserves lessons #13
+PASS: preserves lessons #14
+PASS: preserves lessons #15
+PASS: preserves lessons #16
+PASS: preserves lessons #17
+PASS: preserves lessons #18
+PASS: preserves quizzes #1
+PASS: preserves quizzes #2
+PASS: preserves quizzes #3
+PASS: preserves questions #1
+PASS: preserves questions #2
+PASS: preserves questions #3
+PASS: preserves questions #4
+PASS: preserves questions #5
+PASS: preserves questions #6
+PASS: preserves questions #7
+PASS: preserves questions #8
+PASS: preserves questions #9
+PASS: preserves questions #10
+PASS: preserves questions #11
+PASS: preserves questions #12
+PASS: preserves questions #13
+PASS: preserves questions #14
+PASS: preserves questions #15
+PASS: preserves answers #1
+PASS: preserves answers #2
+PASS: preserves answers #3
+PASS: preserves answers #4
+PASS: preserves answers #5
+PASS: preserves answers #6
+PASS: preserves answers #7
+PASS: preserves answers #8
+PASS: preserves answers #9
+PASS: preserves answers #10
+PASS: preserves answers #11
+PASS: preserves answers #12
+PASS: preserves answers #13
+PASS: preserves answers #14
+PASS: preserves answers #15
+PASS: preserves answers #16
+PASS: preserves answers #17
+PASS: preserves answers #18
+PASS: preserves answers #19
+PASS: preserves answers #20
+PASS: preserves answers #21
+PASS: preserves answers #22
+PASS: preserves answers #23
+PASS: preserves answers #24
+PASS: preserves answers #25
+PASS: preserves answers #26
+PASS: preserves answers #27
+PASS: preserves answers #28
+PASS: preserves answers #29
+PASS: preserves answers #30
+PASS: preserves answers #31
+PASS: preserves answers #32
+PASS: preserves answers #33
+PASS: preserves answers #34
+PASS: preserves answers #35
+PASS: preserves answers #36
+PASS: preserves answers #37
+PASS: preserves answers #38
+PASS: preserves answers #39
+PASS: preserves answers #40
+PASS: preserves answers #41
+PASS: preserves answers #42
+PASS: preserves answers #43
+PASS: preserves answers #44
+PASS: preserves answers #45
+PASS: preserves answers #46
+PASS: preserves answers #47
+PASS: preserves answers #48
+PASS: preserves answers #49
+PASS: preserves answers #50
+PASS: preserves answers #51
+PASS: preserves answers #52
+PASS: preserves answers #53
+PASS: preserves answers #54
+PASS: preserves answers #55
+PASS: preserves answers #56
+PASS: preserves answers #57
+PASS: preserves answers #58
+PASS: preserves answers #59
+PASS: preserves answers #60
+PASS: preserves enrollments #1
+PASS: preserves lesson_progress #1
+PASS: preserves lesson_progress #2
+PASS: preserves lesson_progress #3
+PASS: preserves lesson_progress #4
+PASS: preserves lesson_progress #5
+PASS: preserves lesson_progress #6
+PASS: preserves quiz_attempts #1
+PASS: preserves quiz_attempts #2
+PASS: preserves quiz_answers #1
+PASS: preserves quiz_answers #2
+PASS: preserves quiz_answers #3
+PASS: preserves quiz_answers #4
+PASS: preserves quiz_answers #5
+PASS: preserves quiz_answers #6
+PASS: preserves quiz_answers #7
+PASS: preserves quiz_answers #8
+PASS: preserves quiz_answers #9
+PASS: preserves quiz_answers #10
+PASS: new course is public with its audience, prerequisites and outcomes
+PASS: course has two ordered chapters
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: course has six quiz questions
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: server grades all six correct answers as 100%
+PASS: new course completion is recorded
+PASS: new course is public with its audience, prerequisites and outcomes
+PASS: course has two ordered chapters
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: course has six quiz questions
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: server grades all six correct answers as 100%
+PASS: new course completion is recorded
+PASS: new course is public with its audience, prerequisites and outcomes
+PASS: course has two ordered chapters
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: chapter has two ordered lessons
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: lesson contains substantive content within the supported length
+PASS: lesson includes ## Mục tiêu
+PASS: lesson includes ## Kiến thức
+PASS: lesson includes ## Ví dụ chạy được
+PASS: lesson includes ## Kết quả và tự kiểm
+PASS: lesson includes ## Bài tập nhỏ
+PASS: course has six quiz questions
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: quiz question has four choices
+PASS: stored answer key matches the reviewed content
+PASS: question includes a supported explanation
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: answer fits the supported limit
+PASS: server grades all six correct answers as 100%
+PASS: new course completion is recorded
+PASS: repeat keeps the same course IDs
+PASS: repeat skips all existing demo courses
+PASS: repeat preserves every row including manual content edits and all quiz history
+358 demo course checks passed. Driver: sqlite

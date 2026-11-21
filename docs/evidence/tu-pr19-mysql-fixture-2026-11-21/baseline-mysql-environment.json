@@ -1,0 +1,14 @@
+{
+  "current_user": "tu_pr19_2cfd0dcc@%",
+  "mysql": "8.4.13",
+  "log_bin": 1,
+  "trust": 0,
+  "grants": [
+    {
+      "Grants for tu_pr19_2cfd0dcc@%": "GRANT USAGE ON *.* TO `tu_pr19_2cfd0dcc`@`%`"
+    },
+    {
+      "Grants for tu_pr19_2cfd0dcc@%": "GRANT ALL PRIVILEGES ON `studymate_tu_pr19_baseline_f3454f_test`.* TO `tu_pr19_2cfd0dcc`@`%`"
+    }
+  ]
+}

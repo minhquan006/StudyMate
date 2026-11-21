@@ -5,7 +5,7 @@ return [
         'title' => 'Thực hành HTML và CSS: trang giới thiệu khóa học',
         'category' => 'Lập trình web',
         'cover_key' => 'web',
-        'description' => 'Dành cho người mới muốn tự dựng một trang giới thiệu khóa học. Cần biết tạo, lưu tệp và mở trình duyệt. không cần cài thư viện. Sau 4 bài, bạn sẽ viết cấu trúc HTML có ngữ nghĩa, tạo form có nhãn, áp dụng box model và dựng lưới responsive. Sản phẩm thực hành là một trang có thẻ khóa học và form đăng ký mẫu. Form chỉ minh họa giao diện, chưa lưu dữ liệu. Hoàn thành 4 bài rồi làm quiz 6 câu để tự kiểm tra.',
+        'description' => 'Dành cho người mới muốn tự dựng một trang giới thiệu khóa học. Cần biết tạo, lưu tệp và mở trình duyệt. Không cần cài thư viện. Sau 4 bài, bạn sẽ viết cấu trúc HTML có ngữ nghĩa, tạo form có nhãn, áp dụng box model và dựng lưới responsive. Sản phẩm thực hành là một trang có thẻ khóa học và form đăng ký mẫu. Form chỉ minh họa giao diện, chưa lưu dữ liệu. Hoàn thành 4 bài rồi làm quiz 6 câu để tự kiểm tra.',
         'chapters' => [
             [
                 'title' => 'Tạo cấu trúc và biểu mẫu',
@@ -19,7 +19,7 @@ return [
 Tạo một trang tiếng Việt có tiêu đề, vùng nội dung chính và một thẻ khóa học. Bạn cần trình duyệt và trình soạn thảo văn bản.
 
 ## Kiến thức
-HTML mô tả cấu trúc nội dung. Phần head chứa thông tin về trang, còn body chứa nội dung hiển thị. Thẻ main đánh dấu nội dung chính và article gom một nội dung có thể đứng độc lập. Dùng h1 cho tiêu đề chính của ví dụ này và h2 cho tên khóa học. thứ bậc tiêu đề thể hiện cấu trúc nội dung.
+HTML mô tả cấu trúc nội dung. Phần head chứa thông tin về trang, còn body chứa nội dung hiển thị. Thẻ main đánh dấu nội dung chính và article gom một nội dung có thể đứng độc lập. Dùng h1 cho tiêu đề chính của ví dụ này và h2 cho tên khóa học. Thứ bậc tiêu đề thể hiện cấu trúc nội dung.
 
 ## Ví dụ chạy được
 Lưu toàn bộ đoạn sau thành index.html với mã hóa UTF-8 rồi mở bằng trình duyệt.
@@ -48,7 +48,7 @@ Lưu toàn bộ đoạn sau thành index.html với mã hóa UTF-8 rồi mở b�
 Tab trình duyệt có tên Khóa học của tôi. Trang hiện một tiêu đề chính, một tên khóa học và một đoạn mô tả. Dấu tiếng Việt hiển thị đúng nhờ charset UTF-8 và cách lưu tệp.
 
 ## Bài tập nhỏ
-Thêm một article giới thiệu khóa JavaScript với h2 và p riêng. Kết quả cần có một h1 và hai h2. Đổi title của trang rồi kiểm tra tên tab. thay đổi này không tự đổi h1 trong body.
+Thêm một article giới thiệu khóa JavaScript với h2 và p riêng. Kết quả cần có một h1 và hai h2. Đổi title của trang rồi kiểm tra tên tab. Thay đổi này không tự đổi h1 trong body.
 MD,
                     ],
                     [
@@ -60,7 +60,7 @@ MD,
 Thêm trường họ tên, email và nút đăng ký có thể sử dụng bằng bàn phím. Dùng lại index.html ở bài trước.
 
 ## Kiến thức
-Thuộc tính for của label trỏ đến id của input. Khi bấm vào nhãn, con trỏ chuyển đến ô tương ứng. name đặt tên trường khi gửi form. type="email" yêu cầu định dạng email và required yêu cầu có giá trị. Đây là kiểm tra của trình duyệt. khi có backend, server vẫn phải kiểm tra dữ liệu gửi đến.
+Thuộc tính for của label trỏ đến id của input. Khi bấm vào nhãn, con trỏ chuyển đến ô tương ứng. Thuộc tính name đặt tên trường khi gửi form. Thuộc tính type="email" yêu cầu định dạng email và required yêu cầu có giá trị. Đây là kiểm tra của trình duyệt. Khi có backend, server vẫn phải kiểm tra dữ liệu gửi đến.
 
 ## Ví dụ chạy được
 Chèn đoạn sau trước thẻ đóng main. Form dùng GET để quan sát dữ liệu mẫu trên URL, vì vậy chỉ nhập dữ liệu giả trong bài tập.
@@ -130,7 +130,7 @@ Box model gồm vùng nội dung, padding bên trong đường viền, border v�
 Thẻ có khoảng trống 20px bên trong viền và 16px bên dưới. Thu nhỏ cửa sổ và thử Tab để nhìn thấy đường focus. Trong DevTools, xem sơ đồ box model của article để phân biệt padding với margin.
 
 ## Bài tập nhỏ
-Thử một hộp có width 300px, padding 20px và border 1px mỗi bên. Với border-box, tổng chiều rộng tính cả viền là 300px. với content-box, tổng là 342px, chưa tính margin. Dùng DevTools để đối chiếu hai kết quả.
+Thử một hộp có width 300px, padding 20px và border 1px mỗi bên. Với border-box, tổng chiều rộng tính cả viền là 300px. Với content-box, tổng là 342px, chưa tính margin. Dùng DevTools để đối chiếu hai kết quả.
 MD,
                     ],
                     [
@@ -142,10 +142,10 @@ MD,
 Hiển thị hai thẻ cùng hàng khi đủ chỗ và một thẻ mỗi hàng trên màn hình hẹp. Tổng hợp trang giới thiệu và form của ba bài trước.
 
 ## Kiến thức
-CSS Grid chia vùng chứa thành các cột. gap tạo khoảng cách giữa các ô. Media query áp dụng quy tắc khi điều kiện kích thước thỏa mãn. Cấu hình viewport ở bài đầu giúp thiết bị di động dùng chiều rộng phù hợp cho bố cục responsive.
+CSS Grid chia vùng chứa thành các cột. Thuộc tính gap tạo khoảng cách giữa các ô. Media query áp dụng quy tắc khi điều kiện kích thước thỏa mãn. Cấu hình viewport ở bài đầu giúp thiết bị di động dùng chiều rộng phù hợp cho bố cục responsive.
 
 ## Ví dụ chạy được
-Bọc riêng hai article vào div class="course-grid". giữ h1 và form bên ngoài div này. Thêm CSS sau vào cuối khối style. Quy tắc margin-bottom mới thay khoảng cách cũ bằng gap của lưới.
+Bọc riêng hai article vào div class="course-grid". Giữ h1 và form bên ngoài div này. Thêm CSS sau vào cuối khối style. Quy tắc margin-bottom mới thay khoảng cách cũ bằng gap của lưới.
 
 ```css
 .course-grid {
@@ -164,7 +164,7 @@ Bọc riêng hai article vào div class="course-grid". giữ h1 và form bên ng
 Ở chiều rộng viewport 900px, hai thẻ nằm cạnh nhau. Ở 390px, chúng xếp thành một cột và form vẫn sử dụng được. Đặt tên khóa học dài để kiểm việc xuống dòng. Dùng bàn phím kiểm focus ở input và nút, sau đó thử gửi form với email sai và email mẫu hợp lệ.
 
 ## Bài tập nhỏ
-Thêm thẻ thứ ba vào course-grid. Ở 900px, thẻ thứ ba bắt đầu hàng mới. ở 390px, cả ba xếp dọc. Hoàn thành trang có một h1, ba thẻ và form có nhãn. Tự giải thích chức năng của HTML, CSS và kiểm tra form trước khi làm quiz.
+Thêm thẻ thứ ba vào course-grid. Ở 900px, thẻ thứ ba bắt đầu hàng mới. Ở 390px, cả ba xếp dọc. Hoàn thành trang có một h1, ba thẻ và form có nhãn. Tự giải thích chức năng của HTML, CSS và kiểm tra form trước khi làm quiz.
 MD,
                     ],
                 ],
@@ -180,7 +180,7 @@ MD,
                     'meta',
                 ],
                 'correct' => 1,
-                'explanation' => 'Bài 1 đặt nội dung hiển thị chính trong main. head chứa metadata và title đặt tên tab.',
+                'explanation' => 'Bài 1 đặt nội dung hiển thị chính trong main. Phần head chứa metadata và title đặt tên tab.',
             ],
             [
                 'prompt' => 'Label có for="email" cần liên kết với thuộc tính nào của input?',
@@ -191,7 +191,7 @@ MD,
                     'value="email"',
                 ],
                 'correct' => 2,
-                'explanation' => 'Bài 2 dùng for của label khớp id của input. name là tên trường khi gửi dữ liệu.',
+                'explanation' => 'Bài 2 dùng for của label khớp id của input. Thuộc tính name là tên trường khi gửi dữ liệu.',
             ],
             [
                 'prompt' => 'Một ô type="email" required bị bỏ trống. Khi gửi form bình thường, điều gì xảy ra?',
@@ -243,7 +243,7 @@ MD,
         'title' => 'Thực hành JavaScript: bộ theo dõi việc học',
         'category' => 'Lập trình',
         'cover_key' => 'programming',
-        'description' => 'Dành cho người đã đọc được HTML cơ bản và muốn thêm tương tác vào trang học. Cần trình duyệt có Console và một tệp HTML. Sau 4 bài, bạn sẽ tính tiến độ bằng hàm, xử lý mảng bài học, cập nhật DOM bằng sự kiện và lưu thử trạng thái trong localStorage. Sản phẩm là nút đánh dấu bài học kèm phần trăm tiến độ. Ví dụ lưu trên trình duyệt để luyện tập. tiến độ của ứng dụng StudyMate vẫn do server quản lý. Quiz cuối khóa có 6 câu.',
+        'description' => 'Dành cho người đã đọc được HTML cơ bản và muốn thêm tương tác vào trang học. Cần trình duyệt có Console và một tệp HTML. Sau 4 bài, bạn sẽ tính tiến độ bằng hàm, xử lý mảng bài học, cập nhật DOM bằng sự kiện và lưu thử trạng thái trong localStorage. Sản phẩm là nút đánh dấu bài học kèm phần trăm tiến độ. Ví dụ lưu trên trình duyệt để luyện tập. Tiến độ của ứng dụng StudyMate vẫn do server quản lý. Quiz cuối khóa có 6 câu.',
         'chapters' => [
             [
                 'title' => 'Tính toán và tổ chức dữ liệu',
@@ -276,7 +276,7 @@ console.log(progressPercent(2, 3));
 Ba dòng lần lượt là 25, 0 và 67. Với 2/3, giá trị khoảng 66,67 được làm tròn thành 67. Kiểm riêng tổng bằng 0 trước khi chia giúp hàm trả một số có ý nghĩa cho giao diện.
 
 ## Bài tập nhỏ
-Chạy thêm progressPercent(4, 4), kết quả cần là 100. Thêm điều kiện từ chối done lớn hơn total bằng cách ném Error. Với dữ liệu từ người dùng, cần kiểm kiểu và miền giá trị trước khi gọi hàm. quy tắc này sẽ được mở rộng ở bài mảng.
+Chạy thêm progressPercent(4, 4), kết quả cần là 100. Thêm điều kiện từ chối done lớn hơn total bằng cách ném Error. Với dữ liệu từ người dùng, cần kiểm kiểu và miền giá trị trước khi gọi hàm. Quy tắc này sẽ được mở rộng ở bài mảng.
 MD,
                     ],
                     [
@@ -288,7 +288,7 @@ MD,
 Biểu diễn bốn bài học bằng mảng đối tượng và tính số bài hoàn thành mà không làm mất dữ liệu cũ.
 
 ## Kiến thức
-Mỗi đối tượng lưu id, title và done. filter tạo mảng mới chỉ gồm phần tử thỏa điều kiện. map tạo mảng mới bằng cách biến đổi từng phần tử. Cú pháp spread sao chép các thuộc tính của đối tượng trong ví dụ. đây là bản sao nông. So sánh id để chỉ đánh dấu đúng bài cần thay đổi.
+Mỗi đối tượng lưu id, title và done. Hàm filter tạo mảng mới chỉ gồm phần tử thỏa điều kiện. Hàm map tạo mảng mới bằng cách biến đổi từng phần tử. Cú pháp spread sao chép các thuộc tính của đối tượng trong ví dụ. Đây là bản sao nông. So sánh id để chỉ đánh dấu đúng bài cần thay đổi.
 
 ## Ví dụ chạy được
 Chạy đoạn sau trong Console. Các biến nằm trong khối riêng nên có thể chạy lại cả khối khi luyện tập.
@@ -310,10 +310,10 @@ Chạy đoạn sau trong Console. Các biến nằm trong khối riêng nên có
 ```
 
 ## Kết quả và tự kiểm
-Dòng đầu in 2 vì bản updated có hai bài đã hoàn thành. Dòng sau in false vì bài 2 của mảng lessons ban đầu chưa bị sửa. Các đối tượng không được thay đổi có thể vẫn dùng chung tham chiếu. tránh sửa trực tiếp chúng khi cần giữ bản gốc.
+Dòng đầu in 2 vì bản updated có hai bài đã hoàn thành. Dòng sau in false vì bài 2 của mảng lessons ban đầu chưa bị sửa. Các đối tượng không được thay đổi có thể vẫn dùng chung tham chiếu. Tránh sửa trực tiếp chúng khi cần giữ bản gốc.
 
 ## Bài tập nhỏ
-Đổi id cần đánh dấu từ 2 thành 3. Số bài hoàn thành vẫn là 2, nhưng bài có id 3 được đánh dấu. Kết hợp số bài hoàn thành với hàm ở bài 1 để nhận 50%. Thử id 99. kết quả mảng giữ nguyên vì không có bài khớp.
+Đổi id cần đánh dấu từ 2 thành 3. Số bài hoàn thành vẫn là 2, nhưng bài có id 3 được đánh dấu. Kết hợp số bài hoàn thành với hàm ở bài 1 để nhận 50%. Thử id 99. Kết quả mảng giữ nguyên vì không có bài khớp.
 MD,
                     ],
                 ],
@@ -330,7 +330,7 @@ MD,
 Tạo nút hoàn thành một bài và cập nhật đoạn văn trên trang. Lưu ví dụ thành learning.html rồi mở bằng trình duyệt.
 
 ## Kiến thức
-DOM là biểu diễn của tài liệu để JavaScript truy cập. querySelector tìm phần tử đầu tiên khớp selector. addEventListener đăng ký hàm xử lý sự kiện. textContent thay nội dung văn bản. Đặt script sau các phần tử giúp chúng đã tồn tại khi mã truy vấn chạy.
+DOM là biểu diễn của tài liệu để JavaScript truy cập. Hàm querySelector tìm phần tử đầu tiên khớp selector. Hàm addEventListener đăng ký hàm xử lý sự kiện. Thuộc tính textContent thay nội dung văn bản. Đặt script sau các phần tử giúp chúng đã tồn tại khi mã truy vấn chạy.
 
 ## Ví dụ chạy được
 Mỗi lần bấm nút tăng done một đơn vị nhưng tối đa bằng total. Trang tự thiết lập tổng số bài là 4.
@@ -358,10 +358,10 @@ Mỗi lần bấm nút tăng done một đơn vị nhưng tối đa bằng total
 ```
 
 ## Kết quả và tự kiểm
-Bốn lần bấm lần lượt cho 25%, 50%, 75% và 100%. Ở 100%, nút bị vô hiệu hóa. Thử dùng Tab đến nút và nhấn Enter. aria-live thông báo thay đổi cho công nghệ hỗ trợ. nội dung mới vẫn đọc được trực tiếp trên trang.
+Bốn lần bấm lần lượt cho 25%, 50%, 75% và 100%. Ở 100%, nút bị vô hiệu hóa. Thử dùng Tab đến nút và nhấn Enter. Thuộc tính aria-live thông báo thay đổi cho công nghệ hỗ trợ. Nội dung mới vẫn đọc được trực tiếp trên trang.
 
 ## Bài tập nhỏ
-Đổi total thành 5 và dự đoán kết quả sau hai lần bấm là 40%. Tải lại trang để thấy tiến độ trở về 0%. bài sau sẽ bổ sung lưu thử trên trình duyệt. Ví dụ này chưa gửi yêu cầu hoàn thành bài đến server StudyMate.
+Đổi total thành 5 và dự đoán kết quả sau hai lần bấm là 40%. Tải lại trang để thấy tiến độ trở về 0%. Bài sau sẽ bổ sung lưu thử trên trình duyệt. Ví dụ này chưa gửi yêu cầu hoàn thành bài đến server StudyMate.
 MD,
                     ],
                     [
@@ -373,7 +373,7 @@ MD,
 Lưu biến done để mở lại trang vẫn thấy tiến độ và xử lý dữ liệu lưu sai. Thay toàn bộ learning.html của bài 3 bằng ví dụ dưới. Mở trang qua HTTP server cục bộ, chẳng hạn chạy php -S 127.0.0.1:8090 trong thư mục bài tập rồi vào http://127.0.0.1:8090/learning.html.
 
 ## Kiến thức
-localStorage lưu chuỗi theo origin của trình duyệt. getItem trả null khi chưa có khóa. Number chuyển chuỗi thành số. Cần kiểm số nguyên và miền 0–4 trước khi dùng. try/catch xử lý lỗi truy cập storage. Dữ liệu thực hành lưu trong trình duyệt, còn tiến độ chính thức của StudyMate do server quản lý.
+localStorage lưu chuỗi theo origin của trình duyệt. Hàm getItem trả null khi chưa có khóa. Number chuyển chuỗi thành số. Cần kiểm số nguyên và miền 0–4 trước khi dùng. Cấu trúc try/catch xử lý lỗi truy cập storage. Dữ liệu thực hành lưu trong trình duyệt, còn tiến độ chính thức của StudyMate do server quản lý.
 
 ## Ví dụ chạy được
 Khối dưới gồm phần đọc dữ liệu, hiển thị ban đầu và lưu trong sự kiện click. Chỉ dùng khóa riêng studymate-practice-done cho bài tập.
@@ -496,7 +496,7 @@ MD,
         'title' => 'Thực hành SQL: quản lý đăng ký khóa học',
         'category' => 'Cơ sở dữ liệu',
         'cover_key' => 'database',
-        'description' => 'Dành cho người mới biết khái niệm bảng, dòng và cột. Cần một DB thực hành trống bằng SQLite hoặc MySQL. các ví dụ dùng tên bảng riêng lab_ và dữ liệu giả. Sau 4 bài, bạn sẽ tạo khóa chính/khóa ngoại, lọc và sắp xếp SELECT, JOIN hai bảng và tổng hợp số đăng ký bằng COUNT. Sản phẩm là báo cáo khóa học có hoặc chưa có người đăng ký. Làm quiz 6 câu sau 4 bài. Chạy SQL trong DB thực hành riêng theo hướng dẫn, bảo toàn DB demo StudyMate.',
+        'description' => 'Dành cho người mới biết khái niệm bảng, dòng và cột. Cần một DB thực hành trống bằng SQLite hoặc MySQL. Các ví dụ dùng tên bảng riêng lab_ và dữ liệu giả. Sau 4 bài, bạn sẽ tạo khóa chính/khóa ngoại, lọc và sắp xếp SELECT, JOIN hai bảng và tổng hợp số đăng ký bằng COUNT. Sản phẩm là báo cáo khóa học có hoặc chưa có người đăng ký. Làm quiz 6 câu sau 4 bài. Chạy SQL trong DB thực hành riêng theo hướng dẫn, bảo toàn DB demo StudyMate.',
         'chapters' => [
             [
                 'title' => 'Tạo dữ liệu và truy vấn cơ bản',
@@ -507,7 +507,7 @@ MD,
 # Thiết kế bảng và khóa cho dữ liệu mẫu
 
 ## Mục tiêu
-Tạo hai bảng khóa học và đăng ký có ràng buộc, sau đó thêm dữ liệu giả. Dùng một database thực hành trống riêng. Chạy một lần theo thứ tự. chạy lại INSERT cùng id sẽ vi phạm khóa chính.
+Tạo hai bảng khóa học và đăng ký có ràng buộc, sau đó thêm dữ liệu giả. Dùng một database thực hành trống riêng. Chạy một lần theo thứ tự. Chạy lại INSERT cùng id sẽ vi phạm khóa chính.
 
 ## Kiến thức
 Khóa chính định danh duy nhất một dòng và có giá trị khác NULL. Khóa ngoại bảo đảm mã khóa học trong đăng ký tham chiếu đến khóa học có thật. UNIQUE(email, course_id) ngăn cùng email đăng ký trùng một khóa. Trong ví dụ, PRIMARY KEY được khai báo kèm NOT NULL để thể hiện rõ ràng yêu cầu trên cả hai driver.
@@ -515,7 +515,7 @@ Khóa chính định danh duy nhất một dòng và có giá trị khác NULL. 
 Với SQLite, chạy PRAGMA foreign_keys = ON trước đoạn SQL để bật kiểm khóa ngoại trên kết nối. Với MySQL, dùng engine InnoDB mặc định để thực thi khóa ngoại.
 
 ## Ví dụ chạy được
-Tên bảng lab_ phân biệt bài thực hành với bảng của ứng dụng. Trong MySQL có thể tạo DB riêng qua công cụ quản trị. trong SQLite mở một tệp DB mới.
+Tên bảng lab_ phân biệt bài thực hành với bảng của ứng dụng. Trong MySQL có thể tạo DB riêng qua công cụ quản trị. Trong SQLite mở một tệp DB mới.
 
 ```sql
 CREATE TABLE lab_courses (
@@ -541,7 +541,7 @@ INSERT INTO lab_enrollments (id, email, course_id) VALUES
 ```
 
 ## Kết quả và tự kiểm
-Mỗi bảng có ba dòng. an@example.com đăng ký được hai khóa khác nhau. Nếu thêm lần đăng ký thứ hai cho email này với course_id 1, ràng buộc UNIQUE sẽ từ chối.
+Mỗi bảng có ba dòng. Tài khoản an@example.com đăng ký được hai khóa khác nhau. Nếu thêm lần đăng ký thứ hai cho email này với course_id 1, ràng buộc UNIQUE sẽ từ chối.
 
 ## Bài tập nhỏ
 Trong DB thực hành, thử thêm id 4, email demo@example.com, course_id 99 vào lab_enrollments. Khi kiểm khóa ngoại đã bật, thao tác bị từ chối vì chưa có khóa học id 99. Sau đó SELECT bảng đăng ký để xác nhận vẫn có ba dòng.
@@ -556,7 +556,7 @@ MD,
 Truy xuất khóa học đã xuất bản và sắp xếp kết quả ổn định. Dùng dữ liệu lab_ đã tạo ở bài 1.
 
 ## Kiến thức
-SELECT chọn các cột cần lấy. FROM chỉ định bảng. WHERE lọc dòng trước khi trả kết quả. ORDER BY quyết định thứ tự. khi không có ORDER BY, không dựa vào thứ tự đang quan sát để khẳng định các lần chạy sau sẽ giống nhau. Khi một cột có giá trị trùng, có thể bổ sung id làm tiêu chí thứ hai.
+SELECT chọn các cột cần lấy. FROM chỉ định bảng. WHERE lọc dòng trước khi trả kết quả. ORDER BY quyết định thứ tự. Khi không có ORDER BY, không dựa vào thứ tự đang quan sát để khẳng định các lần chạy sau sẽ giống nhau. Khi một cột có giá trị trùng, có thể bổ sung id làm tiêu chí thứ hai.
 
 ## Ví dụ chạy được
 Chạy câu lệnh sau trong DB thực hành.
@@ -572,7 +572,7 @@ ORDER BY id ASC;
 Có hai dòng, theo thứ tự 1 HTML rồi 2 JavaScript. Khóa SQL có status draft nên bị lọc khỏi kết quả. Câu SELECT này đọc dữ liệu, giữ nguyên cả ba dòng trong bảng.
 
 ## Bài tập nhỏ
-Đổi điều kiện thành status = 'draft'. Kết quả chỉ có dòng 3 SQL. Thử điều kiện status = 'archived'. kết quả rỗng là trạng thái hợp lệ vì dữ liệu mẫu chưa có dòng này. Cuối cùng lấy lại hai khóa published nhưng dùng ORDER BY id DESC, JavaScript sẽ đứng trước HTML.
+Đổi điều kiện thành status = 'draft'. Kết quả chỉ có dòng 3 SQL. Thử điều kiện status = 'archived'. Kết quả rỗng là trạng thái hợp lệ vì dữ liệu mẫu chưa có dòng này. Cuối cùng lấy lại hai khóa published nhưng dùng ORDER BY id DESC, JavaScript sẽ đứng trước HTML.
 
 ## Liên hệ ứng dụng
 Khi viết backend với bộ lọc từ người dùng, truyền giá trị vào prepared statement thay vì nối thẳng dữ liệu nhập vào câu SQL. Bài tập ở đây dùng hằng chuỗi cố định để tập trung vào cách lọc và sắp xếp.
@@ -626,7 +626,7 @@ Tạo báo cáo số đăng ký theo khóa, gồm cả khóa SQL chưa có ngư�
 LEFT JOIN giữ mọi dòng bên trái. Khi chưa có đăng ký khớp, các cột phía e là NULL. COUNT(e.id) đếm các id khác NULL nên khóa chưa có đăng ký được 0. COUNT(*) đếm cả dòng được giữ lại bởi LEFT JOIN nên có thể thành 1 trong trường hợp này. GROUP BY gom dữ liệu theo từng khóa.
 
 ## Ví dụ chạy được
-Chạy truy vấn sau. liệt kê cả c.id và c.title trong GROUP BY để rõ ràng và tương thích với cấu hình MySQL kiểm GROUP BY nghiêm ngặt.
+Chạy truy vấn sau. Liệt kê cả c.id và c.title trong GROUP BY để rõ ràng và tương thích với cấu hình MySQL kiểm GROUP BY nghiêm ngặt.
 
 ```sql
 SELECT c.id, c.title, COUNT(e.id) AS enrollments

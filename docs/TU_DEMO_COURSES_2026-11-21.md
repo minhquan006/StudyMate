@@ -73,7 +73,7 @@ Các kết quả mẫu cần đối chiếu gồm tiến độ JavaScript 25, 0,
 
 SQL lọc published trả HTML, JavaScript. INNER JOIN trả ba đăng ký. LEFT JOIN với COUNT(e.id) trả HTML 2, JavaScript 1, SQL 0. Hai thao tác thêm đăng ký có course_id 99 và đăng ký trùng email/khóa bị ràng buộc từ chối.
 
-Các lệnh tái kiểm sau dùng một DB riêng mới có seed gốc. `tests/run.php` và `tests/demo_courses.php` ghi dữ liệu kiểm thử, vì vậy chọn đúng cấu hình QA trước khi chạy.
+Các lệnh tái kiểm sau dùng một DB QA riêng mới có seed gốc. Tạo DB và user QA bằng tài khoản quản trị, chỉ cấp quyền trên DB QA đó (quyền DDL cần cho setup và fixture, gồm CREATE/ALTER/DROP, cùng quyền đọc/ghi dữ liệu). Cấu hình `config.php` của checkout QA dùng **user app này**, không dùng root hoặc DB demo. `tests/run.php` và `tests/demo_courses.php` ghi dữ liệu kiểm thử, vì vậy kiểm đúng cấu hình trước khi chạy. Mỗi lượt chạy đầy đủ cần DB QA mới; bộ kiểm yêu cầu ban đầu chỉ có ba khóa seed gốc.
 
 ```bash
 php tools/setup.php
@@ -81,7 +81,21 @@ php tests/run.php
 STUDYMATE_DISPOSABLE_DB=1 php tests/demo_courses.php
 ```
 
-Trên Compose, dùng project QA riêng theo README và truyền cờ bằng `docker compose exec -T -e STUDYMATE_DISPOSABLE_DB=1 app php tests/demo_courses.php` sau khi chạy service tests trên cùng DB QA. Bộ kiểm mới xác nhận rollback giữa lượt import, bảo toàn từng dòng cũ ở 12 bảng, cấu trúc nội dung/quiz, chấm 6/6 và bảo toàn cả chỉnh sửa tay lẫn lịch sử học khi import lại.
+Fixture MySQL dùng CHECK tạm trên `lessons` để từ chối bài mới đầu tiên, sau khi importer đã tạo khóa/chương. Fixture được gỡ trong `finally`, rồi bộ kiểm thử import lại. Không tạo trigger MySQL, không cần SUPER hoặc thay `log_bin_trust_function_creators`; kiểm được với binary logging bật và biến trust bằng 0. SQLite dùng trigger cục bộ để tạo lỗi tương đương. Chỉ dùng fixture trên DB QA dùng một lần. Nếu dừng tiến trình cưỡng bức, bỏ DB QA và tạo DB mới thay vì dùng DB đó cho demo.
+
+Trên Compose, dùng `.env` theo README, chọn tên project QA **mới chưa có volume** và dùng cả hai tệp cấu hình. App kết nối bằng `DB_USER=studymate`, không phải root.
+
+```bash
+QA_PROJECT=tu-content-qa-20261121-new
+docker compose -p "$QA_PROJECT" -f compose.yaml -f compose.qa.yaml up --build -d --wait
+docker compose -p "$QA_PROJECT" -f compose.yaml -f compose.qa.yaml exec -T app php tools/setup.php
+docker compose -p "$QA_PROJECT" -f compose.yaml -f compose.qa.yaml exec -T app php tests/run.php
+docker compose -p "$QA_PROJECT" -f compose.yaml -f compose.qa.yaml exec -T -e STUDYMATE_DISPOSABLE_DB=1 app php tests/demo_courses.php
+```
+
+Đổi `QA_PROJECT` cho mỗi lượt kiểm đầy đủ. Khi xong, có thể dọn **đúng project QA vừa tạo** bằng `docker compose -p "$QA_PROJECT" -f compose.yaml -f compose.qa.yaml down -v`; thao tác này xóa volume QA. Các lệnh Compose là hướng dẫn cho máy có Docker; lượt sửa review này kiểm trực tiếp PHP/MySQL qua TCP, chưa chạy Compose.
+
+Bộ kiểm xác nhận rollback giữa lượt import, bảo toàn từng dòng cũ ở 12 bảng, cấu trúc nội dung/quiz, chấm 6/6 và bảo toàn cả chỉnh sửa tay lẫn lịch sử học khi import lại. Điều kiện MySQL CHECK xem [MySQL 8.4 CHECK Constraints](https://dev.mysql.com/doc/refman/8.4/en/create-table-check-constraints.html); điều kiện quyền của fixture cũ xem [CREATE TRIGGER](https://dev.mysql.com/doc/refman/8.4/en/create-trigger.html).
 
 ## Nguồn biên soạn
 
@@ -111,3 +125,24 @@ Bộ hồi quy tests/quan/run.py trên SQLite chạy thêm 487 runner checks đ�
 Lint bốn tệp PHP mới đạt. Các thay đổi trong candidate chỉ gồm năm tệp về nội dung, importer, CLI, kiểm thử và tài liệu. Khi bàn giao PR, reviewer có thể chạy lại các lệnh QA ở trên để đối chiếu trên cùng commit.
 
 AI được tắt trong DB QA của lượt này. Nghiệm thu Gemini thật trên bài mới tiếp tục dùng cấu hình và kịch bản nhóm đã thống nhất.
+
+## Sửa góp ý review về fixture MySQL
+
+Đã tái hiện fixture cũ từ `ae8a6b1` bằng user app trên MySQL 8.4.13 với
+`log_bin=1`, `log_bin_trust_function_creators=0`: lỗi 1419 ở CREATE TRIGGER,
+snapshot dữ liệu 12 bảng không đổi. Log lỗi cũ được giữ riêng với log đạt.
+
+Bản sửa thay trigger MySQL bằng CHECK tạm có tên `demo_content_failure`.
+Importer và lệnh CLI không đổi. Bản sửa đồng thời chỉnh viết hoa đầu câu trong
+nội dung và giải thích, giữ nguyên code fence, tiêu đề khóa, cấu trúc và đáp án.
+
+Đã chạy đúng ba lệnh PHP native ở mục tái kiểm, bằng user app chỉ được cấp
+quyền trên DB QA, không có SUPER hay quyền quản trị toàn server. MySQL giữ
+binary logging bật và trust bằng 0. Mỗi driver đạt **14 service checks và
+358 content/importer checks**. Hai lệnh CLI import lại đồng thời trên mỗi driver
+giữ nguyên dữ liệu 12 bảng; fixture được dọn sau lượt kiểm.
+
+Bằng chứng và fingerprint mã được kiểm nằm tại
+`docs/evidence/tu-pr19-mysql-fixture-2026-11-21/`. Runner tái hiện là
+`tests/tu/verify_demo_mysql.py`. Đây là kiểm PHP/MySQL native, không phải kết quả
+chạy container Compose. Lượt sửa review không chạy lại browser, Edge hoặc Gemini.

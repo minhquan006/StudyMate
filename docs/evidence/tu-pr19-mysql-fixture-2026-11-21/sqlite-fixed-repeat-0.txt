@@ -1,0 +1,3 @@
+Đã có, giữ nguyên #4 Thực hành HTML và CSS: trang giới thiệu khóa học
+Đã có, giữ nguyên #5 Thực hành JavaScript: bộ theo dõi việc học
+Đã có, giữ nguyên #6 Thực hành SQL: quản lý đăng ký khóa học

@@ -1,0 +1,10 @@
+{
+    "checks": 3,
+    "tablesUnchanged": 12,
+    "courses": [
+        4,
+        5,
+        6
+    ],
+    "snapshotSha256": "3a681ed002cf6be30f7f00fe5678a8cd8ef1b5cc0b0895040a1217194ff2b121"
+}

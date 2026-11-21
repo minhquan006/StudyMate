@@ -1,0 +1,410 @@
+{
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "guest has no companion assets or widget"
+    },
+    {
+      "browser": "chrome",
+      "name": "server credits seeded lesson with 20 XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "lesson shows reading pose"
+    },
+    {
+      "browser": "chrome",
+      "name": "transparent companion artwork actually loads"
+    },
+    {
+      "browser": "chrome",
+      "name": "launcher opens panel and focuses its close control"
+    },
+    {
+      "browser": "chrome",
+      "name": "XP rewards remain locked below thresholds"
+    },
+    {
+      "browser": "chrome",
+      "name": "next reward shows remaining actual XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "Escape closes panel and returns focus"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 390 card remains in flow within page width"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 768 card remains in flow within page width"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy 1366 card remains in flow within page width"
+    },
+    {
+      "browser": "chrome",
+      "name": "break mode shows coffee pose without hiding character"
+    },
+    {
+      "browser": "chrome",
+      "name": "starting timer returns reading pose but never grants XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy avoids YouTube 390 side 0"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy avoids YouTube 390 side 1"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy avoids YouTube 1366 side 0"
+    },
+    {
+      "browser": "chrome",
+      "name": "buddy avoids YouTube 1366 side 1"
+    },
+    {
+      "browser": "chrome",
+      "name": "small landscape keeps Buddy in page flow while player stays visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "real lesson completion adds 20 XP and celebrates"
+    },
+    {
+      "browser": "chrome",
+      "name": "reload does not repeat earned-XP celebration"
+    },
+    {
+      "browser": "chrome",
+      "name": "50-XP glasses unlock from real lesson progress"
+    },
+    {
+      "browser": "chrome",
+      "name": "equipping cosmetic sends no academic POST"
+    },
+    {
+      "browser": "chrome",
+      "name": "forged locked outfit preference is rejected"
+    },
+    {
+      "browser": "chrome",
+      "name": "six distinct lessons earn 120 XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz keeps companion compact, attempt 0"
+    },
+    {
+      "browser": "chrome",
+      "name": "passing quiz bonus counted once, attempt 0"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz keeps companion compact, attempt 1"
+    },
+    {
+      "browser": "chrome",
+      "name": "passing quiz bonus counted once, attempt 1"
+    },
+    {
+      "browser": "chrome",
+      "name": "170 XP unlocks red outfit and crown, not student jacket"
+    },
+    {
+      "browser": "chrome",
+      "name": "outfit and accessory survive navigation"
+    },
+    {
+      "browser": "chrome",
+      "name": "returning advanced account gets one gentle reminder"
+    },
+    {
+      "browser": "chrome",
+      "name": "another account does not inherit red outfit"
+    },
+    {
+      "browser": "chrome",
+      "name": "advanced account equips unlocked jacket and crown"
+    },
+    {
+      "browser": "chrome",
+      "name": "close control stays reachable by scrolling wardrobe card"
+    },
+    {
+      "browser": "chrome",
+      "name": "same-day reload does not repeat reminder"
+    },
+    {
+      "browser": "chrome",
+      "name": "minimize leaves accessible restore pill"
+    },
+    {
+      "browser": "chrome",
+      "name": "minimized choice persists on this browser"
+    },
+    {
+      "browser": "chrome",
+      "name": "restore reopens panel and preserves reminder opt-out"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion removes character animation"
+    },
+    {
+      "browser": "chrome",
+      "name": "first account restores its own wardrobe after switch"
+    },
+    {
+      "browser": "chrome",
+      "name": "blocked storage keeps buddy and lesson usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "blocked storage has clear preference feedback"
+    },
+    {
+      "browser": "chrome",
+      "name": "corrupt preferences recover to default outfit"
+    },
+    {
+      "browser": "chrome",
+      "name": "without JavaScript ordinary lesson remains available"
+    },
+    {
+      "browser": "chrome",
+      "name": "instructor1 has no student companion"
+    },
+    {
+      "browser": "chrome",
+      "name": "admin has no student companion"
+    },
+    {
+      "browser": "edge",
+      "name": "guest has no companion assets or widget"
+    },
+    {
+      "browser": "edge",
+      "name": "server credits seeded lesson with 20 XP"
+    },
+    {
+      "browser": "edge",
+      "name": "lesson shows reading pose"
+    },
+    {
+      "browser": "edge",
+      "name": "transparent companion artwork actually loads"
+    },
+    {
+      "browser": "edge",
+      "name": "launcher opens panel and focuses its close control"
+    },
+    {
+      "browser": "edge",
+      "name": "XP rewards remain locked below thresholds"
+    },
+    {
+      "browser": "edge",
+      "name": "next reward shows remaining actual XP"
+    },
+    {
+      "browser": "edge",
+      "name": "Escape closes panel and returns focus"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 390 card remains in flow within page width"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 768 card remains in flow within page width"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy 1366 card remains in flow within page width"
+    },
+    {
+      "browser": "edge",
+      "name": "break mode shows coffee pose without hiding character"
+    },
+    {
+      "browser": "edge",
+      "name": "starting timer returns reading pose but never grants XP"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy avoids YouTube 390 side 0"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy avoids YouTube 390 side 1"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy avoids YouTube 1366 side 0"
+    },
+    {
+      "browser": "edge",
+      "name": "buddy avoids YouTube 1366 side 1"
+    },
+    {
+      "browser": "edge",
+      "name": "small landscape keeps Buddy in page flow while player stays visible"
+    },
+    {
+      "browser": "edge",
+      "name": "real lesson completion adds 20 XP and celebrates"
+    },
+    {
+      "browser": "edge",
+      "name": "reload does not repeat earned-XP celebration"
+    },
+    {
+      "browser": "edge",
+      "name": "50-XP glasses unlock from real lesson progress"
+    },
+    {
+      "browser": "edge",
+      "name": "equipping cosmetic sends no academic POST"
+    },
+    {
+      "browser": "edge",
+      "name": "forged locked outfit preference is rejected"
+    },
+    {
+      "browser": "edge",
+      "name": "six distinct lessons earn 120 XP"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz keeps companion compact, attempt 0"
+    },
+    {
+      "browser": "edge",
+      "name": "passing quiz bonus counted once, attempt 0"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz keeps companion compact, attempt 1"
+    },
+    {
+      "browser": "edge",
+      "name": "passing quiz bonus counted once, attempt 1"
+    },
+    {
+      "browser": "edge",
+      "name": "170 XP unlocks red outfit and crown, not student jacket"
+    },
+    {
+      "browser": "edge",
+      "name": "outfit and accessory survive navigation"
+    },
+    {
+      "browser": "edge",
+      "name": "returning advanced account gets one gentle reminder"
+    },
+    {
+      "browser": "edge",
+      "name": "another account does not inherit red outfit"
+    },
+    {
+      "browser": "edge",
+      "name": "advanced account equips unlocked jacket and crown"
+    },
+    {
+      "browser": "edge",
+      "name": "close control stays reachable by scrolling wardrobe card"
+    },
+    {
+      "browser": "edge",
+      "name": "same-day reload does not repeat reminder"
+    },
+    {
+      "browser": "edge",
+      "name": "minimize leaves accessible restore pill"
+    },
+    {
+      "browser": "edge",
+      "name": "minimized choice persists on this browser"
+    },
+    {
+      "browser": "edge",
+      "name": "restore reopens panel and preserves reminder opt-out"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion removes character animation"
+    },
+    {
+      "browser": "edge",
+      "name": "first account restores its own wardrobe after switch"
+    },
+    {
+      "browser": "edge",
+      "name": "blocked storage keeps buddy and lesson usable"
+    },
+    {
+      "browser": "edge",
+      "name": "blocked storage has clear preference feedback"
+    },
+    {
+      "browser": "edge",
+      "name": "corrupt preferences recover to default outfit"
+    },
+    {
+      "browser": "edge",
+      "name": "without JavaScript ordinary lesson remains available"
+    },
+    {
+      "browser": "edge",
+      "name": "instructor1 has no student companion"
+    },
+    {
+      "browser": "edge",
+      "name": "admin has no student companion"
+    },
+    {
+      "browser": "all",
+      "name": "no JavaScript page errors"
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "158.0.4370.33"
+  },
+  "limits": [
+    "Windows Chrome/Edge viewports, not physical phones or Safari.",
+    "Disposable SQLite only. No MySQL, Docker or real Gemini."
+  ],
+  "finished": "2026-11-21T15:19:31.914Z"
+}

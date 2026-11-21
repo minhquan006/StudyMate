@@ -1,0 +1,48 @@
+{
+  "basePR": 22,
+  "baseSHA": "7f374926acdf3b2c6a1fa9e08b204b39e7777299",
+  "sourcePR": 21,
+  "sourceSHA": "79d877ada8da4301c97d9149c1ae6e29b76544e3",
+  "checks": {
+    "integration": 143,
+    "notes": 93,
+    "space": 158,
+    "buddy": 99
+  },
+  "unchangedCanonicalFiles": [
+    "public/assets/app.css",
+    "public/assets/glass.css",
+    "public/assets/glass-workspace.css",
+    "public/assets/preferences.css",
+    "public/assets/glass.js",
+    "app/glass_views.php",
+    "app/course_media.php"
+  ],
+  "textHashConvention": "SHA-256 after CRLF to LF normalization",
+  "sourceSha256": {
+    "app/bootstrap.php": "672e4a59c644cd648500d3e334218d04a634783463fb928afb1b438ce914cb75",
+    "app/layout.php": "489142513bde6a223c48f01e3bfeab8b2c25de8c075bd9d881760b5dcb8bf0d9",
+    "app/views.php": "0a58166ab169c724ebddf3ba845ffba7c6b8060e76cddb94a536142ced08ffc2",
+    "app/learning_utilities.php": "76432c14dfdcd4cf8ae6f2f20de41e840bf503c01f1acb511367c20e79f73cb1",
+    "app/lesson_notes_view.php": "e5880af99598290a19103bb65b078ecfd88a0eddf4621479950e33395432071c",
+    "app/study_buddy.php": "1b95264da59f63fc3551f56929ee6f4bdd781664c0f2a02294af3323ec8bd7ab",
+    "app/study_space_view.php": "c675e48384c6b5355fa463d3c83d479a031842230d725671715cebffc4f399ea",
+    "app/lang/learning.en.php": "a6f98772b3fcb6eb72f9a8d05914c30e241edb29549ca01923ff2730b785401b",
+    "public/assets/forms.js": "45402497fd69d01cc7cd89f742ea695c3e4cb30f1f745f24c3b292813e3eb3c3",
+    "public/assets/preferences.js": "75dd6fc7a90574cebd1080f1b61ccd6b8863a1823b019377c6f65f8bbe1147cc",
+    "public/assets/learning-utilities.css": "6bf1dca5dd3502123bf444716ad9ee90e78dadf91ac8f6420f8d395175637d64",
+    "public/assets/learning-utilities-i18n.js": "85f6e78dc179318ecd76994f52916ba7143bebb40fcd059293048a2d3c965969",
+    "public/assets/lesson-notes.css": "ee044eaa66bef323aeb08f52355dc379c15624ed3bc147aac79661d9d275a970",
+    "public/assets/lesson-notes.js": "0ddfeb1e76406cd9b3ade9c5bf0455ad857a618afec0d8aa9ecab0bc7a7c123a",
+    "public/assets/study-space.css": "6d432e96b848b23db56dd6171895d021fe219f926eb2cf58b65202172d11f89a",
+    "public/assets/study-space.js": "40bc8dd630134aa28f85b67d559174b4e2fd309406dfb6cc80fe638d11758c5a",
+    "public/assets/study-buddy.css": "a0413e4eb71d7eb235309cb57dca22980e3feee2ccfabb559720ec6b6d66d17c",
+    "public/assets/study-buddy.js": "b45c55e36be5674dd6196f0b6b963703797897d377de8a44332e96949b14a68f",
+    "tests/learning-utilities-integration.cjs": "cc69c3058739268b70475d3d5fbeac52bc2474ad4e377678c9d4e1e8740c69c6",
+    "tests/lesson-notes.cjs": "7868c59d32c051906e6a223d337c08de0613baa670cd0abae20d1af677f66aca",
+    "tests/study-space.cjs": "ae3209bc65e465f1e3c35c03c48542a6c2a6d225c2b4991a3719953edc052614",
+    "tests/study-buddy.cjs": "8f4ea925d3860343e279a90bc7013bee952fc19c97a085b6699e5f687743014d",
+    "tests/study_buddy.php": "d3a4af99a2ca2428fe27ebe575107ef950bd8f6fc89c0bed2fa2cddb6e8b5e66",
+    "tests/study_buddy_fixture.php": "af80969ab16a0367b20cfcbe532843a19e7bf17817a88d318d8d52d5f4de4059"
+  }
+}

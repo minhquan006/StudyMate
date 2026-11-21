@@ -1,0 +1,38 @@
+{
+  "main": "6b79ef34d632aebc07884fa981cc75b162cd4bce",
+  "unchangedFromMain": [
+    "app/actions.php",
+    "app/services.php",
+    "app/management_views.php",
+    "app/glass_views.php",
+    "app/course_media.php",
+    "database/seed.php",
+    "database/demo_courses.php",
+    "database/seed_demo_courses.php",
+    "public/assets/app.css",
+    "public/assets/glass.css",
+    "public/assets/glass-workspace.css",
+    "public/assets/preferences.css",
+    "public/assets/glass.js",
+    "README.md",
+    "Readme.txt"
+  ],
+  "hashConvention": "SHA-256 normalized LF for text",
+  "sourceSha256": {
+    "app/actions.php": "c8e31490cfb09c67be9f310180ccb7b5f9b439020f851352bc8109362e8d403a",
+    "app/services.php": "f8ea61946ed5e2a0926013e76750ac2e224955841767e0a9189d3be276b19ca7",
+    "app/management_views.php": "b99a0704e5fbac7942cbd62fa366e676b6aff77ca7fcce32c662f29c88e5cb58",
+    "app/glass_views.php": "3adf18c11a92a14f7ec2c403b72546d9f7c801e935a3661b3999304a5de6e145",
+    "app/course_media.php": "20782baf2e2574653f8cb4288dd6f4299ecb86e4911a79f5399f645893ea67a4",
+    "database/seed.php": "6b4c6108ce0103795e701dbfb14233bda22c468d9fd2bdcde24664a1d6a68cd1",
+    "database/demo_courses.php": "7e66a7694e43c5ead9838443b02b15e1f55ca503cf73ad9d2d8df45ba4b239fa",
+    "database/seed_demo_courses.php": "b15446f4c8f49555f6d1b746333c3ac38bddcf6e94d790279ba3a895e503f239",
+    "public/assets/app.css": "db9ef55e78212f87bd9a7bea1bae986b3788469d3c095c90f81792815a727854",
+    "public/assets/glass.css": "8df6e489f8160c63d460e7353c47cdefb12810942d71ad10a856fb381a1141f2",
+    "public/assets/glass-workspace.css": "7439d61358a1f401a1a390b37c485aefa82cb69a0238fa89e744174890b5db80",
+    "public/assets/preferences.css": "0e4bcd8863600e26a10669948e442aa14d6affcb67a2261fafbcbeefd3ca3e90",
+    "public/assets/glass.js": "f60476eece9675b231e42ca9e6372d9939689f75dba01ec61ff982bfccfe19ae",
+    "README.md": "18e33fc97cc07649e338e91e945d6118a70479b446ec7d4f552119c6665cf8c2",
+    "Readme.txt": "18e33fc97cc07649e338e91e945d6118a70479b446ec7d4f552119c6665cf8c2"
+  }
+}

@@ -27,7 +27,10 @@
     // Native navigation retains beforeunload protection for unsubmitted quizzes.
     language.addEventListener('change', () => {
       const allowed = document.dispatchEvent(new CustomEvent('studymate:before-language-change', {cancelable: true}));
-      if (allowed) { form.action='/index.php'+location.hash; form.requestSubmit(); }
+      if (allowed) {
+        document.dispatchEvent(new CustomEvent('studymate:language-navigation-approved'));
+        form.action='/index.php'+location.hash; form.requestSubmit();
+      }
       else language.value = root.lang;
     });
     const settings=document.querySelector('#display-settings');

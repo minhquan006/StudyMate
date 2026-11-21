@@ -1,0 +1,311 @@
+{
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "notes do not appear on public home"
+    },
+    {
+      "browser": "chrome",
+      "name": "fresh lesson has an empty optional notebook"
+    },
+    {
+      "browser": "chrome",
+      "name": "notebook opens with keyboard"
+    },
+    {
+      "browser": "chrome",
+      "name": "typing and autosave never send an academic POST"
+    },
+    {
+      "browser": "chrome",
+      "name": "autosave gives saved feedback"
+    },
+    {
+      "browser": "chrome",
+      "name": "counter counts Unicode code points"
+    },
+    {
+      "browser": "chrome",
+      "name": "actual UTF-8 download preserves Vietnamese, code and metadata"
+    },
+    {
+      "browser": "chrome",
+      "name": "download filename is a safe plain-text filename"
+    },
+    {
+      "browser": "chrome",
+      "name": "note restores after reload"
+    },
+    {
+      "browser": "chrome",
+      "name": "existing note reopens its editor"
+    },
+    {
+      "browser": "chrome",
+      "name": "note markup stays plain text and never executes"
+    },
+    {
+      "browser": "chrome",
+      "name": "over-limit draft remains visible without replacing valid saved note"
+    },
+    {
+      "browser": "chrome",
+      "name": "exact Unicode limit accepts 20,000 emoji"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 390 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 768 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes 1366 textarea has accessible label"
+    },
+    {
+      "browser": "chrome",
+      "name": "different lesson does not inherit note"
+    },
+    {
+      "browser": "chrome",
+      "name": "next-lesson POST flushes draft before autosave delay"
+    },
+    {
+      "browser": "chrome",
+      "name": "previous lesson note remains available"
+    },
+    {
+      "browser": "chrome",
+      "name": "notes stay outside completion POST and preserve CSRF/action"
+    },
+    {
+      "browser": "chrome",
+      "name": "only actual completion changes Buddy XP"
+    },
+    {
+      "browser": "chrome",
+      "name": "completion POST preserves note"
+    },
+    {
+      "browser": "chrome",
+      "name": "other tab cannot silently replace an active draft"
+    },
+    {
+      "browser": "chrome",
+      "name": "conflict suspends autosave and preserves newer saved version"
+    },
+    {
+      "browser": "chrome",
+      "name": "cancel conflict choice keeps current draft"
+    },
+    {
+      "browser": "chrome",
+      "name": "explicit read-new choice loads saved version"
+    },
+    {
+      "browser": "chrome",
+      "name": "explicit keep-draft choice updates clean other tab"
+    },
+    {
+      "browser": "chrome",
+      "name": "cancel delete retains note"
+    },
+    {
+      "browser": "chrome",
+      "name": "confirmed delete removes only current lesson note"
+    },
+    {
+      "browser": "chrome",
+      "name": "delete does not remove other lesson notes"
+    },
+    {
+      "browser": "chrome",
+      "name": "quota failure retains visible draft"
+    },
+    {
+      "browser": "chrome",
+      "name": "download remains available when storage is full"
+    },
+    {
+      "browser": "chrome",
+      "name": "cancel unsaved-note exit never locks native completion form"
+    },
+    {
+      "browser": "chrome",
+      "name": "retry after recovery saves and completes lesson normally"
+    },
+    {
+      "browser": "chrome",
+      "name": "confirmed unsaved exit produces one dialog and completes once"
+    },
+    {
+      "browser": "chrome",
+      "name": "corrupt saved note offers recovery"
+    },
+    {
+      "browser": "chrome",
+      "name": "corrupt original is not silently overwritten"
+    },
+    {
+      "browser": "chrome",
+      "name": "raw recovery download preserves original bytes as text"
+    },
+    {
+      "browser": "chrome",
+      "name": "cancel starting new keeps recovery state"
+    },
+    {
+      "browser": "chrome",
+      "name": "explicit new-note choice safely replaces corrupt record"
+    },
+    {
+      "browser": "chrome",
+      "name": "no-JavaScript lesson stays readable without inactive notes UI"
+    },
+    {
+      "browser": "chrome",
+      "name": "another account does not inherit personal notes"
+    },
+    {
+      "browser": "chrome",
+      "name": "first account restores its own note after switch"
+    },
+    {
+      "browser": "edge",
+      "name": "notes do not appear on public home"
+    },
+    {
+      "browser": "edge",
+      "name": "fresh lesson has an empty optional notebook"
+    },
+    {
+      "browser": "edge",
+      "name": "notebook opens with keyboard"
+    },
+    {
+      "browser": "edge",
+      "name": "typing and autosave never send an academic POST"
+    },
+    {
+      "browser": "edge",
+      "name": "autosave gives saved feedback"
+    },
+    {
+      "browser": "edge",
+      "name": "counter counts Unicode code points"
+    },
+    {
+      "browser": "edge",
+      "name": "actual UTF-8 download preserves Vietnamese, code and metadata"
+    },
+    {
+      "browser": "edge",
+      "name": "download filename is a safe plain-text filename"
+    },
+    {
+      "browser": "edge",
+      "name": "note restores after reload"
+    },
+    {
+      "browser": "edge",
+      "name": "existing note reopens its editor"
+    },
+    {
+      "browser": "edge",
+      "name": "note markup stays plain text and never executes"
+    },
+    {
+      "browser": "edge",
+      "name": "over-limit draft remains visible without replacing valid saved note"
+    },
+    {
+      "browser": "edge",
+      "name": "exact Unicode limit accepts 20,000 emoji"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 390 textarea has accessible label"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 768 textarea has accessible label"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "notes 1366 textarea has accessible label"
+    },
+    {
+      "browser": "edge",
+      "name": "different lesson does not inherit note"
+    },
+    {
+      "browser": "edge",
+      "name": "next-lesson POST flushes draft before autosave delay"
+    },
+    {
+      "browser": "edge",
+      "name": "previous lesson note remains available"
+    },
+    {
+      "browser": "edge",
+      "name": "notes stay outside completion POST and preserve CSRF/action"
+    },
+    {
+      "browser": "edge",
+      "name": "only actual completion changes Buddy XP"
+    },
+    {
+      "browser": "edge",
+      "name": "completion POST preserves note"
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "158.0.4370.33"
+  },
+  "downloads": [
+    {
+      "browser": "chrome",
+      "file": "note-chrome.txt",
+      "suggested": "StudyMate-JavaScript-co-ban-Bien-va-kieu-du-lieu.txt"
+    },
+    {
+      "browser": "edge",
+      "file": "note-edge.txt",
+      "suggested": "StudyMate-JavaScript-co-ban-Bien-va-kieu-du-lieu.txt"
+    }
+  ],
+  "limits": [
+    "Disposable SQLite only; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones or Safari."
+  ],
+  "failure": "page.waitForFunction: Timeout 30000ms exceeded.\n    at D:\\TDTU\\Web\\StudyMate\\tests\\lesson-notes.cjs:84:17",
+  "finished": "2026-11-21T15:11:13.239Z"
+}

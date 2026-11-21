@@ -1,0 +1,10 @@
+{
+  "reviewedHead": "c050b352f6a2f5053cb5f5c0a2e72b0942d3d1ab",
+  "basePR22": "7f374926acdf3b2c6a1fa9e08b204b39e7777299",
+  "hashConvention": "SHA-256 with CRLF normalized to LF for source text",
+  "sourceSha256": {
+    "public/assets/study-space.css": "7314db5720207e7b158aa579d412e3abe7d9c1f6e088d085b4189cd86c1e16e0",
+    "tests/study-space-sticky.cjs": "f366f194df261da4eb59f58571d52a7a17c11268d484306c860d5f725e68b028"
+  },
+  "beforeCssSha256LF": "6d432e96b848b23db56dd6171895d021fe219f926eb2cf58b65202172d11f89a"
+}

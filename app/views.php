@@ -86,20 +86,21 @@ function pageLearn(int $id):void {
     $progress=progressFor((int)$user['id'],$id);
     $lessonNumber=array_search($lid,array_map('intval',array_column($lessons,'id')),true)+1;
     ?><main class="container wide learning-page">
-        <div class="learning-top"><div><a class="breadcrumb-link" href="<?=h(url('student'))?>"><?=h(t('Khóa học của tôi'))?></a><p class="learn-course-name"><?=h($course['title'])?></p></div><div class="learning-shortcuts"><a href="#course-outline"><?=h(t('Danh sách bài học'))?></a><a href="#study-assistant"><?=h(t('Hỏi trợ lý AI'))?></a></div></div>
+        <div class="learning-top"><div><a class="breadcrumb-link" href="<?=h(url('student'))?>"><?=h(t('Khóa học của tôi'))?></a><p class="learn-course-name"><?=h($course['title'])?></p></div><div class="learning-shortcuts"><a href="#course-outline"><?=h(t('Danh sách bài học'))?></a><a href="#study-assistant"><?=h(t('Hỏi trợ lý AI'))?></a><button class="btn btn-outline-secondary" id="study-space-toggle" type="button" aria-controls="study-space" aria-expanded="false" hidden><?=h(ut('Không gian học tập'))?></button></div></div>
         <div class="learning-grid"><div class="reading-column">
-            <section class="panel lesson-panel"><p class="lesson-position"><?=h(t('BÀI'))?> <?=$lessonNumber?> / <?=count($lessons)?> · <?=h($lessons[$lessonNumber-1]['chapter_title'])?></p><?php lessonViewer($lesson); ?>
+            <section class="panel lesson-panel" id="lesson-reading"><p class="lesson-position"><?=h(t('BÀI'))?> <?=$lessonNumber?> / <?=count($lessons)?> · <?=h($lessons[$lessonNumber-1]['chapter_title'])?></p><?php lessonViewer($lesson); ?>
                 <div class="lesson-actions"><?=formStart('complete',['lesson_id'=>$lid,'course_id'=>$id,'return_page'=>'learn'])?><button class="btn btn-primary" <?=in_array($lid,$done,true)?'disabled':''?>><?=in_array($lid,$done,true)?t('✓ Đã hoàn thành bài'):t('Đánh dấu hoàn thành')?></button></form><?php if(isset($lessons[$lessonNumber])): $next=$lessons[$lessonNumber]; echo formStart('last_lesson',['course_id'=>$id,'lesson_id'=>$next['id'],'return_page'=>'learn']); ?><button class="btn btn-outline-secondary"><?=h(t('Bài tiếp theo'))?> <?=uiIcon('arrow')?></button></form><?php else: ?><a class="btn btn-outline-secondary" href="<?=h(url('quiz',['id'=>$id]))?>"><?=h(t('Đến quiz cuối khóa'))?></a><?php endif; ?></div>
                 <p class="small muted mt-3"><?=h(t('Tiến độ được ghi khi bạn đánh dấu hoàn thành bài.'))?></p>
             </section>
+            <?php require_once __DIR__.'/lesson_notes_view.php';renderLessonNotes((int)$user['id'],$course,$lesson); ?>
             <?php renderAiPanel($lesson,$lid,$id); ?>
             </div>
-            <aside class="panel outline" id="course-outline" aria-labelledby="outline-title"><h2 id="outline-title"><?=h(t('Nội dung khóa học'))?></h2><p class="small muted"><?=$progress['done']?> / <?=$progress['total']?> <?=h(t('bài đã hoàn thành'))?></p><?php progressBar($progress); ?>
+            <div class="learning-rail"><?php require_once __DIR__.'/study_space_view.php';renderStudySpace((int)$user['id'],$id); ?><details class="lesson-list-wrap" open><summary><?=h(t('Danh sách bài học'))?> <span><?=$progress['done']?> / <?=$progress['total']?></span></summary><aside class="panel outline" id="course-outline" aria-labelledby="outline-title"><h2 id="outline-title"><?=h(t('Nội dung khóa học'))?></h2><p class="small muted"><?=$progress['done']?> / <?=$progress['total']?> <?=h(t('bài đã hoàn thành'))?></p><?php progressBar($progress); ?>
                 <?php foreach(all('SELECT * FROM chapters WHERE course_id=? ORDER BY position,id',[$id]) as $chapter): ?><h3><?=h($chapter['title'])?></h3>
                     <?php foreach($lessons as $item)if((int)$item['chapter_id']===(int)$chapter['id']): echo formStart('last_lesson',['course_id'=>$id,'lesson_id'=>$item['id'],'return_page'=>'learn']); ?><button class="lesson-link <?=$lid===(int)$item['id']?'active':''?>" <?=$lid===(int)$item['id']?'aria-current="step"':''?>><span class="lesson-marker" aria-hidden="true"><?=in_array((int)$item['id'],$done,true)?'✓':'○'?></span><span><?=h($item['title'])?><?php if(in_array((int)$item['id'],$done,true)): ?><span class="visually-hidden"> <?=h(t('— Đã hoàn thành'))?></span><?php endif; ?></span></button></form><?php endif; ?>
                 <?php endforeach; ?>
                 <a class="btn btn-outline-secondary outline-quiz" href="<?=h(url('quiz',['id'=>$id]))?>"><?=h(t('Quiz cuối khóa'))?></a><?php if($progress['percent']<100): ?><p class="small muted outline-note"><?=h(t('Hoàn thành tất cả bài học để mở quiz.'))?></p><?php endif; ?>
-            </aside>
+            </aside></details></div>
 
         </div>
     </main><?php

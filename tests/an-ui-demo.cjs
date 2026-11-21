@@ -102,7 +102,7 @@ async function snapshot(page, name, browser) {
                 page.on('pageerror', error => report.errors.push(engine.name + ': ' + error.message));
                 await page.goto(base + '/index.php?page=home');
                 await page.getByRole('search', { name:'Tìm khóa học toàn trang' }).locator('[name=q]').fill('JavaScript');
-                await Promise.all([page.waitForNavigation(), page.locator('.global-search input').press('Enter')]);
+                await Promise.all([page.waitForNavigation(), page.locator('.global-search [name=q]').press('Enter')]);
                 check(new URL(page.url()).searchParams.get('q') === 'JavaScript' && await page.locator('.course-card').count() === 1, 'global search submits native GET and returns matching course', engine.name);
                 await page.locator('.subject-nav').getByRole('link', { name:'Lập trình web', exact:true }).click();
                 check(await page.locator('.course-card h3').innerText() === 'HTML và CSS cơ bản' && await page.locator('.catalog-filter select').inputValue() !== '', 'subject navigation applies category and preserves selected filter', engine.name);
@@ -201,7 +201,7 @@ async function snapshot(page, name, browser) {
                 const plain = await browser.newContext({ javaScriptEnabled:false, viewport:{ width:390, height:844 } });
                 const nativePage = await plain.newPage();
                 await nativePage.goto(base + '/index.php?page=home');
-                await nativePage.locator('.global-search input').fill('HTML');
+                await nativePage.locator('.global-search [name=q]').fill('HTML');
                 await Promise.all([nativePage.waitForNavigation(), nativePage.locator('.global-search button').click()]);
                 check(await nativePage.locator('.course-card').count() === 1, 'global search works with JavaScript disabled', engine.name);
                 await nativePage.getByLabel('Tìm theo tên khóa học').fill('');

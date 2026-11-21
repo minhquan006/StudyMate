@@ -20,6 +20,21 @@ async function open(p) { if (!(await p.locator('#lesson-notes-details').getAttri
 async function saved(p,key,text) { await p.waitForFunction(({key,text}) => JSON.parse(localStorage.getItem(key) || 'null')?.text === text,{key,text}); }
 async function shot(p,name,engine) { if(engine==='chrome') await p.screenshot({path:path.join(out,name+'.png')}); }
 async function approve(p,button,accept) { p.once('dialog',d=>accept?d.accept():d.dismiss()); await button.click(); }
+async function conflict(p,draft,otherDraft) {
+  await p.bringToFront();
+  // Set up both edits and the other tab's save in one browser task. Autosave
+  // cannot run between these steps on a slow host; real storage events still
+  // deliver the conflict, and the normal 700ms timer runs afterwards.
+  await p.evaluate(({draft,otherDraft}) => {
+    const other=window.open('', 'studymate-notes-conflict');
+    if(!other||other.closed)throw new Error('Other notes tab missing');
+    for(const [win,text] of [[window,draft],[other,otherDraft]]) {
+      const input=win.document.getElementById('lesson-note-input');
+      input.value=text;input.dispatchEvent(new win.Event('input',{bubbles:true}));
+    }
+    other.document.getElementById('lesson-note-save').click();
+  },{draft,otherDraft});
+}
 
 (async()=>{
   try {
@@ -28,7 +43,7 @@ async function approve(p,button,accept) { p.once('dialog',d=>accept?d.accept():d
       report.browsers[engine.name] = b.version();
       try {
         const c = await b.newContext({viewport:{width:1366,height:900},acceptDownloads:true});
-        const p = await c.newPage(); await p.clock.install(); p.on('pageerror',e=>report.errors.push(engine.name+': '+e.message));
+        const p = await c.newPage(); p.on('pageerror',e=>report.errors.push(engine.name+': '+e.message));
         let posts=0; p.on('request',r=>{if(r.method()==='POST')posts++;});
         await p.goto(engine.base+'/index.php?page=home');
         check(await p.locator('#lesson-notes').count()===0,'notes do not appear on public home',engine.name);
@@ -78,21 +93,19 @@ async function approve(p,button,accept) { p.once('dialog',d=>accept?d.accept():d
         check(!fields.has('notes')&&!fields.has('note')&&fields.get('action')==='complete'&&!!fields.get('csrf'),'notes stay outside completion POST and preserve CSRF/action',engine.name);
         check(await p.locator('#study-buddy').getAttribute('data-xp')==='40','only actual completion changes Buddy XP',engine.name);
         check((await p.locator('#lesson-note-input').inputValue()).includes('Đã đối chiếu'),'completion POST preserves note',engine.name);
-        await p.goto(url+'7'); const q=await c.newPage(); await q.goto(url+'7'); await open(p); await open(q);
-        // Keep tab A dirty while interacting with tab B, regardless of host load.
-        // Advancing A's autosave clock explicitly below still tests suspension.
-        await p.clock.pauseAt(new Date((await p.evaluate(() => Date.now())) + 60000));
-        await p.locator('#lesson-note-input').fill('Bản đang sửa ở tab A');
-        await q.locator('#lesson-note-input').fill('Bản mới từ tab B'); await q.locator('#lesson-note-save').click();
+        await p.goto(url+'7'); const popup=p.waitForEvent('popup');
+        await p.evaluate(address=>{window.open(address,'studymate-notes-conflict');},url+'7');
+        const q=await popup;await q.waitForLoadState();await open(p);await open(q);
+        await conflict(p,'Bản đang sửa ở tab A','Bản mới từ tab B');
         await p.waitForFunction(()=>!document.querySelector('#lesson-note-conflict').hidden);
         check(await p.locator('#lesson-note-input').inputValue()==='Bản đang sửa ở tab A','other tab cannot silently replace an active draft',engine.name);
-        await p.clock.fastForward(900);
+        await p.waitForTimeout(900);
         check(await p.evaluate(key=>JSON.parse(localStorage.getItem(key)).text,key)==='Bản mới từ tab B','conflict suspends autosave and preserves newer saved version',engine.name);
         await approve(p,p.locator('#lesson-note-use-saved'),false);
         check(await p.locator('#lesson-note-input').inputValue()==='Bản đang sửa ở tab A','cancel conflict choice keeps current draft',engine.name);
         await approve(p,p.locator('#lesson-note-use-saved'),true);
         check(await p.locator('#lesson-note-input').inputValue()==='Bản mới từ tab B','explicit read-new choice loads saved version',engine.name);
-        await p.locator('#lesson-note-input').fill('Bản A được chọn giữ'); await q.locator('#lesson-note-input').fill('Bản B tiếp theo'); await q.locator('#lesson-note-save').click();
+        await conflict(p,'Bản A được chọn giữ','Bản B tiếp theo');
         await p.waitForFunction(()=>!document.querySelector('#lesson-note-conflict').hidden);
         await approve(p,p.locator('#lesson-note-keep-draft'),true); await saved(p,key,'Bản A được chọn giữ');
         await q.waitForFunction(()=>document.querySelector('#lesson-note-input').value==='Bản A được chọn giữ');
@@ -101,7 +114,7 @@ async function approve(p,button,accept) { p.once('dialog',d=>accept?d.accept():d
         await approve(p,p.locator('#lesson-note-clear'),true);
         check(await p.locator('#lesson-note-input').inputValue()===''&&await p.evaluate(key=>localStorage.getItem(key),key)===null,'confirmed delete removes only current lesson note',engine.name);
         check((await p.evaluate(()=>JSON.parse(localStorage.getItem('studymate:notes:v1:1:2:8')).text)).includes('Đã đối chiếu'),'delete does not remove other lesson notes',engine.name);
-        await q.close(); await p.clock.resume();
+        await q.close();
 
         const blocked=await b.newContext({storageState:auth,acceptDownloads:true,viewport:{width:390,height:900}});
         await blocked.addInitScript(()=>{window.__notesFail=true;const set=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(window.__notesFail&&k.startsWith('studymate:notes:'))throw new DOMException('Full','QuotaExceededError');return set.call(this,k,v)}});

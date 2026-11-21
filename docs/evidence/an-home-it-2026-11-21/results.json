@@ -1,0 +1,514 @@
+{
+  "started": "2026-11-21T07:02:13.846Z",
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "home HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "supplied logo in header and footer"
+    },
+    {
+      "browser": "chrome",
+      "name": "local SVG favicon loads"
+    },
+    {
+      "browser": "chrome",
+      "name": "three IT illustrations"
+    },
+    {
+      "browser": "chrome",
+      "name": "only active slide exposed to assistive technology"
+    },
+    {
+      "browser": "chrome",
+      "name": "automatic slide moves left to second image"
+    },
+    {
+      "browser": "chrome",
+      "name": "automatic slide reaches third image"
+    },
+    {
+      "browser": "chrome",
+      "name": "automatic slide reverses towards right"
+    },
+    {
+      "browser": "chrome",
+      "name": "next control selects image"
+    },
+    {
+      "browser": "chrome",
+      "name": "previous control selects image"
+    },
+    {
+      "browser": "chrome",
+      "name": "manual image choice announces its name"
+    },
+    {
+      "browser": "chrome",
+      "name": "pause prevents automatic changes"
+    },
+    {
+      "browser": "chrome",
+      "name": "keyboard resumes automatic changes"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion disables automatic play"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion still permits manual selection"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion removes sliding transition"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 390 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 390 signup action intact"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 390 artwork does not cover copy"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 768 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 768 signup action intact"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 768 artwork does not cover copy"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1366 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1366 signup action intact"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1366 artwork does not cover copy"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1920 no horizontal overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1920 signup action intact"
+    },
+    {
+      "browser": "chrome",
+      "name": "home 1920 artwork does not cover copy"
+    },
+    {
+      "browser": "chrome",
+      "name": "header search submits existing course query"
+    },
+    {
+      "browser": "chrome",
+      "name": "login logo renders"
+    },
+    {
+      "browser": "chrome",
+      "name": "login no overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "register logo renders"
+    },
+    {
+      "browser": "chrome",
+      "name": "register no overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "detail&id=1 logo renders"
+    },
+    {
+      "browser": "chrome",
+      "name": "detail&id=1 no overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "signed-in hero keeps student action"
+    },
+    {
+      "browser": "chrome",
+      "name": "learning content and focus toggle remain available"
+    },
+    {
+      "browser": "chrome",
+      "name": "learning header uses supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 390 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 768 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "learn&id=2&lesson=7 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "quiz&id=2 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 1366 HTTP 200"
+    },
+    {
+      "browser": "chrome",
+      "name": "student 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "chrome",
+      "name": "no JS keeps illustration still"
+    },
+    {
+      "browser": "chrome",
+      "name": "no JS hides inactive carousel controls"
+    },
+    {
+      "browser": "chrome",
+      "name": "no JS keeps initial illustration and signup link"
+    },
+    {
+      "browser": "chrome",
+      "name": "no JS mobile no overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "home HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "supplied logo in header and footer"
+    },
+    {
+      "browser": "edge",
+      "name": "local SVG favicon loads"
+    },
+    {
+      "browser": "edge",
+      "name": "three IT illustrations"
+    },
+    {
+      "browser": "edge",
+      "name": "only active slide exposed to assistive technology"
+    },
+    {
+      "browser": "edge",
+      "name": "automatic slide moves left to second image"
+    },
+    {
+      "browser": "edge",
+      "name": "automatic slide reaches third image"
+    },
+    {
+      "browser": "edge",
+      "name": "automatic slide reverses towards right"
+    },
+    {
+      "browser": "edge",
+      "name": "next control selects image"
+    },
+    {
+      "browser": "edge",
+      "name": "previous control selects image"
+    },
+    {
+      "browser": "edge",
+      "name": "manual image choice announces its name"
+    },
+    {
+      "browser": "edge",
+      "name": "pause prevents automatic changes"
+    },
+    {
+      "browser": "edge",
+      "name": "keyboard resumes automatic changes"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion disables automatic play"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion still permits manual selection"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion removes sliding transition"
+    },
+    {
+      "browser": "edge",
+      "name": "home 390 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "home 390 signup action intact"
+    },
+    {
+      "browser": "edge",
+      "name": "home 390 artwork does not cover copy"
+    },
+    {
+      "browser": "edge",
+      "name": "home 768 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "home 768 signup action intact"
+    },
+    {
+      "browser": "edge",
+      "name": "home 768 artwork does not cover copy"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1366 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1366 signup action intact"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1366 artwork does not cover copy"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1920 no horizontal overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1920 signup action intact"
+    },
+    {
+      "browser": "edge",
+      "name": "home 1920 artwork does not cover copy"
+    },
+    {
+      "browser": "edge",
+      "name": "header search submits existing course query"
+    },
+    {
+      "browser": "edge",
+      "name": "login logo renders"
+    },
+    {
+      "browser": "edge",
+      "name": "login no overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "register logo renders"
+    },
+    {
+      "browser": "edge",
+      "name": "register no overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "detail&id=1 logo renders"
+    },
+    {
+      "browser": "edge",
+      "name": "detail&id=1 no overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "signed-in hero keeps student action"
+    },
+    {
+      "browser": "edge",
+      "name": "learning content and focus toggle remain available"
+    },
+    {
+      "browser": "edge",
+      "name": "learning header uses supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "student 390 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student 390 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "student 768 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student 768 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "learn&id=2&lesson=7 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "quiz&id=2 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "student 1366 HTTP 200"
+    },
+    {
+      "browser": "edge",
+      "name": "student 1366 no overflow with supplied logo"
+    },
+    {
+      "browser": "edge",
+      "name": "no JS keeps illustration still"
+    },
+    {
+      "browser": "edge",
+      "name": "no JS hides inactive carousel controls"
+    },
+    {
+      "browser": "edge",
+      "name": "no JS keeps initial illustration and signup link"
+    },
+    {
+      "browser": "edge",
+      "name": "no JS mobile no overflow"
+    },
+    {
+      "browser": "all",
+      "name": "no JavaScript page errors"
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "limits": [
+    "Windows browser viewports; not physical phones or Safari.",
+    "Presentation change only; no MySQL or real Gemini rerun."
+  ],
+  "finished": "2026-11-21T07:02:30.815Z",
+  "sourceCommit": "82aa23efdc3302340df164072544d0aabfd4b378",
+  "sourceFilesSha256": {
+    "app/layout.php": "8adefeb9e5dc456dcf4afd942790f72b0cb66857847d77a5312e9bd52df24f53",
+    "app/views.php": "de54bc730717693de0ed8b6f1df8b9585628c20a362dabfbf91686e0b4ea5220",
+    "public/assets/app.css": "516361d94475e8d680035d395a01ed9e42bc60acabcd8cd98a321fb830820a7d",
+    "public/assets/discovery.js": "2a36ff477ab32e0215dfe708a3eeb1b38d0c1ae0a5da526fd421ddd005e226f7",
+    "public/assets/images/SOURCES.md": "363529fa1cda621ca1e87a9b9597fb3f8e57eecc83242f7ea69dc28f14f24076",
+    "public/assets/images/it-code.svg": "c241f1159a764c0a590bb29e360710d1bf3cf137c5fbeac0a6a77206870cb890",
+    "public/assets/images/it-web.svg": "b8ceefd81270a6f7f24d8fbce5bfaba4d1f484fde6a335293c7decfa6ff7f634",
+    "public/assets/images/it-data.svg": "515f09b9099d24065206e097135fdd7a25f550c78e38b62c3243d7771c7d00e3",
+    "public/assets/images/studymate-icon.svg": "815160bb1efb7deea04eb5b7544bd8bf8a26b87a80e729188edfde8bd5e69605",
+    "public/assets/images/studymate-logo.webp": "c2524c63f6ac4af17f0ce8e0be56d92d29802922cf577c22c333f06edf0a1372"
+  },
+  "hashNormalization": "LF text; original WebP bytes",
+  "screenshotNote": "Final PNGs captured with real browser time after transitions completed. Timer checks use Playwright clock. The final no-JavaScript enhancement does not change the pictured enhanced UI."
+}

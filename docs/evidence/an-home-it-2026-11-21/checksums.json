@@ -1,0 +1,17 @@
+{
+  "normalization": "LF text; original PNG bytes",
+  "sha256": {
+    "after-1366.png": "de3cb9e0a36798929a67434ae7efc8949668a0ebf7d47b48c02d135ebe8d12ee",
+    "after-390.png": "ff6705fdbfa94ae1528fb2f66f3af6e77908b2c4699f3a5d92da8deb040e6bb3",
+    "after-768.png": "a5f5d2a8fbaffacd7b9e1d2c131efb2b636119a5e57c67797990d433ce709ade",
+    "banner-1366.png": "fe258af8d20fdc5ce2fe88566d83a7061b893d04bd8720a0b68b825b23752dda",
+    "banner-390.png": "a253b3aefa76996354ce54bce42382c5e91ee0ddae1dcf03c210621f49877697",
+    "banner-768.png": "0d113e079d6817d70481c397b9d8c950a3b2f24e5450431d89a1ef4d646028b6",
+    "banner-mobile-live.png": "da1ea68b292119cf27634ae44ff75fd5d3da4a8828f22fe791a3fad4c29eba40",
+    "before-1366.png": "a7926c0d44e0fc05f8dddb95d0e002db4af2279339d81fc314a1ecf8f70d6551",
+    "mobile-live.png": "f26f42342b447760a81e1fa400167ddc0f216ad46092c3325fd972331ec8593c",
+    "results.json": "485acc97cff1d6d0d29219f84753eb3f3148628b2e66507ed5cbb1281a9357a9",
+    "slide-2.png": "f9f706b3d034defbfaba84a990a454ff6865cafdd646f82188d439fe9d483450",
+    "slide-3.png": "3ccb543946b48f7f7c610e545b33c014e71ce6908637f90fbb2dec25b6475ee2"
+  }
+}

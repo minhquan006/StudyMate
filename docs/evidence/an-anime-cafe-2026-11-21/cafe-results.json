@@ -1,0 +1,252 @@
+{
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "no cafe video fetched before choice"
+    },
+    {
+      "browser": "chrome",
+      "name": "four named scenes available"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe radio changes scene"
+    },
+    {
+      "browser": "chrome",
+      "name": "actual cafe MP4 decodes muted HD loop"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe selects matching video and fallback"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe shows rain and Jazz Lofi guidance"
+    },
+    {
+      "browser": "chrome",
+      "name": "rain animation limited to window region"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe video naturally loops and continues playing"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 390 four choices in two columns"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 768 four choices in two columns"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe 1366 four choices in two columns"
+    },
+    {
+      "browser": "chrome",
+      "name": "motion off releases cafe media"
+    },
+    {
+      "browser": "chrome",
+      "name": "motion off retains cafe photo"
+    },
+    {
+      "browser": "chrome",
+      "name": "forest replaces cafe and hides cafe guidance"
+    },
+    {
+      "browser": "chrome",
+      "name": "rapid scene changes finish on cafe without stale label"
+    },
+    {
+      "browser": "chrome",
+      "name": "static scene releases previous cafe video"
+    },
+    {
+      "browser": "chrome",
+      "name": "cafe selection persists through reload"
+    },
+    {
+      "browser": "chrome",
+      "name": "restoring cafe never autoplays rain or music"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion stops cafe video"
+    },
+    {
+      "browser": "chrome",
+      "name": "reduced motion stops rain animation"
+    },
+    {
+      "browser": "chrome",
+      "name": "independent rain audio keeps cafe video muted and playing"
+    },
+    {
+      "browser": "chrome",
+      "name": "muting sound keeps scenery running"
+    },
+    {
+      "browser": "chrome",
+      "name": "failed cafe video falls back to matching photo"
+    },
+    {
+      "browser": "chrome",
+      "name": "closing cafe returns to readable native lesson"
+    },
+    {
+      "browser": "edge",
+      "name": "no cafe video fetched before choice"
+    },
+    {
+      "browser": "edge",
+      "name": "four named scenes available"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe radio changes scene"
+    },
+    {
+      "browser": "edge",
+      "name": "actual cafe MP4 decodes muted HD loop"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe selects matching video and fallback"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe shows rain and Jazz Lofi guidance"
+    },
+    {
+      "browser": "edge",
+      "name": "rain animation limited to window region"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe video naturally loops and continues playing"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 390 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 390 four choices in two columns"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 768 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 768 four choices in two columns"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 1366 no page overflow"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe 1366 four choices in two columns"
+    },
+    {
+      "browser": "edge",
+      "name": "motion off releases cafe media"
+    },
+    {
+      "browser": "edge",
+      "name": "motion off retains cafe photo"
+    },
+    {
+      "browser": "edge",
+      "name": "forest replaces cafe and hides cafe guidance"
+    },
+    {
+      "browser": "edge",
+      "name": "rapid scene changes finish on cafe without stale label"
+    },
+    {
+      "browser": "edge",
+      "name": "static scene releases previous cafe video"
+    },
+    {
+      "browser": "edge",
+      "name": "cafe selection persists through reload"
+    },
+    {
+      "browser": "edge",
+      "name": "restoring cafe never autoplays rain or music"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion stops cafe video"
+    },
+    {
+      "browser": "edge",
+      "name": "reduced motion stops rain animation"
+    },
+    {
+      "browser": "edge",
+      "name": "independent rain audio keeps cafe video muted and playing"
+    },
+    {
+      "browser": "edge",
+      "name": "muting sound keeps scenery running"
+    },
+    {
+      "browser": "edge",
+      "name": "failed cafe video falls back to matching photo"
+    },
+    {
+      "browser": "edge",
+      "name": "closing cafe returns to readable native lesson"
+    },
+    {
+      "browser": "all",
+      "name": "no JavaScript page errors"
+    }
+  ],
+  "errors": [],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "video": {
+    "chrome": {
+      "width": 1920,
+      "height": 1080,
+      "duration": 10,
+      "muted": true,
+      "loop": true,
+      "inline": true,
+      "source": "/assets/spaces/anime-cafe.mp4",
+      "poster": "/assets/spaces/anime-cafe.jpg"
+    },
+    "edge": {
+      "width": 1920,
+      "height": 1080,
+      "duration": 10,
+      "muted": true,
+      "loop": true,
+      "inline": true,
+      "source": "/assets/spaces/anime-cafe.mp4",
+      "poster": "/assets/spaces/anime-cafe.jpg"
+    }
+  },
+  "finished": "2026-11-21T07:59:56.499Z"
+}

@@ -1,0 +1,34 @@
+.lesson-notes { margin-top: 24px; padding: 0; overflow: hidden; }
+.lesson-notes[hidden], .lesson-notes [hidden] { display: none !important; }
+.lesson-notes details, .lesson-notes details:last-child { padding: 0; border: 0; margin: 0; }
+.lesson-notes summary { display: flex; align-items: center; gap: 14px; min-height: 88px; padding: 20px 28px; list-style: none; background: #fafbfe; }
+.lesson-notes summary::-webkit-details-marker { display: none; }
+.notes-summary-icon { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; flex-shrink: 0; background: #eee8fb; color: #65439d; border-radius: 10px; }
+.notes-summary-icon svg { width: 23px; height: 23px; }
+.lesson-notes summary strong { display: block; font-size: 17px; color: #283b58; font-weight: 650; }
+.lesson-notes summary small { display: block; font-size: 13px; font-weight: 400; color: #595c62; margin-top: 4px; }
+.notes-summary-chevron { margin-left: auto; font-size: 22px; color: #6b7790; }
+.lesson-notes details[open] .notes-summary-chevron { transform: rotate(180deg); }
+.notes-editor { padding: 24px 28px; border-top: 1px solid #e0e5ef; }
+.notes-local-hint { font-size: 14px; color: #595c62; line-height: 1.7; margin-bottom: 18px; }
+.notes-editor > label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 9px; }
+#lesson-note-input { display: block; width: 100%; min-height: 200px; resize: vertical; padding: 15px 17px; background: #fff; color: #293a54; border: 1px solid #bdc9da; border-radius: 8px; font: inherit; font-size: 16px; line-height: 1.8; tab-size: 2; }
+.notes-meta { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-top: 10px; }
+.notes-meta p { margin: 0; font-size: 13px; color: #595c62; }
+.notes-meta output { flex-shrink: 0; font-size: 13px; color: #595c62; }
+.has-note-error #lesson-note-status, .notes-meta .over-limit { color: #a22b3c; }
+.notes-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.notes-actions .btn { font-size: 14px; }
+.notes-delete { min-height: 44px; padding: 9px 10px; border: 0; background: transparent; color: #9c2d3b; margin-left: auto; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.notes-delete:disabled { color: #727985; text-decoration: none; }
+.notes-conflict, .notes-recovery { background: #fff8e8; border: 1px solid #ead7ab; border-radius: 8px; padding: 14px 16px; margin-top: 16px; color: #71521e; font-size: 14px; }
+.notes-conflict p, .notes-recovery p { margin-bottom: 8px; }
+.notes-conflict button, .notes-recovery button { min-height: 44px; padding: 9px 12px; background: #fff; color: #71521e; border: 1px solid #d8bf8d; border-radius: 5px; font-size: 14px; margin: 4px 6px 0 0; }
+@media (max-width: 767px) {
+  .lesson-notes summary { padding: 18px 20px; }
+  .notes-editor { padding: 20px; }
+  .notes-meta { flex-direction: column; gap: 5px; }
+  .notes-actions .btn { flex: 1 1 140px; }
+  .notes-delete { margin-left: 0; }
+}
+@media print { .lesson-notes { display: none !important; } }

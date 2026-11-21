@@ -1,0 +1,13 @@
+{
+  "sourceBytes": 50027864,
+  "sourceSha256": "f72528e8eb9be32a608d6176901485fba96755d18bc1763df4a78f60da73d20b",
+  "sourceResolution": "3840x2160",
+  "outputBytes": 5499815,
+  "outputSha256": "ae46325251e056dd40a2c6f1356cdf5924445a97a0663e4923d2a795eb2655bc",
+  "width": 1920,
+  "height": 1080,
+  "duration": 10.0,
+  "framesEncoded": 250,
+  "audioStreams": 0,
+  "codec": "h264"
+}

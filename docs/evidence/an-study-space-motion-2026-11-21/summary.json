@@ -1,0 +1,60 @@
+{
+  "sourceCommit": "9474b36a0b3b862c82541bb91d8f5e47d18fc32e",
+  "baseCommit": "3a476c6fa28adf8197440a35fe7a26bd2218c893",
+  "baseBranchForDraft": "codex/an-ui-demo-20261121",
+  "sourceFilesSha256": {
+    "app/study_space_view.php": "1a909e8217b33f9fe1a7343bef88050fdf94122a2e5cf902e01c74ce6c945ed6",
+    "public/assets/study-space.js": "ee948758fbabcd050151da01dc02aa07a18e08667df783bcd0a93b75710174d7",
+    "public/assets/study-space.css": "221abafa37d6fb07e01ec8439f0893246b89e3666d0bda8f217a6e1bf131a4bf",
+    "public/assets/spaces/SOURCES.md": "2acb878ec1dec7b04179fe2da0f3a08fc9bdb8dc3ed5cad0e2e814bae00fe38b",
+    "public/assets/spaces/forest-motion.webm": "1e52b4e48f1c321244942dc8d4d031f607e78229f7f3407e9442fb00371bf054",
+    "tests/study-space.cjs": "bbca0e0fe8d6385f03616b30deb0df12a49c6577867f245ec2045ee536001e4f",
+    "app/bootstrap.php": "bf77f23fc60d0962ba9909ce957c51893134190463d7fa060122924194accc09",
+    "app/layout.php": "c6dda59d388b38fee2e8734f111065ee75e692844b96fba039fe2d9f7ff6ea68",
+    "app/views.php": "1843d34e68ef3b4151974369c4b46bbbb2c5b417e071d6dcb05b473c4ceb5386",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005"
+  },
+  "sourceNormalization": "LF text; original WebM bytes",
+  "focus": {
+    "checks": 158,
+    "errors": 0,
+    "sourceCommit": "9474b36a0b3b862c82541bb91d8f5e47d18fc32e",
+    "browsers": {
+      "chrome": "157.0.8103.80",
+      "edge": "157.0.4341.60"
+    },
+    "liveYoutube": [
+      {
+        "browser": "chrome",
+        "status": "Đang phát nhạc YouTube."
+      },
+      {
+        "browser": "edge",
+        "status": "Đang phát nhạc YouTube."
+      }
+    ]
+  },
+  "regression": {
+    "checks": 652,
+    "errors": 0,
+    "sourceCommit": "e30d9af",
+    "note": "Completed before the follow-up side-switch button. Follow-up changed only the dock control; current focused suite covers it."
+  },
+  "phpSyntax": {
+    "files": 34,
+    "sourceCommit": "9474b36a0b3b862c82541bb91d8f5e47d18fc32e"
+  },
+  "video": {
+    "path": "public/assets/spaces/forest-motion.webm",
+    "bytes": 1607981,
+    "resolution": "1920x1080",
+    "nativeLoopCheck": "video-loop.json"
+  },
+  "limitations": [
+    "Disposable SQLite on Windows; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones.",
+    "Web Audio source/decode/play/volume inspected automatically; not a listening-quality review.",
+    "Video background is HD, not a 4K asset.",
+    "YouTube still pauses when the browser tab is hidden; full PHP page navigation still needs media to be started again."
+  ]
+}

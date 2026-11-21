@@ -1,0 +1,16 @@
+PASS existing completed lesson receives retrospective XP
+PASS new account starts with zero XP
+PASS repeated XP reads leave all 12 tables unchanged
+PASS six distinct lessons earn 120 XP
+PASS failed quiz does not earn bonus XP
+PASS first passed quiz earns 50 XP
+PASS passed quiz counted once
+PASS duplicate request returns original attempt
+PASS replayed quiz request does not duplicate XP
+PASS passing same quiz again does not duplicate XP
+PASS another account does not inherit earned XP
+PASS reminder uses actual most recent study activity
+PASS recent lesson navigation clears inactivity
+PASS account without study history is not falsely overdue
+PASS future timestamp cannot create negative inactivity
+15 checks passed on isolated in-memory SQLite

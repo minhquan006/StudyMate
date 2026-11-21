@@ -1,0 +1,67 @@
+{
+  "sourceCommit": "3a476c6fa28adf8197440a35fe7a26bd2218c893",
+  "runtimeEquivalentTo": "2814b3d",
+  "baseCommit": "56e58f8ac2185457cfc75281f6f25ea39f5433b0",
+  "baseBranch": "codex/an-ui-demo-20261121",
+  "sourceFilesSha256": {
+    "app/bootstrap.php": "bf77f23fc60d0962ba9909ce957c51893134190463d7fa060122924194accc09",
+    "app/layout.php": "c6dda59d388b38fee2e8734f111065ee75e692844b96fba039fe2d9f7ff6ea68",
+    "app/views.php": "1843d34e68ef3b4151974369c4b46bbbb2c5b417e071d6dcb05b473c4ceb5386",
+    "app/study_space_view.php": "e40d1a59362ef97c054187d12187b5f4de47526f7b3f0eb556b9c1c737254bf5",
+    "public/assets/study-space.js": "194d906e1ef36f654c747211d6cfcb230a60a68615f4e723fc1dc0579ce49049",
+    "public/assets/study-space.css": "25f4bf56e868051b6a86455cef5d212d4324d942403e6af0d7691e5243db91bf",
+    "public/assets/spaces/library.jpg": "8ec81692ddfa68bf00a4c07fcdea14653609c666d5833aaca3cf4d626da27e18",
+    "public/assets/spaces/forest.jpg": "b8e21c5e9b37c804010681875a9b151523fc48a8691293cd9d1407c70c7306d8",
+    "public/assets/spaces/rain.ogg": "31efcbe952a3989a9276774e2d7be61a2dc98fdd785a94d1435fc19cda9a84d1",
+    "public/assets/spaces/SOURCES.md": "9c73af81942ca7455b7716fcbbe30260d8f307c5a1c98fe8acec80cfc1c4df0c",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005",
+    "tests/study-space.cjs": "8ba5803f55661ece3fc697eba9f066b6d6dc8dfe5c1c413d22e0acb36788ba9e",
+    "tests/an-ui-demo.cjs": "e3e96fdbe0ce4176f3c6599acc266d6e1296478e459406ed912323a28a1e4d0e",
+    "tests/form-feedback.cjs": "0bd6ad735a6c4c6c612f45d45944872b8e723aaa043aa907b065ba8cfd8f0260"
+  },
+  "sourceNormalization": "LF for text; original bytes for image/audio",
+  "focus": {
+    "checks": 132,
+    "errors": 0,
+    "sourceCommit": "3a476c6fa28adf8197440a35fe7a26bd2218c893",
+    "browsers": {
+      "chrome": "157.0.8103.80",
+      "edge": "157.0.4341.60"
+    },
+    "liveYoutube": [
+      {
+        "browser": "chrome",
+        "status": "Đang phát nhạc YouTube."
+      },
+      {
+        "browser": "edge",
+        "status": "Đang phát nhạc YouTube."
+      }
+    ]
+  },
+  "regression": {
+    "checks": 652,
+    "errors": 0,
+    "sourceCommit": "2814b3d"
+  },
+  "forms": {
+    "review": 34,
+    "quiz-exit": 16,
+    "original": 22,
+    "sourceCommit": "2814b3d"
+  },
+  "php": {
+    "checks": 112,
+    "syntaxFiles": 34,
+    "sourceCommit": "2814b3d"
+  },
+  "limits": [
+    "Disposable SQLite on Windows; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones.",
+    "Web Audio source/decode/play/volume inspected automatically; not a listening-quality review."
+  ],
+  "diagnostics": [
+    "First focus runner created too many independent logins; rate limiter correctly returned 429. Final runner reuses the already authenticated test session in isolated browser contexts.",
+    "Repeated focus runs eventually resumed the final lesson, where Next is absent. Final harness explicitly starts seeded lesson 7, and asserts a Next action exists. Application behavior unchanged by this fixture correction."
+  ]
+}

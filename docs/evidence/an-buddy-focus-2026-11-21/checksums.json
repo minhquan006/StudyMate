@@ -1,0 +1,30 @@
+{
+  "normalization": "LF text; original PNG bytes",
+  "sha256": {
+    "after.json": "74cffd0cdcff9976a83fee6bb6dc29958749f137e70fcfa0c5742215f604966e",
+    "after.png": "b6857f2d783b45e87aeac70005c31d4c28572efc3ead1121c0a40b55049b7ca9",
+    "base-regression/floating-player-mobile.png": "7bf37d6ee95753f974a7cc0ee7d32acbe482ef86729663312bb7312a51fed23a",
+    "base-regression/music-1366.png": "aee6d78b6cf85ae35675a6fa2f081b0542d39fb382330327633737881fb08a96",
+    "base-regression/music-390.png": "947544057e6ce6b9cf34885b23fb192ad32eb18a07a78b801828d6f723d49db1",
+    "base-regression/results.json": "14f814c00e5140e59bd52a88a73d9c693e65ce3808e473569708e9a8a57c2ff3",
+    "base-regression/scene-1366.png": "57658d0977f9b9c2407da674159e960e41a6750b8d4f05e8335775394a6c639c",
+    "base-regression/scene-390.png": "e578e04c1b2436629ae2f6c44cba06aa5479fa150577104ec046330206c40b59",
+    "base-regression/scene-768.png": "927022be672b6dce9965106b7a5f791e890715fdf3c24496fe65408db3e0aa17",
+    "base-regression/sound-1366.png": "7bfdd156c71f5e87cb4e05ef7d9363ca7b8b29fafa80224b509404154f8d1b34",
+    "base-regression/sound-390.png": "fa15e50c81dd3fc9463c7656e17859f215a53b20bfa3e3c5edc18acd9449c0ff",
+    "base-regression/youtube-live.png": "8411285388cc658a3b85431ed742e259f1b5e3496e76f60652a4ef3f25a97557",
+    "before.json": "f11e92762061955b6079538f440fa4dd7aeea4d20ce8b73abfaf57e16085d415",
+    "before.png": "cec5ca6a8dc27d1026319c735a49ca8408a4678d6b7e7cf6b7d0f5940d5d3dc3",
+    "regression/floating-player-mobile.png": "ff296a8924ea90df60ee0812e9b575546eb6f42dcf1abb30307822f0306c2688",
+    "regression/music-1366.png": "eb46e5f088677d48e7137f18bf2b357d98773dab71c7285dc433f44089f9033d",
+    "regression/music-390.png": "bda9627a669fa4919c4ad62b392019ae52ce19a52bd8faa1feed77e4036e56a3",
+    "regression/results.json": "f2567cffefde36b5d146a7c5ed5b0c809bb77edb4353f8afd9f504c3cb4a7454",
+    "regression/scene-1366.png": "22eb99d2c5334631aa87aa640eb243645b939802067b7eb419a6e13428cd869a",
+    "regression/scene-390.png": "1f23823833a2ddf2d89b35ff50638e5087797df629f06b911d23e1574a3b6813",
+    "regression/scene-768.png": "195adc6c3b3ec89800a3709aa0567eb68e3b23a6f6d58e6c2d508fe106d89083",
+    "regression/sound-1366.png": "2d99231801e2f0fdfdb8e680fc85186baad1d4484cad8742fe7ce2cbb6e1f29c",
+    "regression/sound-390.png": "add86c2aa5bc616b0f8cf60487a0e18179d9abbefc33d97c3a57244523362517",
+    "regression/youtube-live.png": "cb81c1341230610c271ae210f283d9e57676dd527fc92b54b2d4231d45755a43",
+    "summary.json": "4187a7cf1f34d7c7dcdd35699da2df3d7287d0d7f10262e57db6791cb553aeff"
+  }
+}

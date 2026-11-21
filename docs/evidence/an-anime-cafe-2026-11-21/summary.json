@@ -1,0 +1,39 @@
+{
+  "sourceCommit": "b301d99a981250f31dbf0afd4105bd1ca4a1a420",
+  "baseCommit": "cf455dc3afdc9eba3d124c7dfaa15221ee709951",
+  "sourceNormalization": "LF text; original media bytes",
+  "sourceFilesSha256": {
+    "app/study_space_view.php": "b293795ff729b604b517f53cc11524784a1b411fa3e6a6db36694ab7c34f63cc",
+    "public/assets/study-space.js": "e10e3bcecc61de303cbe20caef61605ebef8f1227863d55a4493dc26717c06fc",
+    "public/assets/study-space.css": "8f1511c5c6c158b176e212ec7238f6d16f7d571c9a88e3765197406a7167350a",
+    "public/assets/spaces/anime-cafe.mp4": "ae46325251e056dd40a2c6f1356cdf5924445a97a0663e4923d2a795eb2655bc",
+    "public/assets/spaces/anime-cafe.jpg": "93263698e62130c5830bf76e945befda6db4e7451b6a77939ff7114fc2fd9289",
+    "public/assets/spaces/SOURCES.md": "93a67dfd173d0219252b23380ee7c5d5f74681db50c44582783cb709ffaafc5d",
+    "tests/study-space.cjs": "bbca0e0fe8d6385f03616b30deb0df12a49c6577867f245ec2045ee536001e4f",
+    "app/bootstrap.php": "bf77f23fc60d0962ba9909ce957c51893134190463d7fa060122924194accc09",
+    "public/assets/forms.js": "5df36c34fbbba1c1dd2f06378e70b7b1d618ed46bac2780db5431709b907b005"
+  },
+  "cafeChecks": 55,
+  "regressionChecks": 158,
+  "javascriptPageErrors": 0,
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "liveYoutube": [
+    {
+      "browser": "chrome",
+      "status": "Đang phát nhạc YouTube."
+    },
+    {
+      "browser": "edge",
+      "status": "Đang phát nhạc YouTube."
+    }
+  ],
+  "limitations": [
+    "Windows Chrome/Edge viewports; not physical phones or Safari.",
+    "SQLite QA; no MySQL/Docker or real Gemini rerun.",
+    "Jazz Lofi is user-selected through the existing YouTube form; no new music track bundled.",
+    "Supplied 4K source preserved in Downloads; deployed asset is 1080p with no audio stream."
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "started": "2026-11-21T09:24:29.885Z",
+  "sourceFilesSha256": {
+    "app/bootstrap.php": "a3f3d2adcabcdad37d4af11bf8cb82c9852aa5786aa338e152fea9577554d6b7",
+    "app/layout.php": "f624907ba2df74f3b03fbd4dc9d215916ad598f93a2d21878aeb9dea75a14c3f",
+    "app/views.php": "cfc4af2302c5588c785592cc4c04c17a4c30810a8d58c27ce720b09ee8384fb5",
+    "app/study_space_view.php": "b293795ff729b604b517f53cc11524784a1b411fa3e6a6db36694ab7c34f63cc",
+    "public/assets/study-space.js": "c62aa03645c9b8e7136a9c1caa226db7a1d62b794189c5cfeb1acec06b6c47bd",
+    "public/assets/study-space.css": "8f1511c5c6c158b176e212ec7238f6d16f7d571c9a88e3765197406a7167350a",
+    "public/assets/spaces/forest-motion.webm": "1e52b4e48f1c321244942dc8d4d031f607e78229f7f3407e9442fb00371bf054"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "public pages retain restrictive script/referrer policy"
+    },
+    {
+      "browser": "chrome",
+      "name": "study page allows only explicit official player script paths and origin referrer"
+    },
+    {
+      "browser": "chrome",
+      "name": "space starts optional and lesson remains usable"
+    },
+    {
+      "browser": "chrome",
+      "name": "space toggle announces expanded state"
+    },
+    {
+      "browser": "chrome",
+      "name": "scene radio changes actual page background"
+    },
+    {
+      "browser": "chrome",
+      "name": "local HD scenery video actually decodes and plays muted"
+    },
+    {
+      "browser": "chrome",
+      "name": "scenery video advances rather than displaying a still"
+    },
+    {
+      "browser": "chrome",
+      "name": "turning motion off releases video source"
+    },
+    {
+      "browser": "chrome",
+      "name": "system reduced motion stops video and disables effects"
+    },
+    {
+      "browser": "chrome",
+      "name": "motion preference resumes when reduction is lifted"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 390 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 390 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 768 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 768 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Không gian 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Âm thanh 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 1366 no page overflow"
+    },
+    {
+      "browser": "chrome",
+      "name": "Nhạc 1366 exactly one tool panel visible"
+    },
+    {
+      "browser": "chrome",
+      "name": "tool tabs work with arrow keys"
+    },
+    {
+      "browser": "chrome",
+      "name": "no YouTube request before explicit valid music load"
+    },
+    {
+      "browser": "chrome",
+      "name": "four decorative sound icons have no extra screen reader noise"
+    },
+    {
+      "browser": "chrome",
+      "name": "real local rain recording decodes and starts after user gesture"
+    },
+    {
+      "browser": "chrome",
+      "name": "four selected ambient channels contain actual signal"
+    },
+    {
+      "browser": "chrome",
+      "name": "active sound indicators reflect actual live channels"
+    },
+    {
+      "browser": "chrome",
+      "name": "master volume mutes all ambient output gains"
+    },
+    {
+      "browser": "chrome",
+      "name": "muted channels stop showing active animation"
+    },
+    {
+      "browser": "chrome",
+      "name": "per-channel and master levels persist"
+    },
+    {
+      "browser": "chrome",
+      "name": "sound volume percentage follows keyboard adjustment"
+    },
+    {
+      "browser": "chrome",
+      "name": "pause stops every live ambient source"
+    },
+    {
+      "browser": "chrome",
+      "name": "reload restores scene/settings without autoplaying ambience"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: javascript:alert(1)"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtube.com.evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtube.com@evil.test/watch?v=M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://example.com/M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: http://youtu.be/M7lc1UVf-VE"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/watch?v=short"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://www.youtube.com/playlist?list=abc"
+    },
+    {
+      "browser": "chrome",
+      "name": "rejects unsafe/non-video link: https://youtu.be/M7lc1UVf-VE/extra"
+    },
+    {
+      "browser": "chrome",
+      "name": "invalid links never contact YouTube"
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "scene-390.png",
+    "sound-390.png",
+    "music-390.png",
+    "scene-768.png",
+    "scene-1366.png",
+    "sound-1366.png",
+    "music-1366.png"
+  ],
+  "browsers": {
+    "chrome": "157.0.8103.80"
+  },
+  "liveYoutube": [],
+  "limitations": [
+    "Disposable SQLite on Windows; not MySQL/Docker or real Gemini.",
+    "Browser viewports, not physical phones.",
+    "Web Audio source/decode/play/volume inspected automatically; not a listening-quality review."
+  ],
+  "failure": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.favorite-select')\u001b[22m\n\n    at D:\\TDTU\\Web\\StudyMate\\tests\\study-space.cjs:122:51",
+  "finished": "2026-11-21T09:25:23.345Z"
+}

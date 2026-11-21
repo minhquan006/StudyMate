@@ -1,0 +1,6 @@
+{
+  "sha": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "browser": "157.0.8103.80",
+  "driver": "sqlite",
+  "screenshots": "automated full-page, seed plus tests/run.php fixture"
+}

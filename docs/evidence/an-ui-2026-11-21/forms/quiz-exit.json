@@ -1,0 +1,133 @@
+{
+  "caseSet": "quiz-exit",
+  "sourceHead": "54c87d5e5595799d46fc32bea79f31153772a040",
+  "sourceLabel": "54c87d5 Windows/SQLite; independent case sets with fresh QA quota fixture",
+  "os": "Windows_NT 10.0.26200",
+  "started": "2026-11-21T04:10:31.379Z",
+  "baseCommit": "9cb5dea77d23684dc258198ffa2c4e3c9dee47dc",
+  "sourceFilesSha256": {
+    "app/layout.php": "a19d3dbc46568825e1ca1d15fabd226d54e81cd3583d1e76916f4b732c563fbe",
+    "public/assets/app.css": "b52df87364f8841af7fc2eccd8dbb19063e44112dad180ad917c6ec77281db29",
+    "public/assets/forms.js": "1f9691cbfb7ae37383efd2809a1c92cf38f9bb4c89274c801a44d07a4a549ddd"
+  },
+  "checks": [
+    {
+      "browser": "chrome",
+      "name": "Logout rồi ở lại không kẹt pending",
+      "expected": "Giữ đáp án; pending/status trống; chưa gửi POST",
+      "actual": "Đáp án còn; aria-busy không có; status=0; logout POST=0",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Logout lại bằng Enter vẫn cho phép hủy",
+      "expected": "Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form",
+      "actual": "Có confirm lần hai; không pending; logout POST=0",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Refresh sau khi hủy logout vẫn cảnh báo",
+      "expected": "Không mất bảo vệ quiz sau khi hủy form khác",
+      "actual": "beforeunload; ở lại giữ đáp án",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Liên kết rời quiz sau khi hủy vẫn cảnh báo",
+      "expected": "Hủy rời bằng liên kết giữ đáp án",
+      "actual": "beforeunload; ở lại giữ đáp án",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Logout sau hủy: xác nhận và nhấp đúp",
+      "expected": "Một confirm, đúng một POST có CSRF và đăng xuất thật",
+      "actual": "confirm=1; logout POST=1; CSRF có; Student=401",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Sau hủy logout vẫn nộp quiz hợp lệ",
+      "expected": "Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả",
+      "actual": "dialog=0; quiz POST=1; trang result có 5 câu",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Quiz chưa đổi đáp án không hỏi logout",
+      "expected": "Không có confirm khi không có lựa chọn chưa nộp",
+      "actual": "dialog=0; thêm đúng một POST logout",
+      "status": "passed"
+    },
+    {
+      "browser": "chrome",
+      "name": "Tắt JavaScript: logout vẫn hoạt động",
+      "expected": "Native form đăng xuất bằng một POST",
+      "actual": "logout POST=1; Student=401",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Logout rồi ở lại không kẹt pending",
+      "expected": "Giữ đáp án; pending/status trống; chưa gửi POST",
+      "actual": "Đáp án còn; aria-busy không có; status=0; logout POST=0",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Logout lại bằng Enter vẫn cho phép hủy",
+      "expected": "Lần gửi tiếp vẫn hỏi xác nhận, hủy không khóa form",
+      "actual": "Có confirm lần hai; không pending; logout POST=0",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Refresh sau khi hủy logout vẫn cảnh báo",
+      "expected": "Không mất bảo vệ quiz sau khi hủy form khác",
+      "actual": "beforeunload; ở lại giữ đáp án",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Liên kết rời quiz sau khi hủy vẫn cảnh báo",
+      "expected": "Hủy rời bằng liên kết giữ đáp án",
+      "actual": "beforeunload; ở lại giữ đáp án",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Logout sau hủy: xác nhận và nhấp đúp",
+      "expected": "Một confirm, đúng một POST có CSRF và đăng xuất thật",
+      "actual": "confirm=1; logout POST=1; CSRF có; Student=401",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Sau hủy logout vẫn nộp quiz hợp lệ",
+      "expected": "Không cảnh báo nhầm; nhấp đúp tạo một POST quiz và có kết quả",
+      "actual": "dialog=0; quiz POST=1; trang result có 5 câu",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Quiz chưa đổi đáp án không hỏi logout",
+      "expected": "Không có confirm khi không có lựa chọn chưa nộp",
+      "actual": "dialog=0; thêm đúng một POST logout",
+      "status": "passed"
+    },
+    {
+      "browser": "edge",
+      "name": "Tắt JavaScript: logout vẫn hoạt động",
+      "expected": "Native form đăng xuất bằng một POST",
+      "actual": "logout POST=1; Student=401",
+      "status": "passed"
+    }
+  ],
+  "browsers": {
+    "chrome": "157.0.8103.80",
+    "edge": "157.0.4341.60"
+  },
+  "errors": [],
+  "finished": "2026-11-21T04:10:48.978Z"
+}

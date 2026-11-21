@@ -9,3 +9,6 @@ docs/evidence/an-utilities-sticky-2026-11-21/* -text whitespace=cr-at-eol
 
 # Preserve captured outline QA artifacts and their checksums on Windows.
 docs/evidence/quan-outline-2026-11-21/* -text
+
+# Preserve the final main-integration QA artifacts byte-for-byte.
+docs/evidence/an-main-integration-2026-11-21/* -text whitespace=cr-at-eol

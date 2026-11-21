@@ -1,5 +1,7 @@
 # Tiện ích học tập trên giao diện #22
 
+Bàn giao mới nhất sau khi #22 merge: [tích hợp main #19/#22 và kiểm lại tiện ích](AN_MAIN_INTEGRATION_2026-11-21.md). Các mốc và số kiểm bên dưới được giữ theo lượt lịch sử ban đầu.
+
 Bổ sung sau review `c050b35`: [sửa nút đóng Góc tập trung bị header che trên tablet](AN_STUDY_SPACE_STICKY_FIX_2026-11-21.md). Các số kiểm trong báo cáo dưới đây thuộc đợt tích hợp ban đầu; bộ hồi quy sticky được ghi riêng.
 
 Nền giao diện: PR #22, `7f374926acdf3b2c6a1fa9e08b204b39e7777299`.

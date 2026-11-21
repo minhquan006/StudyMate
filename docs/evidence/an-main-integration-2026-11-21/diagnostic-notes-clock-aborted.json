@@ -1,0 +1,4 @@
+{
+  "status": "aborted",
+  "reason": "Edge runner stalled while using simulated clock; replaced only conflict-test setup with atomic edits in two real tabs. No conclusion of product failure from this run."
+}
